@@ -1,4 +1,4 @@
-package com.example.codeformaticsfx;
+package com.example.codeformaticsfx.FIles;
 
 import java.util.Base64;
 
@@ -7,6 +7,8 @@ public class EncodeDecode {
     public String decodedQuestion, decodedA1, decodedA2, decodedA3, decodedA4, decodedDifficulty, decodedRightAnswer;
     public String encodedName, encodedScore, encodedTIS;
     public String decodedName, decodedScore, decodedTIS;
+    public String encodedQuizzName, encodedAuthorname, encodedQuestionsUsed;
+    public String decodedQuizzName, decodedAuthorname, decodedQuestionsUsed;
 
     public void encodeQuestionBase64(String question, String a1, String a2, String a3, String a4, String difficulty, String answer){
         byte[] eQuestion = Base64.getEncoder().encode(question.getBytes());
@@ -39,6 +41,22 @@ public class EncodeDecode {
         decodedA3 = new String(eA3);
         byte[] eA4 = Base64.getDecoder().decode(activeQuestion.A4);
         decodedA4 = new String(eA4);
+    }
+    public void encodeQuizzInfo(String quizzName, String authorName, String questionsUsed){
+        byte[] eQuizzname = Base64.getEncoder().encode(quizzName.getBytes());
+        encodedQuizzName = new String(eQuizzname);
+        byte[] eAuthorName = Base64.getEncoder().encode(authorName.getBytes());
+        encodedAuthorname = new String(eAuthorName);
+        byte[] eQuestionsUsed = Base64.getEncoder().encode(questionsUsed.getBytes());
+        encodedQuestionsUsed = new String(eQuestionsUsed);
+    }
+    public void decodeQuizzInfo(String quizzName, String authorName, String questionsUsed){
+        byte[] dQuizzname = Base64.getEncoder().encode(quizzName.getBytes());
+        decodedQuizzName = new String(dQuizzname);
+        byte[] dAuthorName = Base64.getEncoder().encode(authorName.getBytes());
+        decodedAuthorname = new String(dAuthorName);
+        byte[] dQuestionsUsed = Base64.getEncoder().encode(questionsUsed.getBytes());
+        decodedQuestionsUsed = new String(dQuestionsUsed);
     }
     public void encodeScoreboardBase64(String name, String Score, String timeInSeconds){
         byte[] eName = Base64.getEncoder().encode(name.getBytes());

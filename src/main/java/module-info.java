@@ -6,4 +6,6 @@ module com.example.codeformaticsfx {
 
     opens com.example.codeformaticsfx to javafx.fxml;
     exports com.example.codeformaticsfx;
+    exports com.example.codeformaticsfx.FIles;
+    opens com.example.codeformaticsfx.FIles to javafx.fxml;
 }

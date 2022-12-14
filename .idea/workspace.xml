@@ -4,27 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09c124d1-3ed0-4413-a70e-039465c4f822" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/QuestionLibrary/test.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/EncodeDecode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/HelloApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/HelloController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/pickQuestions.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/readWriteQuestions.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/readWriteScoreboard.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/codeformaticsfx/hello-view.fxml" afterDir="false" />
+    <list default="true" id="09c124d1-3ed0-4413-a70e-039465c4f822" name="Changes" comment="Init Commit, Moritz - read/write Questions, picking questions, write Scoreboard">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/FIles/QuizzInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QuestionLibrary/test.json" beforeDir="false" afterPath="$PROJECT_DIR$/QuestionLibrary/test.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/EncodeDecode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/FIles/EncodeDecode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/pickQuestions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/FIles/pickQuestions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/readWriteQuestions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/FIles/readWriteQuestions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/readWriteScoreboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/FIles/readWriteScoreboard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +24,13 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -56,6 +52,7 @@
     "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "S:/FH/Programieren/CodeformaticsFX/QuestionLibrary",
     "project.structure.last.edited": "Libraries",
@@ -69,13 +66,13 @@
       <recent name="S:\FH\Programieren\CodeformaticsFX\src\main\java\com\example\codeformaticsfx" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.readWriteScoreboard">
+  <component name="RunManager" selected="Application.readWriteQuestions">
     <configuration name="pickQuestions" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.codeformaticsfx.pickQuestions" />
+      <option name="MAIN_CLASS_NAME" value="com.example.codeformaticsfx.FIles.pickQuestions" />
       <module name="CodeformaticsFX.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.codeformaticsfx.*" />
+          <option name="PATTERN" value="com.example.codeformaticsfx.FIles.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -84,11 +81,11 @@
       </method>
     </configuration>
     <configuration name="readWriteQuestions" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.codeformaticsfx.readWriteQuestions" />
+      <option name="MAIN_CLASS_NAME" value="com.example.codeformaticsfx.FIles.readWriteQuestions" />
       <module name="CodeformaticsFX.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.codeformaticsfx.*" />
+          <option name="PATTERN" value="com.example.codeformaticsfx.FIles.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -97,11 +94,11 @@
       </method>
     </configuration>
     <configuration name="readWriteScoreboard" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.codeformaticsfx.readWriteScoreboard" />
+      <option name="MAIN_CLASS_NAME" value="com.example.codeformaticsfx.FIles.readWriteScoreboard" />
       <module name="CodeformaticsFX.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.codeformaticsfx.*" />
+          <option name="PATTERN" value="com.example.codeformaticsfx.FIles.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -125,8 +122,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1671019560188</updated>
-      <workItem from="1671019561980" duration="1120000" />
+      <workItem from="1671019561980" duration="5457000" />
     </task>
+    <task id="LOCAL-00001" summary="Init Commit, Moritz - read/write Questions, picking questions, write Scoreboard">
+      <created>1671021359258</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1671021359258</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -142,5 +147,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Init Commit, Moritz - read/write Questions, picking questions, write Scoreboard" />
+    <option name="LAST_COMMIT_MESSAGE" value="Init Commit, Moritz - read/write Questions, picking questions, write Scoreboard" />
   </component>
 </project>

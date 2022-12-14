@@ -1,4 +1,4 @@
-package com.example.codeformaticsfx;
+package com.example.codeformaticsfx.FIles;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -34,25 +34,72 @@ public class readWriteQuestions {
     public readWriteQuestions(){
 
     }
+    public QuizzInfo Quizz(String filePath) throws IOException {
+        QuizzInfo temp = readQuizz(filePath);
+        return temp;
+    }
 
     public List<readWriteQuestions> questionList(String filePath) throws IOException {
-        List<readWriteQuestions> temp = readQuestion(filePath);
+        QuizzInfo Qtemp = Quizz(filePath);
+        List<readWriteQuestions> temp = new ArrayList<>();
+        if(Qtemp != null){
+
+            temp = Qtemp.questionsList;
+        }
         return temp;
     }
 
     public void writeQuestions(String filePath) throws IOException {
+        Scanner scan = new Scanner(System.in);
+        String unnessary, authorname, quizzname, questionsUsed;
         EncodeDecode encodeDecode = new EncodeDecode();
         List<readWriteQuestions> tempList = new ArrayList<>();
-        if(questionList(filePath) != null){
-            tempList = questionList(filePath);
+        if(questionList(filePath) != null) {
+            QuizzInfo temp = Quizz(filePath);
+            unnessary = scan.nextLine();
+            if(temp != null) {
+                if (temp.AuthorName == null) {
+                    System.out.print("Author Name: ");
+                    authorname = scan.nextLine();
+                } else {
+                    authorname = temp.AuthorName;
+                }
+                if (temp.Quizzname == null) {
+                    System.out.print("Quizzname: ");
+                    quizzname = scan.nextLine();
+                } else {
+                    quizzname = temp.Quizzname;
+                }
+                if (temp.questionsUsed == null) {
+                    System.out.print("How many Questions will be used?: ");
+                    questionsUsed = scan.nextLine();
+                } else {
+                    questionsUsed = temp.questionsUsed;
+                }
+            } else{
+                unnessary = scan.nextLine();
+                System.out.print("Author Name: ");
+                authorname = scan.nextLine();
+                System.out.print("Quizzname: ");
+                quizzname = scan.nextLine();
+                System.out.print("How many Questions will be used?: ");
+                questionsUsed = scan.nextLine();
+            }
+        }else{
+            unnessary = scan.nextLine();
+            System.out.print("Author Name: ");
+            authorname = scan.nextLine();
+            System.out.print("Quizzname: ");
+            quizzname = scan.nextLine();
+            System.out.print("How many Questions will be used?: ");
+            questionsUsed = scan.nextLine();
         }
         Writer writer = Files.newBufferedWriter(Paths.get(filePath));
-        Scanner scan = new Scanner(System.in);
         int count = 1, difficulty = 0;
         boolean stop = false, isInside = false;
         String difficultyS = "";
         while (!stop) {
-            String unnessary = scan.nextLine();
+            unnessary = scan.nextLine();
             System.out.print("Question: ");
             String question = scan.nextLine();
             System.out.print("A1: ");
@@ -94,7 +141,8 @@ public class readWriteQuestions {
                 stop = true;
             }
         }
-        gson.toJson(tempList, writer);
+        QuizzInfo thisQuizz = new QuizzInfo(quizzname, authorname, questionsUsed, tempList);
+        gson.toJson(thisQuizz, writer);
         writer.close();
     }
 
@@ -103,6 +151,12 @@ public class readWriteQuestions {
         List<readWriteQuestions> tempList = new Gson().fromJson(reader, new TypeToken<List<readWriteQuestions>>() {}.getType());
         reader.close();
         return tempList;
+    }
+    private QuizzInfo readQuizz(String filePath) throws IOException {
+        Reader reader = Files.newBufferedReader(Paths.get(filePath));
+        QuizzInfo temp = new Gson().fromJson(reader, new TypeToken<QuizzInfo>() {}.getType());
+        reader.close();
+        return temp;
     }
 
     public static void main(String[] args) throws IOException {
