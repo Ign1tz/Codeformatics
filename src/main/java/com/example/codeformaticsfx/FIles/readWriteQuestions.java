@@ -58,23 +58,26 @@ public class readWriteQuestions {
             QuizzInfo temp = Quizz(filePath);
             unnessary = scan.nextLine();
             if(temp != null) {
+                if(temp.questionsList != null){
+                    tempList = temp.questionsList;
+                }
                 if (temp.AuthorName == null) {
                     System.out.print("Author Name: ");
                     authorname = scan.nextLine();
                 } else {
-                    authorname = temp.AuthorName;
+                    authorname = encodeDecode.decodeSingle(temp.AuthorName);
                 }
                 if (temp.Quizzname == null) {
                     System.out.print("Quizzname: ");
                     quizzname = scan.nextLine();
                 } else {
-                    quizzname = temp.Quizzname;
+                    quizzname = encodeDecode.decodeSingle(temp.Quizzname);
                 }
                 if (temp.questionsUsed == null) {
                     System.out.print("How many Questions will be used?: ");
                     questionsUsed = scan.nextLine();
                 } else {
-                    questionsUsed = temp.questionsUsed;
+                    questionsUsed = encodeDecode.decodeSingle(temp.questionsUsed);
                 }
             } else{
                 unnessary = scan.nextLine();
@@ -95,7 +98,7 @@ public class readWriteQuestions {
             questionsUsed = scan.nextLine();
         }
         Writer writer = Files.newBufferedWriter(Paths.get(filePath));
-        int count = 1, difficulty = 0;
+        int difficulty = 0;
         boolean stop = false, isInside = false;
         String difficultyS = "";
         while (!stop) {
@@ -136,12 +139,12 @@ public class readWriteQuestions {
             tempList.add(newQuestion);
             System.out.print("Another Question? ");
             String choice = scan.next();
-            count++;
             if(Objects.equals(choice, "n")){
                 stop = true;
             }
         }
-        QuizzInfo thisQuizz = new QuizzInfo(quizzname, authorname, questionsUsed, tempList);
+        encodeDecode.encodeQuizzInfo(quizzname, authorname, questionsUsed);
+        QuizzInfo thisQuizz = new QuizzInfo(encodeDecode.encodedQuizzName, encodeDecode.encodedAuthorname, encodeDecode.encodedQuestionsUsed, tempList);
         gson.toJson(thisQuizz, writer);
         writer.close();
     }

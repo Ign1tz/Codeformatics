@@ -1,4 +1,7 @@
-package com.example.codeformaticsfx.FIles;
+package com.example.codeformaticsfx;
+
+import com.example.codeformaticsfx.FIles.EncodeDecode;
+import com.example.codeformaticsfx.FIles.readWriteQuestions;
 
 import java.io.IOException;
 import java.util.ArrayList;
