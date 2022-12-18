@@ -39,7 +39,7 @@ public class WriteQuestionsGUIController implements Initializable {
     private Parent root;
     public String difficulty, isRight;
     public static readWriteQuestions writeQuestions = new readWriteQuestions();
-    private InitQuestionInput initQuestion = new InitQuestionInput();
+    private InitQuestionInputController initQuestion = new InitQuestionInputController();
 
     public void finish(ActionEvent event) throws IOException {
         if(Question.getText() == null||A1.getText()==null||A2.getText()==null||A3.getText()==null||A4.getText()==null||isRight==null){

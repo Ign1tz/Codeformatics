@@ -1,6 +1,5 @@
 package com.example.codeformaticsfx.Files.GUI;
 
-import com.example.codeformaticsfx.Files.QuizzInfo;
 import com.example.codeformaticsfx.Files.readWriteQuestions;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -16,7 +15,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class InitQuestionInput {
+public class InitQuestionInputController {
     @FXML
     private TextField QuizzName, AuthorName, numberOfQuestions;
     @FXML
