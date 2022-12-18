@@ -11,7 +11,7 @@ import java.io.IOException;
 public class WriteQuestionsGUI extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        Parent fxmlLoader = FXMLLoader.load(getClass().getResource("StartQuizzInput.fxml"));
+        Parent fxmlLoader = FXMLLoader.load(getClass().getResource("Question input.fxml"));
         Scene scene = new Scene(fxmlLoader);
         stage.setTitle("Hello!");
         stage.setScene(scene);

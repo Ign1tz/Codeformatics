@@ -1,5 +1,7 @@
 package com.example.codeformaticsfx.Files;
 
+import com.example.codeformaticsfx.Files.GUI.WriteQuestionsGUI;
+import com.example.codeformaticsfx.Files.GUI.WriteQuestionsGUIController;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
@@ -21,6 +23,10 @@ import java.util.Scanner;
 
 public class readWriteQuestions {
     private static readWriteQuestions newQuestion;
+    private static List<readWriteQuestions> QuestionList = new ArrayList<>();
+    public List<readWriteQuestions> getQuestionList(){
+        return this.QuestionList;
+    }
     public String QUESTION, A1, A2, A3, A4, DIFFICULTY, RIGHTAWNSER;
 
     static Gson gson = new GsonBuilder().setPrettyPrinting().create();
@@ -52,10 +58,11 @@ public class readWriteQuestions {
         return temp;
     }
 
-    public void writeQuestions(String filePath) throws IOException {
-        Scanner scan = new Scanner(System.in);
-        String unnessary, authorname, quizzname, questionsUsed;
+    public void writeQuestions(String Question, String A1, String A2, String A3, String A4, String Difficulty, String Answer) throws IOException {
+        WriteQuestionsGUIController GUIInput = new WriteQuestionsGUIController();
         EncodeDecode encodeDecode = new EncodeDecode();
+        /*Scanner scan = new Scanner(System.in);
+        String unnessary, authorname, quizzname, questionsUsed;
         List<readWriteQuestions> tempList = new ArrayList<>();
         if(questionList(filePath) != null) {
             QuizzInfo temp = Quizz(filePath);
@@ -100,25 +107,24 @@ public class readWriteQuestions {
             System.out.print("How many Questions will be used?: ");
             questionsUsed = scan.nextLine();
         }
-        Writer writer = Files.newBufferedWriter(Paths.get(filePath));
         int difficulty = 0;
         boolean stop = false, isInside = false;
         String difficultyS = "";
-        while (!stop) {
-            unnessary = scan.nextLine();
+        //while (!stop) {
+            //unnessary = scan.nextLine();*/
             System.out.print("Question: ");
-            String question = scan.nextLine();
+            String question = Question;
             System.out.print("A1: ");
-            String a1 = scan.nextLine();
+            String a1 = A1;
             System.out.print("A2: ");
-            String a2 = scan.nextLine();
+            String a2 = A2;
             System.out.print("A3: ");
-            String a3 = scan.nextLine();
+            String a3 = A3;
             System.out.print("A4: ");
-            String a4 = scan.nextLine();
+            String a4 = A4;
             System.out.print("Correct answer: ");
-            String answer = scan.nextLine();
-            while (!isInside) {
+            String answer = Answer;
+            /*while (!isInside) {
                 System.out.print("Difficulty Level [1-3]: ");
                 difficulty = scan.nextInt();
                 if (difficulty < 4 && difficulty > 0) {
@@ -136,18 +142,22 @@ public class readWriteQuestions {
                 case 3:
                     difficultyS = "Hard";
                     break;
-            }
-            encodeDecode.encodeQuestionBase64(question, a1, a2, a3, a4, difficultyS, answer);
+            }*/
+            encodeDecode.encodeQuestionBase64(question, a1, a2, a3, a4, Difficulty, answer);
             newQuestion = new readWriteQuestions(encodeDecode.encodedQuestion, encodeDecode.encodedA1, encodeDecode.encodedA2, encodeDecode.encodedA3, encodeDecode.encodedA4, encodeDecode.encodedDifficulty, encodeDecode.encodedRightAnswer);
-            tempList.add(newQuestion);
-            System.out.print("Another Question? ");
-            String choice = scan.next();
-            if(Objects.equals(choice, "n")){
-                stop = true;
-            }
+            QuestionList.add(newQuestion);
+            //System.out.print("Another Question? ");
+        //}
+    }
+    public void finish(String filePath, String quizzname, String authorname, String questionsUsed) throws IOException {
+        Writer writer = Files.newBufferedWriter(Paths.get(filePath));
+        File file = new File(filePath);
+        if(file.createNewFile()){
+            System.out.println("ehhh");
         }
+        EncodeDecode encodeDecode = new EncodeDecode();
         encodeDecode.encodeQuizzInfo(quizzname, authorname, questionsUsed);
-        QuizzInfo thisQuizz = new QuizzInfo(encodeDecode.encodedQuizzName, encodeDecode.encodedAuthorname, encodeDecode.encodedQuestionsUsed, tempList);
+        QuizzInfo thisQuizz = new QuizzInfo(encodeDecode.encodedQuizzName, encodeDecode.encodedAuthorname, encodeDecode.encodedQuestionsUsed, getQuestionList());
         gson.toJson(thisQuizz, writer);
         writer.close();
     }
@@ -175,6 +185,6 @@ public class readWriteQuestions {
             Files.createFile(Path.of("./QuestionLibrary/test.json"));
         }
         readWriteQuestions test = new readWriteQuestions();
-        test.writeQuestions("./QuestionLibrary/test.json");
+        //test.writeQuestions("./QuestionLibrary/test.json");
     }
 }

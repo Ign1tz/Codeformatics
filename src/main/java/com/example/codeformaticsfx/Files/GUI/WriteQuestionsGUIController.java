@@ -1,5 +1,6 @@
 package com.example.codeformaticsfx.Files.GUI;
 
+import com.example.codeformaticsfx.Files.readWriteQuestions;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
@@ -10,13 +11,11 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.*;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class WriteQuestionsGUIController implements Initializable {
@@ -34,23 +33,37 @@ public class WriteQuestionsGUIController implements Initializable {
     private CheckBox one, two, three, four;
     private String[] Diff =  {"Easy", "Medium", "Hard"};
     private String[] right =  {"Answer one", "Answer two", "Answer three", "Answer four"};
-    public String question, a1,a2,a3,a4;
+    public String question, a1,a2,a3,a4,QuizzName, AuthorName, numberOfQuestions;
     private Stage stage;
     private Scene scene;
     private Parent root;
-    private String difficulty, isRight;
+    public String difficulty, isRight;
+    public static readWriteQuestions writeQuestions = new readWriteQuestions();
+    private InitQuestionInput initQuestion = new InitQuestionInput();
 
-    public void finish(ActionEvent event){
-        question = Question.getText();
-        a1 = A1.getText();
-        a2 = A2.getText();
-        a3 = A3.getText();
-        a4 = A4.getText();
-        System.out.println(question);
-        System.out.println(a1);
-        System.out.println(a2);
-        System.out.println(a3);
-        System.out.println(a4);
+    public void finish(ActionEvent event) throws IOException {
+        if(Question.getText() == null||A1.getText()==null||A2.getText()==null||A3.getText()==null||A4.getText()==null||isRight==null){
+            error.setOpacity(1);
+        }else {
+            question = Question.getText();
+            a1 = A1.getText();
+            a2 = A2.getText();
+            a3 = A3.getText();
+            a4 = A4.getText();
+            writeQuestions.writeQuestions(question,a1,a2,a3,a4,difficulty,isRight);
+            System.out.println(question);
+            System.out.println(a1);
+            System.out.println(a2);
+            System.out.println(a3);
+            System.out.println(a4);
+            System.out.println(difficulty);
+            System.out.println(isRight);
+            Parent fxmlLoader = FXMLLoader.load(getClass().getResource("StartQuizzInput.fxml"));
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            scene = new Scene(fxmlLoader);
+            stage.setScene(scene);
+            stage.show();
+        }
     }
     public void newQuestion(ActionEvent event) throws IOException {
         if(Question.getText() == null||A1.getText()==null||A2.getText()==null||A3.getText()==null||A4.getText()==null||isRight==null){
@@ -61,6 +74,7 @@ public class WriteQuestionsGUIController implements Initializable {
             a2 = A2.getText();
             a3 = A3.getText();
             a4 = A4.getText();
+            writeQuestions.writeQuestions(question,a1,a2,a3,a4,difficulty,isRight);
             System.out.println(question);
             System.out.println(a1);
             System.out.println(a2);
@@ -85,7 +99,6 @@ public class WriteQuestionsGUIController implements Initializable {
             two.setDisable(false);
             three.setDisable(false);
             four.setDisable(false);
-            isRight = null;
         }
     }
     public void twoIsRight(ActionEvent event) {
@@ -98,7 +111,6 @@ public class WriteQuestionsGUIController implements Initializable {
             one.setDisable(false);
             three.setDisable(false);
             four.setDisable(false);
-            isRight = null;
         }
     }
     public void threeIsRight(ActionEvent event) {
@@ -111,7 +123,6 @@ public class WriteQuestionsGUIController implements Initializable {
             one.setDisable(false);
             two.setDisable(false);
             four.setDisable(false);
-            isRight = null;
         }
     }
     public void fourIsRight(ActionEvent event) {
@@ -124,7 +135,6 @@ public class WriteQuestionsGUIController implements Initializable {
             one.setDisable(false);
             two.setDisable(false);
             three.setDisable(false);
-            isRight = null;
         }
     }
 

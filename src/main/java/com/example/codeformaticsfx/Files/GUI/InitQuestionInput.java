@@ -1,5 +1,7 @@
 package com.example.codeformaticsfx.Files.GUI;
 
+import com.example.codeformaticsfx.Files.QuizzInfo;
+import com.example.codeformaticsfx.Files.readWriteQuestions;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,9 +15,8 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.Scanner;
 
-public class test {
+public class InitQuestionInput {
     @FXML
     private TextField QuizzName, AuthorName, numberOfQuestions;
     @FXML
@@ -23,16 +24,20 @@ public class test {
     private Stage stage;
     private Scene scene;
     private Parent root;
-    public String qName, aName;
+    public String Qname, Author, numberQ;
+    private readWriteQuestions writeQuestions = WriteQuestionsGUIController.writeQuestions;
 
 
     public void startQuestion(ActionEvent event) throws IOException {
+        WriteQuestionsGUIController WQGC = new WriteQuestionsGUIController();
         if(QuizzName.getText() == "" && AuthorName.getText() == "" && numberOfQuestions.getText() == "") {
             error.setOpacity(1);
         }else{
             try{
                 Double.parseDouble(numberOfQuestions.getText());
-                Parent fxmlLoader = FXMLLoader.load(getClass().getResource("Question input.fxml"));
+                String filePath = "./GameResources/QuestionLibrary/" + QuizzName.getText() + ".json";
+                writeQuestions.finish(filePath, QuizzName.getText(), AuthorName.getText(), numberOfQuestions.getText());
+                Parent fxmlLoader = FXMLLoader.load(getClass().getResource("FinishedQuizz.fxml"));
                 stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 scene = new Scene(fxmlLoader);
                 stage.setScene(scene);

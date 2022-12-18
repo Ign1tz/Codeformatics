@@ -14,7 +14,7 @@ public class pickQuestions {
     private List<Integer> medium = new ArrayList<>();
     private List<Integer> hard = new ArrayList<>();
     private readWriteQuestions test = new readWriteQuestions();
-    private List<readWriteQuestions> questionList = test.questionList("./QuestionLibrary/test.json");
+    private List<readWriteQuestions> questionList = test.questionList("./GameResources/QuestionLibrary/test.json");
 
     public pickQuestions() throws IOException {
     }
