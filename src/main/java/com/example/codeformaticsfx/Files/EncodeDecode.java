@@ -1,4 +1,4 @@
-package com.example.codeformaticsfx.FIles;
+package com.example.codeformaticsfx.Files;
 
 import java.util.Base64;
 
