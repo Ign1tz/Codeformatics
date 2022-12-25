@@ -5,6 +5,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 public class HomeStage extends Application {
@@ -18,7 +20,7 @@ public class HomeStage extends Application {
         scene.getStylesheets().add(css);
         primaryStage.setTitle("HomeStage");     //title of window
         primaryStage.setResizable(false);       //not resiazable
-        primaryStage.setFullScreen(true);       //fullscreen
+        primaryStage.setMaximized(true);       //fullscreen
         primaryStage.setScene(scene);           //setscene to stage
 
         primaryStage.show();                    //show stage
