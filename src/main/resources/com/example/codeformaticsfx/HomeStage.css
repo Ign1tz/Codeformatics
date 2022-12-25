@@ -1,9 +1,5 @@
 #logoLabel {
--fx-alignment: center;
--fx-font-size: 30;
 -fx-text-fill: #e91e63;
-
--fx-text-shadow: 2px 2px #0097a7;
 }
 .root{
 -fx-background-image:url("Background.quiz.jpg");
@@ -12,26 +8,24 @@
 .button {
 -fx-background-color: #0097a7;
 -fx-background-radius: 30;
--fx-font-size: 16;
--fx-text-fill: #e91e63;
 }
 
 .button:hover {
--fx-background-color: #e91e63;
+-fx-background-color: #00acc1;
 -fx-background-radius: 30;
--fx-font-size: 16;
--fx-text-fill: #0097a7;
 -fx-border-color: #0097a7;
--fx-border-radius: 28;
--fx-border-vidth: 10;
+-fx-border-radius: 35;
+-fx-border-vidth: 3;
 }
 
 .button:pressed {
--fx-background-color: #e91e63;
+-fx-background-color: #0097a7;
 -fx-background-radius: 30;
--fx-font-size: 16;
--fx-text-fill: #0097a7;
 -fx-border-color: #0097a7;
--fx-border-radius: 28;
--fx-border-vidth: 10;
+-fx-border-radius: 35;
+-fx-border-vidth: 3;
+}
+
+.ImageView {
+-fx-image:url("Java.Logo.png");
 }

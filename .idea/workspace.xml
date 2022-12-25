@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09c124d1-3ed0-4413-a70e-039465c4f822" name="Changes" comment="Anna - set up GUI for HomeStage">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/codeformaticsfx/Background.quiz.jpg" afterDir="false" />
+    <list default="true" id="09c124d1-3ed0-4413-a70e-039465c4f822" name="Changes" comment="Anna - HomeStage has now Buttons and a Title">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/codeformaticsfx/Java.Logo.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/HomeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/HomeStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/HomeStage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/codeformaticsfx/HomeStage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/codeformaticsfx/HomeStage.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/codeformaticsfx/HomeStage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/codeformaticsfx/HomeStage.fxml" afterDir="false" />
@@ -213,7 +214,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671974737185</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Anna - HomeStage has now Buttons and a Title">
+      <created>1671993242735</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1671993242735</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -236,7 +244,8 @@
     <MESSAGE value="Moritz - GUI for Question inputing" />
     <MESSAGE value="Moritz - GUI for Question inputing working with writig to file" />
     <MESSAGE value="Anna - set up GUI for HomeStage" />
-    <option name="LAST_COMMIT_MESSAGE" value="Anna - set up GUI for HomeStage" />
+    <MESSAGE value="Anna - HomeStage has now Buttons and a Title" />
+    <option name="LAST_COMMIT_MESSAGE" value="Anna - HomeStage has now Buttons and a Title" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
