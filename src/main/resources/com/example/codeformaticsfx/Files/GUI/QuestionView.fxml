@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.codeformaticsfx.Files.GUI.AnswerQuestionGUIController">
+    <children>
+        <Label fx:id="FrageNummer" alignment="CENTER" contentDisplay="CENTER" layoutX="183.0" layoutY="82.0" prefHeight="52.0" prefWidth="234.0" text="Frage #" textAlignment="CENTER" />
+        <Button fx:id="a1" layoutX="128.0" layoutY="170.0" mnemonicParsing="false" text="A1" />
+        <Button fx:id="a2" layoutX="447.0" layoutY="170.0" mnemonicParsing="false" text="A2" />
+        <Button fx:id="a3" layoutX="128.0" layoutY="272.0" mnemonicParsing="false" text="A3" />
+        <Button fx:id="a4" layoutX="447.0" layoutY="272.0" mnemonicParsing="false" text="A4" />
+        <Button fx:id="jokerFifty" layoutX="261.0" layoutY="332.0" mnemonicParsing="false" text="50/50 Joker" />
+        <Label fx:id="hint" layoutX="286.0" layoutY="367.0" text="Hint" />
+        <Label fx:id="solution" layoutX="286.0" layoutY="219.0" />
+        <Button fx:id="nextQuestion" layoutX="507.0" layoutY="362.0" mnemonicParsing="false" text="Button" />
+    </children>
+</AnchorPane>
