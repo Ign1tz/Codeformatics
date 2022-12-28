@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09c124d1-3ed0-4413-a70e-039465c4f822" name="Changes" comment="Anna - HomeStage has now Buttons and a Title">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/Files/GUI/AnswerQuestionGUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/Files/GUI/AnswerQuestionGUIController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/codeformaticsfx/Files/GUI/QuestionView.fxml" afterDir="false" />
+    <list default="true" id="09c124d1-3ed0-4413-a70e-039465c4f822" name="Changes" comment="added:&#10; - simple question view for random questions&#10; - simple hint template for joker&#10; - button for the next question with no function&#10;&#10;deleted:&#10; - none&#10; &#10;edited:&#10; - none">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/Files/GUI/AnswerQuestionGUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/Files/GUI/AnswerQuestionGUIController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/codeformaticsfx/Files/GUI/QuestionView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/codeformaticsfx/Files/GUI/QuestionView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -219,7 +218,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671993242735</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="added:&#10; - simple question view for random questions&#10; - simple hint template for joker&#10; - button for the next question with no function&#10;&#10;deleted:&#10; - none&#10; &#10;edited:&#10; - none">
+      <created>1672174463865</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1672174463865</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -243,7 +249,8 @@
     <MESSAGE value="Moritz - GUI for Question inputing working with writig to file" />
     <MESSAGE value="Anna - set up GUI for HomeStage" />
     <MESSAGE value="Anna - HomeStage has now Buttons and a Title" />
-    <option name="LAST_COMMIT_MESSAGE" value="Anna - HomeStage has now Buttons and a Title" />
+    <MESSAGE value="added:&#10; - simple question view for random questions&#10; - simple hint template for joker&#10; - button for the next question with no function&#10;&#10;deleted:&#10; - none&#10; &#10;edited:&#10; - none" />
+    <option name="LAST_COMMIT_MESSAGE" value="added:&#10; - simple question view for random questions&#10; - simple hint template for joker&#10; - button for the next question with no function&#10;&#10;deleted:&#10; - none&#10; &#10;edited:&#10; - none" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
