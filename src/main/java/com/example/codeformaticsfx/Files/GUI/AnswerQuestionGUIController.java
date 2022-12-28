@@ -7,15 +7,17 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
 import javafx.scene.paint.Color;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 import java.util.ResourceBundle;
 
 public class AnswerQuestionGUIController implements Initializable {
 
+    @FXML
+    public Button nextQuestion;
     @FXML
     private Label FrageNummer;
     @FXML
@@ -33,6 +35,8 @@ public class AnswerQuestionGUIController implements Initializable {
     private int correct = 0;
 
     public static readWriteQuestions readQuestions = new readWriteQuestions();
+
+    public List<EncodeDecode> loaded = new ArrayList<>();
 
     Random random = new Random();
     EncodeDecode encodeDecode = new EncodeDecode();
@@ -141,6 +145,36 @@ public class AnswerQuestionGUIController implements Initializable {
         }
     }
 
+    public void nextQuest(ActionEvent actionEvent) {
+        int randomint = random.nextInt(5);
+        randomint = randomint+1;
+        String questionpath = "./GameResources/QuestionLibrary/test.json";
+        try {
+            encodeDecode.decodeQuestion(readQuestions.questionList(questionpath).get(randomint));
+            /*while(loaded.contains(encodeDecode)){
+                randomint = random.nextInt(5);
+                randomint = randomint+1;
+                encodeDecode.decodeQuestion(readQuestions.questionList(questionpath).get(randomint));
+            }*/
+        } catch (Exception e) {
+            e.getStackTrace();
+        }
+
+        FrageNummer.setText(encodeDecode.decodedQuestion);
+        a1.setText(encodeDecode.decodedA1);
+        a2.setText(encodeDecode.decodedA2);
+        a3.setText(encodeDecode.decodedA3);
+        a4.setText(encodeDecode.decodedA4);
+
+        a1.setTextFill(Color.valueOf("black"));
+        a2.setTextFill(Color.valueOf("black"));
+        a3.setTextFill(Color.valueOf("black"));
+        a4.setTextFill(Color.valueOf("black"));
+        hint.setText("Hint");
+        solution.setText("");
+        //loaded.add(encodeDecode);
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         int randomint = random.nextInt(5);
@@ -157,7 +191,8 @@ public class AnswerQuestionGUIController implements Initializable {
         a2.setText(encodeDecode.decodedA2);
         a3.setText(encodeDecode.decodedA3);
         a4.setText(encodeDecode.decodedA4);
-    }
 
+        //loaded.add(encodeDecode);
+    }
 
 }
