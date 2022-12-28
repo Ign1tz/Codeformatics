@@ -29,6 +29,8 @@ public class AnswerQuestionGUIController implements Initializable {
     private Label solution;
     @FXML
     private Button jokerFifty;
+    @FXML
+    private Label score;
 
     private int counter = 0;
 
@@ -46,6 +48,7 @@ public class AnswerQuestionGUIController implements Initializable {
         if (encodeDecode.decodedRightAnswer.equals("A1")){
             solution.setText("true");
             correct++;
+            score.setText("Score: "+correct);
             solution.setTextFill(Color.valueOf("green"));
         }else {
             solution.setText("false");
@@ -58,6 +61,7 @@ public class AnswerQuestionGUIController implements Initializable {
         if (encodeDecode.decodedRightAnswer.equals("A2")){
             solution.setText("true");
             correct++;
+            score.setText("Score: "+correct);
             solution.setTextFill(Color.valueOf("green"));
         }else {
             solution.setText("false");
@@ -70,6 +74,7 @@ public class AnswerQuestionGUIController implements Initializable {
         if (encodeDecode.decodedRightAnswer.equals("A3")){
             solution.setText("true");
             correct++;
+            score.setText("Score: "+correct);
             solution.setTextFill(Color.valueOf("green"));
         }else {
             solution.setText("false");
@@ -82,6 +87,7 @@ public class AnswerQuestionGUIController implements Initializable {
         if (encodeDecode.decodedRightAnswer.equals("A4")){
             solution.setText("true");
             correct++;
+            score.setText("Score: "+correct);
             solution.setTextFill(Color.valueOf("green"));
         }else {
             solution.setText("false");
@@ -140,13 +146,16 @@ public class AnswerQuestionGUIController implements Initializable {
                     break;
             }
             counter = 1;
-        }else {
-            hint.setText("joker already used");
         }
     }
 
     public void nextQuest(ActionEvent actionEvent) {
-        int randomint = random.nextInt(5);
+        if (!solution.getText().equals("true")){
+            solution.setTextFill(Color.valueOf("black"));
+            solution.setText("Next question can be loaded when you answer correct :)");
+            return;
+        }
+        int randomint = random.nextInt(4);
         randomint = randomint+1;
         String questionpath = "./GameResources/QuestionLibrary/test.json";
         try {
@@ -171,6 +180,9 @@ public class AnswerQuestionGUIController implements Initializable {
         a3.setTextFill(Color.valueOf("black"));
         a4.setTextFill(Color.valueOf("black"));
         hint.setText("Hint");
+        if (counter == 1){
+            hint.setText("JOKER ALREADY USED");
+        }
         solution.setText("");
         //loaded.add(encodeDecode);
     }
@@ -194,5 +206,4 @@ public class AnswerQuestionGUIController implements Initializable {
 
         //loaded.add(encodeDecode);
     }
-
 }

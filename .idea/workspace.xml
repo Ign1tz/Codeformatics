@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="09c124d1-3ed0-4413-a70e-039465c4f822" name="Changes" comment="added:&#10; - simple question view for random questions&#10; - simple hint template for joker&#10; - button for the next question with no function&#10;&#10;deleted:&#10; - none&#10; &#10;edited:&#10; - none">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/Files/GUI/AnswerQuestionGUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/Files/GUI/AnswerQuestionGUIController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/codeformaticsfx/Files/GUI/QuestionView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/codeformaticsfx/Files/GUI/QuestionView.fxml" afterDir="false" />
     </list>
