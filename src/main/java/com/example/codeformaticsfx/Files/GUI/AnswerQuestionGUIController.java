@@ -8,13 +8,15 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.paint.Color;
+
+import java.io.Serializable;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.ResourceBundle;
 
-public class AnswerQuestionGUIController implements Initializable {
+public class AnswerQuestionGUIController implements Initializable, Serializable {
 
     @FXML
     public Button nextQuestion;
@@ -156,13 +158,11 @@ public class AnswerQuestionGUIController implements Initializable {
             return;
         }
         int randomint = random.nextInt(4);
-        randomint = randomint+1;
         String questionpath = "./GameResources/QuestionLibrary/test.json";
         try {
             encodeDecode.decodeQuestion(readQuestions.questionList(questionpath).get(randomint));
-            /*while(loaded.contains(encodeDecode)){
-                randomint = random.nextInt(5);
-                randomint = randomint+1;
+           /* while(loaded.contains(encodeDecode)){
+                randomint = random.nextInt(4);
                 encodeDecode.decodeQuestion(readQuestions.questionList(questionpath).get(randomint));
             }*/
         } catch (Exception e) {
@@ -189,8 +189,7 @@ public class AnswerQuestionGUIController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        int randomint = random.nextInt(5);
-        randomint = randomint+1;
+        int randomint = random.nextInt(4);
         String questionpath = "./GameResources/QuestionLibrary/test.json";
         try {
             encodeDecode.decodeQuestion(readQuestions.questionList(questionpath).get(randomint));
