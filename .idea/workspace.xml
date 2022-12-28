@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="09c124d1-3ed0-4413-a70e-039465c4f822" name="Changes" comment="added:&#10; - simple question view for random questions&#10; - simple hint template for joker&#10; - button for the next question with no function&#10;&#10;deleted:&#10; - none&#10; &#10;edited:&#10; - none">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/Files/GUI/AnswerQuestionGUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/Files/GUI/AnswerQuestionGUIController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/Files/GUI/AnswerQuestionGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/Quizz/Questions/AnswerQuestionGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/Files/GUI/AnswerQuestionGUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/Quizz/Questions/AnswerQuestionGUIController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/codeformaticsfx/Files/GUI/QuestionView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/codeformaticsfx/Quizz/Questions/QuestionView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,11 +83,11 @@
   </component>
   <component name="RunManager" selected="Application.AnswerQuestionGUI">
     <configuration name="AnswerQuestionGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.codeformaticsfx.Files.GUI.AnswerQuestionGUI" />
+      <option name="MAIN_CLASS_NAME" value="com.example.codeformaticsfx.Quizz.Questions.AnswerQuestionGUI" />
       <module name="CodeformaticsFX.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.codeformaticsfx.Files.GUI.*" />
+          <option name="PATTERN" value="com.example.codeformaticsfx.Quizz.Questions.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -119,12 +121,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="com.example.codeformaticsfx.Files.GUI.WriteQuestionsGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="WriteQuestionsGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.codeformaticsfx.Files.GUI.WriteQuestionsGUI" />
       <module name="CodeformaticsFX.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.codeformaticsfx.Files.GUI.*" />
+          <option name="PATTERN" value="com.example.codeformaticsfx.Quizz.Questions.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>

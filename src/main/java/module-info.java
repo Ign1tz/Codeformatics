@@ -10,4 +10,6 @@ module com.example.codeformaticsfx {
     opens com.example.codeformaticsfx.Files to javafx.fxml;
     exports com.example.codeformaticsfx.Files.GUI;
     opens com.example.codeformaticsfx.Files.GUI to javafx.fxml;
+    exports com.example.codeformaticsfx.Quizz.Questions;
+    opens com.example.codeformaticsfx.Quizz.Questions to javafx.fxml;
 }

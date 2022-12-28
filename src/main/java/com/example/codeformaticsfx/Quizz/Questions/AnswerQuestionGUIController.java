@@ -1,4 +1,4 @@
-package com.example.codeformaticsfx.Files.GUI;
+package com.example.codeformaticsfx.Quizz.Questions;
 
 import com.example.codeformaticsfx.Files.EncodeDecode;
 import com.example.codeformaticsfx.Files.readWriteQuestions;
