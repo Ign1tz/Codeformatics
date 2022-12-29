@@ -32,9 +32,13 @@ public class AnswerQuestionGUIController implements Initializable, Serializable 
     private Button jokerFifty;
     @FXML
     private Label score;
+    @FXML
+    private Button jokerNew;
 
     private int counterF = 0;
     private int counterS = 0;
+
+    private int counterN = 0;
 
     private int correct = 0;
 
@@ -262,6 +266,13 @@ public class AnswerQuestionGUIController implements Initializable, Serializable 
         }
     }
 
+    public void jokerN(ActionEvent actionEvent) {
+        if (counterN == 0){
+            counterN = 1;
+            nextQuest(new ActionEvent());
+        }
+    }
+
     public void nextQuest(ActionEvent actionEvent) {
         a1.setDisable(false);
         a2.setDisable(false);
@@ -269,6 +280,7 @@ public class AnswerQuestionGUIController implements Initializable, Serializable 
         a4.setDisable(false);
         jokerSeventy.setDisable(false);
         jokerFifty.setDisable(false);
+        jokerNew.setDisable(false);
         nextQuestion.setDisable(true);
 
         int randomint = random.nextInt(4);
@@ -299,6 +311,9 @@ public class AnswerQuestionGUIController implements Initializable, Serializable 
         if (counterS == 1){
             jokerSeventy.setDisable(true);
         }
+        if (counterN == 1){
+            jokerNew.setDisable(true);
+        }
         solution.setText("");
         //loaded.add(encodeDecode);
     }
@@ -311,6 +326,7 @@ public class AnswerQuestionGUIController implements Initializable, Serializable 
         a4.setDisable(false);
         jokerFifty.setDisable(false);
         jokerSeventy.setDisable(false);
+        jokerNew.setDisable(false);
         nextQuestion.setDisable(true);
 
         int randomint = random.nextInt(4);
