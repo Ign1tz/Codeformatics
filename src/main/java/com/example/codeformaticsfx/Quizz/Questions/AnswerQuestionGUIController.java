@@ -24,9 +24,6 @@ public class AnswerQuestionGUIController implements Initializable, Serializable 
     private Label FrageNummer;
     @FXML
     private Button a1, a2, a3, a4;
-
-    @FXML
-    private Label hint;
     @FXML
     private Label solution;
     @FXML
@@ -46,55 +43,75 @@ public class AnswerQuestionGUIController implements Initializable, Serializable 
     EncodeDecode encodeDecode = new EncodeDecode();
 
     public void checkOne(ActionEvent actionEvent) {
-        hint.setText("");
         if (encodeDecode.decodedRightAnswer.equals("A1")){
             solution.setText("true");
             correct++;
             score.setText("Score: "+correct);
             solution.setTextFill(Color.valueOf("green"));
+            nextQuestion.setDisable(false);
         }else {
             solution.setText("false");
             solution.setTextFill(Color.valueOf("red"));
         }
+        a1.setDisable(true);
+        a2.setDisable(true);
+        a3.setDisable(true);
+        a4.setDisable(true);
+        jokerFifty.setDisable(true);
     }
 
     public void checkTwo(ActionEvent actionEvent) {
-        hint.setText("");
         if (encodeDecode.decodedRightAnswer.equals("A2")){
             solution.setText("true");
             correct++;
             score.setText("Score: "+correct);
             solution.setTextFill(Color.valueOf("green"));
+            nextQuestion.setDisable(false);
         }else {
             solution.setText("false");
             solution.setTextFill(Color.valueOf("red"));
         }
+        a1.setDisable(true);
+        a2.setDisable(true);
+        a3.setDisable(true);
+        a4.setDisable(true);
+        jokerFifty.setDisable(true);
     }
 
     public void checkThree(ActionEvent actionEvent) {
-        hint.setText("");
         if (encodeDecode.decodedRightAnswer.equals("A3")){
             solution.setText("true");
             correct++;
             score.setText("Score: "+correct);
             solution.setTextFill(Color.valueOf("green"));
+            nextQuestion.setDisable(false);
         }else {
             solution.setText("false");
             solution.setTextFill(Color.valueOf("red"));
         }
+        a1.setDisable(true);
+        a2.setDisable(true);
+        a3.setDisable(true);
+        a4.setDisable(true);
+        jokerFifty.setDisable(true);
     }
 
     public void checkFour(ActionEvent actionEvent) {
-        hint.setText("");
         if (encodeDecode.decodedRightAnswer.equals("A4")){
             solution.setText("true");
             correct++;
             score.setText("Score: "+correct);
             solution.setTextFill(Color.valueOf("green"));
+            nextQuestion.setDisable(false);
         }else {
             solution.setText("false");
             solution.setTextFill(Color.valueOf("red"));
         }
+        a1.setDisable(true);
+        a2.setDisable(true);
+        a3.setDisable(true);
+        a4.setDisable(true);
+        jokerFifty.setDisable(true);
     }
 
     public void jokerF(ActionEvent actionEvent) {
@@ -106,45 +123,38 @@ public class AnswerQuestionGUIController implements Initializable, Serializable 
                 randomanswer = randomanswer+1;
             }
 
+            a1.setDisable(true);
+            a2.setDisable(true);
+            a3.setDisable(true);
+            a4.setDisable(true);
+
             switch (encodeDecode.decodedRightAnswer){
                 case "A1":
-                    a1.setTextFill(Color.valueOf("green"));
-                    a2.setTextFill(Color.valueOf("red"));
-                    a3.setTextFill(Color.valueOf("red"));
-                    a4.setTextFill(Color.valueOf("red"));
+                    a1.setDisable(false);
                     break;
                 case "A2":
-                    a1.setTextFill(Color.valueOf("red"));
-                    a2.setTextFill(Color.valueOf("green"));
-                    a3.setTextFill(Color.valueOf("red"));
-                    a4.setTextFill(Color.valueOf("red"));
+                    a2.setDisable(false);
                     break;
                 case "A3":
-                    a1.setTextFill(Color.valueOf("red"));
-                    a2.setTextFill(Color.valueOf("red"));
-                    a3.setTextFill(Color.valueOf("green"));
-                    a4.setTextFill(Color.valueOf("red"));
+                    a3.setDisable(false);
                     break;
                 case "A4":
-                    a1.setTextFill(Color.valueOf("red"));
-                    a2.setTextFill(Color.valueOf("red"));
-                    a3.setTextFill(Color.valueOf("red"));
-                    a4.setTextFill(Color.valueOf("green"));
+                    a4.setDisable(false);
                     break;
             }
 
             switch (randomanswer){
                 case 1:
-                    a1.setTextFill(Color.valueOf("green"));
+                    a1.setDisable(false);
                     break;
                 case 2:
-                    a2.setTextFill(Color.valueOf("green"));
+                    a2.setDisable(false);
                     break;
                 case 3:
-                    a3.setTextFill(Color.valueOf("green"));
+                    a3.setDisable(false);
                     break;
                 case 4:
-                    a4.setTextFill(Color.valueOf("green"));
+                    a4.setDisable(false);
                     break;
             }
             counter = 1;
@@ -152,11 +162,12 @@ public class AnswerQuestionGUIController implements Initializable, Serializable 
     }
 
     public void nextQuest(ActionEvent actionEvent) {
-        if (!solution.getText().equals("true")){
-            solution.setTextFill(Color.valueOf("black"));
-            solution.setText("Next question can be loaded when you answer correct :)");
-            return;
-        }
+        a1.setDisable(false);
+        a2.setDisable(false);
+        a3.setDisable(false);
+        a4.setDisable(false);
+        nextQuestion.setDisable(true);
+
         int randomint = random.nextInt(4);
         String questionpath = "./GameResources/QuestionLibrary/test.json";
         try {
@@ -179,9 +190,8 @@ public class AnswerQuestionGUIController implements Initializable, Serializable 
         a2.setTextFill(Color.valueOf("black"));
         a3.setTextFill(Color.valueOf("black"));
         a4.setTextFill(Color.valueOf("black"));
-        hint.setText("Hint");
         if (counter == 1){
-            hint.setText("JOKER ALREADY USED");
+            jokerFifty.setDisable(true);
         }
         solution.setText("");
         //loaded.add(encodeDecode);
@@ -189,6 +199,13 @@ public class AnswerQuestionGUIController implements Initializable, Serializable 
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        a1.setDisable(false);
+        a2.setDisable(false);
+        a3.setDisable(false);
+        a4.setDisable(false);
+        jokerFifty.setDisable(false);
+        nextQuestion.setDisable(true);
+
         int randomint = random.nextInt(4);
         String questionpath = "./GameResources/QuestionLibrary/test.json";
         try {
