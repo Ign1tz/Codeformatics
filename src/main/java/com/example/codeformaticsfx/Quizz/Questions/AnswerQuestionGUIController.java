@@ -21,6 +21,8 @@ public class AnswerQuestionGUIController implements Initializable, Serializable 
     @FXML
     public Button nextQuestion;
     @FXML
+    public Button jokerSeventy;
+    @FXML
     private Label FrageNummer;
     @FXML
     private Button a1, a2, a3, a4;
@@ -31,7 +33,8 @@ public class AnswerQuestionGUIController implements Initializable, Serializable 
     @FXML
     private Label score;
 
-    private int counter = 0;
+    private int counterF = 0;
+    private int counterS = 0;
 
     private int correct = 0;
 
@@ -58,6 +61,7 @@ public class AnswerQuestionGUIController implements Initializable, Serializable 
         a3.setDisable(true);
         a4.setDisable(true);
         jokerFifty.setDisable(true);
+        jokerSeventy.setDisable(true);
     }
 
     public void checkTwo(ActionEvent actionEvent) {
@@ -76,6 +80,7 @@ public class AnswerQuestionGUIController implements Initializable, Serializable 
         a3.setDisable(true);
         a4.setDisable(true);
         jokerFifty.setDisable(true);
+        jokerSeventy.setDisable(true);
     }
 
     public void checkThree(ActionEvent actionEvent) {
@@ -94,6 +99,7 @@ public class AnswerQuestionGUIController implements Initializable, Serializable 
         a3.setDisable(true);
         a4.setDisable(true);
         jokerFifty.setDisable(true);
+        jokerSeventy.setDisable(true);
     }
 
     public void checkFour(ActionEvent actionEvent) {
@@ -112,10 +118,11 @@ public class AnswerQuestionGUIController implements Initializable, Serializable 
         a3.setDisable(true);
         a4.setDisable(true);
         jokerFifty.setDisable(true);
+        jokerSeventy.setDisable(true);
     }
 
     public void jokerF(ActionEvent actionEvent) {
-        if (counter == 0) {
+        if (counterF == 0) {
             int randomanswer = random.nextInt(4);
             randomanswer = randomanswer+1;
             while (randomanswer == Integer.valueOf(encodeDecode.decodedRightAnswer.replaceAll("A", ""))){
@@ -157,7 +164,101 @@ public class AnswerQuestionGUIController implements Initializable, Serializable 
                     a4.setDisable(false);
                     break;
             }
-            counter = 1;
+            counterF = 1;
+        }
+    }
+
+    public void jokerS(ActionEvent actionEvent) {
+        if (counterS == 0) {
+            int randomanswer = random.nextInt(4);
+            randomanswer = randomanswer+1;
+            while (randomanswer == Integer.valueOf(encodeDecode.decodedRightAnswer.replaceAll("A", ""))){
+                randomanswer = random.nextInt(4);
+                randomanswer = randomanswer+1;
+            }
+
+            a1.setDisable(true);
+            a2.setDisable(true);
+            a3.setDisable(true);
+            a4.setDisable(true);
+
+            int border = random.nextInt(10 - 1 + 1) + 1;
+            if (border <= 7){
+                switch (encodeDecode.decodedRightAnswer){
+                    case "A1":
+                        a1.setDisable(false);
+                        a1.setTextFill(Color.valueOf("green"));
+                        break;
+                    case "A2":
+                        a2.setDisable(false);
+                        a2.setTextFill(Color.valueOf("green"));
+                        break;
+                    case "A3":
+                        a3.setDisable(false);
+                        a3.setTextFill(Color.valueOf("green"));
+                        break;
+                    case "A4":
+                        a4.setDisable(false);
+                        a4.setTextFill(Color.valueOf("green"));
+                        break;
+                }
+                switch (randomanswer){
+                    case 1:
+                        a1.setDisable(false);
+                        a1.setTextFill(Color.valueOf("yellow"));
+                        break;
+                    case 2:
+                        a2.setDisable(false);
+                        a2.setTextFill(Color.valueOf("yellow"));
+                        break;
+                    case 3:
+                        a3.setDisable(false);
+                        a3.setTextFill(Color.valueOf("yellow"));
+                        break;
+                    case 4:
+                        a4.setDisable(false);
+                        a4.setTextFill(Color.valueOf("yellow"));
+                        break;
+                }
+            }else {
+                switch (encodeDecode.decodedRightAnswer){
+                    case "A1":
+                        a1.setDisable(false);
+                        a1.setTextFill(Color.valueOf("yellow"));
+                        break;
+                    case "A2":
+                        a2.setDisable(false);
+                        a2.setTextFill(Color.valueOf("yellow"));
+                        break;
+                    case "A3":
+                        a3.setDisable(false);
+                        a3.setTextFill(Color.valueOf("yellow"));
+                        break;
+                    case "A4":
+                        a4.setDisable(false);
+                        a4.setTextFill(Color.valueOf("yellow"));
+                        break;
+                }
+                switch (randomanswer){
+                    case 1:
+                        a1.setDisable(false);
+                        a1.setTextFill(Color.valueOf("green"));
+                        break;
+                    case 2:
+                        a2.setDisable(false);
+                        a2.setTextFill(Color.valueOf("green"));
+                        break;
+                    case 3:
+                        a3.setDisable(false);
+                        a3.setTextFill(Color.valueOf("green"));
+                        break;
+                    case 4:
+                        a4.setDisable(false);
+                        a4.setTextFill(Color.valueOf("green"));
+                        break;
+                }
+            }
+            counterS = 1;
         }
     }
 
@@ -166,6 +267,8 @@ public class AnswerQuestionGUIController implements Initializable, Serializable 
         a2.setDisable(false);
         a3.setDisable(false);
         a4.setDisable(false);
+        jokerSeventy.setDisable(false);
+        jokerFifty.setDisable(false);
         nextQuestion.setDisable(true);
 
         int randomint = random.nextInt(4);
@@ -190,8 +293,11 @@ public class AnswerQuestionGUIController implements Initializable, Serializable 
         a2.setTextFill(Color.valueOf("black"));
         a3.setTextFill(Color.valueOf("black"));
         a4.setTextFill(Color.valueOf("black"));
-        if (counter == 1){
+        if (counterF == 1){
             jokerFifty.setDisable(true);
+        }
+        if (counterS == 1){
+            jokerSeventy.setDisable(true);
         }
         solution.setText("");
         //loaded.add(encodeDecode);
@@ -204,6 +310,7 @@ public class AnswerQuestionGUIController implements Initializable, Serializable 
         a3.setDisable(false);
         a4.setDisable(false);
         jokerFifty.setDisable(false);
+        jokerSeventy.setDisable(false);
         nextQuestion.setDisable(true);
 
         int randomint = random.nextInt(4);
