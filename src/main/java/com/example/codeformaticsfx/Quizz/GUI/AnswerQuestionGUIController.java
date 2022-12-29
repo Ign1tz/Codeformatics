@@ -1,7 +1,8 @@
-package com.example.codeformaticsfx.Quizz.Questions;
+package com.example.codeformaticsfx.Quizz.GUI;
 
 import com.example.codeformaticsfx.Files.EncodeDecode;
 import com.example.codeformaticsfx.Files.readWriteQuestions;
+import com.example.codeformaticsfx.Quizz.QuestionJoker;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -34,6 +35,8 @@ public class AnswerQuestionGUIController implements Initializable, Serializable 
     private Label score;
     @FXML
     private Button jokerNew;
+    private String A1,A2,A3,A4,rightAnswer;
+    private int range;
     private int counterF = 0;
     private int counterS = 0;
     private int counterN = 0;
@@ -44,7 +47,8 @@ public class AnswerQuestionGUIController implements Initializable, Serializable 
     public List<EncodeDecode> loaded = new ArrayList<>();
 
     Random random = new Random();
-    EncodeDecode encodeDecode = new EncodeDecode();
+    private EncodeDecode encodeDecode = new EncodeDecode();
+    private QuestionJoker questionJoker = new QuestionJoker();
 
     public void checkOne(ActionEvent actionEvent) {
         if (encodeDecode.decodedRightAnswer.equals("A1")){
@@ -128,19 +132,22 @@ public class AnswerQuestionGUIController implements Initializable, Serializable 
 
     public void jokerF(ActionEvent actionEvent) {
         if (counterF == 0) {
-            int randomanswer = random.nextInt(4);
-            randomanswer = randomanswer+1;
-            while (randomanswer == Integer.valueOf(encodeDecode.decodedRightAnswer.replaceAll("A", ""))){
-                randomanswer = random.nextInt(4);
-                randomanswer = randomanswer+1;
-            }
+
+            A1=a1.getText();
+            A2=a2.getText();
+            A3=a3.getText();
+            A4=a4.getText();
+            rightAnswer = encodeDecode.decodedRightAnswer;
+            range=4;
+            questionJoker.jokerFiftyFifty(A1,A2,A3,A4,rightAnswer,range);
+
 
             a1.setDisable(true);
             a2.setDisable(true);
             a3.setDisable(true);
             a4.setDisable(true);
 
-            switch (encodeDecode.decodedRightAnswer){
+            switch (questionJoker.getRightAnswer()){
                 case "A1":
                     a1.setDisable(false);
                     break;
@@ -155,7 +162,7 @@ public class AnswerQuestionGUIController implements Initializable, Serializable 
                     break;
             }
 
-            switch (randomanswer){
+            switch (questionJoker.getRandomAnswer()){
                 case 1:
                     a1.setDisable(false);
                     break;
@@ -175,21 +182,22 @@ public class AnswerQuestionGUIController implements Initializable, Serializable 
 
     public void jokerS(ActionEvent actionEvent) {
         if (counterS == 0) {
-            int randomanswer = random.nextInt(4);
-            randomanswer = randomanswer+1;
-            while (randomanswer == Integer.valueOf(encodeDecode.decodedRightAnswer.replaceAll("A", ""))){
-                randomanswer = random.nextInt(4);
-                randomanswer = randomanswer+1;
-            }
 
             a1.setDisable(true);
             a2.setDisable(true);
             a3.setDisable(true);
             a4.setDisable(true);
 
-            int border = random.nextInt(10 - 1 + 1) + 1;
+            A1=a1.getText();
+            A2=a2.getText();
+            A3=a3.getText();
+            A4=a4.getText();
+            rightAnswer = encodeDecode.decodedRightAnswer;
+            range=4;
+            int border = questionJoker.jokerSeventyThirty(A1,A2,A3,A4,rightAnswer,range);
+
             if (border <= 7){
-                switch (encodeDecode.decodedRightAnswer){
+                switch (questionJoker.getRightAnswer()){
                     case "A1":
                         a1.setDisable(false);
                         a1.setTextFill(Color.valueOf("green"));
@@ -207,7 +215,7 @@ public class AnswerQuestionGUIController implements Initializable, Serializable 
                         a4.setTextFill(Color.valueOf("green"));
                         break;
                 }
-                switch (randomanswer){
+                switch (questionJoker.getRandomAnswer()){
                     case 1:
                         a1.setDisable(false);
                         a1.setTextFill(Color.valueOf("yellow"));
@@ -226,7 +234,7 @@ public class AnswerQuestionGUIController implements Initializable, Serializable 
                         break;
                 }
             }else {
-                switch (encodeDecode.decodedRightAnswer){
+                switch (questionJoker.getRightAnswer()){
                     case "A1":
                         a1.setDisable(false);
                         a1.setTextFill(Color.valueOf("yellow"));
@@ -244,7 +252,7 @@ public class AnswerQuestionGUIController implements Initializable, Serializable 
                         a4.setTextFill(Color.valueOf("yellow"));
                         break;
                 }
-                switch (randomanswer){
+                switch (questionJoker.getRandomAnswer()){
                     case 1:
                         a1.setDisable(false);
                         a1.setTextFill(Color.valueOf("green"));

@@ -1,4 +1,4 @@
-package com.example.codeformaticsfx.Quizz.Questions;
+package com.example.codeformaticsfx.Quizz.GUI;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

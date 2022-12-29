@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.codeformaticsfx.Quizz.Questions.AnswerQuestionGUIController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.codeformaticsfx.Quizz.GUI.AnswerQuestionGUIController">
     <children>
         <Label fx:id="FrageNummer" alignment="CENTER" contentDisplay="CENTER" layoutX="183.0" layoutY="82.0" prefHeight="52.0" prefWidth="234.0" text="Frage #" textAlignment="CENTER" />
         <Button fx:id="a1" layoutX="128.0" layoutY="170.0" mnemonicParsing="false" onAction="#checkOne" text="A1" />
