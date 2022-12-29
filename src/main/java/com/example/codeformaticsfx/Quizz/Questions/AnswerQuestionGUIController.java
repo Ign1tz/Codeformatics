@@ -34,12 +34,9 @@ public class AnswerQuestionGUIController implements Initializable, Serializable 
     private Label score;
     @FXML
     private Button jokerNew;
-
     private int counterF = 0;
     private int counterS = 0;
-
     private int counterN = 0;
-
     private int correct = 0;
 
     public static readWriteQuestions readQuestions = new readWriteQuestions();
@@ -66,6 +63,7 @@ public class AnswerQuestionGUIController implements Initializable, Serializable 
         a4.setDisable(true);
         jokerFifty.setDisable(true);
         jokerSeventy.setDisable(true);
+        jokerNew.setDisable(true);
     }
 
     public void checkTwo(ActionEvent actionEvent) {
@@ -85,6 +83,7 @@ public class AnswerQuestionGUIController implements Initializable, Serializable 
         a4.setDisable(true);
         jokerFifty.setDisable(true);
         jokerSeventy.setDisable(true);
+        jokerNew.setDisable(true);
     }
 
     public void checkThree(ActionEvent actionEvent) {
@@ -104,6 +103,7 @@ public class AnswerQuestionGUIController implements Initializable, Serializable 
         a4.setDisable(true);
         jokerFifty.setDisable(true);
         jokerSeventy.setDisable(true);
+        jokerNew.setDisable(true);
     }
 
     public void checkFour(ActionEvent actionEvent) {
@@ -123,6 +123,7 @@ public class AnswerQuestionGUIController implements Initializable, Serializable 
         a4.setDisable(true);
         jokerFifty.setDisable(true);
         jokerSeventy.setDisable(true);
+        jokerNew.setDisable(true);
     }
 
     public void jokerF(ActionEvent actionEvent) {
