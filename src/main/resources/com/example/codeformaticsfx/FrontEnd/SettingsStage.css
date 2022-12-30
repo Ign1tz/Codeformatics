@@ -1,0 +1,52 @@
+ .root{
+ -fx-background-image:url("Background.quiz.jpg");
+ -fx-background-size: cover;
+ }
+ #nameLabel{
+ -fx-text-fill: #e91e63;
+ -fx-font-size: 20px
+ -fx-font-weight: bold;
+ }
+
+ .button {
+ -fx-background-color: #0097a7;
+ -fx-background-radius: 30;
+ -fx-text-fill: #e91e63;
+ }
+
+ .button:hover {
+ -fx-background-color: #00acc1;
+ -fx-background-radius: 30;
+ -fx-border-color: #0097a7;
+ -fx-border-radius: 35;
+ -fx-border-vidth: 3;
+ }
+
+ .button:pressed {
+ -fx-background-color: #0097a7;
+ -fx-background-radius: 30;
+ -fx-border-color: #0097a7;
+ -fx-border-radius: 35;
+ -fx-border-vidth: 3;
+ }
+
+#myNameText {
+-fx-min-width: 40;
+-fx-min-height: 27;
+}
+
+#saveButton {
+-fx-min-width: 60;
+-fx-min-height: 27;
+}
+
+#optionsLabel {
+-fx-text-fill: #e91e63;
+-fx-font-size: 30px
+-fx-font-weight: bold;
+}
+
+#backStart {
+-fx-min-width: 60;
+-fx-min-height: 35;
+}
