@@ -4,13 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09c124d1-3ed0-4413-a70e-039465c4f822" name="Changes" comment="added:&#10; - simple question view for random questions&#10; - simple hint template for joker&#10; - button for the next question with no function&#10;&#10;deleted:&#10; - none&#10; &#10;edited:&#10; - none">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/Quizz/QuestionJoker.java" afterDir="false" />
+    <list default="true" id="09c124d1-3ed0-4413-a70e-039465c4f822" name="Changes" comment="Anna - HomeStage has now a Java Logo">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/Quizz/Questions/AnswerQuestionGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/Quizz/GUI/AnswerQuestionGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/Quizz/Questions/AnswerQuestionGUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/Quizz/GUI/AnswerQuestionGUIController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/FrontEnd/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/HomeStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/FrontEnd/HomeStage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/codeformaticsfx/Quizz/Questions/QuestionView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/codeformaticsfx/Quizz/GUI/QuestionView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/codeformaticsfx/Background.quiz.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/codeformaticsfx/FrontEnd/Background.quiz.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/codeformaticsfx/HomeStage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/codeformaticsfx/FrontEnd/HomeStage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/codeformaticsfx/HomeStage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/codeformaticsfx/FrontEnd/HomeStage.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,40 +44,41 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Anna/IdeaProjects/Codeformatics&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.075414784&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.22803904&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.JavaFX&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/Anna/IdeaProjects/Codeformatics/src/main/resources/FrontEnd.Settings",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.075414784",
+    "project.structure.side.proportion": "0.22803904",
+    "settings.editor.selected.configurable": "preferences.JavaFX"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Anna\IdeaProjects\Codeformatics\src\main\resources\FrontEnd.Settings" />
       <recent name="S:\FH\Programieren\Codeformatics2\src\main\resources\com\example\codeformaticsfx" />
       <recent name="S:\FH\Programieren\Codeformatics2\src\main\java\com\example\codeformaticsfx\Files" />
       <recent name="S:\FH\Programieren\CodeformaticsFX\QuestionLibrary" />
       <recent name="S:\FH\Programieren\CodeformaticsFX\src\main\java\com\example\codeformaticsfx" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Codeformatics\src\main\resources\com\example\codeformaticsfx\Quizz\Questions" />
       <recent name="C:\Users\Anna\IdeaProjects\Codeformatics\src\main\resources\com\example\codeformaticsfx" />
       <recent name="C:\Users\Anna\IdeaProjects\Codeformatics\src\main\java\com\example\codeformaticsfx" />
       <recent name="S:\FH\Programieren\Codeformatics2\GameResources" />
       <recent name="S:\FH\Programieren\Codeformatics2\Scoreboards" />
+      <recent name="S:\FH\Programieren\Codeformatics2\src\main\resources\com\example\codeformaticsfx\Files\GUI" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="com.example.codeformaticsfx.Quizz" />
       <recent name="com.example.codeformaticsfx" />
+      <recent name="com.example.codeformaticsfx.FrontEnd" />
       <recent name="com.example.codeformaticsfx.Files" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -84,13 +86,13 @@
       <recent name="com.example.codeformaticsfx.FIles" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.AnswerQuestionGUI">
+  <component name="RunManager" selected="Application.com.example.codeformaticsfx.FrontEnd.Settings.SettingsStage">
     <configuration name="AnswerQuestionGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.codeformaticsfx.Quizz.GUI.AnswerQuestionGUI" />
       <module name="CodeformaticsFX.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.codeformaticsfx.Quizz.*" />
+          <option name="PATTERN" value="com.example.codeformaticsfx.Quizz.GUI.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -98,8 +100,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DifferentStages" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.codeformaticsfx.FrontEnd.DifferentStages" />
+    <configuration name="SettingsStage" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.codeformaticsfx.SettingsStage" />
       <module name="CodeformaticsFX.main" />
       <extension name="coverage">
         <pattern>
@@ -111,12 +113,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HomeStage" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.codeformaticsfx.HomeStage" />
+    <configuration name="SettingsStage" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.codeformaticsfx.SettingsStage" />
       <module name="CodeformaticsFX.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.codeformaticsfx.*" />
+          <option name="PATTERN" value="com.example.codeformaticsfx.FrontEnd.Home.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -124,12 +126,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="WriteQuestionsGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.codeformaticsfx.Files.GUI.WriteQuestionsGUI" />
+    <configuration name="com.example.codeformaticsfx.FrontEnd.HomeStage" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.codeformaticsfx.FrontEnd.HomeStage" />
       <module name="CodeformaticsFX.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.codeformaticsfx.Quizz.*" />
+          <option name="PATTERN" value="com.example.codeformaticsfx.FrontEnd.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -137,12 +139,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="pickQuestions" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.codeformaticsfx.pickQuestions" />
+    <configuration name="com.example.codeformaticsfx.FrontEnd.Home.HomeStage" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.codeformaticsfx.FrontEnd.Home.HomeStage" />
       <module name="CodeformaticsFX.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.codeformaticsfx.*" />
+          <option name="PATTERN" value="com.example.codeformaticsfx.FrontEnd.Home.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -152,10 +154,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.com.example.codeformaticsfx.FrontEnd.HomeStage" />
+        <item itemvalue="Application.com.example.codeformaticsfx.FrontEnd.Settings.SettingsStage" />
+        <item itemvalue="Application.com.example.codeformaticsfx.FrontEnd.Home.HomeStage" />
+        <item itemvalue="Application.SettingsStage" />
         <item itemvalue="Application.AnswerQuestionGUI" />
-        <item itemvalue="Application.HomeStage" />
-        <item itemvalue="Application.DifferentStages" />
-        <item itemvalue="Application.pickQuestions" />
       </list>
     </recent_temporary>
   </component>
@@ -221,14 +224,7 @@
       <option name="project" value="LOCAL" />
       <updated>1671993242735</updated>
     </task>
-    <task id="LOCAL-00008" summary="added:&#10; - simple question view for random questions&#10; - simple hint template for joker&#10; - button for the next question with no function&#10;&#10;deleted:&#10; - none&#10; &#10;edited:&#10; - none">
-      <created>1672174463865</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1672174463865</updated>
-    </task>
-    <option name="localTasksCounter" value="9" />
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -252,8 +248,7 @@
     <MESSAGE value="Moritz - GUI for Question inputing working with writig to file" />
     <MESSAGE value="Anna - set up GUI for HomeStage" />
     <MESSAGE value="Anna - HomeStage has now Buttons and a Title" />
-    <MESSAGE value="added:&#10; - simple question view for random questions&#10; - simple hint template for joker&#10; - button for the next question with no function&#10;&#10;deleted:&#10; - none&#10; &#10;edited:&#10; - none" />
-    <option name="LAST_COMMIT_MESSAGE" value="added:&#10; - simple question view for random questions&#10; - simple hint template for joker&#10; - button for the next question with no function&#10;&#10;deleted:&#10; - none&#10; &#10;edited:&#10; - none" />
+    <option name="LAST_COMMIT_MESSAGE" value="Anna - HomeStage has now Buttons and a Title" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

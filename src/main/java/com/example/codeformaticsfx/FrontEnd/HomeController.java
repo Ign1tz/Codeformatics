@@ -1,4 +1,4 @@
-package com.example.codeformaticsfx;
+package com.example.codeformaticsfx.FrontEnd;
 
 import javafx.fxml.FXML;
 import javafx.scene.image.Image;

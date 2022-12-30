@@ -1,0 +1,4 @@
+ .root{
+ -fx-background-image:url("Background.quiz.jpg");
+ -fx-background-size: cover;
+ }
