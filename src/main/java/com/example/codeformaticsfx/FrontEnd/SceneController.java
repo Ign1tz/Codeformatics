@@ -14,6 +14,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.lang.reflect.Array;
 import java.util.Arrays;
+import java.util.Objects;
 
 public class SceneController {
     //HomeScene
@@ -32,6 +33,10 @@ public class SceneController {
     private Button saveButton;
     @FXML
     private TextField myNameText;
+
+    //Start
+    @FXML
+    public Button StartButton;              //Implementing and tagging button as module to be accessible for fxml loader
 
     String name;
 
@@ -68,4 +73,11 @@ public class SceneController {
         stage.setScene(scene);
         stage.show();
     }
+
+    public void switchGame(ActionEvent event) throws IOException{
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Game.fxml")));
+        Stage game = (Stage) StartButton.getScene().getWindow();
+        game.setScene(new Scene(root, game.getWidth(),game.getHeight()));
+    }
+
 }

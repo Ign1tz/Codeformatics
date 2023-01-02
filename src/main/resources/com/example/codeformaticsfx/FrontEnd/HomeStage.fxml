@@ -26,7 +26,7 @@
             <Font name="Arial Black" size="14.0" />
          </font>
       </Button>
-      <Button fx:id="StartButton" mnemonicParsing="false" onAction="#StartButton" prefHeight="61.0" prefWidth="139.0" stylesheets="@HomeStage.css" text="START" textFill="#e91e63" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="BASELINE">
+      <Button fx:id="StartButton" mnemonicParsing="false" onAction="#switchGame" prefHeight="61.0" prefWidth="139.0" stylesheets="@HomeStage.css" text="START" textFill="#e91e63" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="BASELINE">
          <font>
             <Font name="Arial Black" size="12.0" />
          </font></Button>
