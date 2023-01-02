@@ -25,6 +25,7 @@ public class Game extends Application {
 
 
             Game.show();                    //show stage
+            //made this comment just to push the code again
         }
         catch (Exception e) {
             e.printStackTrace();
