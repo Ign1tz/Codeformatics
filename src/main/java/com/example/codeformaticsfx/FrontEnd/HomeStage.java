@@ -14,15 +14,16 @@ import javafx.stage.Stage;
 
 import java.io.FileInputStream;
 import java.io.InputStream;
+import java.util.Objects;
 
 public class HomeStage extends Application {
 
     @Override
     public void start(Stage primaryStage) {
     try {
-       Parent parentRoot = FXMLLoader.load(getClass().getResource("HomeStage.fxml")); //connect fxml file with root
+       Parent parentRoot = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("HomeStage.fxml"))); //connect fxml file with root
         Scene scene = new Scene(parentRoot);        //set root to scene
-        String css = this.getClass().getResource("HomeStage.css").toExternalForm(); //connect css file to scene
+        String css = Objects.requireNonNull(this.getClass().getResource("HomeStage.css")).toExternalForm(); //connect css file to scene
         scene.getStylesheets().add(css);
         primaryStage.setTitle("HomeStage");     //title of window
         primaryStage.setResizable(false);       //not resiazable
