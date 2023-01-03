@@ -36,21 +36,6 @@ public class SceneController {
 
     String name;
 
-    //HomeScene
-    public void StartButton() {
-        System.out.println("Start");
-    }   //just seeing if the buttons work
-   /* public void OptionButton() {
-        System.out.println("Option");
-        OptionsButton.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                SettingsStage stage2 = new SettingsStage();
-                getScene.setRoot(stage2);
-            }
-        });
-    }*/
-
 
     public void submit(ActionEvent event) {
         try {
