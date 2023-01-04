@@ -1,6 +1,3 @@
-#logoLabel {
--fx-text-fill: #e91e63;
-}
 .root{
 -fx-background-image:url("Background.quiz.jpg");
 -fx-background-size: cover;
@@ -8,6 +5,9 @@
 .button {
 -fx-background-color: #0097a7;
 -fx-background-radius: 30;
+-fx-min-width: 80;
+-fx-min-height: 40;
+-fx-text-size: 20px;
 }
 
 .button:hover {
@@ -25,7 +25,15 @@
 -fx-border-radius: 35;
 -fx-border-vidth: 3;
 }
-
 .ImageView {
 -fx-image:url("Java.Logo.png");
 }
+#logoLabel {
+-fx-text-fill: #0097a7;
+-fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+}
+#logoLabel2 {
+-fx-text-fill: #e91e63;
+-fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+}
+

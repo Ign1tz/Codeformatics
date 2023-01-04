@@ -4,9 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09c124d1-3ed0-4413-a70e-039465c4f822" name="Changes" comment="Anna - tried to do Scene Switching, needs improvement">
+    <list default="true" id="09c124d1-3ed0-4413-a70e-039465c4f822" name="Changes" comment="Anna - Scene Switching is working">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Music/tubebackr - Silk .mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/codeformaticsfx/SoundSign.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/FrontEnd/SceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/FrontEnd/SceneController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/codeformaticsfx/FrontEnd/HomeStage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/codeformaticsfx/FrontEnd/HomeStage.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/codeformaticsfx/FrontEnd/HomeStage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/codeformaticsfx/FrontEnd/HomeStage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/codeformaticsfx/FrontEnd/SettingsStage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/codeformaticsfx/FrontEnd/SettingsStage.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/codeformaticsfx/FrontEnd/SettingsStage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/codeformaticsfx/FrontEnd/SettingsStage.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -40,37 +45,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Anna/IdeaProjects/Codeformatics/src/main/resources/com/example/codeformaticsfx&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.075414784&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.22803904&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.JavaFX&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/Anna/IdeaProjects/Codeformatics/src/main/resources",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.075414784",
+    "project.structure.side.proportion": "0.22803904",
+    "settings.editor.selected.configurable": "preferences.JavaFX"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Anna\IdeaProjects\Codeformatics\src\main\resources" />
       <recent name="C:\Users\Anna\IdeaProjects\Codeformatics\src\main\resources\com\example\codeformaticsfx" />
       <recent name="C:\Users\Anna\IdeaProjects\Codeformatics\src\main\resources\FrontEnd.Settings" />
       <recent name="S:\FH\Programieren\Codeformatics2\src\main\resources\com\example\codeformaticsfx" />
       <recent name="S:\FH\Programieren\Codeformatics2\src\main\java\com\example\codeformaticsfx\Files" />
-      <recent name="S:\FH\Programieren\CodeformaticsFX\QuestionLibrary" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Anna\IdeaProjects\Codeformatics\src\main\resources\com\example\codeformaticsfx\FrontEnd" />
+      <recent name="C:\Users\Anna\IdeaProjects\Codeformatics\src\main\resources\Music" />
       <recent name="C:\Users\Anna\IdeaProjects\Codeformatics\src\main\resources\com\example\codeformaticsfx" />
+      <recent name="C:\Users\Anna\IdeaProjects\Codeformatics\src\main\resources" />
+      <recent name="C:\Users\Anna\IdeaProjects\Codeformatics\src\main\resources\com\example\codeformaticsfx\FrontEnd" />
       <recent name="C:\Users\Anna\IdeaProjects\Codeformatics\src\main\java\com\example\codeformaticsfx" />
-      <recent name="S:\FH\Programieren\Codeformatics2\GameResources" />
-      <recent name="S:\FH\Programieren\Codeformatics2\Scoreboards" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.example.codeformaticsfx.FrontEnd" />
@@ -82,7 +87,7 @@
       <recent name="com.example.codeformaticsfx.FIles" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.HomeStage">
+  <component name="RunManager" selected="Application.SettingsStage">
     <configuration name="AnswerQuestionGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.codeformaticsfx.Quizz.GUI.AnswerQuestionGUI" />
       <module name="CodeformaticsFX.main" />
@@ -246,7 +251,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672765079262</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Anna - Scene Switching is working">
+      <created>1672767283403</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1672767283403</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -272,7 +284,8 @@
     <MESSAGE value="Anna - HomeStage has now Buttons and a Title" />
     <MESSAGE value="Anna - Settings Stage is created with fxml file etc." />
     <MESSAGE value="Anna - tried to do Scene Switching, needs improvement" />
-    <option name="LAST_COMMIT_MESSAGE" value="Anna - tried to do Scene Switching, needs improvement" />
+    <MESSAGE value="Anna - Scene Switching is working" />
+    <option name="LAST_COMMIT_MESSAGE" value="Anna - Scene Switching is working" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

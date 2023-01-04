@@ -13,13 +13,19 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.stage.Window;
 
+
+import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Objects;
+import java.util.Timer;
 
 public class SceneController {
 
+    @FXML
+    public Button musicButton;
     @FXML
     public Button OptionsButton;
     //SettingsScene
@@ -50,6 +56,7 @@ public class SceneController {
             nameLabel.setText("error");
         }
     }
+
 
     //Switching between two Scenes
     private Stage stage;

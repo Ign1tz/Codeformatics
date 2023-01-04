@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
@@ -11,8 +12,10 @@
 
 <GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@HomeStage.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.codeformaticsfx.FrontEnd.SceneController">
   <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
   </columnConstraints>
   <rowConstraints>
@@ -21,24 +24,32 @@
     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <Button fx:id="OptionsButton" alignment="CENTER" mnemonicParsing="false" onAction="#switchSettings" prefHeight="58.0" prefWidth="136.0" stylesheets="@HomeStage.css" text="OPTIONS" textFill="#e91e63" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+      <Button fx:id="OptionsButton" alignment="CENTER" mnemonicParsing="false" onAction="#switchSettings" prefHeight="58.0" prefWidth="136.0" stylesheets="@HomeStage.css" text="OPTIONS" textFill="#e91e63" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
          <font>
             <Font name="Arial Black" size="14.0" />
          </font>
       </Button>
-      <Button fx:id="StartButton" mnemonicParsing="false" onAction="#switchGame" prefHeight="61.0" prefWidth="139.0" stylesheets="@HomeStage.css" text="START" textFill="#e91e63" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="BASELINE">
+      <Button fx:id="StartButton" mnemonicParsing="false" onAction="#switchGame" prefHeight="61.0" prefWidth="139.0" stylesheets="@HomeStage.css" text="START" textFill="#e91e63" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="BASELINE">
          <font>
             <Font name="Arial Black" size="12.0" />
          </font></Button>
-      <Label fx:id="logoLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="272.0" stylesheets="@HomeStage.css" text="QuizMaker" textAlignment="CENTER" textFill="#bf1394" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-         <font>
-            <Font name="Arial Black" size="24.0" />
-         </font>
-      </Label>
-      <ImageView fx:id="myImageView" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BASELINE">
+      <ImageView fx:id="myImageView" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BASELINE">
          <image>
             <Image url="@../Java.Logo.png" />
          </image>
       </ImageView>
+      <Label fx:id="logoLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="112.0" stylesheets="@HomeStage.css" text="Quiz" textFill="#bf1394" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
+         <font>
+            <Font name="Arial Black" size="40.0" />
+         </font>
+      </Label>
+      <Label fx:id="logoLabel2" prefHeight="61.0" prefWidth="102.0" text="Maker" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets top="10.0" />
+         </GridPane.margin>
+         <font>
+            <Font name="Arial Black" size="30.0" />
+         </font>
+      </Label>
    </children>
 </GridPane>

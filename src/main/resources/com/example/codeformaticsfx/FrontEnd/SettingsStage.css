@@ -2,16 +2,16 @@
  -fx-background-image:url("Background.quiz.jpg");
  -fx-background-size: cover;
  }
- #nameLabel{
- -fx-text-fill: #e91e63;
- -fx-font-size: 20px
- -fx-font-weight: bold;
- }
-
+.label {
+-fx-effect: drop-shadow(gaussian , white(255,255,255,0.5) , 0,0,0,1 );
+}
  .button {
  -fx-background-color: #0097a7;
  -fx-background-radius: 30;
  -fx-text-fill: #e91e63;
+ -fx-min-width: 80;
+ -fx-min-height: 40;
+ -fx-text-size: 20px
  }
 
  .button:hover {
@@ -30,6 +30,12 @@
  -fx-border-vidth: 3;
  }
 
+#nameLabel{
+-fx-text-fill: #e91e63;
+-fx-font-size: 20px;
+-fx-font-weight: bold;
+}
+
 #myNameText {
 -fx-min-width: 40;
 -fx-min-height: 27;
@@ -42,11 +48,12 @@
 
 #optionsLabel {
 -fx-text-fill: #e91e63;
--fx-font-size: 30px
+-fx-font-size: 30px;
 -fx-font-weight: bold;
 }
 
-#backStart {
--fx-min-width: 60;
--fx-min-height: 35;
+#StartButton {
+-fx-min-width: 80;
+-fx-min-height: 40;
+-fx-text-size: 20px;
 }
