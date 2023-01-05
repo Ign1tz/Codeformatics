@@ -58,9 +58,9 @@ public class readWriteQuestions {
 
     public void writeQuestions(String Question, String A1, String A2, String A3, String A4, String Difficulty, String Answer) throws IOException {
         EncodeDecode encodeDecode = new EncodeDecode();
-            encodeDecode.encodeQuestionBase64(Question, A1, A2, A3, A4, Difficulty, Answer);
-            newQuestion = new readWriteQuestions(encodeDecode.encodedQuestion, encodeDecode.encodedA1, encodeDecode.encodedA2, encodeDecode.encodedA3, encodeDecode.encodedA4, encodeDecode.encodedDifficulty, encodeDecode.encodedRightAnswer);
-            QuestionList.add(newQuestion);
+        encodeDecode.encodeQuestionBase64(Question, A1, A2, A3, A4, Difficulty, Answer);
+        newQuestion = new readWriteQuestions(encodeDecode.encodedQuestion, encodeDecode.encodedA1, encodeDecode.encodedA2, encodeDecode.encodedA3, encodeDecode.encodedA4, encodeDecode.encodedDifficulty, encodeDecode.encodedRightAnswer);
+        QuestionList.add(newQuestion);
     }
     public void finish(String filePath, String quizzname, String authorname, String questionsUsed) throws IOException {
         Writer writer = Files.newBufferedWriter(Paths.get(filePath));
@@ -81,7 +81,7 @@ public class readWriteQuestions {
         reader.close();
         return tempList;
     }
-    private QuizzInfo readQuizz(String filePath) throws IOException {
+    public QuizzInfo readQuizz(String filePath) throws IOException {
         Reader reader = Files.newBufferedReader(Paths.get(filePath));
         QuizzInfo temp = new Gson().fromJson(reader, new TypeToken<QuizzInfo>() {}.getType());
         reader.close();

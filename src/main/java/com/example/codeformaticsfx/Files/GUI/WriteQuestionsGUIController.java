@@ -66,7 +66,7 @@ public class WriteQuestionsGUIController implements Initializable {
         }
     }
     public void newQuestion(ActionEvent event) throws IOException {
-        if(Question.getText() == null||A1.getText()==null||A2.getText()==null||A3.getText()==null||A4.getText()==null||isRight==null){
+        if(Question.getText() == ""||A1.getText()==""||A2.getText()==""||A3.getText()==""||A4.getText()==""||isRight==""){
             error.setOpacity(1);
         }else {
             question = Question.getText();
