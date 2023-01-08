@@ -1,7 +1,15 @@
-[
-  {
-    "name": "dGVzdA\u003d\u003d",
-    "score": "MTA\u003d",
-    "tis": "MQ\u003d\u003d"
-  }
-]
+{
+  "Quizzname": "java",
+  "scoreboard": [
+    {
+      "name": "dGVzdA\u003d\u003d",
+      "score": "MTM\u003d",
+      "tis": "OA\u003d\u003d"
+    },
+    {
+      "name": "dGVzdGVy",
+      "score": "MjM\u003d",
+      "tis": "MjM\u003d"
+    }
+  ]
+}

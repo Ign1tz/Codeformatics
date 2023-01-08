@@ -1,17 +1,11 @@
 package com.example.codeformaticsfx.Files.GUI;
 
 import com.example.codeformaticsfx.Files.readWriteQuestions;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
+import javafx.beans.value.*;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
+import javafx.fxml.*;
+import javafx.scene.*;
 import javafx.scene.control.*;
-import javafx.scene.image.ImageView;
 import javafx.stage.*;
 
 import java.io.IOException;
@@ -46,13 +40,6 @@ public class WriteQuestionsGUIController implements Initializable {
             a3 = A3.getText();
             a4 = A4.getText();
             writeQuestions.writeQuestions(question,a1,a2,a3,a4,difficulty,isRight);
-            System.out.println(question);
-            System.out.println(a1);
-            System.out.println(a2);
-            System.out.println(a3);
-            System.out.println(a4);
-            System.out.println(difficulty);
-            System.out.println(isRight);
             Parent fxmlLoader = FXMLLoader.load(getClass().getResource("StartQuizzInput.fxml"));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(fxmlLoader);
@@ -70,13 +57,6 @@ public class WriteQuestionsGUIController implements Initializable {
             a3 = A3.getText();
             a4 = A4.getText();
             writeQuestions.writeQuestions(question,a1,a2,a3,a4,difficulty,isRight);
-            System.out.println(question);
-            System.out.println(a1);
-            System.out.println(a2);
-            System.out.println(a3);
-            System.out.println(a4);
-            System.out.println(difficulty);
-            System.out.println(isRight);
             Parent fxmlLoader = FXMLLoader.load(getClass().getResource("Question input.fxml"));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(fxmlLoader);

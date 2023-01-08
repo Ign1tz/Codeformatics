@@ -42,7 +42,7 @@ public class pickQuestions {
         }
     }
 
-    public readWriteQuestions activeQuestion(List<Integer> probList, int lastQuestion, int numberOfQuestions, int currentQuestion){
+    /*public readWriteQuestions activeQuestion(List<Integer> probList, int lastQuestion, int numberOfQuestions, int currentQuestion){
         List<Integer> probListTemp = updateProb(probList, lastQuestion, numberOfQuestions,currentQuestion);
         int probEasy = probListTemp.get(0), probMedium = probListTemp.get(1), probHard = probListTemp.get(2);
         int questionIndex = randomNumber(probEasy+probMedium+probHard);
@@ -89,7 +89,7 @@ public class pickQuestions {
             return questionList.get(questionNumber);
         }
         return null;
-    }
+    }*/
     public void activeQuestion2(List<Integer> probList, int lastQuestion, int numberOfQuestions, int currentQuestion){
         List<Integer> probListTemp = updateProb(probList, lastQuestion, numberOfQuestions,currentQuestion);
         int probEasy = probListTemp.get(0), probMedium = probListTemp.get(1), probHard = probListTemp.get(2);
@@ -100,27 +100,27 @@ public class pickQuestions {
             return;
         }
         if(questionIndex <= probEasy){
-            if(numberOfEasyQuestions > 0){
+            if(numberOfEasyQuestions > 1){
                 numberOfEasyQuestions--;
                 questionListDiff.add(1);
                 return;
             }
         }
         if (questionIndex <= probMedium + probEasy){
-            if(numberOfMediumQuestions > 0){
+            if(numberOfMediumQuestions > 1){
                 numberOfMediumQuestions--;
                 questionListDiff.add(2);
                 return;
             }
         }
         if(questionIndex <= probEasy + probMedium + probHard){
-            if(numberOfHardQuestions > 1){
+            if(numberOfHardQuestions > 2){
                 numberOfHardQuestions--;
                 questionListDiff.add(3);
                 return;
             }
         }
-        if(numberOfEasyQuestions > 0){
+        if(numberOfEasyQuestions > 1){
             numberOfEasyQuestions--;
             questionListDiff.add(1);
         }
@@ -224,7 +224,7 @@ public class pickQuestions {
         random =  rand.nextInt(high) + low;
         return random;
     }
-    private void printQuestion(){
+    /*private void printQuestion(){
         EncodeDecode encodeDecode = new EncodeDecode();
         loadQuestionDifficulty();
         readWriteQuestions activeQuestion;
@@ -249,14 +249,13 @@ public class pickQuestions {
             }
             justKeepPrintingPrintingPrinting(i, encodeDecode);
         }
-    }
-    public void testQuestion(){
+    }*/
+    public List<Integer> testQuestion(){
         loadQuestionDifficulty();
         EncodeDecode t = new EncodeDecode();
-        System.out.println(t.decodeSingle(questionList.get(1).QUESTION));
-        numberOfEasyQuestions = 10;
-        numberOfMediumQuestions = 10;
-        numberOfHardQuestions = 10;
+        numberOfEasyQuestions = easy.size();
+        numberOfMediumQuestions = medium.size();
+        numberOfHardQuestions = hard.size();
         List<Integer> probList = new ArrayList<>();
         probList.add(66);
         probList.add(22);
@@ -266,7 +265,7 @@ public class pickQuestions {
             activeQuestion2(probList, difficultyOfLastQuestion, 12, i);
             difficultyOfLastQuestion = questionListDiff.get(questionListDiff.size() - 1);
         }
-        System.out.println(questionListDiff);
+        return questionListDiff;
     }
     private void justKeepPrintingPrintingPrinting(int questionNumber, EncodeDecode encodeDecode){
         System.out.println("q: " + encodeDecode.decodedQuestion);

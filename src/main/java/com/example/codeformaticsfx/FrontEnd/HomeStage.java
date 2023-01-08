@@ -22,12 +22,12 @@ public class HomeStage extends Application {
     public void start(Stage primaryStage) {
     try {
        Parent parentRoot = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("HomeStage.fxml"))); //connect fxml file with root
-        Scene scene = new Scene(parentRoot);        //set root to scene
+        Scene scene = new Scene(parentRoot);    //set root to scene
         String css = Objects.requireNonNull(this.getClass().getResource("HomeStage.css")).toExternalForm(); //connect css file to scene
         scene.getStylesheets().add(css);
         primaryStage.setTitle("HomeStage");     //title of window
-        //primaryStage.setResizable(false);       //not resiazable
-        primaryStage.setMaximized(true);       //fullscreen
+        //primaryStage.setResizable(false);     //not resiazable
+        primaryStage.setMaximized(true);        //fullscreen
         primaryStage.setScene(scene);           //setscene to stage
 
         primaryStage.show();                    //show stage

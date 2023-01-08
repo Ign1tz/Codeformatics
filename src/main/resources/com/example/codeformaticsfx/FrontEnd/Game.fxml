@@ -24,10 +24,10 @@
          <Font size="16.0" />
       </font>
    </Label>
-    <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="217.2" stylesheets="@Game.css" text="Answer1" textFill="#e91e63" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="TOP" />
-    <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="217.2" stylesheets="@Game.css" text="Answer2" textFill="#e91e63" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="BOTTOM" />
-    <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="217.2" stylesheets="@Game.css" text="Answer4" textFill="#e91e63" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="BOTTOM" />
-    <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="217.2" stylesheets="@Game.css" text="Answer3" textFill="#e91e63" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="TOP">
+    <Button fx:id="Answer1" mnemonicParsing="false" prefHeight="26.0" prefWidth="217.2" stylesheets="@Game.css" text="Answer1" textFill="#e91e63" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="TOP" />
+    <Button fx:id="Answer2" mnemonicParsing="false" prefHeight="26.0" prefWidth="217.2" stylesheets="@Game.css" text="Answer2" textFill="#e91e63" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="BOTTOM" />
+    <Button fx:id="Answer4" mnemonicParsing="false" prefHeight="26.0" prefWidth="217.2" stylesheets="@Game.css" text="Answer4" textFill="#e91e63" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="BOTTOM" />
+    <Button fx:id="Answer3" mnemonicParsing="false" prefHeight="26.0" prefWidth="217.2" stylesheets="@Game.css" text="Answer3" textFill="#e91e63" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="TOP">
         <GridPane.margin>
             <Insets />
         </GridPane.margin>
