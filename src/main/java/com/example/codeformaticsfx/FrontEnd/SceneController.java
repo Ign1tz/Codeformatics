@@ -11,6 +11,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -42,13 +43,13 @@ public class SceneController extends HomeStage {
     @FXML
     private Label Questions;
     @FXML
-    private Button Answer4;
+    private CheckBox Answer4;
     @FXML
-    private Button Answer3;
+    private CheckBox Answer3;
     @FXML
-    private Button Answer2;
+    private CheckBox Answer2;
     @FXML
-    private Button Answer1 = new Button("test");
+    private CheckBox Answer1 = new CheckBox("test");
 
     String name;
 
@@ -175,6 +176,8 @@ public class SceneController extends HomeStage {
         }
 
         System.out.println(eD.decodeSingle(temp.A1));
+
+        //This part initialises the Design representation of the new Scene
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Game.fxml"));
         Parent root = loader.load();
         SceneController controller = loader.getController();
@@ -189,7 +192,9 @@ public class SceneController extends HomeStage {
     }
 
     public void Return(ActionEvent event) throws IOException{
-        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("HomeStage.fxml")));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("HomeStage.fxml"));
+        Parent root = loader.load();
+        SceneController controller = loader.getController();
         Scene scene = ((Node) event.getSource()).getScene();
         scene.setRoot(root);
     }
