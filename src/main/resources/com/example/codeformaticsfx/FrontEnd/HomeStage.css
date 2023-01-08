@@ -7,7 +7,7 @@
 -fx-background-radius: 30;
 -fx-min-width: 80;
 -fx-min-height: 40;
--fx-text-size: 20px;
+-fx-text-size: 40px;
 }
 
 .button:hover {
@@ -16,6 +16,7 @@
 -fx-border-color: #0097a7;
 -fx-border-radius: 35;
 -fx-border-vidth: 3;
+-fx-effect: dropshadow( gaussian , rgba(255,255,255,1) , 6,0,0,1 );
 }
 
 .button:pressed {
@@ -26,14 +27,15 @@
 -fx-border-vidth: 3;
 }
 .ImageView {
--fx-image:url("Java.Logo.png");
+-fx-image:url("JavaLogo.Farbe.png");
 }
 #logoLabel {
 -fx-text-fill: #0097a7;
--fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+-fx-effect: dropshadow( gaussian , rgba(255,255,255,1) , 6,0,0,1 );
 }
 #logoLabel2 {
 -fx-text-fill: #e91e63;
--fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+-fx-effect: dropshadow( gaussian , rgba(255,255,255,1) , 6,0,0,1 );
+-fx-line-spacing: -2;
 }
 

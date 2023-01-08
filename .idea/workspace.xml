@@ -4,21 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09c124d1-3ed0-4413-a70e-039465c4f822" name="Changes" comment="Moritz - fixed some stuff">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/Files/ScoreboardInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/FrontEnd/Scoreboard.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/FrontEnd/ScoreboardController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/codeformaticsfx/FrontEnd/Scoreboard.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameResources/Scoreboards/Scoreboard.json" beforeDir="false" afterPath="$PROJECT_DIR$/GameResources/Scoreboards/Scoreboard.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/Files/GUI/InitQuestionInputController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/Files/GUI/InitQuestionInputController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/Files/GUI/WriteQuestionsGUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/Files/GUI/WriteQuestionsGUIController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/Files/readWriteScoreboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/Files/readWriteScoreboard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/FrontEnd/HomeStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/FrontEnd/HomeStage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/FrontEnd/SceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/FrontEnd/SceneController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/pickQuestions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/pickQuestions.java" afterDir="false" />
-    </list>
+    <list default="true" id="8cb06ce3-7bd6-454c-8ae6-6aebd864b1d2" name="Changes" comment="Predrag - Adapted game scene and added a spot for question input temporary" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -92,7 +78,7 @@
       <recent name="com.example.codeformaticsfx.FIles" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.SceneController">
+  <component name="RunManager" selected="Application.HomeStage">
     <configuration name="Game" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.codeformaticsfx.FrontEnd.Game" />
       <module name="CodeformaticsFX.main" />
@@ -119,8 +105,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SceneController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.codeformaticsfx.FrontEnd.SceneController" />
+    <configuration name="SettingsStage" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.codeformaticsfx.FrontEnd.SettingsStage" />
       <module name="CodeformaticsFX.main" />
       <extension name="coverage">
         <pattern>
@@ -173,11 +159,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.SceneController" />
         <item itemvalue="Application.HomeStage" />
         <item itemvalue="Application.WriteQuestionsGUI" />
         <item itemvalue="Application.Game" />
         <item itemvalue="Application.com.example.codeformaticsfx.FrontEnd.Home.HomeStage" />
+        <item itemvalue="Application.SettingsStage" />
       </list>
     </recent_temporary>
   </component>
