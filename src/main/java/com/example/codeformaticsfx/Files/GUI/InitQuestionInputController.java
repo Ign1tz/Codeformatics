@@ -22,8 +22,6 @@ public class InitQuestionInputController {
     private Label error, inputANumber;
     private Stage stage;
     private Scene scene;
-    private Parent root;
-    public String Qname, Author, numberQ;
     private readWriteQuestions writeQuestions = WriteQuestionsGUIController.writeQuestions;
 
 

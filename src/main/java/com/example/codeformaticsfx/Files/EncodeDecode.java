@@ -2,7 +2,7 @@ package com.example.codeformaticsfx.Files;
 
 import java.util.Base64;
 
-public class EncodeDecode {
+public class EncodeDecode { //this class is just for encoding and decoding strings with Base64
     public String encodedQuestion, encodedA1, encodedA2, encodedA3, encodedA4, encodedDifficulty, encodedRightAnswer;
     public String decodedQuestion, decodedA1, decodedA2, decodedA3, decodedA4, decodedDifficulty, decodedRightAnswer;
     public String encodedName, encodedScore, encodedTIS;

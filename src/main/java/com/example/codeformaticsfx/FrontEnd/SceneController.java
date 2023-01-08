@@ -35,7 +35,6 @@ public class SceneController {
     private Button saveButton;
     @FXML
     private TextField myNameText;
-
     //Start
     @FXML
     public Button StartButton;              //Implementing and tagging button as module to be accessible for fxml loader
@@ -64,20 +63,38 @@ public class SceneController {
     private Scene scene;
 
    public void switchStart(ActionEvent event) throws IOException {
-       root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("HomeStage.fxml")));
-       Stage window = (Stage) StartButton.getScene().getWindow();
-       window.setScene(new Scene(root, window.getWidth(),window.getHeight()));
+       Parent fxmlLoader = FXMLLoader.load(getClass().getResource("HomeStage.fxml"));
+       stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+       scene = new Scene(fxmlLoader);
+       stage.setMaximized(false);
+       stage.setScene(scene);
+       stage.setMaximized(true);
+       stage.show();
    }
     public void switchSettings(ActionEvent event) throws IOException{
-        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("SettingsStage.fxml")));
-        Stage home = (Stage) StartButton.getScene().getWindow();
-        home.setScene(new Scene(root, home.getWidth(),home.getHeight()));
+        Parent fxmlLoader = FXMLLoader.load(getClass().getResource("SettingsStage.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(fxmlLoader);
+        stage.setMaximized(false);
+        stage.setScene(scene);
+        stage.setMaximized(true);
+        stage.show();
     }
 
     public void switchGame(ActionEvent event) throws IOException{
+        Parent fxmlLoader = FXMLLoader.load(getClass().getResource("Game.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(fxmlLoader);
+        stage.setMaximized(false);
+        stage.setScene(scene);
+        stage.setMaximized(true);
+        stage.show();
+    }
+
+    /*alter Code:
         root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Game.fxml")));
         Stage game = (Stage) StartButton.getScene().getWindow();
         game.setScene(new Scene(root, game.getWidth(),game.getHeight()));
-    }
+     */
 
 }

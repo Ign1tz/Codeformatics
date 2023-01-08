@@ -19,7 +19,7 @@ public class test {
         temp.testQuestion();
         int idk;
         List<Integer> difficulty = temp.questionListDiff;
-        QuizzInfo thisQuizz = rwq.Quizz("./GameResources/QuestionLibrary/Java.json");
+        QuizzInfo thisQuizz = rwq.readQuizz("./GameResources/QuestionLibrary/Java.json");
         for(int i = 1; i <= Integer.parseInt(eD.decodeSingle(thisQuizz.questionsUsed)); i++){
             int thisQuestion = difficulty.get(i - 1);
             switch (thisQuestion){
