@@ -177,7 +177,7 @@ public class SceneController extends HomeStage {
 
         System.out.println(eD.decodeSingle(temp.A1));
 
-        //This part initialises the Design representation of the new Scene
+        //This part initialises the Design representation of the new Scene.
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Game.fxml"));
         Parent root = loader.load();
         SceneController controller = loader.getController();
