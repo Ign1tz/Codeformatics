@@ -4,19 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09c124d1-3ed0-4413-a70e-039465c4f822" name="Changes" comment="Moritz - changed pick question to being not as &quot;stiff&quot;">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/Files/EncodeDecode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/Files/EncodeDecode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/Files/GUI/InitQuestionInputController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/Files/GUI/InitQuestionInputController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/Files/GUI/WriteQuestionsGUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/Files/GUI/WriteQuestionsGUIController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/Files/QuizzInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/Files/QuizzInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/Files/readWriteQuestions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/Files/readWriteQuestions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/Files/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/Files/test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/FrontEnd/HomeStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/FrontEnd/HomeStage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/FrontEnd/SceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/FrontEnd/SceneController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/codeformaticsfx/Files/GUI/Question input.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/codeformaticsfx/Files/GUI/Question input.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/codeformaticsfx/Files/GUI/StartQuizzInput.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/codeformaticsfx/Files/GUI/StartQuizzInput.fxml" afterDir="false" />
-    </list>
+    <list default="true" id="8cb06ce3-7bd6-454c-8ae6-6aebd864b1d2" name="Changes" comment="Predrag - Adapted game scene and added a spot for question input temporary" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
