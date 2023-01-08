@@ -1,7 +1,6 @@
 package com.example.codeformaticsfx.FrontEnd;
 
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -11,36 +10,46 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import javafx.stage.Window;
 
 
-import java.io.File;
 import java.io.IOException;
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Objects;
-import java.util.Timer;
 
-public class SceneController {
+public class SceneController extends HomeStage {
+
+    private Stage primaryStage;
 
     @FXML
     public Button musicButton;
     @FXML
-    public Button OptionsButton;
-    //SettingsScene
+    private Button OptionsButton;
     @FXML
     private Label nameLabel;
     @FXML
     private Button saveButton;
     @FXML
     private TextField myNameText;
-
-    //Start
     @FXML
-    public Button StartButton;              //Implementing and tagging button as module to be accessible for fxml loader
+    private Button StartButton;              //Implementing and tagging buttons as module to be accessible via SceneController
+    @FXML
+    private Button Return;
+    @FXML
+    private Label Questions;
 
     String name;
+
+    public void setPrimaryStage(Stage stage) {          //Implement the main primary Stage from HomeStage to SceneController
+        this.primaryStage = stage;                      //Used for modifying the main Window/Stage
+    }
+
+    @FXML
+    public void updateQuestion() {
+        Questions.setText("this changes the text on button click");
+    }
+
+    public Scene getScene(){
+        return scene;
+    }
 
 
     public void submit(ActionEvent event) {
@@ -70,14 +79,20 @@ public class SceneController {
    }
     public void switchSettings(ActionEvent event) throws IOException{
         root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("SettingsStage.fxml")));
-        Stage home = (Stage) StartButton.getScene().getWindow();
+        Stage home = (Stage) OptionsButton.getScene().getWindow();
         home.setScene(new Scene(root, home.getWidth(),home.getHeight()));
     }
 
-    public void switchGame(ActionEvent event) throws IOException{
+    public void switchGame(ActionEvent event) throws IOException, InterruptedException {
         root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Game.fxml")));
-        Stage game = (Stage) StartButton.getScene().getWindow();
-        game.setScene(new Scene(root, game.getWidth(),game.getHeight()));
+        Scene scene = ((Node) event.getSource()).getScene();
+        scene.setRoot(root);
+    }
+
+    public void Return(ActionEvent event) throws IOException{
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("HomeStage.fxml")));
+        Scene scene = ((Node) event.getSource()).getScene();
+        scene.setRoot(root);
     }
 
 }

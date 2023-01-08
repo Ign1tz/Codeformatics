@@ -30,8 +30,11 @@ public class HomeStage extends Application {
         primaryStage.setMaximized(true);       //fullscreen
         primaryStage.setScene(scene);           //setscene to stage
 
-
         primaryStage.show();                    //show stage
+
+        SceneController sceneController = new SceneController();
+        sceneController.setPrimaryStage(primaryStage);         //Passing the primaryStage to SceneController to switch scenes without creating a new Stage avoiding window size issues
+
     }
     catch (Exception e) {
         e.printStackTrace();

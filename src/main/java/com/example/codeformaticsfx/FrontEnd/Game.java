@@ -14,7 +14,7 @@ public class Game extends Application {
     public void start(Stage Game) {
 
         try {
-            Parent parentRoot = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Game.fxml"))); //connect fxml file with root
+            /*Parent parentRoot = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Game.fxml"))); //connect fxml file with root
             Scene scene = new Scene(parentRoot);        //set root to scene
             String css = Objects.requireNonNull(this.getClass().getResource("Game.css")).toExternalForm(); //connect css file to scene
             scene.getStylesheets().add(css);
@@ -24,7 +24,7 @@ public class Game extends Application {
             Game.setScene(scene);           //setscene to stage
 
 
-            Game.show();                    //show stage
+            Game.show();                    //show stage*/
             //made this comment just to push the code again
         }
         catch (Exception e) {
