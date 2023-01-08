@@ -26,7 +26,7 @@ public class HomeStage extends Application {
         String css = Objects.requireNonNull(this.getClass().getResource("HomeStage.css")).toExternalForm(); //connect css file to scene
         scene.getStylesheets().add(css);
         primaryStage.setTitle("HomeStage");     //title of window
-        primaryStage.setResizable(false);       //not resiazable
+        //primaryStage.setResizable(false);       //not resiazable
         primaryStage.setMaximized(true);       //fullscreen
         primaryStage.setScene(scene);           //setscene to stage
 

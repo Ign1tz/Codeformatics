@@ -4,15 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8cb06ce3-7bd6-454c-8ae6-6aebd864b1d2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="09c124d1-3ed0-4413-a70e-039465c4f822" name="Changes" comment="Moritz - changed pick question to being not as &quot;stiff&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/FrontEnd/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/FrontEnd/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/Files/EncodeDecode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/Files/EncodeDecode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/Files/GUI/InitQuestionInputController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/Files/GUI/InitQuestionInputController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/Files/GUI/WriteQuestionsGUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/Files/GUI/WriteQuestionsGUIController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/Files/QuizzInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/Files/QuizzInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/Files/readWriteQuestions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/Files/readWriteQuestions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/Files/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/Files/test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/FrontEnd/HomeStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/FrontEnd/HomeStage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/FrontEnd/SceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/FrontEnd/SceneController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/codeformaticsfx/FrontEnd/Game.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/codeformaticsfx/FrontEnd/Game.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/codeformaticsfx/FrontEnd/HomeStage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/codeformaticsfx/FrontEnd/HomeStage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/codeformaticsfx/Files/GUI/Question input.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/codeformaticsfx/Files/GUI/Question input.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/codeformaticsfx/Files/GUI/StartQuizzInput.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/codeformaticsfx/Files/GUI/StartQuizzInput.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,33 +27,241 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaFXApplication" />
+        <option value="Class" />
+        <option value="FxmlFile" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2K2pdZVnEpJ2yqq1FWbMb78RPpR" />
+  <component name="ProjectId" id="2Iu7LgsvZXPczn3SFyuE4oMqSFH" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Anna/IdeaProjects/Codeformatics/src/main/resources/com/example/codeformaticsfx&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.075414784&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.22803904&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.JavaFX&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Anna\IdeaProjects\Codeformatics\src\main\resources\com\example\codeformaticsfx" />
+      <recent name="C:\Users\Anna\IdeaProjects\Codeformatics\src\main\resources\FrontEnd.Settings" />
+      <recent name="S:\FH\Programieren\Codeformatics2\src\main\resources\com\example\codeformaticsfx" />
+      <recent name="S:\FH\Programieren\Codeformatics2\src\main\java\com\example\codeformaticsfx\Files" />
+      <recent name="S:\FH\Programieren\CodeformaticsFX\QuestionLibrary" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Anna\IdeaProjects\Codeformatics\src\main\resources\com\example\codeformaticsfx\FrontEnd" />
+      <recent name="C:\Users\Anna\IdeaProjects\Codeformatics\src\main\resources\com\example\codeformaticsfx" />
+      <recent name="C:\Users\Anna\IdeaProjects\Codeformatics\src\main\java\com\example\codeformaticsfx" />
+      <recent name="S:\FH\Programieren\Codeformatics2\GameResources" />
+      <recent name="S:\FH\Programieren\Codeformatics2\Scoreboards" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.example.codeformaticsfx.FrontEnd" />
+      <recent name="com.example.codeformaticsfx" />
+      <recent name="com.example.codeformaticsfx.Files" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.codeformaticsfx.Files.GUI" />
+      <recent name="com.example.codeformaticsfx.FIles" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.HomeStage">
+    <configuration name="Game" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.codeformaticsfx.FrontEnd.Game" />
+      <module name="CodeformaticsFX.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.codeformaticsfx.FrontEnd.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HomeStage" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.codeformaticsfx.FrontEnd.HomeStage" />
+      <module name="CodeformaticsFX.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.codeformaticsfx.FrontEnd.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SettingsStage" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.codeformaticsfx.FrontEnd.SettingsStage" />
+      <module name="CodeformaticsFX.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.codeformaticsfx.FrontEnd.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SettingsStage" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.codeformaticsfx.SettingsStage" />
+      <module name="CodeformaticsFX.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.codeformaticsfx.FrontEnd.Home.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WriteQuestionsGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.codeformaticsfx.Files.GUI.WriteQuestionsGUI" />
+      <module name="CodeformaticsFX.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.codeformaticsfx.Files.GUI.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.example.codeformaticsfx.FrontEnd.Home.HomeStage" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.codeformaticsfx.FrontEnd.Home.HomeStage" />
+      <module name="CodeformaticsFX.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.codeformaticsfx.FrontEnd.Home.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.HomeStage" />
+        <item itemvalue="Application.WriteQuestionsGUI" />
+        <item itemvalue="Application.Game" />
+        <item itemvalue="Application.com.example.codeformaticsfx.FrontEnd.Home.HomeStage" />
+        <item itemvalue="Application.SettingsStage" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="8cb06ce3-7bd6-454c-8ae6-6aebd864b1d2" name="Changes" comment="" />
-      <created>1673182627029</created>
+      <changelist id="09c124d1-3ed0-4413-a70e-039465c4f822" name="Changes" comment="" />
+      <created>1671019560188</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1673182627029</updated>
+      <updated>1671019560188</updated>
+      <workItem from="1671019561980" duration="5457000" />
+      <workItem from="1671127121427" duration="19816000" />
+      <workItem from="1671186417675" duration="474000" />
+      <workItem from="1671378824729" duration="12216000" />
+      <workItem from="1673124017660" duration="2730000" />
+      <workItem from="1673182354146" duration="4926000" />
     </task>
+    <task id="LOCAL-00001" summary="Init Commit, Moritz - read/write Questions, picking questions, write Scoreboard">
+      <created>1671021359258</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1671021359258</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Moritz - encode Quizz info">
+      <created>1671133471156</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1671133471156</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Moritz - encode Quizz info">
+      <created>1671133485933</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1671133485933</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Moritz - GUI for Question inputing">
+      <created>1671380470531</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1671380470531</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Moritz - GUI for Question inputing working with writig to file">
+      <created>1671392969158</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1671392969158</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Anna - set up GUI for HomeStage">
+      <created>1671974737185</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1671974737185</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Anna - HomeStage has now Buttons and a Title">
+      <created>1671993242735</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1671993242735</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Anna - Settings Stage is created with fxml file etc.">
+      <created>1672360888873</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1672360888873</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Moritz - changed pick question to being not as &quot;stiff&quot;">
+      <created>1672951765637</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1672951765637</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -62,5 +273,31 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Init Commit, Moritz - read/write Questions, picking questions, write Scoreboard" />
+    <MESSAGE value="Moritz - encode Quizz info" />
+    <MESSAGE value="Moritz - GUI for Question inputing" />
+    <MESSAGE value="Moritz - GUI for Question inputing working with writig to file" />
+    <MESSAGE value="Anna - set up GUI for HomeStage" />
+    <MESSAGE value="Anna - HomeStage has now Buttons and a Title" />
+    <MESSAGE value="Anna - Settings Stage is created with fxml file etc." />
+    <MESSAGE value="Moritz - changed pick question to being not as &quot;stiff&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Moritz - changed pick question to being not as &quot;stiff&quot;" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/Files/readWriteQuestions.java</url>
+          <line>51</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

@@ -22,21 +22,16 @@ public class WriteQuestionsGUIController implements Initializable {
     @FXML
     private TextField Question, A1, A2, A3, A4;
     @FXML
-    private Button finish, newQuestion;
-    @FXML
     private Label diff, error;
     @FXML
     private Slider diffSlider;
     @FXML
-    private ImageView test;
-    @FXML
     private CheckBox one, two, three, four;
     private String[] Diff =  {"Easy", "Medium", "Hard"};
     private String[] right =  {"Answer one", "Answer two", "Answer three", "Answer four"};
-    public String question, a1,a2,a3,a4,QuizzName, AuthorName, numberOfQuestions;
+    public String question, a1,a2,a3,a4;
     private Stage stage;
     private Scene scene;
-    private Parent root;
     public String difficulty, isRight;
     public static readWriteQuestions writeQuestions = new readWriteQuestions();
     private InitQuestionInputController initQuestion = new InitQuestionInputController();
@@ -137,8 +132,6 @@ public class WriteQuestionsGUIController implements Initializable {
             three.setDisable(false);
         }
     }
-
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         switch ((int) diffSlider.getValue()){
@@ -153,7 +146,6 @@ public class WriteQuestionsGUIController implements Initializable {
                 break;
         }
         diff.setText(difficulty);
-
         diffSlider.valueProperty().addListener(new ChangeListener<Number>() {
             @Override
             public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
