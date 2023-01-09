@@ -28,12 +28,12 @@
     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <Label fx:id="Label1" prefHeight="30.0" prefWidth="168.0" text="Not signed yet." GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="BASELINE">
+      <Label fx:id="Label1" prefHeight="30.0" prefWidth="168.0" text="Not signed yet." GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
          <font>
             <Font name="Arial Black" size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="myNameText" alignment="TOP_LEFT" prefHeight="20.0" prefWidth="150.0" promptText="Enter Name" text="Enter Name" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+      <TextField fx:id="myNameText" alignment="TOP_LEFT" prefHeight="15.0" prefWidth="298.0" promptText="Enter Name" text="Enter Name" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
       <Button fx:id="saveButton" mnemonicParsing="false" onAction="#submit" text="SAVE" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
          <font>
             <Font name="Arial Black" size="13.0" />
@@ -44,7 +44,7 @@
             <Font name="Arial Black" size="20.0" />
          </font>
          <effect>
-            <Glow />
+            <Glow level="1.0" />
          </effect>
       </Label>
       <Button fx:id="StartButton" mnemonicParsing="false" onAction="#switchStart" prefHeight="48.0" prefWidth="96.0" text="RETURN" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="BASELINE">
@@ -52,7 +52,7 @@
             <Font name="Arial Black" size="13.0" />
          </font>
       </Button>
-      <CheckBox fx:id="CheckBox" mnemonicParsing="false" text="OFF" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+      <CheckBox fx:id="CheckSound" mnemonicParsing="false" onAction="#SoundOnOFF" stylesheets="@SettingsStage.css" text="OFF" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
       <Label fx:id="Label2" text="TURN MUSIC ON/OFF" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="BASELINE" />
       <Slider GridPane.columnIndex="2" GridPane.rowIndex="3" />
       <Label fx:id="Label3" text="CHOOSE BACKGROUND" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="BASELINE" />
@@ -61,6 +61,6 @@
          <font>
             <Font name="Arial Black" size="12.0" />
          </font></Button>
-      <Label fx:id="LabelCharacters" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.valignment="BOTTOM" />
+      <Label fx:id="Label5" text="PLEASE ENTER YOUR NAME" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.valignment="BASELINE" />
    </children>
 </GridPane>

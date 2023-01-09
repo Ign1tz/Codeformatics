@@ -37,7 +37,7 @@ public class SceneController extends HomeStage {
     @FXML
     private Button OptionsButton;
     @FXML
-    private Label nameLabel;
+    private Label Label1;
     @FXML
     private Label Difficulty;
     @FXML
@@ -62,6 +62,11 @@ public class SceneController extends HomeStage {
     private CheckBox Answer2;
     @FXML
     private CheckBox Answer1;
+    @FXML
+    private Label LabelCharacters;
+    @FXML
+    private CheckBox CheckSound;
+
 
     String name;
 
@@ -205,17 +210,17 @@ public class SceneController extends HomeStage {
     }
 
 
-    public void submit(ActionEvent event) {
+    public void submit(ActionEvent event) throws IOException{
         try {
             name = myNameText.getText();
             System.out.println(name);
             if (name.length() >= 9) {
-                nameLabel.setText("Max. 8 characters ");    //usernames with more than 8 characters are not allowed
+                Label1.setText("Max. 8 characters ");    //usernames with more than 8 characters are not allowed
             } else {
-                nameLabel.setText("Welcome " + name + "!");
+                Label1.setText("Welcome " + name + "!");
             }
         } catch (Exception e) {
-            nameLabel.setText("error");
+            Label1.setText("error");
         }
     }
 
@@ -318,5 +323,11 @@ public class SceneController extends HomeStage {
         random = rand.nextInt(high) + low;
         return random;
     }
-
+    public void SoundOnOFF(ActionEvent event) {
+    if(CheckSound.isSelected()) {
+        CheckSound.setText("ON");
+    } else {
+        CheckSound.setText("OFF");
+    }
+    }
 }

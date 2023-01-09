@@ -29,7 +29,7 @@
 -fx-border-vidth: 3;
 }
 
-#Label2{
+#Label2 {
 -fx-text-fill:  #0097a7;
 -fx-font-weight: bold;
 -fx-font-size: 20px;
@@ -37,13 +37,32 @@
 }
 
 #Label1 {
--fx-effect: drop-shadow(gaussian , rgba(255,255,255,1) , 4,0,0,1 );
 -fx-font-size: 20px;
 -fx-text-fill:  #0097a7;
 -fx-font-weight: bold;
+-fx-effect: drop-shadow(gaussian , rgba(255,255,255,1) , 4,0,0,1 );
 }
 
+#Label3 {
+-fx-text-fill: #0097a7;
+-fx-font-size: 20px;
+-fx-font-weight: bold;
+-fx-effect: drop-shadow(gaussian , rgba(255,255,255,1) , 4,0,0,1 );
+}
 
+#Label4 {
+-fx-text-fill: #0097a7;
+-fx-font-size: 20px;
+-fx-font-weight: bold;
+-fx-effect: drop-shadow(gaussian , rgba(255,255,255,1) , 4,0,0,1 );
+}
+
+#Label5 {
+-fx-text-fill: #0097a7;
+-fx-font-size: 20px;
+-fx-font-weight: bold;
+-fx-effect: drop-shadow(gaussian , rgba(255,255,255,1) , 4,0,0,1 );
+}
 
 #myNameText {
 -fx-min-width: 40;
@@ -66,4 +85,11 @@
 -fx-min-width: 80;
 -fx-min-height: 40;
 -fx-text-size: 20px;
+}
+
+#CheckSound {
+x-text-fill: #0097a7;
+-fx-font-size: 12px;
+-fx-font-weight: bold;
+-fx-effect: drop-shadow(gaussian , rgba(255,255,255,1) , 6,0,0,1 );
 }

@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8cb06ce3-7bd6-454c-8ae6-6aebd864b1d2" name="Changes" comment="Anna - HomeStage Layout is done">
+    <list default="true" id="8cb06ce3-7bd6-454c-8ae6-6aebd864b1d2" name="Changes" comment="Anna - done stupid shit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Music/tubebackr - Silk .mp3" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/codeformaticsfx/tubebackr - Silk .mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/codeformaticsfx/FrontEnd/HomeStage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/codeformaticsfx/FrontEnd/HomeStage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/FrontEnd/SceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/FrontEnd/SceneController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/codeformaticsfx/FrontEnd/SettingsStage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/codeformaticsfx/FrontEnd/SettingsStage.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/codeformaticsfx/FrontEnd/SettingsStage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/codeformaticsfx/FrontEnd/SettingsStage.fxml" afterDir="false" />
     </list>
@@ -183,7 +182,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="09c124d1-3ed0-4413-a70e-039465c4f822" name="Changes" comment="" />
+      <changelist id="8cb06ce3-7bd6-454c-8ae6-6aebd864b1d2" name="Changes" comment="Anna - done stupid shit" />
       <created>1671019560188</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -258,7 +257,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672951765637</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Anna - done stupid shit">
+      <created>1673230039861</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1673230039862</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -284,7 +290,8 @@
     <MESSAGE value="Anna - HomeStage has now Buttons and a Title" />
     <MESSAGE value="Anna - Settings Stage is created with fxml file etc." />
     <MESSAGE value="Moritz - changed pick question to being not as &quot;stiff&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Moritz - changed pick question to being not as &quot;stiff&quot;" />
+    <MESSAGE value="Anna - done stupid shit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Anna - done stupid shit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
