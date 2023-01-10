@@ -7,8 +7,7 @@
     <list default="true" id="8cb06ce3-7bd6-454c-8ae6-6aebd864b1d2" name="Changes" comment="Anna - done stupid shit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/FrontEnd/SceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/FrontEnd/SceneController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/codeformaticsfx/FrontEnd/SettingsStage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/codeformaticsfx/FrontEnd/SettingsStage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/codeformaticsfx/FrontEnd/SettingsStage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/codeformaticsfx/FrontEnd/SettingsStage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/codeformaticsfx/FrontEnd/Game.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/codeformaticsfx/FrontEnd/Game.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +82,7 @@
       <recent name="com.example.codeformaticsfx.FIles" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.SettingsStage">
+  <component name="RunManager" selected="Application.SceneController">
     <configuration name="Game" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.codeformaticsfx.FrontEnd.Game" />
       <module name="CodeformaticsFX.main" />
@@ -110,8 +109,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SettingsStage" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.codeformaticsfx.FrontEnd.SettingsStage" />
+    <configuration name="SceneController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.codeformaticsfx.FrontEnd.SceneController" />
       <module name="CodeformaticsFX.main" />
       <extension name="coverage">
         <pattern>
@@ -149,12 +148,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="com.example.codeformaticsfx.FrontEnd.Home.HomeStage" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.codeformaticsfx.FrontEnd.Home.HomeStage" />
+    <configuration name="test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.codeformaticsfx.Files.test" />
       <module name="CodeformaticsFX.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.codeformaticsfx.FrontEnd.Home.*" />
+          <option name="PATTERN" value="com.example.codeformaticsfx.Files.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -163,19 +162,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.com.example.codeformaticsfx.FrontEnd.Home.HomeStage" />
+      <item itemvalue="Application.SettingsStage" />
+      <item itemvalue="Application.SceneController" />
+      <item itemvalue="Application.test" />
       <item itemvalue="Application.Game" />
       <item itemvalue="Application.HomeStage" />
-      <item itemvalue="Application.SettingsStage" />
       <item itemvalue="Application.WriteQuestionsGUI" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.SceneController" />
+        <item itemvalue="Application.test" />
         <item itemvalue="Application.HomeStage" />
         <item itemvalue="Application.WriteQuestionsGUI" />
         <item itemvalue="Application.Game" />
-        <item itemvalue="Application.com.example.codeformaticsfx.FrontEnd.Home.HomeStage" />
-        <item itemvalue="Application.SettingsStage" />
       </list>
     </recent_temporary>
   </component>

@@ -3,6 +3,7 @@ package com.example.codeformaticsfx.FrontEnd;
 import com.example.codeformaticsfx.Files.EncodeDecode;
 import com.example.codeformaticsfx.Files.QuizzInfo;
 import com.example.codeformaticsfx.Files.readWriteQuestions;
+import com.example.codeformaticsfx.Quizz.QuestionJoker;
 import com.example.codeformaticsfx.pickQuestions;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -16,6 +17,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 
@@ -94,6 +96,12 @@ public class SceneController extends HomeStage {
         if(selected == null){
 
         }else {
+            if (counterS == 1){
+                Answer1.setTextFill(Color.valueOf("white"));
+                Answer2.setTextFill(Color.valueOf("white"));
+                Answer3.setTextFill(Color.valueOf("white"));
+                Answer4.setTextFill(Color.valueOf("white"));
+            }
             StringBuilder finalScore = new StringBuilder(score);
             for(int nulls = 5; nulls > score.length(); nulls--){
                 finalScore.insert(0, "0");
@@ -329,5 +337,155 @@ public class SceneController extends HomeStage {
     } else {
         CheckSound.setText("OFF");
     }
+    }
+
+    int counterF;
+    QuestionJoker questionJoker = new QuestionJoker();
+
+    public void jokerF(ActionEvent actionEvent) {
+        if (counterF == 0) {
+
+            String A1=Answer1.getText();
+            String A2=Answer2.getText();
+            String A3=Answer3.getText();
+            String A4=Answer4.getText();
+            String rightAnswer = right;
+            int range=4;
+            questionJoker.jokerFiftyFifty(A1,A2,A3,A4,rightAnswer,range);
+
+
+            Answer1.setDisable(true);
+            Answer2.setDisable(true);
+            Answer3.setDisable(true);
+            Answer4.setDisable(true);
+
+            switch (questionJoker.getRightAnswer()){
+                case "A1":
+                    Answer1.setDisable(false);
+                    break;
+                case "A2":
+                    Answer2.setDisable(false);
+                    break;
+                case "A3":
+                    Answer3.setDisable(false);
+                    break;
+                case "A4":
+                    Answer4.setDisable(false);
+                    break;
+            }
+
+            switch (questionJoker.getRandomAnswer()){
+                case 1:
+                    Answer1.setDisable(false);
+                    break;
+                case 2:
+                    Answer2.setDisable(false);
+                    break;
+                case 3:
+                    Answer3.setDisable(false);
+                    break;
+                case 4:
+                    Answer4.setDisable(false);
+                    break;
+            }
+            counterF = 1;
+        }
+    }
+
+    int counterS;
+
+    public void jokerS(ActionEvent actionEvent) {
+        if (counterS == 0) {
+
+            Answer1.setDisable(true);
+            Answer2.setDisable(true);
+            Answer3.setDisable(true);
+            Answer4.setDisable(true);
+
+            String A1=Answer1.getText();
+            String A2=Answer2.getText();
+            String A3=Answer3.getText();
+            String A4=Answer4.getText();
+            String rightAnswer = right;
+            int range=4;
+            int border = questionJoker.jokerSeventyThirty(A1,A2,A3,A4,rightAnswer,range);
+
+            if (border <= 7){
+                switch (questionJoker.getRightAnswer()){
+                    case "A1":
+                        Answer1.setDisable(false);
+                        Answer1.setTextFill(Color.valueOf("green"));
+                        break;
+                    case "A2":
+                        Answer2.setDisable(false);
+                        Answer2.setTextFill(Color.valueOf("green"));
+                        break;
+                    case "A3":
+                        Answer3.setDisable(false);
+                        Answer3.setTextFill(Color.valueOf("green"));
+                        break;
+                    case "A4":
+                        Answer4.setDisable(false);
+                        Answer4.setTextFill(Color.valueOf("green"));
+                        break;
+                }
+                switch (questionJoker.getRandomAnswer()){
+                    case 1:
+                        Answer1.setDisable(false);
+                        Answer1.setTextFill(Color.valueOf("yellow"));
+                        break;
+                    case 2:
+                        Answer2.setDisable(false);
+                        Answer2.setTextFill(Color.valueOf("yellow"));
+                        break;
+                    case 3:
+                        Answer3.setDisable(false);
+                        Answer3.setTextFill(Color.valueOf("yellow"));
+                        break;
+                    case 4:
+                        Answer4.setDisable(false);
+                        Answer4.setTextFill(Color.valueOf("yellow"));
+                        break;
+                }
+            }else {
+                switch (questionJoker.getRightAnswer()){
+                    case "A1":
+                        Answer1.setDisable(false);
+                        Answer1.setTextFill(Color.valueOf("yellow"));
+                        break;
+                    case "A2":
+                        Answer2.setDisable(false);
+                        Answer2.setTextFill(Color.valueOf("yellow"));
+                        break;
+                    case "A3":
+                        Answer3.setDisable(false);
+                        Answer3.setTextFill(Color.valueOf("yellow"));
+                        break;
+                    case "A4":
+                        Answer4.setDisable(false);
+                        Answer4.setTextFill(Color.valueOf("yellow"));
+                        break;
+                }
+                switch (questionJoker.getRandomAnswer()){
+                    case 1:
+                        Answer1.setDisable(false);
+                        Answer1.setTextFill(Color.valueOf("green"));
+                        break;
+                    case 2:
+                        Answer2.setDisable(false);
+                        Answer2.setTextFill(Color.valueOf("green"));
+                        break;
+                    case 3:
+                        Answer3.setDisable(false);
+                        Answer3.setTextFill(Color.valueOf("green"));
+                        break;
+                    case 4:
+                        Answer4.setDisable(false);
+                        Answer4.setTextFill(Color.valueOf("green"));
+                        break;
+                }
+            }
+            counterS = 1;
+        }
     }
 }
