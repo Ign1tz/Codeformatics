@@ -28,7 +28,7 @@
     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <Label fx:id="Label1" prefHeight="30.0" prefWidth="168.0" text="Not signed yet." GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+      <Label fx:id="Label1" prefHeight="30.0" prefWidth="168.0" stylesheets="@SettingsStage.css" text="Not signed yet." GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
          <font>
             <Font name="Arial Black" size="14.0" />
          </font>
@@ -39,7 +39,7 @@
             <Font name="Arial Black" size="13.0" />
          </font>
       </Button>
-      <Label fx:id="SettingsLabel" text="SETTINGS" GridPane.columnIndex="2" GridPane.halignment="CENTER">
+      <Label fx:id="SettingsLabel" stylesheets="@SettingsStage.css" text="SETTINGS" GridPane.columnIndex="2" GridPane.halignment="CENTER">
          <font>
             <Font name="Arial Black" size="20.0" />
          </font>
@@ -52,11 +52,11 @@
             <Font name="Arial Black" size="13.0" />
          </font>
       </Button>
-      <CheckBox fx:id="CheckSound" mnemonicParsing="false" onAction="#SoundOnOFF" stylesheets="@SettingsStage.css" text="OFF" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-      <Label fx:id="Label2" text="TURN MUSIC ON/OFF" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="BASELINE" />
+      <CheckBox fx:id="CheckSound" mnemonicParsing="false" onAction="#SoundOnOFF" stylesheets="@SettingsStage.css" text="OFF" textFill="#0097a7" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+      <Label fx:id="Label2" stylesheets="@SettingsStage.css" text="TURN MUSIC ON/OFF" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="BASELINE" />
       <Slider GridPane.columnIndex="2" GridPane.rowIndex="3" />
-      <Label fx:id="Label3" text="CHOOSE BACKGROUND" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="BASELINE" />
-      <Label fx:id="Label4" text="CREATE QUIZ" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="BASELINE" />
+      <Label fx:id="Label3" stylesheets="@SettingsStage.css" text="CHOOSE BACKGROUND" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="BASELINE" />
+      <Label fx:id="Label4" stylesheets="@SettingsStage.css" text="CREATE QUIZ" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="BASELINE" />
       <Button mnemonicParsing="false" text="QUIZ" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
          <font>
             <Font name="Arial Black" size="12.0" />

@@ -9,7 +9,7 @@
 -fx-text-fill: #e91e63;
 -fx-min-width: 80;
 -fx-min-height: 40;
--fx-text-size: 20px
+-fx-text-size: 20px;
 }
 
 .button:hover {
