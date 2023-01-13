@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+    <list default="true" id="09c124d1-3ed0-4413-a70e-039465c4f822" name="Changes" comment="Moritz - Stuff to long to explain">
     <list default="true" id="8cb06ce3-7bd6-454c-8ae6-6aebd864b1d2" name="Changes" comment="Anna - SceneController hat eine Struktur bekommen">
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/FrontEnd/AudioClip.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/FrontEnd/SceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/FrontEnd/SceneController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/FrontEnd/SettingsStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/FrontEnd/SettingsStage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/codeformaticsfx/FrontEnd/SettingsStage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/codeformaticsfx/FrontEnd/SettingsStage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/codeformaticsfx/FrontEnd/SettingsStage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/codeformaticsfx/FrontEnd/SettingsStage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/codeformaticsfx/tubebackr - Silk .mp3" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/codeformaticsfx/music.1.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/codeformaticsfx/FrontEnd/Game.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/codeformaticsfx/FrontEnd/Game.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,8 +25,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaFXApplication" />
-        <option value="FxmlFile" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -62,9 +60,6 @@
   }
 }</component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.example.codeformaticsfx.FrontEnd" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Anna\IdeaProjects\Codeformatics\src\main\resources\com\example\codeformaticsfx" />
       <recent name="C:\Users\Anna\IdeaProjects\Codeformatics\src\main\resources\FrontEnd.Settings" />
@@ -73,8 +68,8 @@
       <recent name="S:\FH\Programieren\CodeformaticsFX\QuestionLibrary" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Anna\IdeaProjects\Codeformatics\src\main\resources\com\example\codeformaticsfx" />
       <recent name="C:\Users\Anna\IdeaProjects\Codeformatics\src\main\resources\com\example\codeformaticsfx\FrontEnd" />
+      <recent name="C:\Users\Anna\IdeaProjects\Codeformatics\src\main\resources\com\example\codeformaticsfx" />
       <recent name="C:\Users\Anna\IdeaProjects\Codeformatics\src\main\java\com\example\codeformaticsfx" />
       <recent name="S:\FH\Programieren\Codeformatics2\GameResources" />
       <recent name="S:\FH\Programieren\Codeformatics2\Scoreboards" />
@@ -89,7 +84,7 @@
       <recent name="com.example.codeformaticsfx.FIles" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.SettingsStage">
+  <component name="RunManager" selected="Application.SceneController">
     <configuration name="Game" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.codeformaticsfx.FrontEnd.Game" />
       <module name="CodeformaticsFX.main" />
@@ -116,8 +111,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SettingsStage" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.codeformaticsfx.FrontEnd.SettingsStage" />
+    <configuration name="SceneController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.codeformaticsfx.FrontEnd.SceneController" />
       <module name="CodeformaticsFX.main" />
       <extension name="coverage">
         <pattern>
@@ -155,12 +150,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="com.example.codeformaticsfx.FrontEnd.Home.HomeStage" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.codeformaticsfx.FrontEnd.Home.HomeStage" />
+    <configuration name="test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.codeformaticsfx.Files.test" />
       <module name="CodeformaticsFX.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.codeformaticsfx.FrontEnd.Home.*" />
+          <option name="PATTERN" value="com.example.codeformaticsfx.Files.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -177,9 +172,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.SceneController" />
         <item itemvalue="Application.HomeStage" />
         <item itemvalue="Application.WriteQuestionsGUI" />
         <item itemvalue="Application.Game" />
+        <item itemvalue="Application.com.example.codeformaticsfx.FrontEnd.Home.HomeStage" />
         <item itemvalue="Application.com.example.codeformaticsfx.FrontEnd.Home.HomeStage" />
         <item itemvalue="Application.SettingsStage" />
       </list>
@@ -270,14 +267,7 @@
       <option name="project" value="LOCAL" />
       <updated>1673230039862</updated>
     </task>
-    <task id="LOCAL-00011" summary="Anna - SceneController hat eine Struktur bekommen">
-      <created>1673633102147</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1673633102147</updated>
-    </task>
-    <option name="localTasksCounter" value="12" />
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -303,6 +293,7 @@
     <MESSAGE value="Anna - HomeStage has now Buttons and a Title" />
     <MESSAGE value="Anna - Settings Stage is created with fxml file etc." />
     <MESSAGE value="Moritz - changed pick question to being not as &quot;stiff&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Moritz - changed pick question to being not as &quot;stiff&quot;" />
     <MESSAGE value="Anna - done stupid shit" />
     <MESSAGE value="Anna - SceneController hat eine Struktur bekommen" />
     <option name="LAST_COMMIT_MESSAGE" value="Anna - SceneController hat eine Struktur bekommen" />

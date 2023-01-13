@@ -27,7 +27,7 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <Button fx:id="Return" contentDisplay="CENTER" layoutX="94.0" layoutY="200.0" mnemonicParsing="false" onAction="#Return" prefHeight="26.0" prefWidth="217.2" stylesheets="@Game.css" text="Return" textAlignment="CENTER" textFill="#e91e63" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="BOTTOM" />
+      <Button fx:id="Return" contentDisplay="CENTER" layoutX="94.0" layoutY="200.0" mnemonicParsing="false" onAction="#Exit" prefHeight="26.0" prefWidth="217.2" stylesheets="@Game.css" text="Return" textAlignment="CENTER" textFill="#e91e63" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="BOTTOM" />
       <Label fx:id="Questions1" alignment="CENTER" contentDisplay="CENTER" ellipsisString="" prefHeight="47.0" prefWidth="1000.0" stylesheets="@Game.css" text="Your Score" textAlignment="CENTER" textFill="#e91e63" textOverrun="CENTER_ELLIPSIS" GridPane.columnIndex="2" GridPane.rowIndex="2" GridPane.valignment="BASELINE">
          <font>
             <Font name="System Bold" size="18.0" />

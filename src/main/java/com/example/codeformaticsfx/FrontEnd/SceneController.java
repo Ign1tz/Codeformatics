@@ -215,7 +215,6 @@ public class SceneController extends HomeStage {
     }
 
     public void Exit(ActionEvent event) throws IOException {
-
         FXMLLoader loader = new FXMLLoader(getClass().getResource("HomeStage.fxml"));
         Parent root = loader.load();
         SceneController controller = loader.getController();
