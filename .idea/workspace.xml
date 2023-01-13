@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8cb06ce3-7bd6-454c-8ae6-6aebd864b1d2" name="Changes" comment="Anna - kurz vorm nervenzusammenbruch, habe gerettet, was zum retten war">
+    <list default="true" id="8cb06ce3-7bd6-454c-8ae6-6aebd864b1d2" name="Changes" comment="Anna - SceneController hat eine Struktur bekommen">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/FrontEnd/AudioClip.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/FrontEnd/SceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/FrontEnd/SceneController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/codeformaticsfx/FrontEnd/HomeStage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/codeformaticsfx/FrontEnd/HomeStage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/FrontEnd/SettingsStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codeformaticsfx/FrontEnd/SettingsStage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/codeformaticsfx/FrontEnd/SettingsStage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/codeformaticsfx/FrontEnd/SettingsStage.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/codeformaticsfx/FrontEnd/SettingsStage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/codeformaticsfx/FrontEnd/SettingsStage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/codeformaticsfx/tubebackr - Silk .mp3" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/codeformaticsfx/music.1.mp3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,8 +27,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaFXApplication" />
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -60,6 +62,9 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.example.codeformaticsfx.FrontEnd" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Anna\IdeaProjects\Codeformatics\src\main\resources\com\example\codeformaticsfx" />
       <recent name="C:\Users\Anna\IdeaProjects\Codeformatics\src\main\resources\FrontEnd.Settings" />
@@ -68,8 +73,8 @@
       <recent name="S:\FH\Programieren\CodeformaticsFX\QuestionLibrary" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Anna\IdeaProjects\Codeformatics\src\main\resources\com\example\codeformaticsfx\FrontEnd" />
       <recent name="C:\Users\Anna\IdeaProjects\Codeformatics\src\main\resources\com\example\codeformaticsfx" />
+      <recent name="C:\Users\Anna\IdeaProjects\Codeformatics\src\main\resources\com\example\codeformaticsfx\FrontEnd" />
       <recent name="C:\Users\Anna\IdeaProjects\Codeformatics\src\main\java\com\example\codeformaticsfx" />
       <recent name="S:\FH\Programieren\Codeformatics2\GameResources" />
       <recent name="S:\FH\Programieren\Codeformatics2\Scoreboards" />
@@ -265,7 +270,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673230039862</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Anna - SceneController hat eine Struktur bekommen">
+      <created>1673633102147</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1673633102147</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -292,7 +304,8 @@
     <MESSAGE value="Anna - Settings Stage is created with fxml file etc." />
     <MESSAGE value="Moritz - changed pick question to being not as &quot;stiff&quot;" />
     <MESSAGE value="Anna - done stupid shit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Anna - done stupid shit" />
+    <MESSAGE value="Anna - SceneController hat eine Struktur bekommen" />
+    <option name="LAST_COMMIT_MESSAGE" value="Anna - SceneController hat eine Struktur bekommen" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -11,17 +11,17 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 
 import java.io.IOException;
+import java.nio.file.Paths;
 import java.util.List;
 import java.util.Objects;
 import java.util.Random;
@@ -67,6 +67,8 @@ public class SceneController extends HomeStage {
     private Label LabelCharacters;
     @FXML
     private CheckBox CheckSound;
+    @FXML
+    private Slider sliderSettings;
     //FXML USAGE END
 
     //VARIABLES START
@@ -116,6 +118,11 @@ public class SceneController extends HomeStage {
             CheckSound.setText("ON");
         } else {
             CheckSound.setText("OFF");
+        }
+    }
+    public void BackgroundChange(ActionEvent event) {
+        if (sliderSettings.getValue() == 0) {
+           // BackgroundImage myImage = new BackgroundImage(new Image("Background.quiz.jpg"));
         }
     }
     //SETTINGS END

@@ -28,40 +28,34 @@
 -fx-border-radius: 35;
 -fx-border-vidth: 3;
 }
+#Label1 {
+-fx-font-size: 15px;
+-fx-text-fill:  #0097a7;
+-fx-font-weight: bold;
+}
 
 #Label2 {
 -fx-text-fill:  #0097a7;
 -fx-font-weight: bold;
 -fx-font-size: 20px;
--fx-effect: drop-shadow(gaussian , rgba(255,255,255,1) , 4,0,0,1 );
-}
-
-#Label1 {
--fx-font-size: 20px;
--fx-text-fill:  #0097a7;
--fx-font-weight: bold;
--fx-effect: drop-shadow(gaussian , rgba(255,255,255,1) , 4,0,0,1 );
 }
 
 #Label3 {
 -fx-text-fill: #0097a7;
 -fx-font-size: 20px;
 -fx-font-weight: bold;
--fx-effect: drop-shadow(gaussian , rgba(255,255,255,1) , 4,0,0,1 );
 }
 
 #Label4 {
 -fx-text-fill: #0097a7;
 -fx-font-size: 20px;
 -fx-font-weight: bold;
--fx-effect: drop-shadow(gaussian , rgba(255,255,255,1) , 4,0,0,1 );
 }
 
 #Label5 {
 -fx-text-fill: #0097a7;
 -fx-font-size: 20px;
 -fx-font-weight: bold;
--fx-effect: drop-shadow(gaussian , rgba(255,255,255,1) , 4,0,0,1 );
 }
 
 #myNameText {
@@ -78,7 +72,6 @@
 -fx-text-fill: #0097a7;
 -fx-font-size: 60px;
 -fx-font-weight: bold;
--fx-effect: drop-shadow(gaussian , rgba(255,255,255,1) , 6,0,0,1 );
 }
 
 #StartButton {
@@ -91,5 +84,4 @@
 x-text-fill: #0097a7;
 -fx-font-size: 12px;
 -fx-font-weight: bold;
--fx-effect: drop-shadow(gaussian , rgba(255,255,255,1) , 6,0,0,1 );
 }
