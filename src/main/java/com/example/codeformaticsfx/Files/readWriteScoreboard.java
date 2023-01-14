@@ -57,11 +57,11 @@ public class readWriteScoreboard {
             newPlayer = new readWriteScoreboard(encodeDecode.encodedName, encodeDecode.encodedScore, encodeDecode.encodedTIS);
             String tempScore = encodeDecode.decodeSingle(tempScoreboard.get(place).score);
             String tempTISS = encodeDecode.decodeSingle(tempScoreboard.get(place).tis);
-            if(Double.valueOf(tempScore)  < Double.valueOf(newPlayer.score)){
+            if(Double.valueOf(tempScore)  < Double.valueOf(encodeDecode.decodeSingle(newPlayer.score))){
                 tempScoreboard.add(place, newPlayer);
                 wasAdded = true;
                 break;
-            } else if (Double.valueOf(tempScore).equals(Double.valueOf(newPlayer.score))) {
+            } else if (Double.valueOf(tempScore).equals(Double.valueOf(encodeDecode.decodeSingle(newPlayer.score)))) {
                 if(Double.valueOf(tempTISS) > Double.valueOf(newPlayer.tis)) {
                     tempScoreboard.add(place, newPlayer);
                     wasAdded = true;

@@ -370,6 +370,10 @@ public class SceneController extends HomeStage {
             Answer2.setDisable(true);
             Answer3.setDisable(true);
             Answer4.setDisable(true);
+            Answer1.setSelected(false); //removes Selection of (possible) wrong awnser resulting in the possible selection of multiple awnsers
+            Answer2.setSelected(false);
+            Answer3.setSelected(false);
+            Answer4.setSelected(false);
 
             switch (questionJoker.getRightAnswer()){
                 case "A1":
@@ -413,6 +417,10 @@ public class SceneController extends HomeStage {
             Answer2.setDisable(true);
             Answer3.setDisable(true);
             Answer4.setDisable(true);
+            Answer1.setSelected(false); //removes Selection of (possible) wrong awnser resulting in the possible selection of multiple awnsers
+            Answer2.setSelected(false);
+            Answer3.setSelected(false);
+            Answer4.setSelected(false);
 
             String A1=Answer1.getText();
             String A2=Answer2.getText();
