@@ -1,0 +1,87 @@
+.root{
+-fx-background-image:url("Background.quiz.jpg");
+-fx-background-size: cover;
+}
+
+.button {
+-fx-background-color: #0097a7;
+-fx-background-radius: 30;
+-fx-text-fill: #e91e63;
+-fx-min-width: 80;
+-fx-min-height: 40;
+-fx-text-size: 20px;
+}
+
+.button:hover {
+-fx-background-color: #00acc1;
+-fx-background-radius: 30;
+-fx-border-color: #0097a7;
+-fx-border-radius: 35;
+-fx-border-vidth: 3;
+-fx-effect: dropshadow( gaussian , rgba(255,255,255,1) , 6,0,0,1 );
+}
+
+.button:pressed {
+-fx-background-color: #0097a7;
+-fx-background-radius: 30;
+-fx-border-color: #0097a7;
+-fx-border-radius: 35;
+-fx-border-vidth: 3;
+}
+#Label1 {
+-fx-font-size: 15px;
+-fx-text-fill:  #0097a7;
+-fx-font-weight: bold;
+}
+
+#Label2 {
+-fx-text-fill:  #0097a7;
+-fx-font-weight: bold;
+-fx-font-size: 20px;
+}
+
+#Label3 {
+-fx-text-fill: #0097a7;
+-fx-font-size: 20px;
+-fx-font-weight: bold;
+}
+
+#Label4 {
+-fx-text-fill: #0097a7;
+-fx-font-size: 20px;
+-fx-font-weight: bold;
+}
+
+#Label5 {
+-fx-text-fill: #0097a7;
+-fx-font-size: 20px;
+-fx-font-weight: bold;
+}
+
+#myNameText {
+-fx-min-width: 40;
+-fx-min-height: 27;
+}
+
+#saveButton {
+-fx-min-width: 60;
+-fx-min-height: 27;
+}
+
+#SettingsLabel {
+-fx-text-fill: #0097a7;
+-fx-font-size: 60px;
+-fx-font-weight: bold;
+}
+
+#StartButton {
+-fx-min-width: 80;
+-fx-min-height: 40;
+-fx-text-size: 20px;
+}
+
+#CheckSound {
+x-text-fill: #0097a7;
+-fx-font-size: 12px;
+-fx-font-weight: bold;
+}
