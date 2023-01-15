@@ -75,7 +75,7 @@ public class SceneController extends HomeStage {
     //FXML USAGE END
 
     //VARIABLES START
-    String name;
+    static String name;
     private Stage primaryStage;
     static List<Integer> diffList;
     static List<Integer> easy;
@@ -85,6 +85,8 @@ public class SceneController extends HomeStage {
     static List<readWriteQuestions> questionsList;
     static String selected, right, numberOfQuestions;
     static String score = "00000";
+    static String path = "./GameResources/Scoreboards/Scoreboard.json";
+    static boolean nameGiven = false;
     //VARIABLES END
 
     //METHODS START
@@ -105,6 +107,7 @@ public class SceneController extends HomeStage {
                 Label1.setText("Max. 8 characters ");    //usernames with more than 8 characters are not allowed
             } else {
                 Label1.setText("Welcome " + name + "!");
+                nameGiven = true;
             }
         } catch (Exception e) {
             Label1.setText("error");
@@ -223,13 +226,15 @@ public class SceneController extends HomeStage {
         SceneController controller = loader.getController();
         Scene scene = ((Node) event.getSource()).getScene();
         scene.setRoot(root);
+        score = "0";
     }
 
     public void toScoreboard(ActionEvent event) throws IOException {
-        int wait = 0;
         readWriteScoreboard rwS = new readWriteScoreboard();
         if(!Objects.equals(name,null)) {
-            name = nameScoreboard.getText();
+            if(!nameGiven) {
+                name = nameScoreboard.getText();
+            }
             rwS.writeToScoreboard(name, score, String.valueOf(1));
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Scoreboard.fxml"));
             Parent root = loader.load();
@@ -242,7 +247,7 @@ public class SceneController extends HomeStage {
             try {
                 name = nameScoreboard.getText();
                 if (name.length() >= 9) {
-                    scoreboardLabel.setText("Username not accepted");    //usernames with more than 8 characters are not allowed
+                    scoreboardLabel.setText("Username not accepted");
                 }
             } catch (Exception e) {
                 scoreboardLabel.setText("error");
@@ -303,6 +308,7 @@ public class SceneController extends HomeStage {
                     hard.remove(random);
                     break;
             }
+            selected = null;
             Questions.setText(thisQuestion);
             Answer1.setText(eD.decodeSingle(temp.A1));
             Answer2.setText(eD.decodeSingle(temp.A2));

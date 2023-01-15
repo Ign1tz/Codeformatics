@@ -68,7 +68,7 @@ public class readWriteScoreboard {
                 wasAdded = true;
                 break;
             } else if (Double.valueOf(tempScore).equals(Double.valueOf(encodeDecode.decodeSingle(newPlayer.score)))) {
-                if(Double.valueOf(tempTISS) > Double.valueOf(newPlayer.tis)) {
+                if(Double.valueOf(tempTISS) > Double.valueOf(encodeDecode.decodeSingle(newPlayer.tis))) {
                     tempScoreboard.add(place, newPlayer);
                     wasAdded = true;
                     break;
@@ -100,7 +100,7 @@ public class readWriteScoreboard {
             Files.createFile(Path.of("./GameResources/Scoreboards/Scoreboard.json"));
         }
         readWriteScoreboard temp = new readWriteScoreboard();
-        System.out.print(temp.scoreboard());
+        //System.out.print(temp.scoreboard());
         //temp.writeToScoreboard();
     }
 }

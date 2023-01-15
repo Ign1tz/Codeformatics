@@ -40,9 +40,9 @@ public class ScoreboardController {
 
     @FXML
     private void next(ActionEvent event) throws IOException {
-            name1.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).name));
-            place1.setText(String.valueOf(count + 1));
-            points1.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).score));
+        name1.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).name));
+        place1.setText(String.valueOf(count + 1));
+        points1.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).score));
         count++;
         if (encodedScoreboard.size() > count) {
             name2.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).name));
@@ -144,7 +144,7 @@ public class ScoreboardController {
 
     public void previous(ActionEvent event) {
         //count -= 10; //--- Caused by: java.lang.IndexOutOfBoundsException: Index -21 out of bounds for length 5
-        count -= 10;
+        count -= 20;
         name1.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).name));
         place1.setText(String.valueOf(count + 1));
         points1.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).score));
@@ -287,6 +287,7 @@ public class ScoreboardController {
             place10.setText("");
             points10.setText("");
         }
+        count++;
         prev.setOpacity(0);
         prev.setDisable(true);
         if (count >= encodedScoreboard.size()) {
@@ -296,6 +297,7 @@ public class ScoreboardController {
     }
 
     public void Exit(ActionEvent event) throws IOException {
+        count = 0;
         FXMLLoader loader = new FXMLLoader(getClass().getResource("HomeStage.fxml"));
         Parent root = loader.load();
         SceneController controller = loader.getController();
