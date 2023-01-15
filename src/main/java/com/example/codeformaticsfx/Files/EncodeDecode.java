@@ -78,4 +78,8 @@ public class EncodeDecode { //this class is just for encoding and decoding strin
         byte[] dTemp = Base64.getDecoder().decode(temp);
         return new String(dTemp);
     }
+    public String encodeSinge(String temp){
+        byte[] eTemp = Base64.getEncoder().encode(temp.getBytes());
+        return new String(eTemp);
+    }
 }

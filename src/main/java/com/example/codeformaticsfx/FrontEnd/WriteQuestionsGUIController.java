@@ -1,4 +1,4 @@
-package com.example.codeformaticsfx.Files.GUI;
+package com.example.codeformaticsfx.FrontEnd;
 
 import com.example.codeformaticsfx.Files.readWriteQuestions;
 import javafx.beans.value.*;
@@ -57,9 +57,11 @@ public class WriteQuestionsGUIController implements Initializable {
             a3 = A3.getText();
             a4 = A4.getText();
             writeQuestions.writeQuestions(question,a1,a2,a3,a4,difficulty,isRight);
-            Parent fxmlLoader = FXMLLoader.load(getClass().getResource("Question input.fxml"));
+            Parent fxmlLoader = FXMLLoader.load(getClass().getResource("QuestionInput.fxml"));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(fxmlLoader);
+            stage.setTitle("Input Questions");
+            stage.setMaximized(true);
             stage.setScene(scene);
             stage.show();
         }

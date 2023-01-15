@@ -1,4 +1,4 @@
-package com.example.codeformaticsfx.Files.GUI;
+package com.example.codeformaticsfx.FrontEnd;
 
 import com.example.codeformaticsfx.Files.readWriteQuestions;
 import javafx.event.ActionEvent;
@@ -33,6 +33,8 @@ public class InitQuestionInputController {
                 Parent fxmlLoader = FXMLLoader.load(getClass().getResource("FinishedQuizz.fxml"));
                 stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 scene = new Scene(fxmlLoader);
+                stage.setTitle("Question Info");
+                stage.setMaximized(true);
                 stage.setScene(scene);
                 stage.show();
             } catch (NumberFormatException nfe){

@@ -35,26 +35,32 @@ public class readWriteScoreboard {
         ScoreboardInfo scoreboardListTemp = fromFile("./GameResources/Scoreboards/Scoreboard.json");
         return scoreboardListTemp;
     }
-    public void writeToScoreboard() throws IOException {
+    public void writeToScoreboard(String currentName, String currentScore, String currentTIS) throws IOException {
         EncodeDecode encodeDecode = new EncodeDecode();
         boolean wasAdded = false;
-        Scanner scan = new Scanner(System.in);
+        /*Scanner scan = new Scanner(System.in);
         System.out.print("name: ");
         String currentName = scan.nextLine();
         System.out.print("Score: ");
         String currentScore = scan.nextLine();
         System.out.print("Time: ");
-        String  currentTIS = scan.nextLine();
+        String  currentTIS = scan.nextLine();*/
         List<readWriteScoreboard> tempScoreboard = new ArrayList<>();
         List<readWriteScoreboard> tempList = scoreboard().scoreboard;
         if(tempList != null){
             tempScoreboard = scoreboard().scoreboard;
+        }else {
+            readWriteScoreboard newPlayer = new readWriteScoreboard(encodeDecode.encodeSinge(currentName), encodeDecode.encodeSinge(currentScore), encodeDecode.encodeSinge(currentTIS));
+            tempScoreboard.add(newPlayer);
+            ScoreboardInfo sI = new ScoreboardInfo("java", tempScoreboard);
+            Writer writer = Files.newBufferedWriter(Paths.get("./GameResources/Scoreboards/Scoreboard.json"));
+            gson.toJson(sI, writer);
+            writer.close();
+            return;
         }
         System.out.println(tempScoreboard);
-        readWriteScoreboard newPlayer = new readWriteScoreboard(currentName, currentScore, currentTIS);
+        readWriteScoreboard newPlayer = new readWriteScoreboard(encodeDecode.encodeSinge(currentName), encodeDecode.encodeSinge(currentScore), encodeDecode.encodeSinge(currentTIS));
         for(int place = 0; place < tempScoreboard.size(); place++){
-            encodeDecode.encodeScoreboardBase64(currentName, currentScore, currentTIS);
-            newPlayer = new readWriteScoreboard(encodeDecode.encodedName, encodeDecode.encodedScore, encodeDecode.encodedTIS);
             String tempScore = encodeDecode.decodeSingle(tempScoreboard.get(place).score);
             String tempTISS = encodeDecode.decodeSingle(tempScoreboard.get(place).tis);
             if(Double.valueOf(tempScore)  < Double.valueOf(encodeDecode.decodeSingle(newPlayer.score))){
@@ -95,6 +101,6 @@ public class readWriteScoreboard {
         }
         readWriteScoreboard temp = new readWriteScoreboard();
         System.out.print(temp.scoreboard());
-        temp.writeToScoreboard();
+        //temp.writeToScoreboard();
     }
 }

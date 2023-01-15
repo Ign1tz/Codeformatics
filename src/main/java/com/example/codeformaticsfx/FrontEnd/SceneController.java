@@ -3,6 +3,7 @@ package com.example.codeformaticsfx.FrontEnd;
 import com.example.codeformaticsfx.Files.EncodeDecode;
 import com.example.codeformaticsfx.Files.QuizzInfo;
 import com.example.codeformaticsfx.Files.readWriteQuestions;
+import com.example.codeformaticsfx.Files.readWriteScoreboard;
 import com.example.codeformaticsfx.Quizz.QuestionJoker;
 import com.example.codeformaticsfx.pickQuestions;
 import javafx.event.ActionEvent;
@@ -38,7 +39,7 @@ public class SceneController extends HomeStage {
     @FXML
     private Button OptionsButton;
     @FXML
-    private Label Label1;
+    private Label Label1, scoreboardLabel;
     @FXML
     private Label Difficulty;
     @FXML
@@ -69,6 +70,8 @@ public class SceneController extends HomeStage {
     private CheckBox CheckSound;
     @FXML
     private Slider sliderSettings;
+    @FXML
+    private TextField nameScoreboard;
     //FXML USAGE END
 
     //VARIABLES START
@@ -220,6 +223,32 @@ public class SceneController extends HomeStage {
         SceneController controller = loader.getController();
         Scene scene = ((Node) event.getSource()).getScene();
         scene.setRoot(root);
+    }
+
+    public void toScoreboard(ActionEvent event) throws IOException {
+        int wait = 0;
+        readWriteScoreboard rwS = new readWriteScoreboard();
+        if(!Objects.equals(name,null)) {
+            name = nameScoreboard.getText();
+            rwS.writeToScoreboard(name, score, String.valueOf(1));
+            Parent fxmlLoader = FXMLLoader.load(getClass().getResource("Scoreboard.fxml"));
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            scene = new Scene(fxmlLoader);
+            stage.setScene(scene);
+            stage.show();
+        } else{
+            nameScoreboard.setOpacity(1);
+            nameScoreboard.setDisable(false);
+            scoreboardLabel.setOpacity(1);
+            try {
+                name = nameScoreboard.getText();
+                if (name.length() >= 9) {
+                    scoreboardLabel.setText("Username not accepted");    //usernames with more than 8 characters are not allowed
+                }
+            } catch (Exception e) {
+                scoreboardLabel.setText("error");
+            }
+        }
     }
 
     //QUESTIONS LOGIC
@@ -507,6 +536,16 @@ public class SceneController extends HomeStage {
             }
             counterS = 1;
         }
+    }
+
+    public void createQuizz(ActionEvent event) throws IOException {
+        Parent fxmlLoader = FXMLLoader.load(getClass().getResource("QuestionInput.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(fxmlLoader);
+        stage.setTitle("Input Questions");
+        stage.setMaximized(true);
+        stage.setScene(scene);
+        stage.show();
     }
     //HOMESTAGE END
 }

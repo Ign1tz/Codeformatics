@@ -17,12 +17,13 @@ import java.util.Objects;
 import static javafx.application.Application.launch;
 
 public class Scoreboard extends Application{
+
     @FXML
-    private Label place;
+    private Label place1, place2, place3, place4, place5;
     @FXML
-    private Label name;
+    private Label name1, name2, name3, name4, name5;
     @FXML
-    private Label points;
+    private Label points1, points2, points3, points4, points5;
     public Scoreboard() throws IOException {}
     readWriteScoreboard scoreboard = new readWriteScoreboard();
     EncodeDecode encodeDecode = new EncodeDecode();
@@ -32,26 +33,8 @@ public class Scoreboard extends Application{
     public void start(Stage stage) throws IOException {
         Parent parentRoot = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Scoreboard.fxml")));
         Scene scene = new Scene(parentRoot);
-        int yPlace = 114, addY = 40;
-        for(int count = 0; count < encodedScoreboard.size(); count++){
-            String nameCurrent = encodeDecode.decodeSingle(encodedScoreboard.get(count).name);
-            String score = encodeDecode.decodeSingle(encodedScoreboard.get(count).score);
-            String tis = encodeDecode.decodeSingle(encodedScoreboard.get(count).tis);
-            if(count == 0) {
-                place = new Label(String.valueOf(count + 1));
-                name = new Label(nameCurrent);
-                points = new Label(score);
-            } else {
-                Label placement = new Label(String.valueOf(count + 1));
-                Label Name = new Label(nameCurrent);
-                Label Score = new Label(score);
-                placement.relocate(105.0, yPlace + addY);
-                Name.relocate(202.0, yPlace + addY);
-                Score.relocate(444, yPlace + addY);
-            }
-            addY = addY + 40;
-        }
-        stage.setTitle("Hello!");
+        stage.setTitle("Scoreboard");
+        stage.setMaximized(true);
         stage.setScene(scene);
         stage.show();
     }
