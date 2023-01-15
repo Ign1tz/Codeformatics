@@ -231,11 +231,10 @@ public class SceneController extends HomeStage {
         if(!Objects.equals(name,null)) {
             name = nameScoreboard.getText();
             rwS.writeToScoreboard(name, score, String.valueOf(1));
-            Parent fxmlLoader = FXMLLoader.load(getClass().getResource("Scoreboard.fxml"));
-            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            scene = new Scene(fxmlLoader);
-            stage.setScene(scene);
-            stage.show();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Scoreboard.fxml"));
+            Parent root = loader.load();
+            Scene scene = ((Node) event.getSource()).getScene();
+            scene.setRoot(root);
         } else{
             nameScoreboard.setOpacity(1);
             nameScoreboard.setDisable(false);

@@ -12,22 +12,22 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
 import java.io.IOException;
-import java.net.URL;
 import java.util.List;
-import java.util.ResourceBundle;
 
 public class ScoreboardController {
     public ScoreboardController() throws IOException {
     }
 
     @FXML
-    private Label place1, place2, place3, place4, place5;
+    private Label place1, place2, place3, place4, place5, place6, place7, place8, place9, place10;
     @FXML
-    private Label name1, name2, name3, name4, name5;
+    private Label name1, name2, name3, name4, name5, name6, name7, name8, name9, name10;
     @FXML
-    private Label points1, points2, points3, points4, points5;
+    private Label points1, points2, points3, points4, points5, points6, points7, points8, points9, points10;
     @FXML
     private Button prev, next;
+    @FXML
+    private Button exit;
     private int count = 0;
 
     readWriteScoreboard scoreboard = new readWriteScoreboard();
@@ -84,6 +84,56 @@ public class ScoreboardController {
             points5.setText("");
         }
         count++;
+        if (encodedScoreboard.size() > count) {
+            name6.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).name));
+            place6.setText(String.valueOf(count + 1));
+            points6.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).score));
+        } else {
+            name6.setText("");
+            place6.setText("");
+            points6.setText("");
+        }
+        count++;
+        if (encodedScoreboard.size() > count) {
+            name7.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).name));
+            place7.setText(String.valueOf(count + 1));
+            points7.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).score));
+        } else {
+            name7.setText("");
+            place7.setText("");
+            points7.setText("");
+        }
+        count++;
+        if (encodedScoreboard.size() > count) {
+            name8.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).name));
+            place8.setText(String.valueOf(count + 1));
+            points8.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).score));
+        } else {
+            name8.setText("");
+            place8.setText("");
+            points8.setText("");
+        }
+        count++;
+        if (encodedScoreboard.size() > count) {
+            name9.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).name));
+            place9.setText(String.valueOf(count + 1));
+            points9.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).score));
+        } else {
+            name9.setText("");
+            place9.setText("");
+            points9.setText("");
+        }
+        count++;
+        if (encodedScoreboard.size() > count) {
+            name10.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).name));
+            place10.setText(String.valueOf(count + 1));
+            points10.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).score));
+        } else {
+            name10.setText("");
+            place10.setText("");
+            points10.setText("");
+        }
+        count++;
         prev.setOpacity(1);
         prev.setDisable(false);
         if (count >= encodedScoreboard.size()) {
@@ -93,6 +143,7 @@ public class ScoreboardController {
     }
 
     public void previous(ActionEvent event) {
+        //count -= 10; //--- Caused by: java.lang.IndexOutOfBoundsException: Index -21 out of bounds for length 5
         count -= 10;
         name1.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).name));
         place1.setText(String.valueOf(count + 1));
@@ -114,9 +165,29 @@ public class ScoreboardController {
         place5.setText(String.valueOf(count + 1));
         points5.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).score));
         count++;
+        name6.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).name));
+        place6.setText(String.valueOf(count + 1));
+        points6.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).score));
+        count++;
+        name7.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).name));
+        place7.setText(String.valueOf(count + 1));
+        points7.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).score));
+        count++;
+        name8.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).name));
+        place8.setText(String.valueOf(count + 1));
+        points8.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).score));
+        count++;
+        name9.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).name));
+        place9.setText(String.valueOf(count + 1));
+        points9.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).score));
+        count++;
+        name10.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).name));
+        place10.setText(String.valueOf(count + 1));
+        points10.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).score));
+        count++;
         next.setOpacity(1);
         next.setDisable(false);
-        if (count == 5) {
+        if (count == 10) {
             prev.setOpacity(0);
             prev.setDisable(true);
         }
@@ -166,11 +237,69 @@ public class ScoreboardController {
             place5.setText("");
             points5.setText("");
         }
+        count++;
+        if (encodedScoreboard.size() > count) {
+            name6.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).name));
+            place6.setText(String.valueOf(count + 1));
+            points6.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).score));
+        } else {
+            name6.setText("");
+            place6.setText("");
+            points6.setText("");
+        }
+        count++;
+        if (encodedScoreboard.size() > count) {
+            name7.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).name));
+            place7.setText(String.valueOf(count + 1));
+            points7.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).score));
+        } else {
+            name7.setText("");
+            place7.setText("");
+            points7.setText("");
+        }
+        count++;
+        if (encodedScoreboard.size() > count) {
+            name8.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).name));
+            place8.setText(String.valueOf(count + 1));
+            points8.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).score));
+        } else {
+            name8.setText("");
+            place8.setText("");
+            points8.setText("");
+        }
+        count++;
+        if (encodedScoreboard.size() > count) {
+            name9.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).name));
+            place9.setText(String.valueOf(count + 1));
+            points9.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).score));
+        } else {
+            name9.setText("");
+            place9.setText("");
+            points9.setText("");
+        }
+        count++;
+        if (encodedScoreboard.size() > count) {
+            name10.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).name));
+            place10.setText(String.valueOf(count + 1));
+            points10.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).score));
+        } else {
+            name10.setText("");
+            place10.setText("");
+            points10.setText("");
+        }
         prev.setOpacity(0);
         prev.setDisable(true);
         if (count >= encodedScoreboard.size()) {
             next.setOpacity(0);
             next.setDisable(true);
         }
+    }
+
+    public void Exit(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("HomeStage.fxml"));
+        Parent root = loader.load();
+        SceneController controller = loader.getController();
+        Scene scene = ((Node) event.getSource()).getScene();
+        scene.setRoot(root);
     }
 }

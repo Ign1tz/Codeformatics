@@ -2,8 +2,6 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
@@ -24,14 +22,14 @@
       <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
       <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
       <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
       <RowConstraints maxHeight="98.5" minHeight="10.0" prefHeight="93.0" vgrow="SOMETIMES" />
    </rowConstraints>
    <children>
-      <ImageView fitHeight="535.0" fitWidth="1059.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="LEFT" GridPane.valignment="BASELINE">
-         <image>
-            <Image url="@Background.quiz.jpg" />
-         </image>
-      </ImageView>
       <Label prefHeight="47.0" prefWidth="184.0" text="Scoreboard" textFill="#951197" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
          <font>
             <Font size="33.0" />
@@ -40,7 +38,6 @@
       <Label fx:id="name1" prefHeight="17.0" prefWidth="194.0" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="1" />
       <Label fx:id="points1" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="1" />
       <Label fx:id="place1" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-      <Button fx:id="next" mnemonicParsing="false" onAction="#next" text="Next" GridPane.columnIndex="3" GridPane.rowIndex="6" />
       <Label fx:id="place5" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="5" />
       <Label fx:id="place4" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="4" />
       <Label fx:id="place3" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="3" />
@@ -53,6 +50,23 @@
       <Label fx:id="points4" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="4" />
       <Label fx:id="points3" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="3" />
       <Label fx:id="points2" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-      <Button fx:id="prev" mnemonicParsing="false" onAction="#previous" text="Previous" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="6" />
+      <Button fx:id="next" mnemonicParsing="false" onAction="#next" text="Next" GridPane.columnIndex="3" GridPane.rowIndex="11" />
+      <Button fx:id="prev" mnemonicParsing="false" onAction="#previous" text="Previous" GridPane.columnIndex="2" GridPane.rowIndex="11" />
+      <Button fx:id="exit" mnemonicParsing="false" onAction="#Exit" text="Exit" GridPane.halignment="RIGHT" GridPane.rowIndex="11" />
+      <Label fx:id="name6" layoutX="254.0" layoutY="195.0" prefHeight="17.0" prefWidth="194.0" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+      <Label fx:id="points6" layoutX="375.0" layoutY="195.0" prefHeight="18.0" prefWidth="84.0" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+      <Label fx:id="place6" layoutX="132.0" layoutY="85.0" prefHeight="18.0" prefWidth="0.0" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+      <Label fx:id="name7" layoutX="254.0" layoutY="223.0" prefHeight="17.0" prefWidth="194.0" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+      <Label fx:id="name8" layoutX="254.0" layoutY="250.0" prefHeight="17.0" prefWidth="194.0" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+      <Label fx:id="name9" layoutX="254.0" layoutY="277.0" prefHeight="17.0" prefWidth="194.0" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="9" />
+      <Label fx:id="name10" layoutX="254.0" layoutY="304.0" prefHeight="17.0" prefWidth="194.0" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="10" />
+      <Label fx:id="points7" layoutX="375.0" layoutY="222.0" prefHeight="18.0" prefWidth="84.0" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+      <Label fx:id="points8" layoutX="375.0" layoutY="249.0" prefHeight="18.0" prefWidth="96.0" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="8" />
+      <Label fx:id="points9" layoutX="375.0" layoutY="277.0" prefHeight="18.0" prefWidth="85.0" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="9" />
+      <Label fx:id="points10" layoutX="375.0" layoutY="304.0" prefHeight="18.0" prefWidth="97.0" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="10" />
+      <Label fx:id="place7" layoutX="132.0" layoutY="222.0" prefHeight="18.0" prefWidth="32.0" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+      <Label fx:id="place8" layoutX="132.0" layoutY="249.0" prefHeight="18.0" prefWidth="32.0" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+      <Label fx:id="place9" layoutX="132.0" layoutY="277.0" prefHeight="18.0" prefWidth="32.0" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+      <Label fx:id="place10" layoutX="132.0" layoutY="304.0" prefHeight="18.0" prefWidth="32.0" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="10" />
    </children>
 </GridPane>
