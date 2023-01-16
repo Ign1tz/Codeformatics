@@ -34,6 +34,7 @@ public class Scoreboard extends Application{
         Parent parentRoot = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Scoreboard.fxml")));
         Scene scene = new Scene(parentRoot);
         stage.setTitle("Scoreboard");
+        stage.setResizable(false);
         stage.setMaximized(true);
         stage.setScene(scene);
         stage.show();

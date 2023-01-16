@@ -19,7 +19,7 @@ public class SettingsStage extends Application {
             String css = Objects.requireNonNull(this.getClass().getResource("SettingsStage.css")).toExternalForm(); //connect css file to scene
             scene.getStylesheets().add(css);
             SettingsStage.setTitle("SettingsStage");     //title of window
-            //SettingsStage.setResizable(false);       //not resiazable
+            SettingsStage.setResizable(false);       //not resiazable
             SettingsStage.setMaximized(true);       //fullscreen
             SettingsStage.setScene(scene);           //setscene to stage
 
