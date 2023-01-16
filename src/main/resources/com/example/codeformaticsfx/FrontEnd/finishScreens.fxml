@@ -39,8 +39,11 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <Button fx:id="ScoreboardButton" contentDisplay="CENTER" mnemonicParsing="false" onAction="#toScoreboard" prefHeight="26.0" prefWidth="100.0" stylesheets="@Game.css" text="Scoreboard" textAlignment="CENTER" textFill="#e91e63" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="3" GridPane.valignment="BOTTOM" />
-      <TextField fx:id="nameScoreboard" disable="true" minHeight="-Infinity" minWidth="-Infinity" opacity="0.0" prefWidth="118.0" promptText="Name" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+      <Button fx:id="ScoreboardButton" contentDisplay="CENTER" mnemonicParsing="false" onAction="#toScoreboard" prefHeight="40.0" prefWidth="100.0" stylesheets="@Game.css" text="Scoreboard" textAlignment="CENTER" textFill="#e91e63" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="3" GridPane.valignment="BOTTOM">
+         <font>
+            <Font name="Arial Black" size="12.0" />
+         </font></Button>
+      <TextField fx:id="nameScoreboard" disable="true" minHeight="-Infinity" minWidth="-Infinity" opacity="0.0" prefHeight="25.0" prefWidth="100.0" promptText="Name" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
       <Label fx:id="scoreboardLabel" opacity="0.0" text="Label" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="3" GridPane.valignment="TOP" />
    </children>
 </GridPane>

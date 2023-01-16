@@ -102,8 +102,7 @@ public class SceneController extends HomeStage {
     //Settings START
     public void submit(ActionEvent event) throws IOException{
         try {
-            name = myNameText.getText();
-            System.out.println(name);
+            name = myNameText.getText();                //name can be typed into the field
             if (name.length() >= 9) {
                 Label1.setText("Max. 8 characters ");    //usernames with more than 8 characters are not allowed
             } else {
@@ -131,6 +130,16 @@ public class SceneController extends HomeStage {
         if (sliderSettings.getValue() == 0) {
            // BackgroundImage myImage = new BackgroundImage(new Image("Background.quiz.jpg"));
         }
+    }
+    public void createQuizz(ActionEvent event) throws IOException {
+        Parent fxmlLoader = FXMLLoader.load(getClass().getResource("QuestionInput.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(fxmlLoader);
+        stage.setTitle("Input Questions");
+        stage.setResizable(false);
+        stage.setMaximized(true);
+        stage.setScene(scene);
+        stage.show();
     }
     //SETTINGS END
 
@@ -547,14 +556,5 @@ public class SceneController extends HomeStage {
         }
     }
 
-    public void createQuizz(ActionEvent event) throws IOException {
-        Parent fxmlLoader = FXMLLoader.load(getClass().getResource("QuestionInput.fxml"));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(fxmlLoader);
-        stage.setTitle("Input Questions");
-        stage.setMaximized(true);
-        stage.setScene(scene);
-        stage.show();
-    }
     //HOMESTAGE END
 }
