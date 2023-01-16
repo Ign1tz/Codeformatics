@@ -85,7 +85,8 @@ public class SceneController extends HomeStage {
     static List<readWriteQuestions> questionsList;
     static String selected, right, numberOfQuestions;
     static String score = "00000";
-    static String path = "./GameResources/Scoreboards/Scoreboard.json";
+    static String pathScoreboard = "./GameResources/Scoreboards/Scoreboard.json";
+    static String pathQuestions = "./GameResources/QuestionLibrary/Java.json";
     static boolean nameGiven = false;
     //VARIABLES END
 
@@ -161,7 +162,7 @@ public class SceneController extends HomeStage {
         easy = pQ.easy;
         medium = pQ.medium;
         hard = pQ.hard;
-        QuizzInfo thisQuizz = rwq.readQuizz("./GameResources/QuestionLibrary/Java.json");
+        QuizzInfo thisQuizz = rwq.readQuizz(pathQuestions);
         questionsList = thisQuizz.questionsList;
         numberOfQuestions = eD.decodeSingle(thisQuizz.questionsUsed);
         readWriteQuestions temp = null;
@@ -232,10 +233,13 @@ public class SceneController extends HomeStage {
     public void toScoreboard(ActionEvent event) throws IOException {
         readWriteScoreboard rwS = new readWriteScoreboard();
         if(!Objects.equals(name,null)) {
+            if(myNameText != null){
+                nameScoreboard.setText(myNameText.getText());
+            }
             if(!nameGiven) {
                 name = nameScoreboard.getText();
             }
-            rwS.writeToScoreboard(name, score, String.valueOf(1));
+            rwS.writeToScoreboard(name, score, String.valueOf(1), pathScoreboard);
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Scoreboard.fxml"));
             Parent root = loader.load();
             Scene scene = ((Node) event.getSource()).getScene();

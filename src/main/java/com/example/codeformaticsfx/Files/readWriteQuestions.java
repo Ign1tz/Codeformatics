@@ -60,12 +60,6 @@ public class readWriteQuestions { //this class handles creating the questions, w
         gson.toJson(thisQuizz, writer);
         writer.close();
     }
-    /*private List<readWriteQuestions> readQuestion(String filePath) throws IOException {
-        Reader reader = Files.newBufferedReader(Paths.get(filePath));
-        List<readWriteQuestions> tempList = new Gson().fromJson(reader, new TypeToken<List<readWriteQuestions>>() {}.getType());
-        reader.close();
-        return tempList;
-    }*/
     public QuizzInfo readQuizz(String filePath) throws IOException {
         Reader reader = Files.newBufferedReader(Paths.get(filePath));
         QuizzInfo temp = new Gson().fromJson(reader, new TypeToken<QuizzInfo>() {}.getType());

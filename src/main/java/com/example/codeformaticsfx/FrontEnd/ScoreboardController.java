@@ -34,106 +34,9 @@ public class ScoreboardController {
     EncodeDecode encodeDecode = new EncodeDecode();
     private List<readWriteScoreboard> encodedScoreboard = scoreboard.fromFile("./GameResources/Scoreboards/Scoreboard.json").scoreboard;
 
-    private void startup() {
-
-    }
-
     @FXML
     private void next(ActionEvent event) throws IOException {
-        name1.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).name));
-        place1.setText(String.valueOf(count + 1));
-        points1.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).score));
-        count++;
-        if (encodedScoreboard.size() > count) {
-            name2.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).name));
-            place2.setText(String.valueOf(count + 1));
-            points2.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).score));
-        } else {
-            name2.setText("");
-            place2.setText("");
-            points2.setText("");
-        }
-        count++;
-        if (encodedScoreboard.size() > count) {
-            name3.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).name));
-            place3.setText(String.valueOf(count + 1));
-            points3.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).score));
-        } else {
-            name3.setText("");
-            place3.setText("");
-            points3.setText("");
-        }
-        count++;
-        if (encodedScoreboard.size() > count) {
-            name4.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).name));
-            place4.setText(String.valueOf(count + 1));
-            points4.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).score));
-        } else {
-            name4.setText("");
-            place4.setText("");
-            points4.setText("");
-        }
-        count++;
-        if (encodedScoreboard.size() > count) {
-            name5.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).name));
-            place5.setText(String.valueOf(count + 1));
-            points5.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).score));
-        } else {
-            name5.setText("");
-            place5.setText("");
-            points5.setText("");
-        }
-        count++;
-        if (encodedScoreboard.size() > count) {
-            name6.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).name));
-            place6.setText(String.valueOf(count + 1));
-            points6.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).score));
-        } else {
-            name6.setText("");
-            place6.setText("");
-            points6.setText("");
-        }
-        count++;
-        if (encodedScoreboard.size() > count) {
-            name7.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).name));
-            place7.setText(String.valueOf(count + 1));
-            points7.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).score));
-        } else {
-            name7.setText("");
-            place7.setText("");
-            points7.setText("");
-        }
-        count++;
-        if (encodedScoreboard.size() > count) {
-            name8.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).name));
-            place8.setText(String.valueOf(count + 1));
-            points8.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).score));
-        } else {
-            name8.setText("");
-            place8.setText("");
-            points8.setText("");
-        }
-        count++;
-        if (encodedScoreboard.size() > count) {
-            name9.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).name));
-            place9.setText(String.valueOf(count + 1));
-            points9.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).score));
-        } else {
-            name9.setText("");
-            place9.setText("");
-            points9.setText("");
-        }
-        count++;
-        if (encodedScoreboard.size() > count) {
-            name10.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).name));
-            place10.setText(String.valueOf(count + 1));
-            points10.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).score));
-        } else {
-            name10.setText("");
-            place10.setText("");
-            points10.setText("");
-        }
-        count++;
+        setScoreboard();
         prev.setOpacity(1);
         prev.setDisable(false);
         if (count >= encodedScoreboard.size()) {
@@ -142,49 +45,11 @@ public class ScoreboardController {
         }
     }
 
+
     public void previous(ActionEvent event) {
         //count -= 10; //--- Caused by: java.lang.IndexOutOfBoundsException: Index -21 out of bounds for length 5
         count -= 20;
-        name1.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).name));
-        place1.setText(String.valueOf(count + 1));
-        points1.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).score));
-        count++;
-        name2.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).name));
-        place2.setText(String.valueOf(count + 1));
-        points2.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).score));
-        count++;
-        name3.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).name));
-        place3.setText(String.valueOf(count + 1));
-        points3.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).score));
-        count++;
-        name4.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).name));
-        place4.setText(String.valueOf(count + 1));
-        points4.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).score));
-        count++;
-        name5.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).name));
-        place5.setText(String.valueOf(count + 1));
-        points5.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).score));
-        count++;
-        name6.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).name));
-        place6.setText(String.valueOf(count + 1));
-        points6.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).score));
-        count++;
-        name7.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).name));
-        place7.setText(String.valueOf(count + 1));
-        points7.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).score));
-        count++;
-        name8.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).name));
-        place8.setText(String.valueOf(count + 1));
-        points8.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).score));
-        count++;
-        name9.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).name));
-        place9.setText(String.valueOf(count + 1));
-        points9.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).score));
-        count++;
-        name10.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).name));
-        place10.setText(String.valueOf(count + 1));
-        points10.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).score));
-        count++;
+        setScoreboard();
         next.setOpacity(1);
         next.setDisable(false);
         if (count == 10) {
@@ -194,6 +59,15 @@ public class ScoreboardController {
     }
 
     public void initialize() {
+        setScoreboard();
+        prev.setOpacity(0);
+        prev.setDisable(true);
+        if (count >= encodedScoreboard.size()) {
+            next.setOpacity(0);
+            next.setDisable(true);
+        }
+    }
+    public void setScoreboard(){
         name1.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).name));
         place1.setText(String.valueOf(count + 1));
         points1.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).score));
@@ -288,14 +162,7 @@ public class ScoreboardController {
             points10.setText("");
         }
         count++;
-        prev.setOpacity(0);
-        prev.setDisable(true);
-        if (count >= encodedScoreboard.size()) {
-            next.setOpacity(0);
-            next.setDisable(true);
-        }
     }
-
     public void Exit(ActionEvent event) throws IOException {
         count = 0;
         FXMLLoader loader = new FXMLLoader(getClass().getResource("HomeStage.fxml"));

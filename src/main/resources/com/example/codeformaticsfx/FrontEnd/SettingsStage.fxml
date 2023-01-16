@@ -36,7 +36,7 @@
             <Bloom />
          </effect>
       </Label>
-      <TextField fx:id="myNameText" alignment="TOP_LEFT" prefHeight="15.0" prefWidth="298.0" promptText="Enter Name" text="Enter Name" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+      <TextField fx:id="myNameText" alignment="TOP_LEFT" prefHeight="15.0" prefWidth="298.0" promptText="Enter Name" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
       <Button fx:id="saveButton" mnemonicParsing="false" onAction="#submit" text="SAVE" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
          <font>
             <Font name="Arial Black" size="13.0" />

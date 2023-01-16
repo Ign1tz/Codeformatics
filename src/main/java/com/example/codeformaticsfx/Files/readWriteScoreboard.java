@@ -31,29 +31,22 @@ public class readWriteScoreboard {
         this.score = score;
         this.tis = timeInSeconds;
     }
-    public ScoreboardInfo scoreboard() throws IOException {
-        ScoreboardInfo scoreboardListTemp = fromFile("./GameResources/Scoreboards/Scoreboard.json");
+    public ScoreboardInfo scoreboard(String path) throws IOException {
+        ScoreboardInfo scoreboardListTemp = fromFile(path);
         return scoreboardListTemp;
     }
-    public void writeToScoreboard(String currentName, String currentScore, String currentTIS) throws IOException {
+    public void writeToScoreboard(String currentName, String currentScore, String currentTIS, String path) throws IOException {
         EncodeDecode encodeDecode = new EncodeDecode();
         boolean wasAdded = false;
-        /*Scanner scan = new Scanner(System.in);
-        System.out.print("name: ");
-        String currentName = scan.nextLine();
-        System.out.print("Score: ");
-        String currentScore = scan.nextLine();
-        System.out.print("Time: ");
-        String  currentTIS = scan.nextLine();*/
         List<readWriteScoreboard> tempScoreboard = new ArrayList<>();
-        List<readWriteScoreboard> tempList = scoreboard().scoreboard;
+        List<readWriteScoreboard> tempList = scoreboard(path).scoreboard;
         if(tempList != null){
-            tempScoreboard = scoreboard().scoreboard;
+            tempScoreboard = scoreboard(path).scoreboard;
         }else {
             readWriteScoreboard newPlayer = new readWriteScoreboard(encodeDecode.encodeSinge(currentName), encodeDecode.encodeSinge(currentScore), encodeDecode.encodeSinge(currentTIS));
             tempScoreboard.add(newPlayer);
             ScoreboardInfo sI = new ScoreboardInfo("java", tempScoreboard);
-            Writer writer = Files.newBufferedWriter(Paths.get("./GameResources/Scoreboards/Scoreboard.json"));
+            Writer writer = Files.newBufferedWriter(Paths.get(path));
             gson.toJson(sI, writer);
             writer.close();
             return;
@@ -79,7 +72,7 @@ public class readWriteScoreboard {
             tempScoreboard.add(newPlayer);
         }
         ScoreboardInfo sI = new ScoreboardInfo("java", tempScoreboard);
-        Writer writer = Files.newBufferedWriter(Paths.get("./GameResources/Scoreboards/Scoreboard.json"));
+        Writer writer = Files.newBufferedWriter(Paths.get(path));
         gson.toJson(sI, writer);
         writer.close();
     }
