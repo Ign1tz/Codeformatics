@@ -23,7 +23,7 @@ public class readWriteQuestions { //this class handles creating the questions, w
     public String QUESTION, A1, A2, A3, A4, DIFFICULTY, RIGHTAWNSER;
     static Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
-    public readWriteQuestions(String eQuestion, String eA1, String eA2, String eA3, String eA4, String eDifficulty, String eAnswer) throws IOException {
+    public readWriteQuestions(String eQuestion, String eA1, String eA2, String eA3, String eA4, String eDifficulty, String eAnswer) {
         this.QUESTION = eQuestion;
         this.A1 = eA1;
         this.A2 = eA2;

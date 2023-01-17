@@ -31,9 +31,7 @@ public class SceneController extends HomeStage {
 
     //FXML USAGE START
     @FXML
-    public AnchorPane Warning;
-    @FXML
-    public GridPane WarningGrid;
+    public GridPane Warning;
     @FXML
     public Button musicButton, exit, stay;
     @FXML
@@ -218,14 +216,12 @@ public class SceneController extends HomeStage {
     public void Return(ActionEvent event){
         Warning.setOpacity(1);
         Warning.setDisable(false);
-        WarningGrid.setOpacity(1);
         exit.setDisable(false);
         stay.setDisable(false);
     }
     public void Stay(ActionEvent event){
         Warning.setOpacity(0);
         Warning.setDisable(true);
-        WarningGrid.setOpacity(0);
         exit.setDisable(true);
         stay.setDisable(true);
     }
