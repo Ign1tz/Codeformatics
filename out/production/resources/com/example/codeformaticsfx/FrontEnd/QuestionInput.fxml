@@ -33,7 +33,7 @@
    <children>
       <ImageView fitHeight="295.0" fitWidth="889.0" pickOnBounds="true" preserveRatio="true" GridPane.columnSpan="2" GridPane.rowSpan="7">
          <image>
-            <Image url="@Background.quiz.jpg" />
+            <Image url="@Background.jpg" />
          </image>
       </ImageView>
       <TextField fx:id="Question" prefHeight="25.0" prefWidth="492.0" promptText="Question" GridPane.columnIndex="1" GridPane.columnSpan="4" />

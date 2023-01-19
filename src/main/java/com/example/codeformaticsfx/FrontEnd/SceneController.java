@@ -107,15 +107,18 @@ public class SceneController {
     //SWITCHING SCENES START
 
     public void switchStart(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("HomeStage.fxml")));
-        Stage window = (Stage) StartButton.getScene().getWindow();
-        window.setScene(new Scene(root, window.getWidth(), window.getHeight()));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("HomeStage.fxml"));
+        Parent root = loader.load();
+        SceneController controller = loader.getController();
+        Scene scene = ((Node) event.getSource()).getScene();
+        scene.setRoot(root);
     }
 
     public void switchSettings(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("SettingsStage.fxml")));
-        Stage home = (Stage) OptionsButton.getScene().getWindow();
-        home.setScene(new Scene(root, home.getWidth(), home.getHeight()));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("SettingsStage.fxml"));
+        Parent root = loader.load();
+        Scene scene = ((Node) event.getSource()).getScene();
+        scene.setRoot(root);
     }
     //SWITCH SCENES END
 
@@ -165,7 +168,6 @@ public class SceneController {
         controller.Answer3.setText(eD.decodeSingle(temp.A3));
         controller.Answer4.setText(eD.decodeSingle(temp.A4));
         controller.Questions.setText(thisQuestion);
-        controller.Difficulty.setText("Difficulty: " + eD.decodeSingle(temp.DIFFICULTY));
         controller.Score.setText("Score: 00000");
         Scene scene = ((Node) event.getSource()).getScene();
         scene.setRoot(root);
@@ -205,6 +207,8 @@ public class SceneController {
                 name = nameScoreboard.getText();
             }
             rwS.writeToScoreboard(name, score, String.valueOf(1), pathScoreboard);
+            ScoreboardController SC = new ScoreboardController();
+            SC.setPath(pathScoreboard);
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Scoreboard.fxml"));
             Parent root = loader.load();
             Scene scene = ((Node) event.getSource()).getScene();
@@ -283,7 +287,6 @@ public class SceneController {
             Answer2.setText(eD.decodeSingle(temp.A2));
             Answer3.setText(eD.decodeSingle(temp.A3));
             Answer4.setText(eD.decodeSingle(temp.A4));
-            Difficulty.setText("Difficulty: " + eD.decodeSingle(temp.DIFFICULTY));
             right = eD.decodeSingle(temp.RIGHTAWNSER);
             question++;
             Answer1.setSelected(false);
@@ -380,7 +383,6 @@ public class SceneController {
             }
 
             questionJoker.jokerFiftyFifty(A1,A2,A3,A4,rightAnswer,range,rightnumber);
-
 
             Answer1.setDisable(true);
             Answer2.setDisable(true);
