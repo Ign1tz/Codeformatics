@@ -11,7 +11,7 @@
    <children>
       <ImageView fitHeight="527.0" fitWidth="922.0" layoutX="-51.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@Background.quiz.jpg" />
+            <Image url="@Background.jpg" />
          </image>
       </ImageView>
       <TextField fx:id="QuizzName" layoutX="139.0" layoutY="97.0" />

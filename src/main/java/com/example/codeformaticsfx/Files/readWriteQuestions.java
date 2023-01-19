@@ -66,16 +66,4 @@ public class readWriteQuestions { //this class handles creating the questions, w
         reader.close();
         return temp;
     }
-    public static void main(String[] args) throws IOException {
-        File theDir = new File("./QuestionLibrary");
-        if (!theDir.exists()){
-            theDir.mkdirs();
-        }
-        File newFile = new File("./QuestionLibrary/test.json");
-        if (!newFile.exists()){
-            Files.createFile(Path.of("./QuestionLibrary/test.json"));
-        }
-        readWriteQuestions test = new readWriteQuestions();
-        //test.writeQuestions("./QuestionLibrary/test.json");
-    }
 }

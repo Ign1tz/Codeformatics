@@ -30,22 +30,15 @@ public class readWriteList {
             temp = new ArrayList<>();
         }
         Writer writer = Files.newBufferedWriter(Paths.get("./GameResources/QuestionList.json"));
-        readWriteList newTopic = new readWriteList(questions);
-        listOfTopics.add(newTopic);
-        ListInfo LI = new ListInfo("test", listOfTopics);
         temp.add(questions);
         gson.toJson(temp, writer);
         writer.close();
+        System.out.println(temp);
     }
     public List<String> fromFile() throws IOException {
         Reader reader = Files.newBufferedReader(Paths.get("./GameResources/QuestionList.json"));
         List<String> tempList = new Gson().fromJson(reader, new TypeToken<List<String>>() {}.getType());
         reader.close();
         return tempList;
-    }
-
-    public static void main(String[] args) throws IOException {
-        readWriteList rwl = new readWriteList();
-        rwl.writeList("Java");
     }
 }

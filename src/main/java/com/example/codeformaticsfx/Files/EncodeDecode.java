@@ -5,10 +5,7 @@ import java.util.Base64;
 public class EncodeDecode { //this class is just for encoding and decoding strings with Base64
     public String encodedQuestion, encodedA1, encodedA2, encodedA3, encodedA4, encodedDifficulty, encodedRightAnswer;
     public String decodedQuestion, decodedA1, decodedA2, decodedA3, decodedA4, decodedDifficulty, decodedRightAnswer;
-    public String encodedName, encodedScore, encodedTIS;
-    public String decodedName, decodedScore, decodedTIS;
     public String encodedQuizzName, encodedAuthorname, encodedQuestionsUsed;
-    public String decodedQuizzName, decodedAuthorname, decodedQuestionsUsed;
 
     public void encodeQuestionBase64(String question, String a1, String a2, String a3, String a4, String difficulty, String answer){
         byte[] eQuestion = Base64.getEncoder().encode(question.getBytes());
@@ -49,30 +46,6 @@ public class EncodeDecode { //this class is just for encoding and decoding strin
         encodedAuthorname = new String(eAuthorName);
         byte[] eQuestionsUsed = Base64.getEncoder().encode(questionsUsed.getBytes());
         encodedQuestionsUsed = new String(eQuestionsUsed);
-    }
-    public void decodeQuizzInfo(String quizzName, String authorName, String questionsUsed){
-        byte[] dQuizzname = Base64.getEncoder().encode(quizzName.getBytes());
-        decodedQuizzName = new String(dQuizzname);
-        byte[] dAuthorName = Base64.getEncoder().encode(authorName.getBytes());
-        decodedAuthorname = new String(dAuthorName);
-        byte[] dQuestionsUsed = Base64.getEncoder().encode(questionsUsed.getBytes());
-        decodedQuestionsUsed = new String(dQuestionsUsed);
-    }
-    public void encodeScoreboardBase64(String name, String Score, String timeInSeconds){
-        byte[] eName = Base64.getEncoder().encode(name.getBytes());
-        encodedName = new String(eName);
-        byte[] eScore = Base64.getEncoder().encode(Score.getBytes());
-        encodedScore = new String(eScore);
-        byte[] eTimeInSeconds = Base64.getEncoder().encode(timeInSeconds.getBytes());
-        encodedTIS = new String(eTimeInSeconds);
-    }
-    public void decodeScoreboardBase64(String name, String score, String timeInSeconds){ //will be used in the future
-        byte[] dName = Base64.getDecoder().decode(name);
-        decodedName = new String(dName);
-        byte[] dScore = Base64.getDecoder().decode(score);
-        decodedScore = new String(dScore);
-        byte[] dTIS = Base64.getDecoder().decode(timeInSeconds);
-        decodedTIS = new String(dTIS);
     }
     public String decodeSingle(String temp){
         byte[] dTemp = Base64.getDecoder().decode(temp);

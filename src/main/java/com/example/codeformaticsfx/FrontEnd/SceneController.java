@@ -7,90 +7,53 @@ import com.example.codeformaticsfx.Files.readWriteScoreboard;
 import com.example.codeformaticsfx.Quizz.QuestionJoker;
 import com.example.codeformaticsfx.pickQuestions;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
+import javafx.fxml.*;
+import javafx.scene.*;
 import javafx.scene.control.*;
-import javafx.scene.image.Image;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-
-
 import java.io.IOException;
-import java.nio.file.Paths;
-import java.util.List;
-import java.util.Objects;
-import java.util.Random;
+import java.util.*;
 
-public class SceneController extends HomeStage {
+public class SceneController {
 
     //FXML USAGE START
     @FXML
-    public GridPane Warning;
+    public GridPane Warning, SettingsGrid;
     @FXML
-    public Button musicButton, exit, stay;
+    public Button musicButton, exit, stay, OptionsButton, saveButton, newQuizz, StartButton, Return;
     @FXML
-    private Button OptionsButton;
+    private Label Label1, scoreboardLabel, Difficulty, Score, FinalScore, Questions, LabelCharacters;
     @FXML
-    private Label Label1, scoreboardLabel;
-    @FXML
-    private Label Difficulty;
-    @FXML
-    private Label Score;
-    @FXML
-    private Label FinalScore;
-    @FXML
-    private Button saveButton;
-    @FXML
-    private TextField myNameText;
-    @FXML
-    private Button StartButton;              //Implementing and tagging buttons as module to be accessible via SceneController
-    @FXML
-    private Button Return;
-    @FXML
-    private Label Questions;
-    @FXML
-    private CheckBox Answer4;
-    @FXML
-    private CheckBox Answer3;
-    @FXML
-    private CheckBox Answer2;
-    @FXML
-    private CheckBox Answer1;
-    @FXML
-    private Label LabelCharacters;
-    @FXML
-    private CheckBox CheckSound;
+    private CheckBox Answer1, Answer2, Answer3, Answer4, CheckSound;
     @FXML
     private Slider sliderSettings;
     @FXML
-    private TextField nameScoreboard;
+    private TextField nameScoreboard, myNameText;
     //FXML USAGE END
 
     //VARIABLES START
     static String name;
-    private Stage primaryStage;
-    static List<Integer> diffList;
-    static List<Integer> easy;
-    static List<Integer> medium;
-    static List<Integer> hard;
+    private static Stage primaryStage;
+    static List<Integer> diffList, easy, medium, hard;
     static int question = 0;
     static List<readWriteQuestions> questionsList;
-    static String selected, right, numberOfQuestions;
-    static String score = "00000";
-    static String pathScoreboard = "./GameResources/Scoreboards/Scoreboard.json";
+    static String selected, right, numberOfQuestions, score = "00000";
+    static String pathScoreboard = "./GameResources/Scoreboards/JavaScoreboard.json";
     static String pathQuestions = "./GameResources/QuestionLibrary/Java.json";
     static boolean nameGiven = false;
+    private Stage stage;
+    private Parent root;
+    private static Scene scene;
+    int counterF, counterS;
+    QuestionJoker questionJoker = new QuestionJoker();
     //VARIABLES END
 
     //METHODS START
-    public void setPrimaryStage(Stage stage) {          //Implement the main primary Stage from HomeStage to SceneController
-        this.primaryStage = stage;                      //Used for modifying the main Window/Stage
+    public void setPrimaryStage(Stage stage, Scene scene) {          //Implement the main primary Stage from HomeStage to SceneController
+        this.primaryStage = stage;                                  //Used for modifying the main Window/Stage
+        this.scene = scene;
     }
 
     public Scene getScene() {
@@ -98,7 +61,7 @@ public class SceneController extends HomeStage {
     }
 
     //Settings START
-    public void submit(ActionEvent event) throws IOException{
+    public void submit(ActionEvent event) {
         try {
             name = myNameText.getText();                //name can be typed into the field
             if (name.length() >= 9) {
@@ -126,25 +89,22 @@ public class SceneController extends HomeStage {
     }
     public void BackgroundChange(ActionEvent event) {
         if (sliderSettings.getValue() == 0) {
-           // BackgroundImage myImage = new BackgroundImage(new Image("Background.quiz.jpg"));
         }
     }
     public void createQuizz(ActionEvent event) throws IOException {
-        Parent fxmlLoader = FXMLLoader.load(getClass().getResource("QuestionInput.fxml"));
+        SettingsGrid.setStyle("-fx-background-image: url('com/example/codeformaticsfx/FrontEnd/Background2.jpg')"); //Working on (moritz)
+        /*Parent fxmlLoader = FXMLLoader.load(getClass().getResource("QuestionInput.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(fxmlLoader);
         stage.setTitle("Input Questions");
         stage.setResizable(false);
         stage.setMaximized(true);
         stage.setScene(scene);
-        stage.show();
+        stage.show();*/
     }
     //SETTINGS END
 
     //SWITCHING SCENES START
-    private Stage stage;
-    private Parent root;
-    private Scene scene;
 
     public void switchStart(ActionEvent event) throws IOException {
         root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("HomeStage.fxml")));
@@ -394,8 +354,6 @@ public class SceneController extends HomeStage {
     }
 
     //Questions - Joker
-    int counterF;
-    QuestionJoker questionJoker = new QuestionJoker();
 
     public void jokerF(ActionEvent actionEvent) {
         if (counterF == 0) {
@@ -451,7 +409,6 @@ public class SceneController extends HomeStage {
         }
     }
 
-    int counterS;
 
     public void jokerS(ActionEvent actionEvent) {
         if (counterS == 0) {
@@ -460,7 +417,7 @@ public class SceneController extends HomeStage {
             Answer2.setDisable(true);
             Answer3.setDisable(true);
             Answer4.setDisable(true);
-            Answer1.setSelected(false); //removes Selection of (possible) wrong awnser resulting in the possible selection of multiple awnsers
+            Answer1.setSelected(false); //removes Selection of (possible) wrong answer resulting in the possible selection of multiple answers
             Answer2.setSelected(false);
             Answer3.setSelected(false);
             Answer4.setSelected(false);
@@ -551,6 +508,5 @@ public class SceneController extends HomeStage {
             counterS = 1;
         }
     }
-
     //HOMESTAGE END
 }

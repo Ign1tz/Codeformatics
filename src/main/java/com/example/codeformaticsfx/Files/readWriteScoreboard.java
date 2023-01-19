@@ -45,7 +45,7 @@ public class readWriteScoreboard {
         }else {
             readWriteScoreboard newPlayer = new readWriteScoreboard(encodeDecode.encodeSinge(currentName), encodeDecode.encodeSinge(currentScore), encodeDecode.encodeSinge(currentTIS));
             tempScoreboard.add(newPlayer);
-            ScoreboardInfo sI = new ScoreboardInfo("java", tempScoreboard);
+            ScoreboardInfo sI = new ScoreboardInfo("Java", tempScoreboard);
             Writer writer = Files.newBufferedWriter(Paths.get(path));
             gson.toJson(sI, writer);
             writer.close();
@@ -71,7 +71,7 @@ public class readWriteScoreboard {
         if(!wasAdded){
             tempScoreboard.add(newPlayer);
         }
-        ScoreboardInfo sI = new ScoreboardInfo("java", tempScoreboard);
+        ScoreboardInfo sI = new ScoreboardInfo("Java", tempScoreboard);
         Writer writer = Files.newBufferedWriter(Paths.get(path));
         gson.toJson(sI, writer);
         writer.close();
@@ -81,19 +81,5 @@ public class readWriteScoreboard {
         ScoreboardInfo tempList = new Gson().fromJson(reader, new TypeToken<ScoreboardInfo>() {}.getType());
         reader.close();
         return tempList;
-    }
-
-    public static void main(String[] args) throws IOException {
-        File theDir = new File("./GameResources/Scoreboards");
-        if (!theDir.exists()){
-            theDir.mkdirs();
-        }
-        File file = new File("./GameResources/Scoreboards/Scoreboard.json");
-        if(!file.exists()){
-            Files.createFile(Path.of("./GameResources/Scoreboards/Scoreboard.json"));
-        }
-        readWriteScoreboard temp = new readWriteScoreboard();
-        //System.out.print(temp.scoreboard());
-        //temp.writeToScoreboard();
     }
 }

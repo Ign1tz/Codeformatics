@@ -1,6 +1,6 @@
 
-.SettingsGrid {
-    -fx-background-image: url('Background.quiz.jpg');
+#SettingsGrid {
+    -fx-background-image: url('Background2.jpg');
     -fx-background-size: cover;
 }
 
