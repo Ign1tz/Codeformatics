@@ -30,13 +30,10 @@ public class InitQuestionInputController {
                 Double.parseDouble(numberOfQuestions.getText());
                 String filePath = "./GameResources/QuestionLibrary/" + QuizzName.getText() + ".json";
                 writeQuestions.finish(filePath, QuizzName.getText(), AuthorName.getText(), numberOfQuestions.getText());
-                Parent fxmlLoader = FXMLLoader.load(getClass().getResource("FinishedQuizz.fxml"));
-                stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                scene = new Scene(fxmlLoader);
-                stage.setTitle("Question Info");
-                stage.setMaximized(true);
-                stage.setScene(scene);
-                stage.show();
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("SettingsStage.fxml"));
+                Parent root = loader.load();
+                Scene scene = ((Node) event.getSource()).getScene();
+                scene.setRoot(root);
             } catch (NumberFormatException nfe){
                 inputANumber.setOpacity(1);
             }

@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<GridPane id="SettingsGridTest" fx:id="SettingsGrid" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="SettingsGrid" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.codeformaticsfx.FrontEnd.SceneController">
+<GridPane id="SettingsGridTest" fx:id="SettingsGrid" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="SettingsGrid" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.codeformaticsfx.FrontEnd.SettingsController">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="110.0" minWidth="10.0" prefWidth="42.0" />
@@ -61,7 +61,7 @@
          <effect>
             <Bloom />
          </effect></Label>
-      <Slider fx:id="sliderSettings" blockIncrement="1.0" majorTickUnit="50.0" max="2.0" min="1.0" minorTickCount="0" value="1.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+      <Slider fx:id="sliderSettings" majorTickUnit="50.0" minorTickCount="0" value="50.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
       <Label fx:id="Label3" stylesheets="@SettingsStage.css" text="CHOOSE BACKGROUND" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="BASELINE">
          <effect>
             <Bloom />

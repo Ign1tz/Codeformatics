@@ -29,13 +29,18 @@ public class ScoreboardController {
     @FXML
     private Button exit;
     private int count = 0;
+    private String path = "./GameResources/Scoreboards/JavaScoreboard.json";
 
     readWriteScoreboard scoreboard = new readWriteScoreboard();
     EncodeDecode encodeDecode = new EncodeDecode();
-    private List<readWriteScoreboard> encodedScoreboard = scoreboard.fromFile("./GameResources/Scoreboards/Scoreboard.json").scoreboard;
+    private List<readWriteScoreboard> encodedScoreboard = scoreboard.fromFile(path).scoreboard;
 
+
+    public void setPath(String newPath){
+        path = newPath;
+    }
     @FXML
-    private void next(ActionEvent event) throws IOException {
+    private void next(ActionEvent event) {
         setScoreboard();
         prev.setOpacity(1);
         prev.setDisable(false);
