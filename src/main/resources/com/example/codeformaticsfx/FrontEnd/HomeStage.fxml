@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -54,6 +53,5 @@
             </Label>
          </children>
       </AnchorPane>
-      <CheckBox fx:id="CheckSound" disable="true" mnemonicParsing="false" onAction="#playSong" opacity="0.0" text="CheckBox" GridPane.rowIndex="1" />
    </children>
 </GridPane>

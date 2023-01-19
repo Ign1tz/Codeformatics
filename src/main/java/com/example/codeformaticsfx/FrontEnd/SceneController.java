@@ -33,7 +33,7 @@ public class SceneController implements Initializable{
     @FXML
     private CheckBox Answer1, Answer2, Answer3, Answer4;
     @FXML
-    public CheckBox CheckSound;
+    private CheckBox CheckSound;
     @FXML
     private Slider sliderSettings;
     @FXML

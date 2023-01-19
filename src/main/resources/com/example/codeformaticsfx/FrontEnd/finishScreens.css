@@ -7,6 +7,10 @@
 -fx-background-color: #0097a7;
 -fx-background-radius: 30;
 -fx-text-fill: #e91e63;
+-fx-min-width: 80;
+-fx-min-height: 40;
+-fx-text-size: 20px;
+-fx-font-weight: bold;
 }
 
 .button:hover {
@@ -30,3 +34,4 @@
 -fx-font-size: 20px;
 -fx-font-weight: bold;
 }
+
