@@ -11,10 +11,10 @@ public class QuestionJoker {
     private int randomAnswer;
     Random random = new Random();
 
-    public void jokerFiftyFifty(String a1,String a2,String a3,String a4,String rightAnswer,int range){
-        int randomanswer = random.nextInt(range);
-        while (randomanswer == Integer.valueOf(rightAnswer.replaceAll("A",""))){
-            randomanswer = random.nextInt(range);
+    public void jokerFiftyFifty(String a1,String a2,String a3,String a4,String rightAnswer,int range, int rightnumber){
+        int randomanswer = random.nextInt(range)+1;
+        while (randomanswer == rightnumber){
+            randomanswer = random.nextInt(range)+1;
         }
 
         this.a1=a1;
@@ -26,10 +26,10 @@ public class QuestionJoker {
         this.randomAnswer=randomanswer;
     }
 
-    public int jokerSeventyThirty(String a1,String a2,String a3,String a4,String rightAnswer,int range){
-        int randomanswer = random.nextInt(range);
-        while (randomanswer == Integer.valueOf(rightAnswer.replaceAll("A",""))){
-            randomanswer = random.nextInt(range);
+    public int jokerSeventyThirty(String a1,String a2,String a3,String a4,String rightAnswer,int range, int rightnumber){
+        int randomanswer = random.nextInt(range)+1;
+        while (randomanswer == rightnumber){
+            randomanswer = random.nextInt(range)+1;
         }
 
         this.a1=a1;

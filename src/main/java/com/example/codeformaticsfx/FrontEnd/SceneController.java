@@ -364,7 +364,22 @@ public class SceneController {
             String A4=Answer4.getText();
             String rightAnswer = right;
             int range=4;
-            questionJoker.jokerFiftyFifty(A1,A2,A3,A4,rightAnswer,range);
+            int rightnumber = 0;
+
+            if ("A1".equals(rightAnswer)){
+                rightnumber = 1;
+            }
+            if ("A2".equals(rightAnswer)){
+                rightnumber = 2;
+            }
+            if ("A3".equals(rightAnswer)){
+                rightnumber = 3;
+            }
+            if ("A4".equals(rightAnswer)){
+                rightnumber = 4;
+            }
+
+            questionJoker.jokerFiftyFifty(A1,A2,A3,A4,rightAnswer,range,rightnumber);
 
 
             Answer1.setDisable(true);
@@ -428,7 +443,23 @@ public class SceneController {
             String A4=Answer4.getText();
             String rightAnswer = right;
             int range=4;
-            int border = questionJoker.jokerSeventyThirty(A1,A2,A3,A4,rightAnswer,range);
+            int rightnumber = 0;
+
+            if ("A1".equals(rightAnswer)){
+                rightnumber = 1;
+            }
+            if ("A2".equals(rightAnswer)){
+                rightnumber = 2;
+            }
+            if ("A3".equals(rightAnswer)){
+                rightnumber = 3;
+            }
+            if ("A4".equals(rightAnswer)){
+                rightnumber = 4;
+            }
+
+
+            int border = questionJoker.jokerSeventyThirty(A1,A2,A3,A4,rightAnswer,range, rightnumber);
 
             if (border <= 7){
                 switch (questionJoker.getRightAnswer()){
