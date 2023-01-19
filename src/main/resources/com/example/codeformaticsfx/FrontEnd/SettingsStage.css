@@ -4,12 +4,12 @@
 }
 
 .button {
--fx-background-color: #0097a7;
--fx-background-radius: 30;
--fx-text-fill: #e91e63;
--fx-min-width: 80;
--fx-min-height: 40;
--fx-text-size: 20px;
+-fx-background-color: #0097a7;  /*change background color*/
+-fx-background-radius: 30;      /*radius of button*/
+-fx-text-fill: #e91e63;         /*color of text inside of buttin*/
+-fx-min-width: 80;              /*sets width*/
+-fx-min-height: 40;             /*sets height*/
+-fx-text-size: 20px;            /*size of text*/
 }
 
 .button:hover {
@@ -17,8 +17,8 @@
 -fx-background-radius: 30;
 -fx-border-color: #0097a7;
 -fx-border-radius: 35;
--fx-border-vidth: 3;
--fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 1), 6, 0, 0, 1);
+-fx-border-width: 3;
+-fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 1), 6, 0, 0, 1); /*when mouse over button = white shadow*/
 }
 
 .button:pressed {
@@ -26,7 +26,7 @@
 -fx-background-radius: 30;
 -fx-border-color: #0097a7;
 -fx-border-radius: 35;
--fx-border-vidth: 3;
+-fx-border-width: 3;
 }
 
 #Label1 {

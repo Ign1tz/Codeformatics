@@ -7,6 +7,10 @@
 -fx-background-color: #0097a7;
 -fx-background-radius: 30;
 -fx-text-fill: #e91e63;
+-fx-min-width: 80;
+-fx-min-height: 40;
+-fx-text-size: 20px;
+-fx-font-weight: bold;
 }
 
 .button:hover {
@@ -14,7 +18,7 @@
 -fx-background-radius: 30;
 -fx-border-color: #0097a7;
 -fx-border-radius: 35;
--fx-border-vidth: 3;
+-fx-border-width: 3;
 }
 
 .button:pressed {
@@ -22,5 +26,67 @@
 -fx-background-radius: 30;
 -fx-border-color: #0097a7;
 -fx-border-radius: 35;
--fx-border-vidth: 3;
+-fx-border-width: 3;
+}
+
+#labelExit {
+-fx-font-weight: bold;
+-fx-font-size: 14px;
+}
+
+#labelExit2 {
+-fx-font-weight: bold;
+-fx-font-size: 14px;
+}
+
+#exit {
+-fx-background-color: black;
+-fx-background-radius: 30;
+-fx-text-fill: #ff0000;
+-fx-min-width: 40;
+-fx-min-height: 20;
+-fx-text-size: 14px;
+-fx-font-weight: bold;
+}
+
+#exit:hover {
+-fx-background-color: black;
+-fx-background-radius: 30;
+-fx-border-color: black;
+-fx-border-radius: 35;
+-fx-border-width: 3;
+}
+
+#exit:pressed {
+-fx-background-color: black;
+-fx-background-radius: 30;
+-fx-border-color: black;
+-fx-border-radius: 35;
+-fx-border-width: 3;
+}
+
+#stay {
+-fx-background-color: black;
+-fx-background-radius: 30;
+-fx-text-fill: #ff0000;
+-fx-min-width: 40;
+-fx-min-height: 20;
+-fx-text-size: 14px;
+-fx-font-weight: bold;
+}
+
+#stay:hover {
+-fx-background-color: black;
+-fx-background-radius: 30;
+-fx-border-color: black;
+-fx-border-radius: 35;
+-fx-border-width: 3;
+}
+
+#stay:pressed {
+-fx-background-color: black;
+-fx-background-radius: 30;
+-fx-border-color: black;
+-fx-border-radius: 35;
+-fx-border-width: 3;
 }
