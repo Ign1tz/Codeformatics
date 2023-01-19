@@ -165,7 +165,6 @@ public class SceneController {
         controller.Answer3.setText(eD.decodeSingle(temp.A3));
         controller.Answer4.setText(eD.decodeSingle(temp.A4));
         controller.Questions.setText(thisQuestion);
-        controller.Difficulty.setText("Difficulty: " + eD.decodeSingle(temp.DIFFICULTY));
         controller.Score.setText("Score: 00000");
         Scene scene = ((Node) event.getSource()).getScene();
         scene.setRoot(root);
@@ -283,7 +282,6 @@ public class SceneController {
             Answer2.setText(eD.decodeSingle(temp.A2));
             Answer3.setText(eD.decodeSingle(temp.A3));
             Answer4.setText(eD.decodeSingle(temp.A4));
-            Difficulty.setText("Difficulty: " + eD.decodeSingle(temp.DIFFICULTY));
             right = eD.decodeSingle(temp.RIGHTAWNSER);
             question++;
             Answer1.setSelected(false);
