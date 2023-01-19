@@ -14,7 +14,7 @@
 -fx-background-radius: 30;
 -fx-border-color: #0097a7;
 -fx-border-radius: 35;
--fx-border-vidth: 3;
+-fx-border-width: 3;
 }
 
 .button:pressed {
@@ -22,7 +22,7 @@
 -fx-background-radius: 30;
 -fx-border-color: #0097a7;
 -fx-border-radius: 35;
--fx-border-vidth: 3;
+-fx-border-width: 3;
 }
 
 .label {

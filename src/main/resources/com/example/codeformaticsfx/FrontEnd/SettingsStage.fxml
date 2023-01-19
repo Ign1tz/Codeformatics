@@ -56,10 +56,7 @@
             <Font name="Arial Black" size="13.0" />
          </font>
       </Button>
-      <CheckBox fx:id="CheckSound" mnemonicParsing="false" onAction="#SoundOnOFF" stylesheets="@SettingsStage.css" text="OFF" textFill="#0097a7" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
-         <effect>
-            <Bloom />
-         </effect></CheckBox>
+      <CheckBox fx:id="CheckSound" mnemonicParsing="false" onAction="#playSong" stylesheets="@SettingsStage.css" text="OFF" textFill="#0097a7" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
       <Label fx:id="Label2" stylesheets="@SettingsStage.css" text="TURN MUSIC ON/OFF" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="BASELINE">
          <effect>
             <Bloom />

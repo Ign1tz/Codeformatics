@@ -11,12 +11,17 @@ import javafx.fxml.*;
 import javafx.scene.*;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+
+import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import java.util.*;
 
-public class SceneController {
+public class SceneController implements Initializable{
 
     //FXML USAGE START
     @FXML
@@ -26,7 +31,9 @@ public class SceneController {
     @FXML
     private Label Label1, scoreboardLabel, Difficulty, Score, FinalScore, Questions, LabelCharacters;
     @FXML
-    private CheckBox Answer1, Answer2, Answer3, Answer4, CheckSound;
+    private CheckBox Answer1, Answer2, Answer3, Answer4;
+    @FXML
+    public CheckBox CheckSound;
     @FXML
     private Slider sliderSettings;
     @FXML
@@ -47,6 +54,12 @@ public class SceneController {
     private Parent root;
     private static Scene scene;
     int counterF, counterS;
+    private ArrayList<File> songs;
+    private File directory;
+    private File[] files;
+    private int songNumber;
+    private Media media;
+    private MediaPlayer mediaPlayer;
     QuestionJoker questionJoker = new QuestionJoker();
     //VARIABLES END
 
@@ -67,10 +80,10 @@ public class SceneController {
             if (name.length() >= 9) {
                 Label1.setText("Max. 8 characters ");    //usernames with more than 8 characters are not allowed
             } else {
-                Label1.setText("Welcome " + name + "!");
+                Label1.setText("Welcome " + name + "!"); //after name is set, it welcomes the user
                 nameGiven = true;
             }
-        } catch (Exception e) {
+        } catch (Exception e) {     //should there be an error, I want to know
             Label1.setText("error");
         }
     }
@@ -80,11 +93,28 @@ public class SceneController {
         random = rand.nextInt(high) + low;
         return random;
     }
-    public void SoundOnOFF(ActionEvent event) {
-        if(CheckSound.isSelected()) {
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        songs = new ArrayList<>();
+        directory = new File("C:\\Users\\Anna\\IdeaProjects\\Codeformatics\\src\\main\\resources\\com\\example\\codeformaticsfx\\music"); //path to file
+        files = directory.listFiles();      //stores music in file
+
+        if (files != null) {
+            //add music in arraylist
+            // System.out.println(file);
+            songs.addAll(Arrays.asList(files));
+            media = new Media(songs.get(songNumber).toURI().toString());
+            mediaPlayer = new MediaPlayer(media);
+        }
+
+    }
+    public void playSong() {
+        if (CheckSound.isSelected()) {  //if checkbox is selected play song, if not pause
             CheckSound.setText("ON");
+            mediaPlayer.play();
+            //mediaPlayer.getOnPlaying();
         } else {
-            CheckSound.setText("OFF");
+            mediaPlayer.pause();
         }
     }
     public void BackgroundChange(ActionEvent event) {
@@ -537,5 +567,7 @@ public class SceneController {
             counterS = 1;
         }
     }
+
+
     //HOMESTAGE END
 }

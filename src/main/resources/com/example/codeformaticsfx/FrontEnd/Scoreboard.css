@@ -16,7 +16,7 @@
 -fx-background-radius: 30;
 -fx-border-color: #0097a7;
 -fx-border-radius: 35;
--fx-border-vidth: 3;
+-fx-border-width: 3;
 -fx-effect: dropshadow( gaussian , rgba(255,255,255,1) , 6,0,0,1 );
 }
 
@@ -25,7 +25,7 @@
 -fx-background-radius: 30;
 -fx-border-color: #0097a7;
 -fx-border-radius: 35;
--fx-border-vidth: 3;
+-fx-border-width: 3;
 }
 
 #titleScore {
