@@ -40,11 +40,10 @@ public class WriteQuestionsGUIController implements Initializable {
             a3 = A3.getText();
             a4 = A4.getText();
             writeQuestions.writeQuestions(question,a1,a2,a3,a4,difficulty,isRight);
-            Parent fxmlLoader = FXMLLoader.load(getClass().getResource("StartQuizzInput.fxml"));
-            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            scene = new Scene(fxmlLoader);
-            stage.setScene(scene);
-            stage.show();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("StartQuizzInput.fxml"));
+            Parent root = loader.load();
+            Scene scene = ((Node) event.getSource()).getScene();
+            scene.setRoot(root);
         }
     }
     public void newQuestion(ActionEvent event) throws IOException {
