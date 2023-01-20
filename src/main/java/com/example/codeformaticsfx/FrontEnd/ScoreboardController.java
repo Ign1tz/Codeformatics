@@ -11,6 +11,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.GridPane;
 
 import java.io.IOException;
 import java.util.List;
@@ -18,7 +19,8 @@ import java.util.List;
 public class ScoreboardController {
     public ScoreboardController() throws IOException {
     }
-
+    @FXML
+    private GridPane scoreboardGrid;
     @FXML
     private Label place1, place2, place3, place4, place5, place6, place7, place8, place9, place10;
     @FXML
@@ -71,6 +73,14 @@ public class ScoreboardController {
         if (count >= encodedScoreboard.size()) {
             next.setOpacity(0);
             next.setDisable(true);
+        }
+
+        if(Vars.currentBackgroundValue <= 33){
+            scoreboardGrid.setStyle("-fx-background-image: url('com/example/codeformaticsfx/FrontEnd/Background2.jpg')");
+        } else if (Vars.currentBackgroundValue > 33 && Vars.currentBackgroundValue <= 66) {
+            scoreboardGrid.setStyle("-fx-background-image: url('com/example/codeformaticsfx/FrontEnd/Background.jpg')");
+        }else{
+            scoreboardGrid.setStyle("-fx-background-image: url('com/example/codeformaticsfx/FrontEnd/Background2.jpg')");
         }
     }
     public void setScoreboard(){

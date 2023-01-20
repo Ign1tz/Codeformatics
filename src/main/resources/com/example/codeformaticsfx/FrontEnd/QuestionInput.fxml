@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane fx:id="inputQuestionsGrid" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" stylesheets="@QuestionInput.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.codeformaticsfx.FrontEnd.WriteQuestionsGUIController">
+<GridPane fx:id="inputQuestionsGrid" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="inputQuestionsGrid" stylesheets="@QuestionInput.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.codeformaticsfx.FrontEnd.WriteQuestionsGUIController">
   <columnConstraints>
       <ColumnConstraints hgrow="SOMETIMES" maxWidth="132.5" minWidth="10.0" prefWidth="102.5" />
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="132.5" minWidth="10.0" prefWidth="102.5" />
@@ -37,26 +37,43 @@
       <TextField fx:id="A4" prefHeight="25.0" prefWidth="334.0" promptText="Answer four" GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.rowIndex="4" />
       <Button mnemonicParsing="false" onAction="#newQuestion" text="Next Question" GridPane.columnIndex="5" GridPane.rowIndex="6" />
       <Button fx:id="finish" mnemonicParsing="false" onAction="#finish" text="Finish" GridPane.columnIndex="2" GridPane.rowIndex="6" />
-      <Label text="Right Answer" textFill="WHITE" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP" />
-      <Label text="Difficulty:" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+      <Label text="Right Answer" textFill="WHITE" GridPane.columnIndex="5" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="TOP">
+         <padding>
+            <Insets left="10.0" />
+         </padding></Label>
       <Label text="Question" textFill="WHITE" GridPane.columnIndex="1" />
       <Label text="Answer four" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="4" />
       <Label text="Answer three" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="3" />
       <Label text="Answer two" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="2" />
       <Label text="Answer one" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-      <CheckBox fx:id="four" mnemonicParsing="false" onAction="#fourIsRight" GridPane.columnIndex="5" GridPane.rowIndex="4" />
-      <CheckBox fx:id="one" mnemonicParsing="false" onAction="#oneIsRight" GridPane.columnIndex="5" GridPane.rowIndex="3" />
-      <CheckBox fx:id="two" mnemonicParsing="false" onAction="#twoIsRight" GridPane.columnIndex="5" GridPane.rowIndex="2" />
-      <CheckBox fx:id="three" mnemonicParsing="false" onAction="#threeIsRight" GridPane.columnIndex="5" GridPane.rowIndex="1" />
-      <Slider fx:id="diffSlider" blockIncrement="1.0" majorTickUnit="1.0" max="3.0" min="1.0" minorTickCount="0" showTickMarks="true" snapToTicks="true" value="1.0" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="5" />
-      <Label fx:id="diff" contentDisplay="CENTER" text="Easy" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="5">
+      <CheckBox fx:id="four" mnemonicParsing="false" onAction="#fourIsRight" GridPane.columnIndex="5" GridPane.rowIndex="4">
          <padding>
             <Insets left="15.0" />
+         </padding></CheckBox>
+      <CheckBox fx:id="one" mnemonicParsing="false" onAction="#oneIsRight" GridPane.columnIndex="5" GridPane.rowIndex="3">
+         <padding>
+            <Insets left="15.0" />
+         </padding></CheckBox>
+      <CheckBox fx:id="two" mnemonicParsing="false" onAction="#twoIsRight" GridPane.columnIndex="5" GridPane.rowIndex="2">
+         <padding>
+            <Insets left="15.0" />
+         </padding></CheckBox>
+      <CheckBox fx:id="three" mnemonicParsing="false" onAction="#threeIsRight" GridPane.columnIndex="5" GridPane.rowIndex="1">
+         <padding>
+            <Insets left="15.0" />
+         </padding></CheckBox>
+      <Slider fx:id="diffSlider" blockIncrement="1.0" majorTickUnit="1.0" max="3.0" min="1.0" minorTickCount="0" showTickMarks="true" snapToTicks="true" value="1.0" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+         <padding>
+            <Insets bottom="30.0" />
+         </padding></Slider>
+      <Label fx:id="diff" contentDisplay="CENTER" text="Easy" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+         <padding>
+            <Insets bottom="30.0" right="15.0" />
          </padding>
       </Label>
       <Label fx:id="error" opacity="0.0" text="Please select one option for everything!" textAlignment="CENTER" textFill="RED" wrapText="true" GridPane.columnIndex="5" GridPane.rowIndex="5" />
-      <Label text="Easy" textFill="WHITE" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.rowIndex="5" GridPane.valignment="BOTTOM" />
-      <Label text="Medium" textFill="WHITE" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="BOTTOM" />
-      <Label text="Hard" textFill="WHITE" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="5" GridPane.valignment="BOTTOM" />
+      <Label text="Easy" textFill="WHITE" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
+      <Label text="Medium" textFill="WHITE" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
+      <Label text="Hard" textFill="WHITE" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
    </children>
 </GridPane>

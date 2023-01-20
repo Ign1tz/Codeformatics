@@ -40,13 +40,12 @@ public class SettingsController implements Initializable {
     private File directory;
     private File[] files;
     private int songNumber;
-    //private static MediaPlayer mediaPlayer;
     private Media media;
     private static String name;
     public boolean nameGiven = false;
     private static boolean soundOn = false;
 
-    public void createQuizz(ActionEvent event) throws IOException { //Working on (moritz)
+    public void createQuizz(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("QuestionInput.fxml"));
         Parent root = loader.load();
         Scene scene = ((Node) event.getSource()).getScene();
@@ -103,21 +102,21 @@ public class SettingsController implements Initializable {
         }
         sliderSettings.setValue(Vars.currentBackgroundValue);
         if(sliderSettings.getValue() <= 33){
-            SettingsGrid.setStyle("-fx-background-image: url('com/example/codeformaticsfx/FrontEnd/Background.jpg')");
-        } else if (sliderSettings.getValue() > 33 && sliderSettings.getValue() <= 66) {
             SettingsGrid.setStyle("-fx-background-image: url('com/example/codeformaticsfx/FrontEnd/Background2.jpg')");
-        }else{
+        } else if (sliderSettings.getValue() > 33 && sliderSettings.getValue() <= 66) {
             SettingsGrid.setStyle("-fx-background-image: url('com/example/codeformaticsfx/FrontEnd/Background.jpg')");
+        }else{
+            SettingsGrid.setStyle("-fx-background-image: url('com/example/codeformaticsfx/FrontEnd/Background2.jpg')");
         }
         sliderSettings.valueProperty().addListener(new ChangeListener<Number>() {
             @Override
             public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
                 if(sliderSettings.getValue() <= 33){
-                    SettingsGrid.setStyle("-fx-background-image: url('com/example/codeformaticsfx/FrontEnd/Background.jpg')");
-                } else if (sliderSettings.getValue() > 33 && sliderSettings.getValue() <= 66) {
                     SettingsGrid.setStyle("-fx-background-image: url('com/example/codeformaticsfx/FrontEnd/Background2.jpg')");
-                }else{
+                } else if (sliderSettings.getValue() > 33 && sliderSettings.getValue() <= 66) {
                     SettingsGrid.setStyle("-fx-background-image: url('com/example/codeformaticsfx/FrontEnd/Background.jpg')");
+                }else{
+                    SettingsGrid.setStyle("-fx-background-image: url('com/example/codeformaticsfx/FrontEnd/Background2.jpg')");
                 }
                 Vars.currentBackgroundValue = (int) sliderSettings.getValue();
             }

@@ -1,11 +1,13 @@
 package com.example.codeformaticsfx.FrontEnd;
 
+import com.example.codeformaticsfx.Files.Vars;
 import com.example.codeformaticsfx.Files.readWriteQuestions;
 import javafx.beans.value.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.*;
 import javafx.scene.*;
 import javafx.scene.control.*;
+import javafx.scene.layout.GridPane;
 import javafx.stage.*;
 
 import java.io.IOException;
@@ -13,6 +15,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class WriteQuestionsGUIController implements Initializable {
+    @FXML
+    private GridPane inputQuestionsGrid;
     @FXML
     private TextField Question, A1, A2, A3, A4;
     @FXML
@@ -112,6 +116,13 @@ public class WriteQuestionsGUIController implements Initializable {
     }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        if(Vars.currentBackgroundValue <= 33){
+            inputQuestionsGrid.setStyle("-fx-background-image: url('com/example/codeformaticsfx/FrontEnd/Background2.jpg')");
+        } else if (Vars.currentBackgroundValue > 33 && Vars.currentBackgroundValue <= 66) {
+            inputQuestionsGrid.setStyle("-fx-background-image: url('com/example/codeformaticsfx/FrontEnd/Background.jpg')");
+        }else{
+            inputQuestionsGrid.setStyle("-fx-background-image: url('com/example/codeformaticsfx/FrontEnd/Background2.jpg')");
+        }
         switch ((int) diffSlider.getValue()){
             case 1:
                 difficulty = "Easy";
@@ -123,7 +134,7 @@ public class WriteQuestionsGUIController implements Initializable {
                 difficulty = "Hard";
                 break;
         }
-        diff.setText(difficulty);
+        diff.setText("Difficulty: " + difficulty);
         diffSlider.valueProperty().addListener(new ChangeListener<Number>() {
             @Override
             public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
@@ -138,7 +149,7 @@ public class WriteQuestionsGUIController implements Initializable {
                         difficulty = "Hard";
                         break;
                 }
-                diff.setText(difficulty);
+                diff.setText("Difficulty: " + difficulty);
             }
         });
     }

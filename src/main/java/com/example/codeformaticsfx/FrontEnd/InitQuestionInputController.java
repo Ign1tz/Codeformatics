@@ -1,5 +1,6 @@
 package com.example.codeformaticsfx.FrontEnd;
 
+import com.example.codeformaticsfx.Files.Vars;
 import com.example.codeformaticsfx.Files.readWriteList;
 import com.example.codeformaticsfx.Files.readWriteQuestions;
 import javafx.beans.value.ChangeListener;
@@ -8,6 +9,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.*;
 import javafx.scene.*;
 import javafx.scene.control.*;
+import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -17,6 +19,8 @@ import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class InitQuestionInputController implements Initializable{
+    @FXML
+    private GridPane finishQuestionsGrid;
     private readWriteQuestions writeQuestions = WriteQuestionsGUIController.writeQuestions;
     private readWriteList rwL = new readWriteList();
     @FXML
@@ -70,6 +74,13 @@ public class InitQuestionInputController implements Initializable{
         return false;
     }
     public void initialize(URL location, ResourceBundle resources) {
+        if(Vars.currentBackgroundValue <= 33){
+            finishQuestionsGrid.setStyle("-fx-background-image: url('com/example/codeformaticsfx/FrontEnd/Background2.jpg')");
+        } else if (Vars.currentBackgroundValue > 33 && Vars.currentBackgroundValue <= 66) {
+            finishQuestionsGrid.setStyle("-fx-background-image: url('com/example/codeformaticsfx/FrontEnd/Background.jpg')");
+        }else{
+            finishQuestionsGrid.setStyle("-fx-background-image: url('com/example/codeformaticsfx/FrontEnd/Background2.jpg')");
+        }
         QuizzName.getCharacters().toString();
         AuthorName.getCharacters().toString();
         numberOfQuestions.setMax(writeQuestions.getQuestionList().size() - 4);

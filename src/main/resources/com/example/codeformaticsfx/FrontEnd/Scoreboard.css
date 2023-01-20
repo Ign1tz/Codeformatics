@@ -1,4 +1,4 @@
-#scoreboardGrid{
+.scoreboardGrid{
 -fx-background-image:url("Background.jpg");
 -fx-background-size: cover;
 }

@@ -1,4 +1,4 @@
-#finishGrid{
+.finishGrid{
 -fx-background-image:url("Background.jpg");
 -fx-background-size: cover;
 }

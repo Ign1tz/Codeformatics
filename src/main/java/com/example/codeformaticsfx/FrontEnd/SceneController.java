@@ -18,11 +18,11 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.*;
 
-public class SceneController {
+public class SceneController implements Initializable{
 
     //FXML USAGE START
     @FXML
-    public GridPane Warning, SettingsGrid;
+    public GridPane Warning, homeGrid, finishGrid, GameGrid;
     @FXML
     public Button musicButton, exit, stay, OptionsButton, saveButton, newQuizz, StartButton, Return;
     @FXML
@@ -509,6 +509,23 @@ public class SceneController {
                 }
             }
             counterS = 1;
+        }
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        if(Vars.currentBackgroundValue <= 33){
+            if(homeGrid != null) homeGrid.setStyle("-fx-background-image: url('com/example/codeformaticsfx/FrontEnd/Background2.jpg')");
+            if(finishGrid != null) finishGrid.setStyle("-fx-background-image: url('com/example/codeformaticsfx/FrontEnd/Background2.jpg')");
+            if(GameGrid != null) GameGrid.setStyle("-fx-background-image: url('com/example/codeformaticsfx/FrontEnd/Background2.jpg')");
+        } else if (Vars.currentBackgroundValue > 33 && Vars.currentBackgroundValue <= 66) {
+            if(homeGrid != null) homeGrid.setStyle("-fx-background-image: url('com/example/codeformaticsfx/FrontEnd/Background.jpg')");
+            if(finishGrid != null) finishGrid.setStyle("-fx-background-image: url('com/example/codeformaticsfx/FrontEnd/Background.jpg')");
+            if(GameGrid != null) GameGrid.setStyle("-fx-background-image: url('com/example/codeformaticsfx/FrontEnd/Background.jpg')");
+        }else{
+            if(homeGrid != null) homeGrid.setStyle("-fx-background-image: url('com/example/codeformaticsfx/FrontEnd/Background2.jpg')");
+            if(finishGrid != null) finishGrid.setStyle("-fx-background-image: url('com/example/codeformaticsfx/FrontEnd/Background2.jpg')");
+            if(GameGrid != null) GameGrid.setStyle("-fx-background-image: url('com/example/codeformaticsfx/FrontEnd/Background2.jpg')");
         }
     }
 

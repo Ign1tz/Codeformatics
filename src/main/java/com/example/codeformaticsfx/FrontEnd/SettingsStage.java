@@ -22,7 +22,6 @@ public class SettingsStage extends Application {
             SettingsStage.setResizable(false);       //not resiazable
             SettingsStage.setMaximized(true);       //fullscreen
             SettingsStage.setScene(scene);           //setscene to stage
-
             SettingsStage.show();                    //show stage
         }
         catch (Exception e) {
