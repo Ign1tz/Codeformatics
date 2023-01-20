@@ -43,13 +43,12 @@ public class InitQuestionInputController implements Initializable{
     }
 
     public void startQuestion(ActionEvent event) throws IOException {
-        if(QuizzName.getText() == "" && AuthorName.getText() == "") {
+        if(QuizzName.getText() == "" || AuthorName.getText() == "") {
             error.setOpacity(1);
         }else{
             if(!existsIn(QuizzName.getText().toLowerCase(), QuizList)) {
                 try {
-                    String filePath = "./GameResources/QuestionLibrary/" + QuizzName.getText().toLowerCase() + ".json";
-                    writeQuestions.finish(filePath, QuizzName.getText(), AuthorName.getText(), questionNumber, QuizzName.getText().toLowerCase());
+                    writeQuestions.finish(QuizzName.getText(), AuthorName.getText(), questionNumber, QuizzName.getText().toLowerCase());
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("SettingsStage.fxml"));
                     Parent root = loader.load();
                     Scene scene = ((Node) event.getSource()).getScene();
