@@ -48,7 +48,8 @@ public class readWriteQuestions { //this class handles creating the questions, w
         readWriteQuestions newQuestion = new readWriteQuestions(encodeDecode.encodedQuestion, encodeDecode.encodedA1, encodeDecode.encodedA2, encodeDecode.encodedA3, encodeDecode.encodedA4, encodeDecode.encodedDifficulty, encodeDecode.encodedRightAnswer);
         QuestionList.add(newQuestion);
     }
-    public void finish(String filePath, String quizzname, String authorname, String questionsUsed) throws IOException {
+    public void finish(String filePath, String quizzname, String authorname, String questionsUsed, String QuizName) throws IOException {
+        readWriteList rwL = new readWriteList(QuizName);
         Writer writer = Files.newBufferedWriter(Paths.get(filePath));
         File file = new File(filePath);
         if(file.createNewFile()){
@@ -59,6 +60,7 @@ public class readWriteQuestions { //this class handles creating the questions, w
         QuizzInfo thisQuizz = new QuizzInfo(encodeDecode.encodedQuizzName, encodeDecode.encodedAuthorname, encodeDecode.encodedQuestionsUsed, getQuestionList());
         gson.toJson(thisQuizz, writer);
         writer.close();
+        rwL.writeList(QuizName);
     }
     public QuizzInfo readQuizz(String filePath) throws IOException {
         Reader reader = Files.newBufferedReader(Paths.get(filePath));

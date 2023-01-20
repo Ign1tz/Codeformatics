@@ -24,7 +24,7 @@ public class readWriteList {
     public readWriteList(){}
     static Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
-    private void writeList(String questions) throws IOException {
+    public void writeList(String questions) throws IOException {
         List<String> temp = fromFile();
         if(temp == null){
             temp = new ArrayList<>();
