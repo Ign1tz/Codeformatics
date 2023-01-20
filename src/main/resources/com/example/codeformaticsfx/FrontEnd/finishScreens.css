@@ -1,4 +1,4 @@
-.root{
+#finishGrid{
 -fx-background-image:url("Background.jpg");
 -fx-background-size: cover;
 }
@@ -11,6 +11,7 @@
 -fx-min-height: 40;
 -fx-text-size: 20px;
 -fx-font-weight: bold;
+-fx-font-family: ArialBlack;
 }
 
 .button:hover {
@@ -33,5 +34,6 @@
 -fx-text-fill: #e91e63;
 -fx-font-size: 20px;
 -fx-font-weight: bold;
+-fx-font-family: ArialBlack;
 }
 

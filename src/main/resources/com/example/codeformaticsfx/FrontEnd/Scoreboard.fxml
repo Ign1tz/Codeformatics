@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<GridPane prefHeight="407.0" prefWidth="607.0" stylesheets="@Scoreboard.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.codeformaticsfx.FrontEnd.ScoreboardController">
+<GridPane fx:id="scoreboardGrid" prefHeight="407.0" prefWidth="607.0" stylesheets="@Scoreboard.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.codeformaticsfx.FrontEnd.ScoreboardController">
    <columnConstraints>
       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -114,7 +114,7 @@
       <Label fx:id="place10" layoutX="132.0" layoutY="304.0" prefHeight="18.0" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="10" />
       <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
          <children>
-            <Label fx:id="titleScore" contentDisplay="CENTER" prefHeight="88.0" prefWidth="357.0" stylesheets="@Scoreboard.css" text="Scoreboard" textFill="#951197">
+            <Label fx:id="titleScore" alignment="CENTER" contentDisplay="CENTER" prefHeight="88.0" prefWidth="607.0" stylesheets="@Scoreboard.css" text="Scoreboard" textFill="#951197">
                <font>
                   <Font size="33.0" />
                </font>

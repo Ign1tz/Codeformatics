@@ -1,4 +1,4 @@
-.root{
+#homeGrid{
 -fx-background-image:url("Background.jpg"); /*sets background -> path*/
 -fx-background-size: cover;
 }

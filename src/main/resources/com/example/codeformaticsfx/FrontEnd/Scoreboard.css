@@ -1,4 +1,4 @@
-.root{
+#scoreboardGrid{
 -fx-background-image:url("Background.jpg");
 -fx-background-size: cover;
 }
@@ -8,7 +8,9 @@
 -fx-background-radius: 30;
 -fx-min-width: 80;
 -fx-min-height: 40;
--fx-text-size: 40px;
+-fx-text-size: 14px;
+-fx-font-weight: bold;
+-fx-font-family: ArialBlack;
 }
 
 .button:hover {
@@ -32,6 +34,7 @@
 -fx-text-fill: #e91e63;
 -fx-font-weight: bold;
 -fx-font-size: 60px;
+-fx-font-family: ArialBlack;
 }
 
 .label {

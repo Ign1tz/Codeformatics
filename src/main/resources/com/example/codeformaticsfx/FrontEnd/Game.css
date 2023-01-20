@@ -1,4 +1,4 @@
-.root{
+#GameGrid{
 -fx-background-image:url("Background.jpg");
 -fx-background-size: cover;
 }
@@ -11,6 +11,7 @@
 -fx-min-height: 40;
 -fx-text-size: 20px;
 -fx-font-weight: bold;
+-fx-font-family: ArialBlack;
 }
 
 .button:hover {
@@ -32,11 +33,13 @@
 #labelExit {
 -fx-font-weight: bold;
 -fx-font-size: 14px;
+-fx-font-family: ArialBlack;
 }
 
 #labelExit2 {
 -fx-font-weight: bold;
 -fx-font-size: 14px;
+-fx-font-family: ArialBlack;
 }
 
 #exit {
