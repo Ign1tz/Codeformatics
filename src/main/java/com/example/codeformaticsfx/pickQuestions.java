@@ -1,6 +1,7 @@
 package com.example.codeformaticsfx;
 
 import com.example.codeformaticsfx.Files.EncodeDecode;
+import com.example.codeformaticsfx.Files.Vars;
 import com.example.codeformaticsfx.Files.readWriteQuestions;
 
 import java.io.IOException;
@@ -15,7 +16,7 @@ public class pickQuestions {
     public List<Integer> hard = new ArrayList<>();
     private int numberOfEasyQuestions, numberOfMediumQuestions, numberOfHardQuestions;
     private readWriteQuestions temp = new readWriteQuestions();
-    public List<readWriteQuestions> questionList = temp.questionList("./GameResources/QuestionLibrary/Java.json");
+    public List<readWriteQuestions> questionList = temp.questionList(Vars.pathQuestions);
     public List<Integer> questionListDiff = new ArrayList<>();
 
     public pickQuestions() throws IOException {
