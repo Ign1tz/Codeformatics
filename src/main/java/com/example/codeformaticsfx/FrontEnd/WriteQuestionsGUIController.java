@@ -117,11 +117,11 @@ public class WriteQuestionsGUIController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         if(Vars.currentBackgroundValue <= 33){
-            inputQuestionsGrid.setStyle("-fx-background-image: url('com/example/codeformaticsfx/FrontEnd/Background2.jpg')");
+            inputQuestionsGrid.setStyle("-fx-background-image: url("+ Vars.pathBackground1 +")");
         } else if (Vars.currentBackgroundValue > 33 && Vars.currentBackgroundValue <= 66) {
-            inputQuestionsGrid.setStyle("-fx-background-image: url('com/example/codeformaticsfx/FrontEnd/Background.jpg')");
+            inputQuestionsGrid.setStyle("-fx-background-image: url("+ Vars.pathBackground2 +")");
         }else{
-            inputQuestionsGrid.setStyle("-fx-background-image: url('com/example/codeformaticsfx/FrontEnd/Background2.jpg')");
+            inputQuestionsGrid.setStyle("-fx-background-image: url("+ Vars.pathBackground3 +")");
         }
         switch ((int) diffSlider.getValue()){
             case 1:

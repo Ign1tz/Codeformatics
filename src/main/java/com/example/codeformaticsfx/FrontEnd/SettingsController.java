@@ -102,21 +102,21 @@ public class SettingsController implements Initializable {
         }
         sliderSettings.setValue(Vars.currentBackgroundValue);
         if(sliderSettings.getValue() <= 33){
-            SettingsGrid.setStyle("-fx-background-image: url('com/example/codeformaticsfx/FrontEnd/Background2.jpg')");
+            SettingsGrid.setStyle("-fx-background-image: url("+ Vars.pathBackground1 +")");
         } else if (sliderSettings.getValue() > 33 && sliderSettings.getValue() <= 66) {
-            SettingsGrid.setStyle("-fx-background-image: url('com/example/codeformaticsfx/FrontEnd/Background.jpg')");
+            SettingsGrid.setStyle("-fx-background-image: url("+ Vars.pathBackground2 +")");
         }else{
-            SettingsGrid.setStyle("-fx-background-image: url('com/example/codeformaticsfx/FrontEnd/Background2.jpg')");
+            SettingsGrid.setStyle("-fx-background-image: url("+ Vars.pathBackground3 +")");
         }
         sliderSettings.valueProperty().addListener(new ChangeListener<Number>() {
             @Override
             public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
                 if(sliderSettings.getValue() <= 33){
-                    SettingsGrid.setStyle("-fx-background-image: url('com/example/codeformaticsfx/FrontEnd/Background2.jpg')");
+                    SettingsGrid.setStyle("-fx-background-image: url("+ Vars.pathBackground1 +")");
                 } else if (sliderSettings.getValue() > 33 && sliderSettings.getValue() <= 66) {
-                    SettingsGrid.setStyle("-fx-background-image: url('com/example/codeformaticsfx/FrontEnd/Background.jpg')");
+                    SettingsGrid.setStyle("-fx-background-image: url("+ Vars.pathBackground2 +")");
                 }else{
-                    SettingsGrid.setStyle("-fx-background-image: url('com/example/codeformaticsfx/FrontEnd/Background2.jpg')");
+                    SettingsGrid.setStyle("-fx-background-image: url("+ Vars.pathBackground3 +")");
                 }
                 Vars.currentBackgroundValue = (int) sliderSettings.getValue();
             }

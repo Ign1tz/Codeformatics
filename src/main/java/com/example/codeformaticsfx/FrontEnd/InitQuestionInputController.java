@@ -75,11 +75,11 @@ public class InitQuestionInputController implements Initializable{
     }
     public void initialize(URL location, ResourceBundle resources) {
         if(Vars.currentBackgroundValue <= 33){
-            finishQuestionsGrid.setStyle("-fx-background-image: url('com/example/codeformaticsfx/FrontEnd/Background2.jpg')");
+            finishQuestionsGrid.setStyle("-fx-background-image: url("+ Vars.pathBackground1 +")");
         } else if (Vars.currentBackgroundValue > 33 && Vars.currentBackgroundValue <= 66) {
-            finishQuestionsGrid.setStyle("-fx-background-image: url('com/example/codeformaticsfx/FrontEnd/Background.jpg')");
+            finishQuestionsGrid.setStyle("-fx-background-image: url("+ Vars.pathBackground2 +")");
         }else{
-            finishQuestionsGrid.setStyle("-fx-background-image: url('com/example/codeformaticsfx/FrontEnd/Background2.jpg')");
+            finishQuestionsGrid.setStyle("-fx-background-image: url("+ Vars.pathBackground3 +")");
         }
         QuizzName.getCharacters().toString();
         AuthorName.getCharacters().toString();

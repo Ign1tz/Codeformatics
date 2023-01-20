@@ -515,17 +515,17 @@ public class SceneController implements Initializable{
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         if(Vars.currentBackgroundValue <= 33){
-            if(homeGrid != null) homeGrid.setStyle("-fx-background-image: url('com/example/codeformaticsfx/FrontEnd/Background2.jpg')");
-            if(finishGrid != null) finishGrid.setStyle("-fx-background-image: url('com/example/codeformaticsfx/FrontEnd/Background2.jpg')");
-            if(GameGrid != null) GameGrid.setStyle("-fx-background-image: url('com/example/codeformaticsfx/FrontEnd/Background2.jpg')");
+            if(homeGrid != null) homeGrid.setStyle("-fx-background-image: url("+ Vars.pathBackground1 +")");
+            if(finishGrid != null) finishGrid.setStyle("-fx-background-image: url("+ Vars.pathBackground1 +")");
+            if(GameGrid != null) GameGrid.setStyle("-fx-background-image: url("+ Vars.pathBackground1 +")");
         } else if (Vars.currentBackgroundValue > 33 && Vars.currentBackgroundValue <= 66) {
-            if(homeGrid != null) homeGrid.setStyle("-fx-background-image: url('com/example/codeformaticsfx/FrontEnd/Background.jpg')");
-            if(finishGrid != null) finishGrid.setStyle("-fx-background-image: url('com/example/codeformaticsfx/FrontEnd/Background.jpg')");
-            if(GameGrid != null) GameGrid.setStyle("-fx-background-image: url('com/example/codeformaticsfx/FrontEnd/Background.jpg')");
+            if(homeGrid != null) homeGrid.setStyle("-fx-background-image: url("+ Vars.pathBackground2 +")");
+            if(finishGrid != null) finishGrid.setStyle("-fx-background-image: url("+ Vars.pathBackground2 +")");
+            if(GameGrid != null) GameGrid.setStyle("-fx-background-image: url("+ Vars.pathBackground2 +")");
         }else{
-            if(homeGrid != null) homeGrid.setStyle("-fx-background-image: url('com/example/codeformaticsfx/FrontEnd/Background2.jpg')");
-            if(finishGrid != null) finishGrid.setStyle("-fx-background-image: url('com/example/codeformaticsfx/FrontEnd/Background2.jpg')");
-            if(GameGrid != null) GameGrid.setStyle("-fx-background-image: url('com/example/codeformaticsfx/FrontEnd/Background2.jpg')");
+            if(homeGrid != null) homeGrid.setStyle("-fx-background-image: url("+ Vars.pathBackground3 +")");
+            if(finishGrid != null) finishGrid.setStyle("-fx-background-image: url("+ Vars.pathBackground3 +")");
+            if(GameGrid != null) GameGrid.setStyle("-fx-background-image: url("+ Vars.pathBackground3 +")");
         }
     }
 

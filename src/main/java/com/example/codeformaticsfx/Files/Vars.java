@@ -12,6 +12,8 @@ public class Vars {
     public static int currentBackgroundValue = 50;
     public static String pathScoreboard = "./GameResources/Scoreboards/javaScoreboard.json";
     public static String pathQuestions = "./GameResources/QuestionLibrary/java.json";
-    public static GridPane finishQuestionGrid, finishGrid, GameGrid, homeGrid, inputQuestionGrid, scoreboardGrid, SettingsGrid;
+    public static String pathBackground1 = "com/example/codeformaticsfx/FrontEnd/Background2.jpg";
+    public static String pathBackground2 = "com/example/codeformaticsfx/FrontEnd/Background.jpg";
+    public static String pathBackground3 = "com/example/codeformaticsfx/FrontEnd/Background2.jpg";
 
 }

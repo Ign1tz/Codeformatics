@@ -76,11 +76,11 @@ public class ScoreboardController {
         }
 
         if(Vars.currentBackgroundValue <= 33){
-            scoreboardGrid.setStyle("-fx-background-image: url('com/example/codeformaticsfx/FrontEnd/Background2.jpg')");
+            scoreboardGrid.setStyle("-fx-background-image: url("+ Vars.pathBackground1 +")");
         } else if (Vars.currentBackgroundValue > 33 && Vars.currentBackgroundValue <= 66) {
-            scoreboardGrid.setStyle("-fx-background-image: url('com/example/codeformaticsfx/FrontEnd/Background.jpg')");
+            scoreboardGrid.setStyle("-fx-background-image: url("+ Vars.pathBackground2 +")");
         }else{
-            scoreboardGrid.setStyle("-fx-background-image: url('com/example/codeformaticsfx/FrontEnd/Background2.jpg')");
+            scoreboardGrid.setStyle("-fx-background-image: url("+ Vars.pathBackground3 +")");
         }
     }
     public void setScoreboard(){
