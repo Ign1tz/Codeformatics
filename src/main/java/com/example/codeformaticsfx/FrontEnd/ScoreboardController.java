@@ -1,6 +1,7 @@
 package com.example.codeformaticsfx.FrontEnd;
 
 import com.example.codeformaticsfx.Files.EncodeDecode;
+import com.example.codeformaticsfx.Files.Vars;
 import com.example.codeformaticsfx.Files.readWriteScoreboard;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -29,7 +30,7 @@ public class ScoreboardController {
     @FXML
     private Button exit;
     private int count = 0;
-    private String path = "./GameResources/Scoreboards/JavaScoreboard.json";
+    private String path = Vars.pathScoreboard;
 
     readWriteScoreboard scoreboard = new readWriteScoreboard();
     EncodeDecode encodeDecode = new EncodeDecode();

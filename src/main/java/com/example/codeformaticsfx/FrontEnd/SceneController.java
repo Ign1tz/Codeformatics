@@ -1,9 +1,6 @@
 package com.example.codeformaticsfx.FrontEnd;
 
-import com.example.codeformaticsfx.Files.EncodeDecode;
-import com.example.codeformaticsfx.Files.QuizzInfo;
-import com.example.codeformaticsfx.Files.readWriteQuestions;
-import com.example.codeformaticsfx.Files.readWriteScoreboard;
+import com.example.codeformaticsfx.Files.*;
 import com.example.codeformaticsfx.Quizz.QuestionJoker;
 import com.example.codeformaticsfx.pickQuestions;
 import javafx.event.ActionEvent;
@@ -21,7 +18,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.*;
 
-public class SceneController implements Initializable{
+public class SceneController {
 
     //FXML USAGE START
     @FXML
@@ -48,7 +45,6 @@ public class SceneController implements Initializable{
     static List<readWriteQuestions> questionsList;
     static String selected, right, numberOfQuestions, score = "00000";
     static String pathScoreboard = "./GameResources/Scoreboards/JavaScoreboard.json";
-    static String pathQuestions = "./GameResources/QuestionLibrary/Java.json";
     static boolean nameGiven = false;
     private Stage stage;
     private Parent root;
@@ -73,68 +69,12 @@ public class SceneController implements Initializable{
         return scene;
     }
 
-    //Settings START
-    public void submit(ActionEvent event) {
-        try {
-            name = myNameText.getText();                //name can be typed into the field
-            if (name.length() >= 9) {
-                Label1.setText("Max. 8 characters ");    //usernames with more than 8 characters are not allowed
-            } else {
-                Label1.setText("Welcome " + name + "!"); //after name is set, it welcomes the user
-                nameGiven = true;
-            }
-        } catch (Exception e) {     //should there be an error, I want to know
-            Label1.setText("error");
-        }
-    }
     private int randomNumber(int high) {
         int low = 1, random;
         Random rand = new Random();
         random = rand.nextInt(high) + low;
         return random;
     }
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        songs = new ArrayList<>();
-        directory = new File("C:\\Users\\Anna\\IdeaProjects\\Codeformatics\\src\\main\\resources\\com\\example\\codeformaticsfx\\music"); //path to file
-        files = directory.listFiles();      //stores music in file
-
-        if (files != null) {
-            //add music in arraylist
-            // System.out.println(file);
-            songs.addAll(Arrays.asList(files));
-            media = new Media(songs.get(songNumber).toURI().toString());
-            mediaPlayer = new MediaPlayer(media);
-        }
-
-    }
-    public void playSong() {
-        if (CheckSound.isSelected()) {  //if checkbox is selected play song, if not pause
-            CheckSound.setText("ON");
-            mediaPlayer.play();
-            //mediaPlayer.getOnPlaying();
-        } else {
-            mediaPlayer.pause();
-        }
-    }
-    public void BackgroundChange(ActionEvent event) {
-        if (sliderSettings.getValue() == 0) {
-        }
-    }
-    public void createQuizz(ActionEvent event) throws IOException {
-        SettingsGrid.setStyle("-fx-background-image: url('com/example/codeformaticsfx/FrontEnd/Background2.jpg')"); //Working on (moritz)
-        /*Parent fxmlLoader = FXMLLoader.load(getClass().getResource("QuestionInput.fxml"));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(fxmlLoader);
-        stage.setTitle("Input Questions");
-        stage.setResizable(false);
-        stage.setMaximized(true);
-        stage.setScene(scene);
-        stage.show();*/
-    }
-    //SETTINGS END
-
-    //SWITCHING SCENES START
 
     public void switchStart(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("HomeStage.fxml"));
@@ -162,7 +102,7 @@ public class SceneController implements Initializable{
         easy = pQ.easy;
         medium = pQ.medium;
         hard = pQ.hard;
-        QuizzInfo thisQuizz = rwq.readQuizz(pathQuestions);
+        QuizzInfo thisQuizz = rwq.readQuizz(Vars.pathQuestions);
         questionsList = thisQuizz.questionsList;
         numberOfQuestions = eD.decodeSingle(thisQuizz.questionsUsed);
         readWriteQuestions temp = null;
@@ -236,9 +176,9 @@ public class SceneController implements Initializable{
             if(!nameGiven) {
                 name = nameScoreboard.getText();
             }
-            rwS.writeToScoreboard(name, score, String.valueOf(1), pathScoreboard);
+            rwS.writeToScoreboard(name, score, String.valueOf(1), Vars.pathScoreboard);
             ScoreboardController SC = new ScoreboardController();
-            SC.setPath(pathScoreboard);
+            //SC.setPath(Vars.pathScoreboard);
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Scoreboard.fxml"));
             Parent root = loader.load();
             Scene scene = ((Node) event.getSource()).getScene();

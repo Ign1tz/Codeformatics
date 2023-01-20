@@ -1,5 +1,6 @@
 package com.example.codeformaticsfx.FrontEnd;
 
+import com.example.codeformaticsfx.Files.Vars;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
@@ -11,9 +12,14 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.ResourceBundle;
 
 public class SettingsController implements Initializable {
@@ -30,20 +36,16 @@ public class SettingsController implements Initializable {
     private Label Label1;
     @FXML
     private TextField myNameText;
+    private ArrayList<File> songs;
+    private File directory;
+    private File[] files;
+    private int songNumber;
+    //private static MediaPlayer mediaPlayer;
+    private Media media;
     private static String name;
     public boolean nameGiven = false;
+    private static boolean soundOn = false;
 
-    public void SoundOnOFF(ActionEvent event) {
-        if(CheckSound.isSelected()) {
-            CheckSound.setText("ON");
-        } else {
-            CheckSound.setText("OFF");
-        }
-    }
-    public void BackgroundChange(ActionEvent event) {
-        if (sliderSettings.getValue() == 0) {
-        }
-    }
     public void createQuizz(ActionEvent event) throws IOException { //Working on (moritz)
         FXMLLoader loader = new FXMLLoader(getClass().getResource("QuestionInput.fxml"));
         Parent root = loader.load();
@@ -73,27 +75,51 @@ public class SettingsController implements Initializable {
         scene.setRoot(root);
     }
 
+    public void playSong() {
+        if (CheckSound.isSelected()) {  //if checkbox is selected play song, if not pause
+            CheckSound.setText("ON");
+            Vars.mediaPlayer.setAutoPlay(true);
+            Vars.soundIsOn = true;
+            //mediaPlayer.getOnPlaying();
+        } else {
+            Vars.mediaPlayer.pause();
+        }
+    }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        switch ((int) sliderSettings.getValue()){
-            case 1:
-                SettingsGrid.setStyle("-fx-background-image: url('com/example/codeformaticsfx/FrontEnd/Background2.jpg')");
-                break;
-            case 2:
-                SettingsGrid.setStyle("-fx-background-image: url('com/example/codeformaticsfx/FrontEnd/Background.jpg')");
-                break;
+        if(Vars.soundIsOn){
+            CheckSound.setSelected(true);
+        }
+        songs = new ArrayList<>();
+        directory = new File("src/main/resources/com/example/codeformaticsfx/FrontEnd/music"); //path to file
+        System.out.println(directory);
+        files = directory.listFiles();      //stores music in file
+        if (files != null && !Vars.soundIsOn) {
+            //add music in arraylist
+            // System.out.println(file);
+            songs.addAll(Arrays.asList(files));
+            media = new Media(songs.get(songNumber).toURI().toString());
+            Vars.mediaPlayer = new MediaPlayer(media);
+        }
+        sliderSettings.setValue(Vars.currentBackgroundValue);
+        if(sliderSettings.getValue() <= 33){
+            SettingsGrid.setStyle("-fx-background-image: url('com/example/codeformaticsfx/FrontEnd/Background.jpg')");
+        } else if (sliderSettings.getValue() > 33 && sliderSettings.getValue() <= 66) {
+            SettingsGrid.setStyle("-fx-background-image: url('com/example/codeformaticsfx/FrontEnd/Background2.jpg')");
+        }else{
+            SettingsGrid.setStyle("-fx-background-image: url('com/example/codeformaticsfx/FrontEnd/Background.jpg')");
         }
         sliderSettings.valueProperty().addListener(new ChangeListener<Number>() {
             @Override
             public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
-                switch ((int) sliderSettings.getValue()){
-                    case 1:
-                        SettingsGrid.setStyle("-fx-background-image: url('com/example/codeformaticsfx/FrontEnd/Background2.jpg')");
-                        break;
-                    case 2:
-                        SettingsGrid.setStyle("-fx-background-image: url('com/example/codeformaticsfx/FrontEnd/Background.jpg')");
-                        break;
+                if(sliderSettings.getValue() <= 33){
+                    SettingsGrid.setStyle("-fx-background-image: url('com/example/codeformaticsfx/FrontEnd/Background.jpg')");
+                } else if (sliderSettings.getValue() > 33 && sliderSettings.getValue() <= 66) {
+                    SettingsGrid.setStyle("-fx-background-image: url('com/example/codeformaticsfx/FrontEnd/Background2.jpg')");
+                }else{
+                    SettingsGrid.setStyle("-fx-background-image: url('com/example/codeformaticsfx/FrontEnd/Background.jpg')");
                 }
+                Vars.currentBackgroundValue = (int) sliderSettings.getValue();
             }
         });
     }
