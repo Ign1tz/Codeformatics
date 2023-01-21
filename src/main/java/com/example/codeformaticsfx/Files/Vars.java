@@ -13,5 +13,4 @@ public class Vars {
     public static String pathBackground3 = "com/example/codeformaticsfx/FrontEnd/Background2.jpg";
 
     public static String logoPath = "com/example/codeformaticsfx/GameResources/Logos/java.png";
-    public static String logoPathAbsolut;
 }
