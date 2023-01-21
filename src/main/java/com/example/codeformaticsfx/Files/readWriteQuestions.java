@@ -48,9 +48,9 @@ public class readWriteQuestions { //this class handles creating the questions, w
         readWriteQuestions newQuestion = new readWriteQuestions(encodeDecode.encodedQuestion, encodeDecode.encodedA1, encodeDecode.encodedA2, encodeDecode.encodedA3, encodeDecode.encodedA4, encodeDecode.encodedDifficulty, encodeDecode.encodedRightAnswer);
         QuestionList.add(newQuestion);
     }
-    public void finish(String quizzname, String authorname, String questionsUsed, String QuizName) throws IOException {
-        String quizFilePath = "./GameResources/QuestionLibrary/" + QuizName + ".json";
-        String scoreboardFilePath = "./GameResources/Scoreboards/" + QuizName + "Scoreboard.json";
+    public void finish(String quizzname, String authorname, String questionsUsed, String QuizName, String logoPath) throws IOException {
+        String quizFilePath = "src/main/resources/com/example/codeformaticsfx/GameResources/QuestionLibrary/" + QuizName + ".json";
+        String scoreboardFilePath = "src/main/resources/com/example/codeformaticsfx/GameResources/Scoreboards/" + QuizName + "Scoreboard.json";
         readWriteList rwL = new readWriteList(QuizName);
         Writer writer = Files.newBufferedWriter(Paths.get(quizFilePath));;
         Writer writer2 = Files.newBufferedWriter(Paths.get(scoreboardFilePath));
@@ -60,7 +60,7 @@ public class readWriteQuestions { //this class handles creating the questions, w
         }
         EncodeDecode encodeDecode = new EncodeDecode();
         encodeDecode.encodeQuizzInfo(quizzname, authorname, questionsUsed);
-        QuizzInfo thisQuizz = new QuizzInfo(encodeDecode.encodedQuizzName, encodeDecode.encodedAuthorname, encodeDecode.encodedQuestionsUsed, getQuestionList());
+        QuizzInfo thisQuizz = new QuizzInfo(encodeDecode.encodedQuizzName, encodeDecode.encodedAuthorname, encodeDecode.encodedQuestionsUsed, encodeDecode.encodeSinge(logoPath), getQuestionList());
         gson.toJson(thisQuizz, writer);
         writer.close();
         writer2.close();

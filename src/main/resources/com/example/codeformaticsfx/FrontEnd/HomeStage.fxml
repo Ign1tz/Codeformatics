@@ -36,7 +36,7 @@
          </font></Button>
       <ImageView fx:id="myImageView" fitHeight="168.0" fitWidth="165.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BASELINE">
          <image>
-            <Image url="@../JavaLogo.Farbe.png" />
+            <Image url="@../GameResources/Logos/java.png" />
          </image>
       </ImageView>
       <AnchorPane prefHeight="249.0" prefWidth="362.0" GridPane.columnIndex="2">

@@ -173,8 +173,4 @@ public class pickQuestions {
         }
         return questionListDiff;
     }
-    public static void main(String[] args) throws IOException {
-        pickQuestions temp = new pickQuestions();
-        temp.testQuestion();
-    }
 }

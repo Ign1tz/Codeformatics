@@ -1,8 +1,14 @@
 package com.example.codeformaticsfx.FrontEnd;
 
+import com.example.codeformaticsfx.Files.EncodeDecode;
 import com.example.codeformaticsfx.Files.Vars;
+import com.example.codeformaticsfx.Files.readWriteList;
+import com.example.codeformaticsfx.Files.readWriteQuestions;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.collections.ObservableListBase;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,6 +17,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
@@ -20,10 +27,12 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class SettingsController implements Initializable {
-
+    @FXML
+    private ChoiceBox chooseQuiz;
     @FXML
     public GridPane SettingsGrid;
     @FXML
@@ -51,7 +60,6 @@ public class SettingsController implements Initializable {
         Scene scene = ((Node) event.getSource()).getScene();
         scene.setRoot(root);
     }
-
     public void submit(ActionEvent event) {
         try {
             name = myNameText.getText();                //name can be typed into the field
@@ -65,19 +73,30 @@ public class SettingsController implements Initializable {
             Label1.setText("error");
         }
     }
-
     public void switchStart(ActionEvent event) throws IOException {
+        Vars.currentQuiz = (String) chooseQuiz.getValue();
+        Vars.pathQuestions = "src/main/resources/com/example/codeformaticsfx/GameResources/QuestionLibrary/"+Vars.currentQuiz+".json";
+        Vars.pathScoreboard = "src/main/resources/com/example/codeformaticsfx/GameResources/Scoreboards/"+Vars.currentQuiz+"Scoreboard.json";
+        readWriteQuestions rwq = new readWriteQuestions();
+        EncodeDecode ed = new EncodeDecode();
+        if (ed.decodeSingle(rwq.readQuizz(Vars.pathQuestions).logoPath).equals("default")){
+            Vars.logoPath = "com/example/codeformaticsfx/GameResources/Logos/default.jpeg";
+        }else{
+            Vars.logoPath = ed.decodeSingle(rwq.readQuizz(Vars.pathQuestions).logoPath);
+        }
+        System.out.println(Vars.logoPath);
         FXMLLoader loader = new FXMLLoader(getClass().getResource("HomeStage.fxml"));
         Parent root = loader.load();
         SceneController controller = loader.getController();
         Scene scene = ((Node) event.getSource()).getScene();
         scene.setRoot(root);
-    }
 
+    }
     public void playSong() {
         if (CheckSound.isSelected()) {  //if checkbox is selected play song, if not pause
             CheckSound.setText("ON");
             Vars.mediaPlayer.setAutoPlay(true);
+            Vars.mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
             Vars.soundIsOn = true;
             //mediaPlayer.getOnPlaying();
         } else {
@@ -86,6 +105,14 @@ public class SettingsController implements Initializable {
     }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        readWriteList rwl = new readWriteList();
+        try {
+            ObservableList<String> quizNameList = FXCollections.observableList(rwl.fromFile());
+            chooseQuiz.setItems(quizNameList);
+            chooseQuiz.setValue(Vars.currentQuiz);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
         if(Vars.soundIsOn){
             CheckSound.setSelected(true);
         }

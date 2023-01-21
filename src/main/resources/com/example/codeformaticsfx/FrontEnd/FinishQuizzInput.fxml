@@ -35,8 +35,10 @@
             <Insets left="15.0" />
          </padding>
       </Label>
-      <Label fx:id="error" opacity="0.0" text="Please fill everything out!" textFill="RED" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+      <Label fx:id="error" opacity="0.0" text="Please fill everything out!" textFill="RED" GridPane.columnIndex="2" GridPane.rowIndex="4" GridPane.valignment="TOP" />
       <Slider fx:id="numberOfQuestions" GridPane.columnIndex="2" GridPane.rowIndex="2" />
       <Label fx:id="NameError" opacity="0.0" stylesheets="@FinishQuizInput.css" text="Name allready used" GridPane.columnIndex="3" />
+      <Button fx:id="browse" mnemonicParsing="false" onAction="#Browse" text="Browse" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+      <TextField fx:id="directory" GridPane.columnIndex="2" GridPane.rowIndex="3" />
    </children>
 </GridPane>
