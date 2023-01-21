@@ -20,7 +20,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.*;
 
-public class SceneController implements Initializable{
+public class SceneController implements Initializable {
 
     //FXML USAGE START
     @FXML
@@ -153,13 +153,14 @@ public class SceneController implements Initializable{
     }
 
     //END GAME SCENE
-    public void Return(ActionEvent event){
+    public void Return(ActionEvent event) {
         Warning.setOpacity(1);
         Warning.setDisable(false);
         exit.setDisable(false);
         stay.setDisable(false);
     }
-    public void Stay(ActionEvent event){
+
+    public void Stay(ActionEvent event) {
         Warning.setOpacity(0);
         Warning.setDisable(true);
         exit.setDisable(true);
@@ -178,11 +179,11 @@ public class SceneController implements Initializable{
 
     public void toScoreboard(ActionEvent event) throws IOException {
         readWriteScoreboard rwS = new readWriteScoreboard();
-        if(!Objects.equals(name,null)) {
-            if(myNameText != null){
+        if (!Objects.equals(name, null)) {
+            if (myNameText != null) {
                 nameScoreboard.setText(myNameText.getText());
             }
-            if(!nameGiven) {
+            if (!nameGiven) {
                 name = nameScoreboard.getText();
             }
             System.out.println(Vars.pathScoreboard);
@@ -193,7 +194,7 @@ public class SceneController implements Initializable{
             scene.setRoot(root);
             score = "00000";
             name = null;
-        } else{
+        } else {
             nameScoreboard.setOpacity(1);
             nameScoreboard.setDisable(false);
             scoreboardLabel.setOpacity(1);
@@ -212,20 +213,20 @@ public class SceneController implements Initializable{
     @FXML
     public void updateQuestion(ActionEvent event) throws IOException {
         readWriteQuestions temp = null;
-        if(Objects.equals(selected, right)){
+        if (Objects.equals(selected, right)) {
             score = String.valueOf(Integer.parseInt(score) + 100);
         }
-        if(selected == null){
+        if (selected == null) {
 
-        }else {
-            if (counterS == 1){
+        } else {
+            if (counterS == 1) {
                 Answer1.setTextFill(Color.valueOf("#e91e63"));
                 Answer2.setTextFill(Color.valueOf("#e91e63"));
                 Answer3.setTextFill(Color.valueOf("#e91e63"));
                 Answer4.setTextFill(Color.valueOf("#e91e63"));
             }
             StringBuilder finalScore = new StringBuilder(score);
-            for(int nulls = 5; nulls > score.length(); nulls--){
+            for (int nulls = 5; nulls > score.length(); nulls--) {
                 finalScore.insert(0, "0");
             }
             Score.setText("Score: " + finalScore);
@@ -341,28 +342,28 @@ public class SceneController implements Initializable{
     public void jokerF(ActionEvent actionEvent) {
         if (counterF == 0) {
 
-            String A1=Answer1.getText();
-            String A2=Answer2.getText();
-            String A3=Answer3.getText();
-            String A4=Answer4.getText();
+            String A1 = Answer1.getText();
+            String A2 = Answer2.getText();
+            String A3 = Answer3.getText();
+            String A4 = Answer4.getText();
             String rightAnswer = right;
-            int range=4;
+            int range = 4;
             int rightnumber = 0;
 
-            if ("A1".equals(rightAnswer)){
+            if ("A1".equals(rightAnswer)) {
                 rightnumber = 1;
             }
-            if ("A2".equals(rightAnswer)){
+            if ("A2".equals(rightAnswer)) {
                 rightnumber = 2;
             }
-            if ("A3".equals(rightAnswer)){
+            if ("A3".equals(rightAnswer)) {
                 rightnumber = 3;
             }
-            if ("A4".equals(rightAnswer)){
+            if ("A4".equals(rightAnswer)) {
                 rightnumber = 4;
             }
 
-            questionJoker.jokerFiftyFifty(A1,A2,A3,A4,rightAnswer,range,rightnumber);
+            questionJoker.jokerFiftyFifty(A1, A2, A3, A4, rightAnswer, range, rightnumber);
 
             Answer1.setDisable(true);
             Answer2.setDisable(true);
@@ -373,7 +374,7 @@ public class SceneController implements Initializable{
             Answer3.setSelected(false);
             Answer4.setSelected(false);
 
-            switch (questionJoker.getRightAnswer()){
+            switch (questionJoker.getRightAnswer()) {
                 case "A1":
                     Answer1.setDisable(false);
                     break;
@@ -388,7 +389,7 @@ public class SceneController implements Initializable{
                     break;
             }
 
-            switch (questionJoker.getRandomAnswer()){
+            switch (questionJoker.getRandomAnswer()) {
                 case 1:
                     Answer1.setDisable(false);
                     break;
@@ -419,32 +420,32 @@ public class SceneController implements Initializable{
             Answer3.setSelected(false);
             Answer4.setSelected(false);
 
-            String A1=Answer1.getText();
-            String A2=Answer2.getText();
-            String A3=Answer3.getText();
-            String A4=Answer4.getText();
+            String A1 = Answer1.getText();
+            String A2 = Answer2.getText();
+            String A3 = Answer3.getText();
+            String A4 = Answer4.getText();
             String rightAnswer = right;
-            int range=4;
+            int range = 4;
             int rightnumber = 0;
 
-            if ("A1".equals(rightAnswer)){
+            if ("A1".equals(rightAnswer)) {
                 rightnumber = 1;
             }
-            if ("A2".equals(rightAnswer)){
+            if ("A2".equals(rightAnswer)) {
                 rightnumber = 2;
             }
-            if ("A3".equals(rightAnswer)){
+            if ("A3".equals(rightAnswer)) {
                 rightnumber = 3;
             }
-            if ("A4".equals(rightAnswer)){
+            if ("A4".equals(rightAnswer)) {
                 rightnumber = 4;
             }
 
 
-            int border = questionJoker.jokerSeventyThirty(A1,A2,A3,A4,rightAnswer,range, rightnumber);
+            int border = questionJoker.jokerSeventyThirty(A1, A2, A3, A4, rightAnswer, range, rightnumber);
 
-            if (border <= 7){
-                switch (questionJoker.getRightAnswer()){
+            if (border <= 7) {
+                switch (questionJoker.getRightAnswer()) {
                     case "A1":
                         Answer1.setDisable(false);
                         Answer1.setTextFill(Color.valueOf("green"));
@@ -462,7 +463,7 @@ public class SceneController implements Initializable{
                         Answer4.setTextFill(Color.valueOf("green"));
                         break;
                 }
-                switch (questionJoker.getRandomAnswer()){
+                switch (questionJoker.getRandomAnswer()) {
                     case 1:
                         Answer1.setDisable(false);
                         Answer1.setTextFill(Color.valueOf("yellow"));
@@ -480,8 +481,8 @@ public class SceneController implements Initializable{
                         Answer4.setTextFill(Color.valueOf("yellow"));
                         break;
                 }
-            }else {
-                switch (questionJoker.getRightAnswer()){
+            } else {
+                switch (questionJoker.getRightAnswer()) {
                     case "A1":
                         Answer1.setDisable(false);
                         Answer1.setTextFill(Color.valueOf("yellow"));
@@ -499,7 +500,7 @@ public class SceneController implements Initializable{
                         Answer4.setTextFill(Color.valueOf("yellow"));
                         break;
                 }
-                switch (questionJoker.getRandomAnswer()){
+                switch (questionJoker.getRandomAnswer()) {
                     case 1:
                         Answer1.setDisable(false);
                         Answer1.setTextFill(Color.valueOf("green"));
@@ -525,7 +526,7 @@ public class SceneController implements Initializable{
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         readWriteList rwl = new readWriteList();
-        if(firstTime){
+        if (firstTime) {
             try {
                 Vars.listOfQuestions = rwl.fromFile();
             } catch (IOException e) {
@@ -537,46 +538,40 @@ public class SceneController implements Initializable{
             Image image = new Image(Vars.logoPath);
             myImageView.setImage(image);
         }
-        if(Vars.currentBackgroundValue <= 33){
-            if(homeGrid != null) homeGrid.setStyle("-fx-background-image: url("+ Vars.pathBackground1 +")");
-            if(finishGrid != null) finishGrid.setStyle("-fx-background-image: url("+ Vars.pathBackground1 +")");
-            if(GameGrid != null) GameGrid.setStyle("-fx-background-image: url("+ Vars.pathBackground1 +")");
+        if (Vars.currentBackgroundValue <= 33) {
+            if (homeGrid != null) homeGrid.setStyle("-fx-background-image: url(" + Vars.pathBackground1 + ")");
+            if (finishGrid != null) finishGrid.setStyle("-fx-background-image: url(" + Vars.pathBackground1 + ")");
+            if (GameGrid != null) GameGrid.setStyle("-fx-background-image: url(" + Vars.pathBackground1 + ")");
         } else if (Vars.currentBackgroundValue > 33 && Vars.currentBackgroundValue <= 66) {
-            if(homeGrid != null) homeGrid.setStyle("-fx-background-image: url("+ Vars.pathBackground2 +")");
-            if(finishGrid != null) finishGrid.setStyle("-fx-background-image: url("+ Vars.pathBackground2 +")");
-            if(GameGrid != null) GameGrid.setStyle("-fx-background-image: url("+ Vars.pathBackground2 +")");
-        }else{
-            if(homeGrid != null) homeGrid.setStyle("-fx-background-image: url("+ Vars.pathBackground3 +")");
-            if(finishGrid != null) finishGrid.setStyle("-fx-background-image: url("+ Vars.pathBackground3 +")");
-            if(GameGrid != null) GameGrid.setStyle("-fx-background-image: url("+ Vars.pathBackground3 +")");
+            if (homeGrid != null) homeGrid.setStyle("-fx-background-image: url(" + Vars.pathBackground2 + ")");
+            if (finishGrid != null) finishGrid.setStyle("-fx-background-image: url(" + Vars.pathBackground2 + ")");
+            if (GameGrid != null) GameGrid.setStyle("-fx-background-image: url(" + Vars.pathBackground2 + ")");
+        } else {
+            if (homeGrid != null) homeGrid.setStyle("-fx-background-image: url(" + Vars.pathBackground3 + ")");
+            if (finishGrid != null) finishGrid.setStyle("-fx-background-image: url(" + Vars.pathBackground3 + ")");
+            if (GameGrid != null) GameGrid.setStyle("-fx-background-image: url(" + Vars.pathBackground3 + ")");
         }
     }
     //HOMESTAGE END
 
     //Method for Layout
-    public String layoutString (String a) {
+    public String layoutString(String a) {
+        char[] check = a.toCharArray(); //create new Array with length of a
+        final int middle = a.length() / 2;   //getting middle of String
 
-        String[] check = new String[a.length()]; //create new Array with length of a
-
-        for (int i = 0; i < a.length(); i++) { //filling Array with a
-            check[i] = a + i;
-        }
-
-       final int middle = a.length() / 2;   //getting middle of String
-
-    if (a.length() > 13) {
-        if (check[middle].equals("")) { //if middle of array equals "" split string
-            arrStr = new String[]{a.substring(0, middle), a.substring(middle)}; //splitting String in two sections
-        } else {
-            for (int x = middle + 1; x < check.length; x++) {
-                if (check[x].equals("")) {
-                    arrStr = new String[]{a.substring(0, x), a.substring(x)};
-                    break;
+        if (a.length() > 13) {
+            if (check[middle] == ' ') { //if middle of array equals "" split string
+                arrStr = new String[]{a.substring(0, middle), a.substring(middle)}; //splitting String in two sections
+            } else {
+                for (int x = middle + 1; x < check.length; x++) {
+                    if (check[x] == ' ') {
+                        arrStr = new String[]{a.substring(0, x), a.substring(x)};
+                        break;
+                    }
                 }
             }
+            a = arrStr[0] + "\n" + arrStr[1].stripLeading(); //filling a with new layout String
         }
-        a = arrStr[0] + "-" + "\n" + arrStr[1]; //filling a with new layout String
-    }
-    return a;
+        return a;
     }
 }
