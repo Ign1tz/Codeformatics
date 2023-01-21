@@ -83,7 +83,7 @@
             <Bloom />
          </effect></Label>
       <Slider orientation="VERTICAL" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-      <ChoiceBox prefHeight="25.0" prefWidth="123.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
+      <ChoiceBox fx:id="chooseQuiz" prefHeight="25.0" prefWidth="123.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
       <Label fx:id="createQuiz" text="CHANGE QUIZ" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="TOP">
          <effect>
             <Bloom />

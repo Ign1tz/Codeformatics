@@ -516,8 +516,10 @@ public class SceneController implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        Image image = new Image(Vars.logoPath);
-        myImageView.setImage(image);
+        if (scene.getRoot().getStylesheets() == GameGrid.getStylesheets()) {
+            Image image = new Image(Vars.logoPath);
+            myImageView.setImage(image);
+        }
         if(Vars.currentBackgroundValue <= 33){
             if(homeGrid != null) homeGrid.setStyle("-fx-background-image: url("+ Vars.pathBackground1 +")");
             if(finishGrid != null) finishGrid.setStyle("-fx-background-image: url("+ Vars.pathBackground1 +")");
