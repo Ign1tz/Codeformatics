@@ -62,7 +62,7 @@ public class InitQuestionInputController implements Initializable{
                 }
                 try {
                     writeQuestions.finish(QuizzName.getText(), AuthorName.getText(), questionNumber, QuizzName.getText().toLowerCase(), Vars.logoPath);
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("SettingsStage.fxml"));
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("HomeStage.fxml"));
                     Parent root = loader.load();
                     Scene scene = ((Node) event.getSource()).getScene();
                     scene.setRoot(root);

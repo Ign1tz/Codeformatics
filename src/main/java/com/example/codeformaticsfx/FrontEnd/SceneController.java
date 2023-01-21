@@ -48,7 +48,7 @@ public class SceneController implements Initializable{
     static int question = 0;
     static List<readWriteQuestions> questionsList;
     static String selected, right, numberOfQuestions, score = "00000";
-    static boolean nameGiven = false, isHome = true;
+    static boolean nameGiven = false, firstTime = true;
     private Stage stage;
     private Parent root;
     private static Scene scene;
@@ -80,7 +80,7 @@ public class SceneController implements Initializable{
     }
 
     public void switchStart(ActionEvent event) throws IOException {
-        isHome = true;
+        Vars.isHome = true;
         FXMLLoader loader = new FXMLLoader(getClass().getResource("HomeStage.fxml"));
         Parent root = loader.load();
         SceneController controller = loader.getController();
@@ -89,6 +89,7 @@ public class SceneController implements Initializable{
     }
 
     public void switchSettings(ActionEvent event) throws IOException {
+        Vars.isHome = false;
         FXMLLoader loader = new FXMLLoader(getClass().getResource("SettingsStage.fxml"));
         Parent root = loader.load();
         Scene scene = ((Node) event.getSource()).getScene();
@@ -98,7 +99,7 @@ public class SceneController implements Initializable{
 
     //HOMESTAGE START
     public void switchGame(ActionEvent event) throws IOException, InterruptedException {
-        isHome = false;
+        Vars.isHome = false;
         question = 0;
         pickQuestions pQ = new pickQuestions();
         EncodeDecode eD = new EncodeDecode();
@@ -164,7 +165,7 @@ public class SceneController implements Initializable{
     }
 
     public void Exit(ActionEvent event) throws IOException {
-        isHome = true;
+        Vars.isHome = true;
         FXMLLoader loader = new FXMLLoader(getClass().getResource("HomeStage.fxml"));
         Parent root = loader.load();
         SceneController controller = loader.getController();
@@ -521,7 +522,16 @@ public class SceneController implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        if (isHome) {
+        readWriteList rwl = new readWriteList();
+        if(firstTime){
+            try {
+                Vars.listOfQuestions = rwl.fromFile();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            firstTime = false;
+        }
+        if (Vars.isHome) {
             Image image = new Image(Vars.logoPath);
             myImageView.setImage(image);
         }
