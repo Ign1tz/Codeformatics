@@ -40,7 +40,7 @@
       </AnchorPane>
       <AnchorPane maxHeight="50.0" maxWidth="600.0" minHeight="50.0" minWidth="600.0" prefHeight="50.0" prefWidth="600.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
          <children>
-            <Label fx:id="Questions" alignment="CENTER" layoutY="11.0" prefHeight="29.0" prefWidth="600.0" text="Insert Question Here" textFill="#e91e63">
+            <Label fx:id="Questions" alignment="CENTER" contentDisplay="CENTER" layoutY="11.0" prefHeight="29.0" prefWidth="600.0" text="Insert Question Here" textFill="#e91e63">
                <font>
                   <Font name="Arial Black" size="20.0" />
                </font>
@@ -66,42 +66,6 @@
       <Button fx:id="Return" mnemonicParsing="false" onAction="#Return" stylesheets="@Game.css" text="Return" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
       <Button fx:id="jokerFifty" mnemonicParsing="false" onAction="#jokerF" stylesheets="@Game.css" text="50/50" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="BASELINE" />
       <Button fx:id="nextQuestion" mnemonicParsing="false" onAction="#updateQuestion" stylesheets="@Game.css" text="Next" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
-         <children>
-            <CheckBox fx:id="Answer1" layoutX="84.0" layoutY="29.0" mnemonicParsing="false" onAction="#AnswerOne" text="CheckBox" textFill="#e91e63">
-               <font>
-                  <Font name="Arial Black" size="14.0" />
-               </font>
-               <effect>
-                  <DropShadow />
-               </effect>
-            </CheckBox>
-         </children>
-      </AnchorPane>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
-         <children>
-            <CheckBox fx:id="Answer2" layoutX="89.0" layoutY="29.0" mnemonicParsing="false" onAction="#AnswerTwo" text="CheckBox" textFill="#e91e63">
-               <font>
-                  <Font name="Arial Black" size="14.0" />
-               </font>
-               <effect>
-                  <DropShadow />
-               </effect>
-            </CheckBox>
-         </children>
-      </AnchorPane>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
-         <children>
-            <CheckBox fx:id="Answer4" layoutX="87.0" layoutY="29.0" mnemonicParsing="false" onAction="#AnswerFour" text="CheckBox" textFill="#e91e63">
-               <font>
-                  <Font name="Arial Black" size="14.0" />
-               </font>
-               <effect>
-                  <DropShadow />
-               </effect>
-            </CheckBox>
-         </children>
-      </AnchorPane>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
          <children>
             <GridPane fx:id="Warning" disable="true" layoutX="34.0" layoutY="14.0" opacity="0.0" prefHeight="141.0" prefWidth="300.0" style="-fx-background-color: #353333;">
@@ -144,6 +108,42 @@
                   <Button fx:id="stay" mnemonicParsing="false" onAction="#Stay" stylesheets="@Game.css" text="Stay" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
                </children>
             </GridPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+         <children>
+            <CheckBox fx:id="Answer1" layoutX="84.0" layoutY="29.0" mnemonicParsing="false" onAction="#AnswerOne" text="CheckBox" textFill="#e91e63">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </CheckBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+         <children>
+            <CheckBox fx:id="Answer4" layoutX="87.0" layoutY="29.0" mnemonicParsing="false" onAction="#AnswerFour" text="CheckBox" textFill="#e91e63">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </CheckBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+         <children>
+            <CheckBox fx:id="Answer2" layoutX="89.0" layoutY="29.0" mnemonicParsing="false" onAction="#AnswerTwo" text="CheckBox" textFill="#e91e63">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </CheckBox>
          </children>
       </AnchorPane>
    </children>

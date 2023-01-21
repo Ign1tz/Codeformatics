@@ -59,7 +59,7 @@ public class SceneController implements Initializable{
     private int songNumber;
     private Media media;
     private MediaPlayer mediaPlayer;
-    private String[] arrStr;
+    private String[] arrStr = {""};
     QuestionJoker questionJoker = new QuestionJoker();
     //VARIABLES END
 
@@ -139,11 +139,12 @@ public class SceneController implements Initializable{
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Game.fxml"));
         Parent root = loader.load();
         SceneController controller = loader.getController();
-        controller.Answer1.setText(eD.decodeSingle(temp.A1));
-        controller.Answer2.setText(eD.decodeSingle(temp.A2));
-        controller.Answer3.setText(eD.decodeSingle(temp.A3));
-        controller.Answer4.setText(eD.decodeSingle(temp.A4));
-        controller.Questions.setText(thisQuestion);
+        controller.Answer1.setText(layoutString(eD.decodeSingle(temp.A1)));
+        controller.Answer2.setText(layoutString(eD.decodeSingle(temp.A2)));
+        controller.Answer3.setText(layoutString(eD.decodeSingle(temp.A3)));
+        controller.Answer4.setText(layoutString(eD.decodeSingle(temp.A4)));
+        assert thisQuestion != null;
+        controller.Questions.setText(layoutString(thisQuestion));
         controller.Score.setText("Score: 00000");
         Scene scene = ((Node) event.getSource()).getScene();
         scene.setRoot(root);
@@ -260,11 +261,11 @@ public class SceneController implements Initializable{
                     break;
             }
             selected = null;
-            Questions.setText(thisQuestion);
-            Answer1.setText(eD.decodeSingle(temp.A1));
-            Answer2.setText(eD.decodeSingle(temp.A2));
-            Answer3.setText(eD.decodeSingle(temp.A3));
-            Answer4.setText(eD.decodeSingle(temp.A4));
+            Questions.setText(layoutString(thisQuestion));
+            Answer1.setText(layoutString(eD.decodeSingle(temp.A1)));
+            Answer2.setText(layoutString(eD.decodeSingle(temp.A2)));
+            Answer3.setText(layoutString(eD.decodeSingle(temp.A3)));
+            Answer4.setText(layoutString(eD.decodeSingle(temp.A4)));
             right = eD.decodeSingle(temp.RIGHTAWNSER);
             question++;
             Answer1.setSelected(false);
@@ -544,11 +545,28 @@ public class SceneController implements Initializable{
 
     //Method for Layout
     public String layoutString (String a) {
-       final int middle = a.length() / 2;   //getting middle of String
-        if (a.length() > 13) {
-            arrStr = new String[]{a.substring(0, middle), a.substring(middle)}; //splitting String in two sections
+
+        String[] check = new String[a.length()]; //create new Array with length of a
+
+        for (int i = 0; i < a.length(); i++) { //filling Array with a
+            check[i] = a + i;
         }
-       a = arrStr[0] + "-" + "\n" + arrStr[1]; //filling a with new layout String
+
+       final int middle = a.length() / 2;   //getting middle of String
+
+    if (a.length() > 13) {
+        if (check[middle].equals("")) { //if middle of array equals "" split string
+            arrStr = new String[]{a.substring(0, middle), a.substring(middle)}; //splitting String in two sections
+        } else {
+            for (int x = middle + 1; x < check.length; x++) {
+                if (check[x].equals("")) {
+                    arrStr = new String[]{a.substring(0, x), a.substring(x)};
+                    break;
+                }
+            }
+        }
+        a = arrStr[0] + "-" + "\n" + arrStr[1]; //filling a with new layout String
+    }
     return a;
     }
 }
