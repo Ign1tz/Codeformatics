@@ -555,23 +555,22 @@ public class SceneController implements Initializable {
     //HOMESTAGE END
 
     //Method for Layout
-    public String layoutString(String a) {
-        char[] check = a.toCharArray(); //create new Array with length of a
-        final int middle = a.length() / 2;   //getting middle of String
-
-        if (a.length() > 13) {
-            if (check[middle] == ' ') { //if middle of array equals "" split string
-                arrStr = new String[]{a.substring(0, middle), a.substring(middle)}; //splitting String in two sections
+    public String layoutString(String string) {
+        char[] check = string.toCharArray(); //create new Array with string as chars
+        final int middle = string.length() / 2;   //getting middle of String
+        if (string.length() > 13) {
+            if (check[middle] == ' ') { //if middle of array is a space, split string
+                arrStr = new String[]{string.substring(0, middle), string.substring(middle)}; //splitting String in two sections
             } else {
                 for (int x = middle + 1; x < check.length; x++) {
                     if (check[x] == ' ') {
-                        arrStr = new String[]{a.substring(0, x), a.substring(x)};
+                        arrStr = new String[]{string.substring(0, x), string.substring(x)};
                         break;
                     }
                 }
             }
-            a = arrStr[0] + "\n" + arrStr[1].stripLeading(); //filling a with new layout String
+            string = arrStr[0] + "\n" + arrStr[1].stripLeading(); //filling a with new layout String
         }
-        return a;
+        return string;
     }
 }
