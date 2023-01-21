@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.net.URL?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.ChoiceBox?>
@@ -39,12 +40,18 @@
          <effect>
             <Bloom />
          </effect>
+         <GridPane.margin>
+            <Insets bottom="7.0" />
+         </GridPane.margin>
       </Label>
       <TextField fx:id="myNameText" alignment="TOP_LEFT" prefHeight="15.0" prefWidth="298.0" promptText="Enter Name" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
       <Button fx:id="saveButton" mnemonicParsing="false" onAction="#submit" text="SAVE" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
          <font>
             <Font name="Arial Black" size="13.0" />
          </font>
+         <GridPane.margin>
+            <Insets bottom="7.0" />
+         </GridPane.margin>
       </Button>
       <Label fx:id="SettingsLabel" prefHeight="88.0" prefWidth="295.0" stylesheets="@SettingsStage.css" text="SETTINGS" GridPane.columnIndex="2" GridPane.halignment="CENTER">
          <font>
@@ -59,11 +66,17 @@
             <Font name="Arial Black" size="13.0" />
          </font>
       </Button>
-      <CheckBox fx:id="CheckSound" mnemonicParsing="false" onAction="#playSong" stylesheets="@SettingsStage.css" text="OFF" textFill="#0097a7" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+      <CheckBox fx:id="CheckSound" mnemonicParsing="false" onAction="#playSong" stylesheets="@SettingsStage.css" text="OFF" textFill="#0097a7" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets top="10.0" />
+         </GridPane.margin></CheckBox>
       <Label fx:id="Label2" stylesheets="@SettingsStage.css" text="TURN MUSIC ON/OFF" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="BASELINE">
          <effect>
             <Bloom />
-         </effect></Label>
+         </effect>
+         <GridPane.margin>
+            <Insets top="7.0" />
+         </GridPane.margin></Label>
       <Slider fx:id="sliderSettings" majorTickUnit="50.0" maxWidth="150.0" minWidth="150.0" minorTickCount="0" prefWidth="150.0" value="50.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
       <Label fx:id="Label3" stylesheets="@SettingsStage.css" text="CHOOSE BACKGROUND" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="BASELINE">
          <effect>

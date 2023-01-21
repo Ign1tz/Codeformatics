@@ -3,6 +3,7 @@ package com.example.codeformaticsfx.FrontEnd;
 import com.example.codeformaticsfx.Files.*;
 import com.example.codeformaticsfx.Quizz.QuestionJoker;
 import com.example.codeformaticsfx.pickQuestions;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.*;
 import javafx.scene.*;
@@ -39,6 +40,8 @@ public class SceneController implements Initializable {
     private TextField nameScoreboard, myNameText;
     @FXML
     private ImageView myImageView;
+    @FXML
+    private Button exitGame;
     //FXML USAGE END
 
     //VARIABLES START
@@ -551,6 +554,10 @@ public class SceneController implements Initializable {
             if (finishGrid != null) finishGrid.setStyle("-fx-background-image: url(" + Vars.pathBackground3 + ")");
             if (GameGrid != null) GameGrid.setStyle("-fx-background-image: url(" + Vars.pathBackground3 + ")");
         }
+    }
+
+    public void endAll(ActionEvent event) {
+       primaryStage.close();
     }
     //HOMESTAGE END
 

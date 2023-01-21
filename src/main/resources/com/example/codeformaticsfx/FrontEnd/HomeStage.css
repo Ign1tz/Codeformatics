@@ -5,9 +5,10 @@
 .button {
 -fx-background-color: #0097a7;
 -fx-background-radius: 30;
--fx-min-width: 80;
--fx-min-height: 40;
--fx-text-size: 40px;
+-fx-min-width: 120;
+-fx-min-height: 54;
+-fx-text-size: 14px;
+-fx-text-fill: #e91e63;
 }
 
 .button:hover {
@@ -38,4 +39,5 @@
 -fx-effect: dropshadow( gaussian , rgba(255,255,255,1) , 6,0,0,1 );
 -fx-line-spacing: -2;       /*changed spacing of letters to please eyes*/
 }
+
 
