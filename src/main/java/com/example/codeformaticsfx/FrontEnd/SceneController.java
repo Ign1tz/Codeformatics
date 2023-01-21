@@ -211,10 +211,10 @@ public class SceneController implements Initializable{
 
         }else {
             if (counterS == 1){
-                Answer1.setTextFill(Color.valueOf("white"));
-                Answer2.setTextFill(Color.valueOf("white"));
-                Answer3.setTextFill(Color.valueOf("white"));
-                Answer4.setTextFill(Color.valueOf("white"));
+                Answer1.setTextFill(Color.valueOf("#e91e63"));
+                Answer2.setTextFill(Color.valueOf("#e91e63"));
+                Answer3.setTextFill(Color.valueOf("#e91e63"));
+                Answer4.setTextFill(Color.valueOf("#e91e63"));
             }
             StringBuilder finalScore = new StringBuilder(score);
             for(int nulls = 5; nulls > score.length(); nulls--){

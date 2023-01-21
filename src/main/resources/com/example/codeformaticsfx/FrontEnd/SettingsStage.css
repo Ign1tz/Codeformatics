@@ -87,3 +87,15 @@
 -fx-font-weight: bold;
     -fx-background-color: transparent;
 }
+
+#volume {
+-fx-text-fill: #0097a7;
+-fx-font-size: 20px;
+-fx-font-weight: bold;
+}
+
+#createQuiz {
+-fx-text-fill: #0097a7;
+-fx-font-size: 20px;
+-fx-font-weight: bold;
+}
