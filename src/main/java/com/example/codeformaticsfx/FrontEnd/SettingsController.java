@@ -98,6 +98,7 @@ public class SettingsController implements Initializable {
 
     public void playSong() {
         if (CheckSound.isSelected()) {  //if checkbox is selected play song, if not pause
+            Vars.mediaPlayer.play();
             CheckSound.setText("ON");
             Vars.mediaPlayer.setAutoPlay(true);
             Vars.mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
@@ -121,7 +122,6 @@ public class SettingsController implements Initializable {
         files = directory.listFiles();      //stores music in file
         if (files != null && !Vars.soundIsOn) {
             //add music in arraylist
-            // System.out.println(file);
             songs.addAll(Arrays.asList(files));
             media = new Media(songs.get(songNumber).toURI().toString());
             Vars.mediaPlayer = new MediaPlayer(media);

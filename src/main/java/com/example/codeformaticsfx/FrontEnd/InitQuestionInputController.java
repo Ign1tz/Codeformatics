@@ -1,10 +1,7 @@
 package com.example.codeformaticsfx.FrontEnd;
 
-import com.example.codeformaticsfx.Files.Vars;
-import com.example.codeformaticsfx.Files.readWriteList;
-import com.example.codeformaticsfx.Files.readWriteQuestions;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
+import com.example.codeformaticsfx.Files.*;
+import javafx.beans.value.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.*;
 import javafx.scene.*;
@@ -15,11 +12,8 @@ import javafx.stage.Stage;
 
 import java.io.*;
 import java.net.URL;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.util.List;
-import java.util.Objects;
-import java.util.ResourceBundle;
+import java.nio.file.*;
+import java.util.*;
 
 public class InitQuestionInputController implements Initializable{
     @FXML
@@ -32,11 +26,10 @@ public class InitQuestionInputController implements Initializable{
     private Label error, Number, NameError;
     @FXML
     private Slider numberOfQuestions;
-    private Stage stage;
-    private Scene scene;
     private String questionNumber;
     private File file;
     private List<String> QuizList;
+    private String nameNoSpace;
 
     {
         try {
@@ -54,14 +47,15 @@ public class InitQuestionInputController implements Initializable{
             error.setOpacity(1);
         }else{
             if(!existsIn(QuizzName.getText().toLowerCase(), QuizList)) {
+                nameNoSpace = QuizzName.getText().replace(" ", "").toLowerCase();
                 if(file == null && directory.getText() != null){
                     Vars.logoPath = "default";
                 }else{
-                    Files.copy(Path.of(file.getAbsolutePath()), Path.of("src/main/resources/com/example/codeformaticsfx/GameResources/Logos/" + QuizzName.getText() + file.getAbsolutePath().substring(file.getAbsolutePath().lastIndexOf('.'))));
-                    Vars.logoPath = "com/example/codeformaticsfx/GameResources/Logos/" + QuizzName.getText() + file.getAbsolutePath().substring(file.getAbsolutePath().lastIndexOf('.'));
+                    Files.copy(Path.of(file.getAbsolutePath()), Path.of("src/main/resources/com/example/codeformaticsfx/GameResources/Logos/" + nameNoSpace + file.getAbsolutePath().substring(file.getAbsolutePath().lastIndexOf('.'))));
+                    Vars.logoPath = "com/example/codeformaticsfx/GameResources/Logos/" + nameNoSpace + file.getAbsolutePath().substring(file.getAbsolutePath().lastIndexOf('.'));
                 }
                 try {
-                    writeQuestions.finish(QuizzName.getText(), AuthorName.getText(), questionNumber, QuizzName.getText().toLowerCase(), Vars.logoPath);
+                    writeQuestions.finish(QuizzName.getText(), AuthorName.getText(), questionNumber, nameNoSpace, Vars.logoPath);
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("HomeStage.fxml"));
                     Parent root = loader.load();
                     Scene scene = ((Node) event.getSource()).getScene();

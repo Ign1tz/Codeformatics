@@ -8,15 +8,10 @@ import javafx.event.ActionEvent;
 import javafx.fxml.*;
 import javafx.scene.*;
 import javafx.scene.control.*;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
+import javafx.scene.image.*;
 import javafx.scene.layout.GridPane;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-
-import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.*;
@@ -27,15 +22,11 @@ public class SceneController implements Initializable {
     @FXML
     public GridPane Warning, homeGrid, finishGrid, GameGrid;
     @FXML
-    public Button musicButton, exit, stay, OptionsButton, saveButton, newQuizz, StartButton, Return;
+    public Button exit, stay, OptionsButton, StartButton, Return;
     @FXML
-    private Label Label1, scoreboardLabel, Difficulty, Score, FinalScore, Questions, LabelCharacters;
+    private Label scoreboardLabel, Score, FinalScore, Questions;
     @FXML
     private CheckBox Answer1, Answer2, Answer3, Answer4;
-    @FXML
-    private CheckBox CheckSound;
-    @FXML
-    private Slider sliderSettings;
     @FXML
     private TextField nameScoreboard, myNameText;
     @FXML
@@ -52,16 +43,8 @@ public class SceneController implements Initializable {
     static List<readWriteQuestions> questionsList;
     static String selected, right, numberOfQuestions, score = "00000";
     static boolean nameGiven = false, firstTime = true;
-    private Stage stage;
-    private Parent root;
     private static Scene scene;
     int counterF, counterS;
-    private ArrayList<File> songs;
-    private File directory;
-    private File[] files;
-    private int songNumber;
-    private Media media;
-    private MediaPlayer mediaPlayer;
     private String[] arrStr = {""};
     QuestionJoker questionJoker = new QuestionJoker();
     //VARIABLES END
@@ -156,14 +139,14 @@ public class SceneController implements Initializable {
     }
 
     //END GAME SCENE
-    public void Return(ActionEvent event) {
+    public void Return() {
         Warning.setOpacity(1);
         Warning.setDisable(false);
         exit.setDisable(false);
         stay.setDisable(false);
     }
 
-    public void Stay(ActionEvent event) {
+    public void Stay() {
         Warning.setOpacity(0);
         Warning.setDisable(true);
         exit.setDisable(true);
@@ -182,7 +165,7 @@ public class SceneController implements Initializable {
 
     public void toScoreboard(ActionEvent event) throws IOException {
         readWriteScoreboard rwS = new readWriteScoreboard();
-        if (!Objects.equals(name, null)) {
+        if (!Objects.equals(name, null) && !name.equals(" ")) {
             if (myNameText != null) {
                 nameScoreboard.setText(myNameText.getText());
             }
@@ -342,7 +325,7 @@ public class SceneController implements Initializable {
 
     //Questions - Joker
 
-    public void jokerF(ActionEvent actionEvent) {
+    public void jokerF() {
         if (counterF == 0) {
 
             String A1 = Answer1.getText();
@@ -411,7 +394,7 @@ public class SceneController implements Initializable {
     }
 
 
-    public void jokerS(ActionEvent actionEvent) {
+    public void jokerS() {
         if (counterS == 0) {
 
             Answer1.setDisable(true);
