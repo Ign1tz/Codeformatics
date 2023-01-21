@@ -13,8 +13,6 @@ public class Vars {
     public static String pathBackground1 = "com/example/codeformaticsfx/FrontEnd/Background2.jpg";
     public static String pathBackground2 = "com/example/codeformaticsfx/FrontEnd/Background.jpg";
     public static String pathBackground3 = "com/example/codeformaticsfx/FrontEnd/Background2.jpg";
-
-    public  static String logoPathAbsolut;
-
+    public static String logoPathAbsolut;
     public static String logoPath = "com/example/codeformaticsfx/GameResources/Logos/java.png";
 }

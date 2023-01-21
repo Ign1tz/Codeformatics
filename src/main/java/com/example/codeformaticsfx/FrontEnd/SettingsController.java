@@ -76,6 +76,7 @@ public class SettingsController implements Initializable {
     public void switchStart(ActionEvent event) throws IOException {
         Vars.currentQuiz = (String) chooseQuiz.getValue();
         Vars.pathQuestions = "src/main/resources/com/example/codeformaticsfx/GameResources/QuestionLibrary/"+Vars.currentQuiz+".json";
+        Vars.pathScoreboard = "src/main/resources/com/example/codeformaticsfx/GameResources/Scoreboards/"+Vars.currentQuiz+"Scoreboard.json";
         readWriteQuestions rwq = new readWriteQuestions();
         EncodeDecode ed = new EncodeDecode();
         if (ed.decodeSingle(rwq.readQuizz(Vars.pathQuestions).logoPath).equals("default")){

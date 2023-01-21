@@ -33,19 +33,21 @@ public class readWriteScoreboard {
     }
     public ScoreboardInfo scoreboard(String path) throws IOException {
         ScoreboardInfo scoreboardListTemp = fromFile(path);
+        if(scoreboardListTemp == null){
+            scoreboardListTemp = new ScoreboardInfo(Vars.currentQuiz, null);
+        }
         return scoreboardListTemp;
     }
     public void writeToScoreboard(String currentName, String currentScore, String currentTIS, String path) throws IOException {
         EncodeDecode encodeDecode = new EncodeDecode();
         boolean wasAdded = false;
         List<readWriteScoreboard> tempScoreboard = new ArrayList<>();
-        List<readWriteScoreboard> tempList = scoreboard(path).scoreboard;
-        if(tempList != null){
+        if(scoreboard(path).scoreboard != null){
             tempScoreboard = scoreboard(path).scoreboard;
         }else {
             readWriteScoreboard newPlayer = new readWriteScoreboard(encodeDecode.encodeSinge(currentName), encodeDecode.encodeSinge(currentScore), encodeDecode.encodeSinge(currentTIS));
             tempScoreboard.add(newPlayer);
-            ScoreboardInfo sI = new ScoreboardInfo("Java", tempScoreboard);
+            ScoreboardInfo sI = new ScoreboardInfo(Vars.currentQuiz, tempScoreboard);
             Writer writer = Files.newBufferedWriter(Paths.get(path));
             gson.toJson(sI, writer);
             writer.close();
@@ -71,7 +73,7 @@ public class readWriteScoreboard {
         if(!wasAdded){
             tempScoreboard.add(newPlayer);
         }
-        ScoreboardInfo sI = new ScoreboardInfo("Java", tempScoreboard);
+        ScoreboardInfo sI = new ScoreboardInfo(Vars.currentQuiz, tempScoreboard);
         Writer writer = Files.newBufferedWriter(Paths.get(path));
         gson.toJson(sI, writer);
         writer.close();

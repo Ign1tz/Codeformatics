@@ -48,7 +48,7 @@ public class SceneController implements Initializable{
     static int question = 0;
     static List<readWriteQuestions> questionsList;
     static String selected, right, numberOfQuestions, score = "00000";
-    static boolean nameGiven = false;
+    static boolean nameGiven = false, isHome = true;
     private Stage stage;
     private Parent root;
     private static Scene scene;
@@ -80,6 +80,7 @@ public class SceneController implements Initializable{
     }
 
     public void switchStart(ActionEvent event) throws IOException {
+        isHome = true;
         FXMLLoader loader = new FXMLLoader(getClass().getResource("HomeStage.fxml"));
         Parent root = loader.load();
         SceneController controller = loader.getController();
@@ -97,6 +98,7 @@ public class SceneController implements Initializable{
 
     //HOMESTAGE START
     public void switchGame(ActionEvent event) throws IOException, InterruptedException {
+        isHome = false;
         question = 0;
         pickQuestions pQ = new pickQuestions();
         EncodeDecode eD = new EncodeDecode();
@@ -162,6 +164,7 @@ public class SceneController implements Initializable{
     }
 
     public void Exit(ActionEvent event) throws IOException {
+        isHome = true;
         FXMLLoader loader = new FXMLLoader(getClass().getResource("HomeStage.fxml"));
         Parent root = loader.load();
         SceneController controller = loader.getController();
@@ -179,12 +182,14 @@ public class SceneController implements Initializable{
             if(!nameGiven) {
                 name = nameScoreboard.getText();
             }
+            System.out.println(Vars.pathScoreboard);
             rwS.writeToScoreboard(name, score, String.valueOf(1), Vars.pathScoreboard);
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Scoreboard.fxml"));
             Parent root = loader.load();
             Scene scene = ((Node) event.getSource()).getScene();
             scene.setRoot(root);
             score = "00000";
+            name = null;
         } else{
             nameScoreboard.setOpacity(1);
             nameScoreboard.setDisable(false);
@@ -516,7 +521,7 @@ public class SceneController implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        if (scene.getRoot().getStylesheets() == GameGrid.getStylesheets()) {
+        if (isHome) {
             Image image = new Image(Vars.logoPath);
             myImageView.setImage(image);
         }
