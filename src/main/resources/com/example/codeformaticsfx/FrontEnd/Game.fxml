@@ -38,14 +38,14 @@
             </CheckBox>
          </children>
       </AnchorPane>
-      <AnchorPane maxHeight="70.0" maxWidth="600.0" minHeight="50.0" minWidth="600.0" prefHeight="70.0" prefWidth="600.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+      <AnchorPane maxHeight="50.0" maxWidth="600.0" minHeight="50.0" minWidth="600.0" prefHeight="50.0" prefWidth="600.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
          <children>
             <Label fx:id="Questions" alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="600.0" text="Insert Question Here" textFill="#e91e63">
                <font>
                   <Font name="Arial Black" size="20.0" />
                </font>
                <effect>
-                  <DropShadow spread="0.2" />
+                  <DropShadow />
                </effect>
             </Label>
          </children>
@@ -66,7 +66,7 @@
       <Button fx:id="Return" mnemonicParsing="false" onAction="#Return" stylesheets="@Game.css" text="Return" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
       <Button fx:id="jokerFifty" mnemonicParsing="false" onAction="#jokerF" stylesheets="@Game.css" text="50/50" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="BASELINE" />
       <Button fx:id="nextQuestion" mnemonicParsing="false" onAction="#updateQuestion" stylesheets="@Game.css" text="Next" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
          <children>
             <GridPane fx:id="Warning" disable="true" layoutX="34.0" layoutY="14.0" opacity="0.0" prefHeight="141.0" prefWidth="300.0" style="-fx-background-color: #353333;">
               <columnConstraints>

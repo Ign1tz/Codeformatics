@@ -1,16 +1,10 @@
 package com.example.codeformaticsfx.FrontEnd;
 
-import com.example.codeformaticsfx.Files.EncodeDecode;
-import com.example.codeformaticsfx.Files.Vars;
-import com.example.codeformaticsfx.Files.readWriteScoreboard;
+import com.example.codeformaticsfx.Files.*;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
+import javafx.fxml.*;
+import javafx.scene.*;
+import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 
 import java.io.IOException;
@@ -31,8 +25,6 @@ public class ScoreboardController {
     secondPoints, thirdPoints;
     @FXML
     private Button prev, next;
-    @FXML
-    private Button exit;
     private int count = 0;
     private String path = Vars.pathScoreboard;
 
@@ -40,12 +32,8 @@ public class ScoreboardController {
     EncodeDecode encodeDecode = new EncodeDecode();
     private List<readWriteScoreboard> encodedScoreboard = scoreboard.fromFile(path).scoreboard;
 
-
-    public void setPath(String newPath){
-        path = newPath;
-    }
     @FXML
-    private void next(ActionEvent event) {
+    private void next() {
         setScoreboard();
         prev.setOpacity(1);
         prev.setDisable(false);
@@ -56,8 +44,7 @@ public class ScoreboardController {
     }
 
 
-    public void previous(ActionEvent event) {
-        //count -= 10; //--- Caused by: java.lang.IndexOutOfBoundsException: Index -21 out of bounds for length 5
+    public void previous() {
         count -= 20;
         setScoreboard();
         next.setOpacity(1);
