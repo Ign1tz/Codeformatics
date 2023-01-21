@@ -60,6 +60,7 @@ public class SettingsController implements Initializable {
         Scene scene = ((Node) event.getSource()).getScene();
         scene.setRoot(root);
     }
+
     public void submit(ActionEvent event) {
         try {
             name = myNameText.getText();                //name can be typed into the field
@@ -73,18 +74,20 @@ public class SettingsController implements Initializable {
             Label1.setText("error");
         }
     }
+
     public void switchStart(ActionEvent event) throws IOException {
+        Vars.currentQuiz = chooseQuiz.getValue().toString();
         Vars.currentQuiz = (String) chooseQuiz.getValue();
-        Vars.pathQuestions = "src/main/resources/com/example/codeformaticsfx/GameResources/QuestionLibrary/"+Vars.currentQuiz+".json";
-        Vars.pathScoreboard = "src/main/resources/com/example/codeformaticsfx/GameResources/Scoreboards/"+Vars.currentQuiz+"Scoreboard.json";
+        Vars.pathQuestions = "src/main/resources/com/example/codeformaticsfx/GameResources/QuestionLibrary/" + Vars.currentQuiz + ".json";
+        Vars.pathScoreboard = "src/main/resources/com/example/codeformaticsfx/GameResources/Scoreboards/" + Vars.currentQuiz + "Scoreboard.json";
         readWriteQuestions rwq = new readWriteQuestions();
         EncodeDecode ed = new EncodeDecode();
-        if (ed.decodeSingle(rwq.readQuizz(Vars.pathQuestions).logoPath).equals("default")){
+        if (ed.decodeSingle(rwq.readQuizz(Vars.pathQuestions).logoPath).equals("default")) {
             Vars.logoPath = "com/example/codeformaticsfx/GameResources/Logos/default.jpeg";
-        }else{
+        } else {
             Vars.logoPath = ed.decodeSingle(rwq.readQuizz(Vars.pathQuestions).logoPath);
         }
-        System.out.println(Vars.logoPath);
+        Vars.isHome = true;
         FXMLLoader loader = new FXMLLoader(getClass().getResource("HomeStage.fxml"));
         Parent root = loader.load();
         SceneController controller = loader.getController();
@@ -92,6 +95,7 @@ public class SettingsController implements Initializable {
         scene.setRoot(root);
 
     }
+
     public void playSong() {
         if (CheckSound.isSelected()) {  //if checkbox is selected play song, if not pause
             CheckSound.setText("ON");
@@ -103,22 +107,17 @@ public class SettingsController implements Initializable {
             Vars.mediaPlayer.pause();
         }
     }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        readWriteList rwl = new readWriteList();
-        try {
-            ObservableList<String> quizNameList = FXCollections.observableList(rwl.fromFile());
-            chooseQuiz.setItems(quizNameList);
-            chooseQuiz.setValue(Vars.currentQuiz);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        if(Vars.soundIsOn){
+        ObservableList<String> quizNameList = FXCollections.observableList(Vars.listOfQuestions);
+        chooseQuiz.setItems(quizNameList);
+        chooseQuiz.setValue(Vars.currentQuiz);
+        if (Vars.soundIsOn) {
             CheckSound.setSelected(true);
         }
         songs = new ArrayList<>();
         directory = new File("src/main/resources/com/example/codeformaticsfx/FrontEnd/music"); //path to file
-        System.out.println(directory);
         files = directory.listFiles();      //stores music in file
         if (files != null && !Vars.soundIsOn) {
             //add music in arraylist
@@ -128,22 +127,22 @@ public class SettingsController implements Initializable {
             Vars.mediaPlayer = new MediaPlayer(media);
         }
         sliderSettings.setValue(Vars.currentBackgroundValue);
-        if(sliderSettings.getValue() <= 33){
-            SettingsGrid.setStyle("-fx-background-image: url("+ Vars.pathBackground1 +")");
+        if (sliderSettings.getValue() <= 33) {
+            SettingsGrid.setStyle("-fx-background-image: url(" + Vars.pathBackground1 + ")");
         } else if (sliderSettings.getValue() > 33 && sliderSettings.getValue() <= 66) {
-            SettingsGrid.setStyle("-fx-background-image: url("+ Vars.pathBackground2 +")");
-        }else{
-            SettingsGrid.setStyle("-fx-background-image: url("+ Vars.pathBackground3 +")");
+            SettingsGrid.setStyle("-fx-background-image: url(" + Vars.pathBackground2 + ")");
+        } else {
+            SettingsGrid.setStyle("-fx-background-image: url(" + Vars.pathBackground3 + ")");
         }
         sliderSettings.valueProperty().addListener(new ChangeListener<Number>() {
             @Override
             public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
-                if(sliderSettings.getValue() <= 33){
-                    SettingsGrid.setStyle("-fx-background-image: url("+ Vars.pathBackground1 +")");
+                if (sliderSettings.getValue() <= 33) {
+                    SettingsGrid.setStyle("-fx-background-image: url(" + Vars.pathBackground1 + ")");
                 } else if (sliderSettings.getValue() > 33 && sliderSettings.getValue() <= 66) {
-                    SettingsGrid.setStyle("-fx-background-image: url("+ Vars.pathBackground2 +")");
-                }else{
-                    SettingsGrid.setStyle("-fx-background-image: url("+ Vars.pathBackground3 +")");
+                    SettingsGrid.setStyle("-fx-background-image: url(" + Vars.pathBackground2 + ")");
+                } else {
+                    SettingsGrid.setStyle("-fx-background-image: url(" + Vars.pathBackground3 + ")");
                 }
                 Vars.currentBackgroundValue = (int) sliderSettings.getValue();
             }
