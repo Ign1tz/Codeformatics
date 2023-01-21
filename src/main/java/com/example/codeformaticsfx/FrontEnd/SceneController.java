@@ -56,6 +56,7 @@ public class SceneController implements Initializable{
     private int songNumber;
     private Media media;
     private MediaPlayer mediaPlayer;
+    private String[] arrStr;
     QuestionJoker questionJoker = new QuestionJoker();
     //VARIABLES END
 
@@ -528,7 +529,15 @@ public class SceneController implements Initializable{
             if(GameGrid != null) GameGrid.setStyle("-fx-background-image: url("+ Vars.pathBackground3 +")");
         }
     }
-
-
     //HOMESTAGE END
+
+    //Method for Layout
+    public String layoutString (String a) {
+       final int middle = a.length() / 2;   //getting middle of String
+        if (a.length() > 13) {
+            arrStr = new String[]{a.substring(0, middle), a.substring(middle)}; //splitting String in two sections
+        }
+       a = arrStr[0] + "-" + "\n" + arrStr[1]; //filling a with new layout String
+    return a;
+    }
 }
