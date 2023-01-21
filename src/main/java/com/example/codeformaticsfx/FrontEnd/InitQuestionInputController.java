@@ -10,10 +10,13 @@ import javafx.fxml.*;
 import javafx.scene.*;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
-import java.io.IOException;
+import java.io.*;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.List;
 import java.util.Objects;
 import java.util.ResourceBundle;
@@ -24,7 +27,7 @@ public class InitQuestionInputController implements Initializable{
     private readWriteQuestions writeQuestions = WriteQuestionsGUIController.writeQuestions;
     private readWriteList rwL = new readWriteList();
     @FXML
-    private TextField QuizzName, AuthorName;
+    private TextField QuizzName, AuthorName, directory;
     @FXML
     private Label error, Number, NameError;
     @FXML
@@ -32,6 +35,7 @@ public class InitQuestionInputController implements Initializable{
     private Stage stage;
     private Scene scene;
     private String questionNumber;
+    private File file;
     private List<String> QuizList;
 
     {
@@ -45,14 +49,19 @@ public class InitQuestionInputController implements Initializable{
     private List<String> setQuiz() throws IOException {
         return rwL.fromFile();
     }
-
     public void startQuestion(ActionEvent event) throws IOException {
         if(QuizzName.getText() == "" || AuthorName.getText() == "") {
             error.setOpacity(1);
         }else{
             if(!existsIn(QuizzName.getText().toLowerCase(), QuizList)) {
+                if(file == null && directory.getText() != null){
+                    Vars.logoPath = "default";
+                }else{
+                    Files.copy(Path.of(file.getAbsolutePath()), Path.of("src/main/resources/com/example/codeformaticsfx/GameResources/Logos/" + QuizzName.getText() + file.getAbsolutePath().substring(file.getAbsolutePath().lastIndexOf('.'))));
+                    Vars.logoPath = "com/example/codeformaticsfx/GameResources/Logos/" + QuizzName.getText() + file.getAbsolutePath().substring(file.getAbsolutePath().lastIndexOf('.'));
+                }
                 try {
-                    writeQuestions.finish(QuizzName.getText(), AuthorName.getText(), questionNumber, QuizzName.getText().toLowerCase());
+                    writeQuestions.finish(QuizzName.getText(), AuthorName.getText(), questionNumber, QuizzName.getText().toLowerCase(), Vars.logoPath);
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("SettingsStage.fxml"));
                     Parent root = loader.load();
                     Scene scene = ((Node) event.getSource()).getScene();
@@ -98,5 +107,18 @@ public class InitQuestionInputController implements Initializable{
                 Number.setText(String.valueOf((int) numberOfQuestions.getValue()));
             }
         });
+    }
+    @FXML
+    private void Browse(){
+        FileChooser dirCh = new FileChooser();
+        dirCh.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("Image FIles", "*.png", "*.jpg", "*.gif")
+        );
+        Stage stage = (Stage) finishQuestionsGrid.getScene().getWindow();
+        file = dirCh.showOpenDialog(stage);
+        if(file != null){
+            directory.setText(file.getAbsolutePath());
+            Vars.logoPathAbsolut = file.getAbsolutePath();
+        }
     }
 }

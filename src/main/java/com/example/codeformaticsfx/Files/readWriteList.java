@@ -17,8 +17,8 @@ public class readWriteList {
     public String SCOREBOARD;
     public String NAME;
     public readWriteList(String questions){
-        this.QUESTIONS = "./GameResources/QuestionLibrary/" + questions + ".json";
-        this.SCOREBOARD = "./GameResources/Scoreboards/" + questions + "Scoreboard.json";
+        this.QUESTIONS = "src/main/resources/com/example/codeformaticsfx/GameResources/QuestionLibrary/" + questions + ".json";
+        this.SCOREBOARD = "src/main/resources/com/example/codeformaticsfx/GameResources/Scoreboards/" + questions + "Scoreboard.json";
         this.NAME = questions;
     }
     public readWriteList(){}
@@ -29,14 +29,14 @@ public class readWriteList {
         if(temp == null){
             temp = new ArrayList<>();
         }
-        Writer writer = Files.newBufferedWriter(Paths.get("./GameResources/QuestionList.json"));
+        Writer writer = Files.newBufferedWriter(Paths.get("src/main/resources/com/example/codeformaticsfx/GameResources/QuestionList.json"));
         temp.add(questions);
         gson.toJson(temp, writer);
         writer.close();
         System.out.println(temp);
     }
     public List<String> fromFile() throws IOException {
-        Reader reader = Files.newBufferedReader(Paths.get("./GameResources/QuestionList.json"));
+        Reader reader = Files.newBufferedReader(Paths.get("src/main/resources/com/example/codeformaticsfx/GameResources/QuestionList.json"));
         List<String> tempList = new Gson().fromJson(reader, new TypeToken<List<String>>() {}.getType());
         reader.close();
         return tempList;

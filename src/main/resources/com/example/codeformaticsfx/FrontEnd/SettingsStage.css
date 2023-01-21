@@ -85,4 +85,5 @@
 -fx-text-fill: #0097a7;
 -fx-font-size: 12px;
 -fx-font-weight: bold;
+    -fx-background-color: transparent;
 }

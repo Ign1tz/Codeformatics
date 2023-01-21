@@ -11,6 +11,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
@@ -23,7 +24,6 @@ import java.util.Arrays;
 import java.util.ResourceBundle;
 
 public class SettingsController implements Initializable {
-
     @FXML
     public GridPane SettingsGrid;
     @FXML
@@ -51,7 +51,6 @@ public class SettingsController implements Initializable {
         Scene scene = ((Node) event.getSource()).getScene();
         scene.setRoot(root);
     }
-
     public void submit(ActionEvent event) {
         try {
             name = myNameText.getText();                //name can be typed into the field
@@ -65,7 +64,6 @@ public class SettingsController implements Initializable {
             Label1.setText("error");
         }
     }
-
     public void switchStart(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("HomeStage.fxml"));
         Parent root = loader.load();
@@ -73,11 +71,11 @@ public class SettingsController implements Initializable {
         Scene scene = ((Node) event.getSource()).getScene();
         scene.setRoot(root);
     }
-
     public void playSong() {
         if (CheckSound.isSelected()) {  //if checkbox is selected play song, if not pause
             CheckSound.setText("ON");
             Vars.mediaPlayer.setAutoPlay(true);
+            Vars.mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
             Vars.soundIsOn = true;
             //mediaPlayer.getOnPlaying();
         } else {

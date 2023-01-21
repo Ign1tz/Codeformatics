@@ -7,6 +7,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.*;
 import javafx.scene.*;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
@@ -35,6 +37,8 @@ public class SceneController implements Initializable{
     private Slider sliderSettings;
     @FXML
     private TextField nameScoreboard, myNameText;
+    @FXML
+    private ImageView myImageView;
     //FXML USAGE END
 
     //VARIABLES START
@@ -44,7 +48,6 @@ public class SceneController implements Initializable{
     static int question = 0;
     static List<readWriteQuestions> questionsList;
     static String selected, right, numberOfQuestions, score = "00000";
-    static String pathScoreboard = "./GameResources/Scoreboards/JavaScoreboard.json";
     static boolean nameGiven = false;
     private Stage stage;
     private Parent root;
@@ -177,12 +180,11 @@ public class SceneController implements Initializable{
                 name = nameScoreboard.getText();
             }
             rwS.writeToScoreboard(name, score, String.valueOf(1), Vars.pathScoreboard);
-            ScoreboardController SC = new ScoreboardController();
-            //SC.setPath(Vars.pathScoreboard);
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Scoreboard.fxml"));
             Parent root = loader.load();
             Scene scene = ((Node) event.getSource()).getScene();
             scene.setRoot(root);
+            score = "00000";
         } else{
             nameScoreboard.setOpacity(1);
             nameScoreboard.setDisable(false);
@@ -514,6 +516,8 @@ public class SceneController implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        Image image = new Image(Vars.logoPath);
+        myImageView.setImage(image);
         if(Vars.currentBackgroundValue <= 33){
             if(homeGrid != null) homeGrid.setStyle("-fx-background-image: url("+ Vars.pathBackground1 +")");
             if(finishGrid != null) finishGrid.setStyle("-fx-background-image: url("+ Vars.pathBackground1 +")");
