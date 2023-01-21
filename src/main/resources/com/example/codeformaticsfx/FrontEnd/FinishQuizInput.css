@@ -29,7 +29,7 @@
 -fx-border-width: 3;
 }
 .label {
-    -fx-text-fill: #e91e63;
-    -fx-font-size: 20px;
-    -fx-font-weight: bold;
+-fx-text-fill: #e91e63;
+-fx-font-size: 20px;
+-fx-font-weight: bold;
 }

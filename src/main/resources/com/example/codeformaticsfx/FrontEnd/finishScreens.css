@@ -32,8 +32,15 @@
 
 .label {
 -fx-text-fill: #e91e63;
--fx-font-size: 20px;
+-fx-font-size: 30px;
 -fx-font-weight: bold;
 -fx-font-family: ArialBlack;
 }
 
+#Questions {
+-fx-font-size: 60px;
+}
+
+#scoreboardLabel {
+-fx-font-size: 20px;
+}

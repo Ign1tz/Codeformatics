@@ -86,3 +86,15 @@
 -fx-font-size: 12px;
 -fx-font-weight: bold;
 }
+
+#volume {
+-fx-text-fill: #0097a7;
+-fx-font-size: 20px;
+-fx-font-weight: bold;
+}
+
+#createQuiz {
+-fx-text-fill: #0097a7;
+-fx-font-size: 20px;
+-fx-font-weight: bold;
+}

@@ -43,14 +43,47 @@
 -fx-font-size: 14px;
 }
 
-#name1 {
+#winnerName {
 -fx-font-size: 25;
+-fx-text-fill: #A5653F;
 }
 
-#points1 {
+#winnerPoints {
 -fx-font-size: 25;
+-fx-text-fill: #A5653F;
 }
 
-place1 {
+#winnerPlace {
 -fx-font-size: 25;
+-fx-text-fill: #A5653F;
+}
+
+#secondName {
+-fx-font-size: 20;
+-fx-text-fill: #6D778B;
+}
+
+#secondPoints {
+-fx-font-size: 20;
+-fx-text-fill: #6D778B;
+}
+
+#secondPlace {
+-fx-font-size: 20;
+-fx-text-fill: #6D778B;
+}
+
+#thirdName {
+-fx-font-size: 18;
+-fx-text-fill: #BF6836;
+}
+
+#thirdPoints {
+-fx-font-size: 18;
+-fx-text-fill: #BF6836;
+}
+
+#thirdPlace {
+-fx-font-size: 18;
+-fx-text-fill: #BF6836;
 }
