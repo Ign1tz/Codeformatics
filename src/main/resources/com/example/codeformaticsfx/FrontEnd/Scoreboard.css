@@ -60,30 +60,30 @@
 
 #secondName {
 -fx-font-size: 20;
--fx-text-fill: #6D778B;
+-fx-text-fill: #b2b9bc;
 }
 
 #secondPoints {
 -fx-font-size: 20;
--fx-text-fill: #6D778B;
+-fx-text-fill: #b2b9bc;
 }
 
 #secondPlace {
 -fx-font-size: 20;
--fx-text-fill: #6D778B;
+-fx-text-fill: #b2b9bc;
 }
 
 #thirdName {
 -fx-font-size: 18;
--fx-text-fill: #BF6836;
+-fx-text-fill: #bf8970;
 }
 
 #thirdPoints {
 -fx-font-size: 18;
--fx-text-fill: #BF6836;
+-fx-text-fill: #bf8970;
 }
 
 #thirdPlace {
 -fx-font-size: 18;
--fx-text-fill: #BF6836;
+-fx-text-fill: #bf8970;
 }

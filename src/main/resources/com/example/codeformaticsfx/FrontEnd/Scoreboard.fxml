@@ -4,7 +4,6 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.effect.Bloom?>
 <?import javafx.scene.effect.DropShadow?>
-<?import javafx.scene.effect.Glow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -48,7 +47,7 @@
          </effect></Label>
       <Label fx:id="place5" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5">
          <effect>
-            <DropShadow blurType="GAUSSIAN" height="1.0" radius="0.0" width="1.0" />
+            <DropShadow />
          </effect></Label>
       <Label fx:id="place4" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4">
          <effect>
@@ -129,10 +128,7 @@
          </effect></Label>
       <Label fx:id="name10" layoutX="254.0" layoutY="304.0" prefHeight="17.0" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="10">
          <effect>
-            <Glow>
-               <input>
-                  <DropShadow />
-               </input></Glow>
+            <DropShadow />
          </effect></Label>
       <Label fx:id="points7" layoutX="375.0" layoutY="222.0" prefHeight="18.0" textFill="WHITE" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="7">
          <effect>
@@ -173,7 +169,7 @@
                   <Font size="33.0" />
                </font>
                <effect>
-                  <Bloom />
+                  <DropShadow />
                </effect>
             </Label>
          </children>
@@ -195,32 +191,32 @@
       </Label>
       <Label fx:id="secondPlace" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
          <effect>
-            <Bloom />
+            <DropShadow />
          </effect>
       </Label>
       <Label fx:id="secondName" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
          <effect>
-            <Bloom />
+            <DropShadow />
          </effect>
       </Label>
       <Label fx:id="secondPoints" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
          <effect>
-            <Bloom />
+            <DropShadow />
          </effect>
       </Label>
       <Label fx:id="thirdPlace" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
          <effect>
-            <Bloom />
+            <DropShadow />
          </effect>
       </Label>
       <Label fx:id="thirdName" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
          <effect>
-            <Bloom />
+            <DropShadow />
          </effect>
       </Label>
       <Label fx:id="thirdPoints" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
          <effect>
-            <Bloom />
+            <DropShadow />
          </effect>
       </Label>
    </children>
