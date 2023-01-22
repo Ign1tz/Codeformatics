@@ -477,6 +477,7 @@ public class SceneController implements Initializable {
             EncodeDecode eD = new EncodeDecode();
             readWriteQuestions quest = null;
             String newQuest = "";
+            // get random difficulty question
             switch (randomDiff) {
                 case 1:
                     randomElement = randomNumber(easy.size() - 1);
@@ -497,6 +498,7 @@ public class SceneController implements Initializable {
                     hard.remove(random);
                     break;
             }
+            // link the question with the GUI
             selected = null;
             Questions.setText(layoutString(newQuest));
             Answer1.setText(layoutString(eD.decodeSingle(quest.A1)));
