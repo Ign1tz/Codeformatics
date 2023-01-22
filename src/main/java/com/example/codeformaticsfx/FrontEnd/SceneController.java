@@ -44,7 +44,7 @@ public class SceneController implements Initializable {
     static String selected, right, numberOfQuestions, score = "00000";
     static boolean nameGiven = false, firstTime = true;
     private static Scene scene;
-    int counterF, counterS;
+    int counterF, counterS, counterTF, counterN;
     QuestionJoker questionJoker = new QuestionJoker();
     //VARIABLES END
 
@@ -390,6 +390,73 @@ public class SceneController implements Initializable {
             }
             counterF = 1;
         }
+    }
+
+    public void jokerTF(ActionEvent actionEvent) {
+        if (counterTF == 0) {
+
+            Answer1.setDisable(true);
+            Answer2.setDisable(true);
+            Answer3.setDisable(true);
+            Answer4.setDisable(true);
+            Answer1.setSelected(false); //removes Selection of (possible) wrong answer resulting in the possible selection of multiple answers
+            Answer2.setSelected(false);
+            Answer3.setSelected(false);
+            Answer4.setSelected(false);
+
+            String A1 = Answer1.getText();
+            String A2 = Answer2.getText();
+            String A3 = Answer3.getText();
+            String A4 = Answer4.getText();
+            String rightAnswer = right;
+            int range = 4;
+            int rightnumber = 0;
+
+            if ("A1".equals(rightAnswer)) {
+                rightnumber = 1;
+            }
+            if ("A2".equals(rightAnswer)) {
+                rightnumber = 2;
+            }
+            if ("A3".equals(rightAnswer)) {
+                rightnumber = 3;
+            }
+            if ("A4".equals(rightAnswer)) {
+                rightnumber = 4;
+            }
+
+
+            questionJoker.jokerTwentyFive(A1, A2, A3, A4, rightAnswer, range, rightnumber);
+
+            Answer1.setDisable(false);
+            Answer2.setDisable(false);
+            Answer3.setDisable(false);
+            Answer4.setDisable(false);
+            Answer1.setSelected(false); //removes Selection of (possible) wrong awnser resulting in the possible selection of multiple awnsers
+            Answer2.setSelected(false);
+            Answer3.setSelected(false);
+            Answer4.setSelected(false);
+
+            switch (questionJoker.getRandomAnswer()) {
+                case 1:
+                    Answer1.setDisable(true);
+                    break;
+                case 2:
+                    Answer2.setDisable(true);
+                    break;
+                case 3:
+                    Answer3.setDisable(true);
+                    break;
+                case 4:
+                    Answer4.setDisable(true);
+                    break;
+            }
+            counterTF = 1;
+        }
+    }
+
+
+    public void jokerNew(ActionEvent actionEvent) {
     }
 
 

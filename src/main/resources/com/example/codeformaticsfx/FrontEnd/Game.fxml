@@ -161,9 +161,9 @@
             </CheckBox>
          </children>
       </AnchorPane>
-      <Button fx:id="twentyfive" mnemonicParsing="false" stylesheets="@Game.css" text="75/25" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="BASELINE" />
-      <Button fx:id="newQuestion" mnemonicParsing="false" stylesheets="@Game.css" text="New Question" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
-         <GridPane.margin>
+      <Button fx:id="twentyfive" mnemonicParsing="false" onAction="#jokerTF" stylesheets="@Game.css" text="75/25" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="BASELINE" />
+      <Button fx:id="newQuestion" mnemonicParsing="false" onAction="#jokerNew" stylesheets="@Game.css" text="New Question" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+      <GridPane.margin>
             <Insets top="20.0" />
          </GridPane.margin>
       </Button>

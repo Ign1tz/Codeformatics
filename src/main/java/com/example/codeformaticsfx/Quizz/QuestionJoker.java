@@ -43,6 +43,21 @@ public class QuestionJoker {
         return random.nextInt(10 - 1 + 1) + 1;
     }
 
+    public void jokerTwentyFive(String a1,String a2,String a3,String a4,String rightAnswer,int range, int rightnumber){
+        int randomanswer = random.nextInt(range)+1;
+        while (randomanswer == rightnumber){
+            randomanswer = random.nextInt(range)+1;
+        }
+
+        this.a1=a1;
+        this.a2=a2;
+        this.a3=a3;
+        this.a4=a4;
+        this.rightAnswer=rightAnswer;
+        this.range=range;
+        this.randomAnswer=randomanswer;
+    }
+
     public int getRange() {
         return range;
     }
