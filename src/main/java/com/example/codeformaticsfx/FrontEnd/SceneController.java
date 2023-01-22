@@ -44,6 +44,7 @@ public class SceneController implements Initializable {
     static String selected, right, numberOfQuestions, score = "00000";
     static boolean nameGiven = false, firstTime = true;
     private static Scene scene;
+    static String diff;
     int counterF, counterS, counterTF, counterN;
     QuestionJoker questionJoker = new QuestionJoker();
     public static double startTime, timeElapsed;
@@ -121,6 +122,7 @@ public class SceneController implements Initializable {
                 hard.remove(random);
                 break;
         }
+        diff = eD.decodeSingle(temp.DIFFICULTY);
         right = eD.decodeSingle(temp.RIGHTAWNSER);
         //This part initialises the Design representation of the new Scene.
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Game.fxml"));
@@ -274,6 +276,7 @@ public class SceneController implements Initializable {
             Answer2.setText(layoutString(eD.decodeSingle(temp.A2)));
             Answer3.setText(layoutString(eD.decodeSingle(temp.A3)));
             Answer4.setText(layoutString(eD.decodeSingle(temp.A4)));
+            diff = eD.decodeSingle(temp.DIFFICULTY);
             right = eD.decodeSingle(temp.RIGHTAWNSER);
             question++;
             Answer1.setSelected(false);
@@ -492,31 +495,33 @@ public class SceneController implements Initializable {
             Answer3.setSelected(false);
             Answer4.setSelected(false);
 
-            Random random = new Random();
-            int randomDiff = random.nextInt(3)+1;
+
             int randomElement;
             EncodeDecode eD = new EncodeDecode();
+
+
+
             readWriteQuestions quest = null;
             String newQuest = "";
             // get random difficulty question
-            switch (randomDiff) {
-                case 1:
+            switch (diff) {
+                case "Easy":
                     randomElement = randomNumber(easy.size() - 1);
                     quest = questionsList.get(easy.get(randomElement));
                     newQuest = eD.decodeSingle(quest.QUESTION);
-                    easy.remove(random);
+                    easy.remove(randomElement);
                     break;
-                case 2:
+                case "Medium":
                     randomElement = randomNumber(medium.size() - 1);
                     quest = questionsList.get(medium.get(randomElement));
                     newQuest = eD.decodeSingle(quest.QUESTION);
-                    medium.remove(random);
+                    medium.remove(randomElement);
                     break;
-                case 3:
+                case "Hard":
                     randomElement = randomNumber(hard.size() - 1);
                     quest = questionsList.get(hard.get(randomElement));
                     newQuest = eD.decodeSingle(quest.QUESTION);
-                    hard.remove(random);
+                    hard.remove(randomElement);
                     break;
             }
             // link the question with the GUI
@@ -526,6 +531,7 @@ public class SceneController implements Initializable {
             Answer2.setText(layoutString(eD.decodeSingle(quest.A2)));
             Answer3.setText(layoutString(eD.decodeSingle(quest.A3)));
             Answer4.setText(layoutString(eD.decodeSingle(quest.A4)));
+            diff = eD.decodeSingle(quest.DIFFICULTY);
             right = eD.decodeSingle(quest.RIGHTAWNSER);
             question++;
             Answer1.setSelected(false);
