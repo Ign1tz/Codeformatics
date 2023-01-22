@@ -45,7 +45,6 @@ public class SceneController implements Initializable {
     static boolean nameGiven = false, firstTime = true;
     private static Scene scene;
     int counterF, counterS;
-    private String[] arrStr = {""};
     QuestionJoker questionJoker = new QuestionJoker();
     //VARIABLES END
 
@@ -546,6 +545,8 @@ public class SceneController implements Initializable {
 
     //Method for Layout
     public String layoutString(String string) {
+        boolean newLine = false;
+        String[] arrStr = {"", ""};
         char[] check = string.toCharArray(); //create new Array with string as chars
         final int middle = string.length() / 2;   //getting middle of String
         if (string.length() > 13) {
@@ -555,11 +556,15 @@ public class SceneController implements Initializable {
                 for (int x = middle + 1; x < check.length; x++) {
                     if (check[x] == ' ') {
                         arrStr = new String[]{string.substring(0, x), string.substring(x)};
+                        newLine = true;
                         break;
                     }
                 }
             }
             string = arrStr[0] + "\n" + arrStr[1].stripLeading(); //filling a with new layout String
+        }
+        if(!newLine){
+            string = String.valueOf(check);
         }
         return string;
     }
