@@ -29,7 +29,7 @@
       <Label text="Quizz Name" GridPane.columnIndex="1" />
       <Label text="Author Name" GridPane.columnIndex="1" GridPane.rowIndex="1" />
       <Label stylesheets="@FinishQuizInput.css" text="Number of Questions" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-      <Button mnemonicParsing="false" onAction="#startQuestion" text="Start adding Questions" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+      <Button mnemonicParsing="false" onAction="#startQuestion" text="Finish Quiz" GridPane.columnIndex="2" GridPane.rowIndex="4" />
       <Label fx:id="Number" text="0" textFill="WHITE" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="CENTER">
          <padding>
             <Insets left="15.0" />

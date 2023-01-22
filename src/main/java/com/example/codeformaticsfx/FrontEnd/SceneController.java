@@ -46,6 +46,7 @@ public class SceneController implements Initializable {
     private static Scene scene;
     int counterF, counterS, counterTF, counterN;
     QuestionJoker questionJoker = new QuestionJoker();
+    public static double startTime, timeElapsed;
     //VARIABLES END
 
     //METHODS START
@@ -135,6 +136,7 @@ public class SceneController implements Initializable {
         Scene scene = ((Node) event.getSource()).getScene();
         scene.setRoot(root);
         question++;
+        startTime = System.currentTimeMillis();
     }
 
     //END GAME SCENE
@@ -172,7 +174,7 @@ public class SceneController implements Initializable {
                 name = nameScoreboard.getText();
             }
             System.out.println(Vars.pathScoreboard);
-            rwS.writeToScoreboard(name, score, String.valueOf(1), Vars.pathScoreboard);
+            rwS.writeToScoreboard(name, score, String.valueOf(timeElapsed), Vars.pathScoreboard);
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Scoreboard.fxml"));
             Parent root = loader.load();
             Scene scene = ((Node) event.getSource()).getScene();
@@ -222,6 +224,7 @@ public class SceneController implements Initializable {
                 controller.FinalScore.setText("" + finalScore);
                 Scene scene = ((Node) event.getSource()).getScene();
                 scene.setRoot(root);
+                timeElapsed = System.currentTimeMillis() - startTime;
                 return;
             }
             EncodeDecode eD = new EncodeDecode();

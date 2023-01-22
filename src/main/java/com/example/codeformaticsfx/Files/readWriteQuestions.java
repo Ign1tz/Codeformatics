@@ -9,7 +9,6 @@ import java.nio.file.*;
 import java.util.*;
 
 public class readWriteQuestions { //this class handles creating the questions, writing them as a json to a file and reading them from said file
-    //private static readWriteQuestions newQuestion;
     private static List<readWriteQuestions> QuestionList = new ArrayList<>();
     public List<readWriteQuestions> getQuestionList(){
         return this.QuestionList;
@@ -59,6 +58,7 @@ public class readWriteQuestions { //this class handles creating the questions, w
         writer.close();
         writer2.close();
         rwL.writeList(QuizName);
+        QuestionList = new ArrayList<>();
     }
     public QuizzInfo readQuizz(String filePath) throws IOException {
         Reader reader = Files.newBufferedReader(Paths.get(filePath));

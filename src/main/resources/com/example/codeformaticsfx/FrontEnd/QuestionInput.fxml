@@ -75,5 +75,8 @@
       <Label text="Easy" textFill="WHITE" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
       <Label text="Medium" textFill="WHITE" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
       <Label text="Hard" textFill="WHITE" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
+      <Label text="You need at least 7 Questions, at least two must be hard!" GridPane.columnIndex="6" GridPane.rowIndex="3" />
+      <Label fx:id="numberOfQuestions" text="You have:  Questions" GridPane.columnIndex="6" GridPane.rowIndex="4" />
+      <Label fx:id="hardQuestions" text="You have  hard questions!" GridPane.columnIndex="6" GridPane.rowIndex="5" />
    </children>
 </GridPane>
