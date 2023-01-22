@@ -22,7 +22,7 @@ public class SceneController implements Initializable {
     @FXML
     public GridPane Warning, homeGrid, finishGrid, GameGrid;
     @FXML
-    public Button exit, stay, OptionsButton, StartButton, Return;
+    public Button exit, stay, OptionsButton, StartButton, Return, twentyfive, jokerSeventy, jokerFifty, newQuestion;
     @FXML
     private Label scoreboardLabel, Score, FinalScore, Questions;
     @FXML
@@ -392,6 +392,7 @@ public class SceneController implements Initializable {
                     break;
             }
             counterF = 1;
+            jokerFifty.setDisable(true);
         }
     }
 
@@ -457,6 +458,7 @@ public class SceneController implements Initializable {
                     break;
             }
             counterTF = 1;
+            twentyfive.setDisable(true);
         }
     }
 
@@ -580,6 +582,7 @@ public class SceneController implements Initializable {
                 }
             }
             counterS = 1;
+            jokerSeventy.setDisable(true);
         }
     }
 
