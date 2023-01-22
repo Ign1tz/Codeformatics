@@ -106,6 +106,7 @@ public class SettingsController implements Initializable {
             //mediaPlayer.getOnPlaying();
         } else {
             Vars.mediaPlayer.pause();
+            CheckSound.setText("OFF");
         }
     }
 
