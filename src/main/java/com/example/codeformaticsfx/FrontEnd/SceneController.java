@@ -323,10 +323,10 @@ public class SceneController implements Initializable {
     }
 
     //Questions - Joker
-
+    // 50/50 Joker
     public void jokerF() {
+        // check if joker was used
         if (counterF == 0) {
-
             String A1 = Answer1.getText();
             String A2 = Answer2.getText();
             String A3 = Answer3.getText();
@@ -335,6 +335,7 @@ public class SceneController implements Initializable {
             int range = 4;
             int rightnumber = 0;
 
+            // get right answer
             if ("A1".equals(rightAnswer)) {
                 rightnumber = 1;
             }
@@ -359,6 +360,7 @@ public class SceneController implements Initializable {
             Answer3.setSelected(false);
             Answer4.setSelected(false);
 
+            // show right answer
             switch (questionJoker.getRightAnswer()) {
                 case "A1":
                     Answer1.setDisable(false);
@@ -374,6 +376,7 @@ public class SceneController implements Initializable {
                     break;
             }
 
+            // show random answer
             switch (questionJoker.getRandomAnswer()) {
                 case 1:
                     Answer1.setDisable(false);
@@ -393,8 +396,8 @@ public class SceneController implements Initializable {
     }
 
     public void jokerTF(ActionEvent actionEvent) {
+        // check if joker was used
         if (counterTF == 0) {
-
             Answer1.setDisable(true);
             Answer2.setDisable(true);
             Answer3.setDisable(true);
@@ -412,6 +415,7 @@ public class SceneController implements Initializable {
             int range = 4;
             int rightnumber = 0;
 
+            // get right answer
             if ("A1".equals(rightAnswer)) {
                 rightnumber = 1;
             }
@@ -437,6 +441,7 @@ public class SceneController implements Initializable {
             Answer3.setSelected(false);
             Answer4.setSelected(false);
 
+            // disable random answer
             switch (questionJoker.getRandomAnswer()) {
                 case 1:
                     Answer1.setDisable(true);
@@ -461,8 +466,8 @@ public class SceneController implements Initializable {
 
 
     public void jokerS() {
+        // check if joker was used
         if (counterS == 0) {
-
             Answer1.setDisable(true);
             Answer2.setDisable(true);
             Answer3.setDisable(true);
@@ -480,6 +485,7 @@ public class SceneController implements Initializable {
             int range = 4;
             int rightnumber = 0;
 
+            // get right answer
             if ("A1".equals(rightAnswer)) {
                 rightnumber = 1;
             }
@@ -496,6 +502,7 @@ public class SceneController implements Initializable {
 
             int border = questionJoker.jokerSeventyThirty(A1, A2, A3, A4, rightAnswer, range, rightnumber);
 
+            // see if 70% has right answer
             if (border <= 7) {
                 switch (questionJoker.getRightAnswer()) {
                     case "A1":
@@ -534,6 +541,7 @@ public class SceneController implements Initializable {
                         break;
                 }
             } else {
+                // if 30% has right answer
                 switch (questionJoker.getRightAnswer()) {
                     case "A1":
                         Answer1.setDisable(false);
