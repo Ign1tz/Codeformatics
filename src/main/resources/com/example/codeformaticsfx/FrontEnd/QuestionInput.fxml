@@ -6,11 +6,12 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Slider?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane fx:id="inputQuestionsGrid" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="inputQuestionsGrid" stylesheets="@QuestionInput.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.codeformaticsfx.FrontEnd.WriteQuestionsGUIController">
+<GridPane fx:id="inputQuestionsGrid" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="inputQuestionsGrid" stylesheets="@QuestionInput.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.codeformaticsfx.FrontEnd.WriteQuestionsGUIController">
   <columnConstraints>
       <ColumnConstraints hgrow="SOMETIMES" maxWidth="132.5" minWidth="10.0" prefWidth="102.5" />
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="132.5" minWidth="10.0" prefWidth="102.5" />
@@ -75,8 +76,39 @@
       <Label text="Easy" textFill="WHITE" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
       <Label text="Medium" textFill="WHITE" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
       <Label text="Hard" textFill="WHITE" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
-      <Label text="You need at least 7 Questions, at least two must be hard!" GridPane.columnIndex="6" GridPane.rowIndex="3" />
-      <Label fx:id="numberOfQuestions" text="You have:  Questions" GridPane.columnIndex="6" GridPane.rowIndex="4" />
-      <Label fx:id="hardQuestions" text="You have  hard questions!" GridPane.columnIndex="6" GridPane.rowIndex="5" />
+      <AnchorPane prefHeight="45.0" prefWidth="402.0" GridPane.columnIndex="5" GridPane.halignment="LEFT" GridPane.rowIndex="3" GridPane.valignment="TOP">
+         <children>
+            <Label fx:id="hint1" layoutX="43.0" layoutY="-1.0" prefHeight="30.0" prefWidth="310.0" text="You need at least seven Questions,">
+               <padding>
+                  <Insets left="30.0" />
+               </padding>
+            </Label>
+            <Label fx:id="hint2" layoutX="43.0" layoutY="20.0" prefHeight="25.0" prefWidth="281.0" text="at least two must be hard!">
+               <padding>
+                  <Insets left="30.0" />
+               </padding>
+            </Label>
+         </children>
+         <GridPane.margin>
+            <Insets top="10.0" />
+         </GridPane.margin>
+      </AnchorPane>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.halignment="LEFT" GridPane.rowIndex="4" GridPane.valignment="BASELINE">
+         <children>
+            <Label fx:id="numberOfQuestions" layoutX="42.0" layoutY="-12.0" prefHeight="25.0" prefWidth="255.0" text="You have:  Questions">
+               <padding>
+                  <Insets left="30.0" />
+               </padding>
+            </Label>
+            <Label fx:id="hardQuestions" layoutX="42.0" layoutY="4.0" prefHeight="25.0" prefWidth="255.0" text="You have  hard questions!">
+               <padding>
+                  <Insets left="30.0" />
+               </padding>
+            </Label>
+         </children>
+         <GridPane.margin>
+            <Insets bottom="10.0" />
+         </GridPane.margin>
+      </AnchorPane>
    </children>
 </GridPane>
