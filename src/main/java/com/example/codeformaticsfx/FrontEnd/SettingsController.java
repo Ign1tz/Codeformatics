@@ -67,10 +67,10 @@ public class SettingsController implements Initializable {
             if (name.length() >= 9) {
                 Label1.setText("Max. 8 characters ");    //usernames with more than 8 characters are not allowed
             } else {
-                Label1.setText("Welcome " + name + "!");
+                Label1.setText("Welcome " + name + "!");    //Label Welcomes user
                 nameGiven = true;
             }
-        } catch (Exception e) {
+        } catch (Exception e) { //if something doesn't work there should be a error message
             Label1.setText("error");
         }
     }
@@ -98,15 +98,15 @@ public class SettingsController implements Initializable {
 
     public void playSong() {
         if (CheckSound.isSelected()) {  //if checkbox is selected play song, if not pause
-            Vars.mediaPlayer.play();
-            CheckSound.setText("ON");
+            Vars.mediaPlayer.play();    //music play
+            CheckSound.setText("ON");   //text of checkbox sets to 'ON'
             Vars.mediaPlayer.setAutoPlay(true);
-            Vars.mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
+            Vars.mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE); //endless loop
             Vars.soundIsOn = true;
             //mediaPlayer.getOnPlaying();
         } else {
-            Vars.mediaPlayer.pause();
-            CheckSound.setText("OFF");
+            Vars.mediaPlayer.pause();   //music stops
+            CheckSound.setText("OFF");  //text of checkbox sets to 'OFF'
         }
     }
 

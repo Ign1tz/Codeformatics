@@ -44,3 +44,11 @@
 #scoreboardLabel {
 -fx-font-size: 20px;
 }
+
+#gameMade {
+-fx-font-size: 14px;
+}
+
+#max8Digits {
+-fx-font-size: 14px;
+}

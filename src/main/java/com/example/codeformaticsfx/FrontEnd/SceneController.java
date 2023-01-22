@@ -22,7 +22,7 @@ public class SceneController implements Initializable {
     @FXML
     public GridPane Warning, homeGrid, finishGrid, GameGrid;
     @FXML
-    public Button exit, stay, OptionsButton, StartButton, Return, twentyfive, jokerSeventy, jokerFifty, newQuestion;
+    public Button exit, stay, OptionsButton, StartButton, Return, twentyfive, jokerSeventy, jokerFifty, newQuestion, nextQuestion;
     @FXML
     private Label scoreboardLabel, Score, FinalScore, Questions;
     @FXML
@@ -138,18 +138,36 @@ public class SceneController implements Initializable {
     }
 
     //END GAME SCENE
-    public void Return() {
+    public void Return() {  //return button
         Warning.setOpacity(1);
-        Warning.setDisable(false);
+        Warning.setDisable(false);  //GridPane is now visible and can be used
         exit.setDisable(false);
-        stay.setDisable(false);
+        stay.setDisable(false);     ////exit and stay button are usable
+        Answer1.setDisable(true);
+        Answer2.setDisable(true);
+        Answer3.setDisable(true);
+        Answer4.setDisable(true);   //every answer in game cannot be used
+        twentyfive.setDisable(true);
+        jokerSeventy.setDisable(true);
+        newQuestion.setDisable(true);
+        jokerFifty.setDisable(true);
+        nextQuestion.setDisable(true);  //every button in game cannot be used
     }
 
     public void Stay() {
         Warning.setOpacity(0);
-        Warning.setDisable(true);
+        Warning.setDisable(true);       //GridPane cannot be used and seen
         exit.setDisable(true);
-        stay.setDisable(true);
+        stay.setDisable(true);      //exit and stay button cannot be used as well
+        Answer1.setDisable(false);
+        Answer2.setDisable(false);
+        Answer3.setDisable(false);
+        Answer4.setDisable(false);
+        twentyfive.setDisable(false);
+        jokerSeventy.setDisable(false);
+        newQuestion.setDisable(false);
+        jokerFifty.setDisable(false);
+        nextQuestion.setDisable(false); //every button and answer can be used
     }
 
     public void Exit(ActionEvent event) throws IOException {
@@ -617,23 +635,23 @@ public class SceneController implements Initializable {
     }
 
     public void endAll(ActionEvent event) {
-       primaryStage.close();
+       primaryStage.close();    //closes stages, game and window
     }
     //HOMESTAGE END
 
     //Method for Layout
     public String layoutString(String string) {
         boolean newLine = false;
-        String[] arrStr = {"", ""};
+        String[] arrStr = {"", ""};     //String is defined
         char[] check = string.toCharArray(); //create new Array with string as chars
         final int middle = string.length() / 2;   //getting middle of String
-        if (string.length() > 13) {
+        if (string.length() > 13) {         //if string is bigger than 13 characters it should be splitted
             if (check[middle] == ' ') { //if middle of array is a space, split string
                 arrStr = new String[]{string.substring(0, middle), string.substring(middle)}; //splitting String in two sections
             } else {
                 for (int x = middle + 1; x < check.length; x++) {
                     if (check[x] == ' ') {
-                        arrStr = new String[]{string.substring(0, x), string.substring(x)};
+                        arrStr = new String[]{string.substring(0, x), string.substring(x)}; //if middle isn't a space search for the closest
                         newLine = true;
                         break;
                     }

@@ -29,6 +29,7 @@
 -fx-border-radius: 35;
 -fx-border-width: 3;
 }
+/*Button layout explained in HomeStage.css*/
 
 #titleScore {
 -fx-text-fill: #e91e63;
@@ -40,50 +41,55 @@
 .label {
 -fx-text-fill: #e91e63;
 -fx-font-weight: bold;
--fx-font-size: 14px;
+-fx-font-size: 16px;
 }
+/*every label except the first three winners are the same*/
 
 #winnerName {
--fx-font-size: 25;
+-fx-font-size: 28;
 -fx-text-fill: #A5653F;
 }
 
 #winnerPoints {
--fx-font-size: 25;
+-fx-font-size: 28;
 -fx-text-fill: #A5653F;
 }
 
 #winnerPlace {
--fx-font-size: 25;
+-fx-font-size: 28;
 -fx-text-fill: #A5653F;
 }
+/*winner is the biggest label and has a golden colour*/
 
 #secondName {
--fx-font-size: 20;
+-fx-font-size: 24;
 -fx-text-fill: #b2b9bc;
 }
 
 #secondPoints {
--fx-font-size: 20;
+-fx-font-size: 24;
 -fx-text-fill: #b2b9bc;
 }
 
 #secondPlace {
--fx-font-size: 20;
+-fx-font-size: 24;
 -fx-text-fill: #b2b9bc;
 }
 
+/*second place is the second biggest label and has a silver color*/
+
 #thirdName {
--fx-font-size: 18;
+-fx-font-size: 20;
 -fx-text-fill: #bf8970;
 }
 
 #thirdPoints {
--fx-font-size: 18;
+-fx-font-size: 20;
 -fx-text-fill: #bf8970;
 }
 
 #thirdPlace {
--fx-font-size: 18;
+-fx-font-size: 20;
 -fx-text-fill: #bf8970;
 }
+/*third place is slightly bigger than everyone else, however has a bronze coloring*/

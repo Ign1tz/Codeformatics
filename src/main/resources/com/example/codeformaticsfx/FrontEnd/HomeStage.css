@@ -3,23 +3,23 @@
 -fx-background-size: cover;
 }
 .button {
--fx-background-color: #0097a7;
--fx-background-radius: 30;
--fx-min-width: 120;
--fx-min-height: 54;
--fx-text-size: 14px;
--fx-text-fill: #e91e63;
+-fx-background-color: #0097a7;  /*change background color*/
+-fx-background-radius: 30;  /*radius of button*/
+-fx-min-width: 120;      /*sets width*/
+-fx-min-height: 54;      /*sets height*/
+-fx-text-size: 14px;    /*size of text*/
+-fx-text-fill: #e91e63;        /*color of text inside of button*/
 }
-
+/*all buttons have a min width and height, text size is 14px, text should be filled with a specific colour*/
 .button:hover {
 -fx-background-color: #00acc1;
 -fx-background-radius: 30;
 -fx-border-color: #0097a7;
 -fx-border-radius: 35;
 -fx-border-width: 3;
--fx-effect: dropshadow( gaussian , rgba(255,255,255,1) , 6,0,0,1 );
+-fx-effect: dropshadow( gaussian , rgba(255,255,255,1) , 6,0,0,1 ); /*when mouse over button = white shadow*/
 }
-
+/*if mouse is on button, change background color, add a border*/
 .button:pressed {
 -fx-background-color: #0097a7;
 -fx-background-radius: 30;
@@ -27,13 +27,16 @@
 -fx-border-radius: 35;
 -fx-border-width: 3;
 }
+/*if button is pressed, border and background color should be the same*/
 .ImageView {
 -fx-image:url("JavaLogo.Farbe.png"); /*path to picture*/
 }
+/*Imagewiev with path to JavaLogo*/
 #logoLabel {
 -fx-text-fill: #0097a7;
 -fx-effect: dropshadow( gaussian , rgba(255,255,255,1) , 6,0,0,1 );
 }
+/*seen dropshadow in a tutorial, never remembered all the numbers, used dropshadow in scenebuilder instead*/
 #logoLabel2 {
 -fx-text-fill: #e91e63;
 -fx-effect: dropshadow( gaussian , rgba(255,255,255,1) , 6,0,0,1 );

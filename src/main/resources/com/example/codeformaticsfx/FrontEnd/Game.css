@@ -31,6 +31,8 @@
 -fx-border-width: 3;
 }
 
+/*button layout explained in HomeStage.css*/
+
 #labelExit {
 -fx-font-weight: bold;
 -fx-font-size: 14px;
@@ -47,8 +49,8 @@
 -fx-background-color: black;
 -fx-background-radius: 30;
 -fx-text-fill: #ff0000;
--fx-min-width: 40;
--fx-min-height: 20;
+-fx-min-width: 80;
+-fx-min-height: 40;
 -fx-text-size: 14px;
 -fx-font-weight: bold;
 }
@@ -73,8 +75,8 @@
 -fx-background-color: black;
 -fx-background-radius: 30;
 -fx-text-fill: #ff0000;
--fx-min-width: 40;
--fx-min-height: 20;
+-fx-min-width: 80;
+-fx-min-height: 40;
 -fx-text-size: 14px;
 -fx-font-weight: bold;
 }
@@ -94,3 +96,4 @@
 -fx-border-radius: 35;
 -fx-border-width: 3;
 }
+/*GridPane with exit buttons and stay button do have another layout when it comes to colours*/
