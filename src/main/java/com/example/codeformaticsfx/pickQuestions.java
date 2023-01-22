@@ -14,8 +14,10 @@ public class pickQuestions {
     public List<Integer> easy = new ArrayList<>();
     public List<Integer> medium = new ArrayList<>();
     public List<Integer> hard = new ArrayList<>();
-    private int numberOfEasyQuestions, numberOfMediumQuestions, numberOfHardQuestions;
     private readWriteQuestions temp = new readWriteQuestions();
+    private EncodeDecode ed = new EncodeDecode();
+    private int numberOfQuestions = Integer.parseInt(ed.decodeSingle(temp.readQuizz(Vars.pathQuestions).questionsUsed));
+    private int numberOfEasyQuestions, numberOfMediumQuestions, numberOfHardQuestions;
     public List<readWriteQuestions> questionList = temp.questionList(Vars.pathQuestions);
     public List<Integer> questionListDiff = new ArrayList<>();
 
@@ -167,8 +169,8 @@ public class pickQuestions {
         probList.add(22);
         probList.add(12);
         int difficultyOfLastQuestion = 0;
-        for(int i = 0; i < 12; i++){
-            activeQuestion(probList, difficultyOfLastQuestion, 12, i);
+        for(int i = 0; i < numberOfQuestions; i++){
+            activeQuestion(probList, difficultyOfLastQuestion, numberOfQuestions, i);
             difficultyOfLastQuestion = questionListDiff.get(questionListDiff.size() - 1);
         }
         return questionListDiff;

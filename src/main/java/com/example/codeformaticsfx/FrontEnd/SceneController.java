@@ -46,6 +46,7 @@ public class SceneController implements Initializable {
     private static Scene scene;
     int counterF, counterS, counterTF, counterN;
     QuestionJoker questionJoker = new QuestionJoker();
+    public static double startTime, timeElapsed;
     //VARIABLES END
 
     //METHODS START
@@ -135,6 +136,7 @@ public class SceneController implements Initializable {
         Scene scene = ((Node) event.getSource()).getScene();
         scene.setRoot(root);
         question++;
+        startTime = System.currentTimeMillis();
     }
 
     //END GAME SCENE
@@ -190,7 +192,7 @@ public class SceneController implements Initializable {
                 name = nameScoreboard.getText();
             }
             System.out.println(Vars.pathScoreboard);
-            rwS.writeToScoreboard(name, score, String.valueOf(1), Vars.pathScoreboard);
+            rwS.writeToScoreboard(name, score, String.valueOf(timeElapsed), Vars.pathScoreboard);
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Scoreboard.fxml"));
             Parent root = loader.load();
             Scene scene = ((Node) event.getSource()).getScene();
@@ -240,6 +242,7 @@ public class SceneController implements Initializable {
                 controller.FinalScore.setText("" + finalScore);
                 Scene scene = ((Node) event.getSource()).getScene();
                 scene.setRoot(root);
+                timeElapsed = System.currentTimeMillis() - startTime;
                 return;
             }
             EncodeDecode eD = new EncodeDecode();
@@ -482,6 +485,60 @@ public class SceneController implements Initializable {
 
 
     public void jokerNew(ActionEvent actionEvent) {
+        // check if joker was used
+        if (counterN == 0) {
+            Answer1.setSelected(false); //removes Selection of (possible) wrong answer resulting in the possible selection of multiple answers
+            Answer2.setSelected(false);
+            Answer3.setSelected(false);
+            Answer4.setSelected(false);
+
+            Random random = new Random();
+            int randomDiff = random.nextInt(3)+1;
+            int randomElement;
+            EncodeDecode eD = new EncodeDecode();
+            readWriteQuestions quest = null;
+            String newQuest = "";
+            // get random difficulty question
+            switch (randomDiff) {
+                case 1:
+                    randomElement = randomNumber(easy.size() - 1);
+                    quest = questionsList.get(easy.get(randomElement));
+                    newQuest = eD.decodeSingle(quest.QUESTION);
+                    easy.remove(random);
+                    break;
+                case 2:
+                    randomElement = randomNumber(medium.size() - 1);
+                    quest = questionsList.get(medium.get(randomElement));
+                    newQuest = eD.decodeSingle(quest.QUESTION);
+                    medium.remove(random);
+                    break;
+                case 3:
+                    randomElement = randomNumber(hard.size() - 1);
+                    quest = questionsList.get(hard.get(randomElement));
+                    newQuest = eD.decodeSingle(quest.QUESTION);
+                    hard.remove(random);
+                    break;
+            }
+            // link the question with the GUI
+            selected = null;
+            Questions.setText(layoutString(newQuest));
+            Answer1.setText(layoutString(eD.decodeSingle(quest.A1)));
+            Answer2.setText(layoutString(eD.decodeSingle(quest.A2)));
+            Answer3.setText(layoutString(eD.decodeSingle(quest.A3)));
+            Answer4.setText(layoutString(eD.decodeSingle(quest.A4)));
+            right = eD.decodeSingle(quest.RIGHTAWNSER);
+            question++;
+            Answer1.setSelected(false);
+            Answer2.setSelected(false);
+            Answer3.setSelected(false);
+            Answer4.setSelected(false);
+            Answer1.setDisable(false);
+            Answer2.setDisable(false);
+            Answer3.setDisable(false);
+            Answer4.setDisable(false);
+            counterN = 1;
+            newQuestion.setDisable(true);
+        }
     }
 
 

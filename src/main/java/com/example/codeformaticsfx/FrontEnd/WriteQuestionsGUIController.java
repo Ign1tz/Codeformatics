@@ -12,6 +12,7 @@ import javafx.stage.*;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class WriteQuestionsGUIController implements Initializable {
@@ -20,7 +21,7 @@ public class WriteQuestionsGUIController implements Initializable {
     @FXML
     private TextField Question, A1, A2, A3, A4;
     @FXML
-    private Label diff, error;
+    private Label diff, error, numberOfQuestions, hardQuestions;
     @FXML
     private Slider diffSlider;
     @FXML
@@ -33,10 +34,13 @@ public class WriteQuestionsGUIController implements Initializable {
     public String difficulty, isRight;
     public static readWriteQuestions writeQuestions = new readWriteQuestions();
     private InitQuestionInputController initQuestion = new InitQuestionInputController();
+    private static int Questions = 0, hardQuestionsNumber = 0;
 
     public void finish(ActionEvent event) throws IOException {
         if(Question.getText() == null||A1.getText()==null||A2.getText()==null||A3.getText()==null||A4.getText()==null||isRight==null){
             error.setOpacity(1);
+        }else if ((!(hardQuestionsNumber == 1 && Objects.equals(difficulty, "Hard")) && (hardQuestionsNumber < 2)) || Questions < 6){
+            System.out.println("ehhhh");
         }else {
             question = Question.getText();
             a1 = A1.getText();
@@ -48,6 +52,8 @@ public class WriteQuestionsGUIController implements Initializable {
             Parent root = loader.load();
             Scene scene = ((Node) event.getSource()).getScene();
             scene.setRoot(root);
+            Questions = 0;
+            hardQuestionsNumber = 0;
         }
     }
     public void newQuestion(ActionEvent event) throws IOException {
@@ -60,6 +66,12 @@ public class WriteQuestionsGUIController implements Initializable {
             a3 = A3.getText();
             a4 = A4.getText();
             writeQuestions.writeQuestions(question,a1,a2,a3,a4,difficulty,isRight);
+            Questions++;
+            if(difficulty == "Hard"){
+                hardQuestionsNumber++;
+            }
+            numberOfQuestions.setText("You have " + Questions + " questions!");
+            hardQuestions.setText("You have " + hardQuestionsNumber + " hard questions!");
             FXMLLoader loader = new FXMLLoader(getClass().getResource("QuestionInput.fxml"));
             Parent root = loader.load();
             Scene scene = ((Node) event.getSource()).getScene();
@@ -116,6 +128,8 @@ public class WriteQuestionsGUIController implements Initializable {
     }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        numberOfQuestions.setText("You have " + Questions + " questions!");
+        hardQuestions.setText("You have " + hardQuestionsNumber + " hard questions!");
         if(Vars.currentBackgroundValue <= 33){
             inputQuestionsGrid.setStyle("-fx-background-image: url("+ Vars.pathBackground1 +")");
         } else if (Vars.currentBackgroundValue > 33 && Vars.currentBackgroundValue <= 66) {
