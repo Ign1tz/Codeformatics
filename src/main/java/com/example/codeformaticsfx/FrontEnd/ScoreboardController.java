@@ -64,7 +64,7 @@ public class ScoreboardController {
             next.setDisable(true);
         }
 
-        if(Vars.currentBackgroundValue <= 33){
+        if(Vars.currentBackgroundValue <= 33){ //sets background
             scoreboardGrid.setStyle("-fx-background-image: url("+ Vars.pathBackground1 +")");
         } else if (Vars.currentBackgroundValue > 33 && Vars.currentBackgroundValue <= 66) {
             scoreboardGrid.setStyle("-fx-background-image: url("+ Vars.pathBackground2 +")");
@@ -73,8 +73,8 @@ public class ScoreboardController {
         }
     }
     public void setScoreboard(){
-       if (encodedScoreboard.size() > count) {
-           if (count == 0) {
+       if (encodedScoreboard.size() > count) { //checks if this place exists in in scoreboard list
+           if (count == 0) { //if its the first place change how it looks
                winnerName.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).name));
                winnerPlace.setText(String.valueOf(count + 1));
                winnerPoints.setText(encodeDecode.decodeSingle(encodedScoreboard.get(count).score));

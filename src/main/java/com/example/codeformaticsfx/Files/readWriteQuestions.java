@@ -35,34 +35,30 @@ public class readWriteQuestions { //this class handles creating the questions, w
         }
         return temp;
     }
-    public void writeQuestions(String Question, String A1, String A2, String A3, String A4, String Difficulty, String Answer) throws IOException {
+    public void writeQuestions(String Question, String A1, String A2, String A3, String A4, String Difficulty, String Answer) {
         EncodeDecode encodeDecode = new EncodeDecode();
         encodeDecode.encodeQuestionBase64(Question, A1, A2, A3, A4, Difficulty, Answer);
-        readWriteQuestions newQuestion = new readWriteQuestions(encodeDecode.encodedQuestion, encodeDecode.encodedA1, encodeDecode.encodedA2, encodeDecode.encodedA3, encodeDecode.encodedA4, encodeDecode.encodedDifficulty, encodeDecode.encodedRightAnswer);
-        QuestionList.add(newQuestion);
+        readWriteQuestions newQuestion = new readWriteQuestions(encodeDecode.encodedQuestion, encodeDecode.encodedA1, encodeDecode.encodedA2, encodeDecode.encodedA3, encodeDecode.encodedA4, encodeDecode.encodedDifficulty, encodeDecode.encodedRightAnswer); //creates a new Question objects
+        QuestionList.add(newQuestion); //adds it to list
     }
     public void finish(String quizzname, String authorname, String questionsUsed, String QuizName, String logoPath) throws IOException {
         String quizFilePath = "src/main/resources/com/example/codeformaticsfx/GameResources/QuestionLibrary/" + QuizName + ".json";
         String scoreboardFilePath = "src/main/resources/com/example/codeformaticsfx/GameResources/Scoreboards/" + QuizName + "Scoreboard.json";
-        readWriteList rwL = new readWriteList(QuizName);
-        Writer writer = Files.newBufferedWriter(Paths.get(quizFilePath));;
-        Writer writer2 = Files.newBufferedWriter(Paths.get(scoreboardFilePath));
-        File quizFile = new File(quizFilePath);
-        if(quizFile.createNewFile()){
-            System.out.println("ehhh");
-        }
+        readWriteList rwL = new readWriteList(QuizName); //adds topic to List of topics
+        Writer writer = Files.newBufferedWriter(Paths.get(quizFilePath)); // opens new File for Question
+        Writer writer2 = Files.newBufferedWriter(Paths.get(scoreboardFilePath)); // open new File for scoreboard
         EncodeDecode encodeDecode = new EncodeDecode();
         encodeDecode.encodeQuizzInfo(quizzname, authorname, questionsUsed);
-        QuizzInfo thisQuizz = new QuizzInfo(encodeDecode.encodedQuizzName, encodeDecode.encodedAuthorname, encodeDecode.encodedQuestionsUsed, encodeDecode.encodeSinge(logoPath), getQuestionList());
-        gson.toJson(thisQuizz, writer);
+        QuizzInfo thisQuizz = new QuizzInfo(encodeDecode.encodedQuizzName, encodeDecode.encodedAuthorname, encodeDecode.encodedQuestionsUsed, encodeDecode.encodeSinge(logoPath), getQuestionList()); //creates the Info for this Quiz
+        gson.toJson(thisQuizz, writer); // writes it to file
         writer.close();
         writer2.close();
         rwL.writeList(QuizName);
-        QuestionList = new ArrayList<>();
+        QuestionList = new ArrayList<>(); // clears list for next time
     }
     public QuizzInfo readQuizz(String filePath) throws IOException {
-        Reader reader = Files.newBufferedReader(Paths.get(filePath));
-        QuizzInfo temp = new Gson().fromJson(reader, new TypeToken<QuizzInfo>() {}.getType());
+        Reader reader = Files.newBufferedReader(Paths.get(filePath)); //opens the Quizfile to get the Quiz + Info
+        QuizzInfo temp = new Gson().fromJson(reader, new TypeToken<QuizzInfo>() {}.getType()); // reads QuizInfo
         reader.close();
         return temp;
     }

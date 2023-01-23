@@ -2,13 +2,11 @@ package com.example.codeformaticsfx.FrontEnd;
 
 import com.example.codeformaticsfx.Files.EncodeDecode;
 import com.example.codeformaticsfx.Files.Vars;
-import com.example.codeformaticsfx.Files.readWriteList;
 import com.example.codeformaticsfx.Files.readWriteQuestions;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.collections.ObservableListBase;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,7 +15,6 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
@@ -27,7 +24,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import java.util.ResourceBundle;
 
 public class SettingsController implements Initializable {
@@ -61,7 +57,7 @@ public class SettingsController implements Initializable {
         scene.setRoot(root);
     }
 
-    public void submit(ActionEvent event) {
+    public void submit() {
         try {
             name = myNameText.getText();                //name can be typed into the field
             if (name.length() >= 9) {
@@ -77,7 +73,6 @@ public class SettingsController implements Initializable {
 
     public void switchStart(ActionEvent event) throws IOException {
         Vars.currentQuiz = chooseQuiz.getValue().toString();
-        Vars.currentQuiz = (String) chooseQuiz.getValue();
         Vars.pathQuestions = "src/main/resources/com/example/codeformaticsfx/GameResources/QuestionLibrary/" + Vars.currentQuiz + ".json";
         Vars.pathScoreboard = "src/main/resources/com/example/codeformaticsfx/GameResources/Scoreboards/" + Vars.currentQuiz + "Scoreboard.json";
         readWriteQuestions rwq = new readWriteQuestions();
@@ -90,7 +85,6 @@ public class SettingsController implements Initializable {
         Vars.isHome = true;
         FXMLLoader loader = new FXMLLoader(getClass().getResource("HomeStage.fxml"));
         Parent root = loader.load();
-        SceneController controller = loader.getController();
         Scene scene = ((Node) event.getSource()).getScene();
         scene.setRoot(root);
 
@@ -103,7 +97,6 @@ public class SettingsController implements Initializable {
             Vars.mediaPlayer.setAutoPlay(true);
             Vars.mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE); //endless loop
             Vars.soundIsOn = true;
-            //mediaPlayer.getOnPlaying();
         } else {
             Vars.mediaPlayer.pause();   //music stops
             CheckSound.setText("OFF");  //text of checkbox sets to 'OFF'
@@ -112,23 +105,22 @@ public class SettingsController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        ObservableList<String> quizNameList = FXCollections.observableList(Vars.listOfQuestions);
+        ObservableList<String> quizNameList = FXCollections.observableList(Vars.listOfTopics);
         chooseQuiz.setItems(quizNameList);
         chooseQuiz.setValue(Vars.currentQuiz);
-        if (Vars.soundIsOn) {
+        if (Vars.soundIsOn) { //sets Checksound on if sound is playing
             CheckSound.setSelected(true);
         }
         songs = new ArrayList<>();
         directory = new File("src/main/resources/com/example/codeformaticsfx/FrontEnd/music"); //path to file
         files = directory.listFiles();      //stores music in file
         if (files != null && !Vars.soundIsOn) {
-            //add music in arraylist
             songs.addAll(Arrays.asList(files));
             media = new Media(songs.get(songNumber).toURI().toString());
             Vars.mediaPlayer = new MediaPlayer(media);
         }
         sliderSettings.setValue(Vars.currentBackgroundValue);
-        if (sliderSettings.getValue() <= 33) {
+        if (sliderSettings.getValue() <= 33) { //sets Background
             SettingsGrid.setStyle("-fx-background-image: url(" + Vars.pathBackground1 + ")");
         } else if (sliderSettings.getValue() > 33 && sliderSettings.getValue() <= 66) {
             SettingsGrid.setStyle("-fx-background-image: url(" + Vars.pathBackground2 + ")");
@@ -138,7 +130,7 @@ public class SettingsController implements Initializable {
         sliderSettings.valueProperty().addListener(new ChangeListener<Number>() {
             @Override
             public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
-                if (sliderSettings.getValue() <= 33) {
+                if (sliderSettings.getValue() <= 33) { //sets Background
                     SettingsGrid.setStyle("-fx-background-image: url(" + Vars.pathBackground1 + ")");
                 } else if (sliderSettings.getValue() > 33 && sliderSettings.getValue() <= 66) {
                     SettingsGrid.setStyle("-fx-background-image: url(" + Vars.pathBackground2 + ")");

@@ -3,7 +3,6 @@ package com.example.codeformaticsfx.FrontEnd;
 import com.example.codeformaticsfx.Files.*;
 import com.example.codeformaticsfx.Quizz.QuestionJoker;
 import com.example.codeformaticsfx.pickQuestions;
-import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.*;
 import javafx.scene.*;
@@ -86,7 +85,7 @@ public class SceneController implements Initializable {
     //SWITCH SCENES END
 
     //HOMESTAGE START
-    public void switchGame(ActionEvent event) throws IOException, InterruptedException {
+    public void switchGame(ActionEvent event) throws IOException {
         Vars.isHome = false;
         question = 0;
         pickQuestions pQ = new pickQuestions();
@@ -104,19 +103,19 @@ public class SceneController implements Initializable {
         String thisQuestion = null;
         switch (diffList.get(question)) {
             case 1:
-                random = randomNumber(easy.size() - 1);
+                random = randomNumber(easy.size()) - 1;
                 temp = questionsList.get(easy.get(random));
                 thisQuestion = eD.decodeSingle(temp.QUESTION);
                 easy.remove(random);
                 break;
             case 2:
-                random = randomNumber(medium.size() - 1);
+                random = randomNumber(medium.size()) - 1;
                 temp = questionsList.get(medium.get(random));
                 thisQuestion = eD.decodeSingle(temp.QUESTION);
                 medium.remove(random);
                 break;
             case 3:
-                random = randomNumber(hard.size() - 1);
+                random = randomNumber(hard.size()) - 1;
                 temp = questionsList.get(hard.get(random));
                 thisQuestion = eD.decodeSingle(temp.QUESTION);
                 hard.remove(random);
@@ -252,19 +251,19 @@ public class SceneController implements Initializable {
             String thisQuestion = null;
             switch (diffList.get(question)) {
                 case 1:
-                    random = randomNumber(easy.size() - 1);
+                    random = randomNumber(easy.size()) - 1;
                     temp = questionsList.get(easy.get(random));
                     thisQuestion = eD.decodeSingle(temp.QUESTION);
                     easy.remove(random);
                     break;
                 case 2:
-                    random = randomNumber(medium.size() - 1);
+                    random = randomNumber(medium.size()) - 1;
                     temp = questionsList.get(medium.get(random));
                     thisQuestion = eD.decodeSingle(temp.QUESTION);
                     medium.remove(random);
                     break;
                 case 3:
-                    random = randomNumber(hard.size() - 1);
+                    random = randomNumber(hard.size()) - 1;
                     temp = questionsList.get(hard.get(random));
                     thisQuestion = eD.decodeSingle(temp.QUESTION);
                     hard.remove(random);
@@ -506,19 +505,19 @@ public class SceneController implements Initializable {
             // get random difficulty question
             switch (diff) {
                 case "Easy":
-                    randomElement = randomNumber(easy.size() - 1);
+                    randomElement = randomNumber(easy.size()) - 1;
                     quest = questionsList.get(easy.get(randomElement));
                     newQuest = eD.decodeSingle(quest.QUESTION);
                     easy.remove(randomElement);
                     break;
                 case "Medium":
-                    randomElement = randomNumber(medium.size() - 1);
+                    randomElement = randomNumber(medium.size()) - 1;
                     quest = questionsList.get(medium.get(randomElement));
                     newQuest = eD.decodeSingle(quest.QUESTION);
                     medium.remove(randomElement);
                     break;
                 case "Hard":
-                    randomElement = randomNumber(hard.size() - 1);
+                    randomElement = randomNumber(hard.size()) - 1;
                     quest = questionsList.get(hard.get(randomElement));
                     newQuest = eD.decodeSingle(quest.QUESTION);
                     hard.remove(randomElement);
@@ -672,7 +671,7 @@ public class SceneController implements Initializable {
         readWriteList rwl = new readWriteList();
         if (firstTime) {
             try {
-                Vars.listOfQuestions = rwl.fromFile();
+                Vars.listOfTopics = rwl.fromFile();
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }

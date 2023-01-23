@@ -2,7 +2,7 @@ package com.example.codeformaticsfx.Files;
 
 import java.util.List;
 
-public class ScoreboardInfo {
+public class ScoreboardInfo { //adds info to scoreboard what quiz it belogngs to
     public String Quizzname;
     public List<readWriteScoreboard> scoreboard;
 
