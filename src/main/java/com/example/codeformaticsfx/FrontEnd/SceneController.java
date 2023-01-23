@@ -562,18 +562,22 @@ public class SceneController implements Initializable {
                     case "A1":
                         Answer1.setDisable(false);
                         Answer1.setSelected(true);
+                        selected = "A1";
                         break;
                     case "A2":
                         Answer2.setDisable(false);
                         Answer2.setSelected(true);
+                        selected = "A2";
                         break;
                     case "A3":
                         Answer3.setDisable(false);
                         Answer3.setSelected(true);
+                        selected = "A3";
                         break;
                     case "A4":
                         Answer4.setDisable(false);
                         Answer4.setSelected(true);
+                        selected = "A4";
                         break;
                 }
                 switch (questionJoker.getRandomAnswer()) {
@@ -610,18 +614,22 @@ public class SceneController implements Initializable {
                     case 1:
                         Answer1.setDisable(false);
                         Answer1.setSelected(true);
+                        selected = "A1";
                         break;
                     case 2:
                         Answer2.setDisable(false);
                         Answer2.setSelected(true);
+                        selected = "A2";
                         break;
                     case 3:
                         Answer3.setDisable(false);
                         Answer3.setSelected(true);
+                        selected = "A3";
                         break;
                     case 4:
                         Answer4.setDisable(false);
                         Answer4.setSelected(true);
+                        selected = "A4";
                         break;
                 }
             }

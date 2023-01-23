@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane fx:id="inputQuestionsGrid" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="inputQuestionsGrid" stylesheets="@QuestionInput.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.codeformaticsfx.FrontEnd.WriteQuestionsGUIController">
+<GridPane fx:id="inputQuestionsGrid" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="inputQuestionsGrid" stylesheets="@QuestionInput.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.codeformaticsfx.FrontEnd.WriteQuestionsGUIController">
   <columnConstraints>
       <ColumnConstraints hgrow="SOMETIMES" maxWidth="132.5" minWidth="10.0" prefWidth="102.5" />
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="132.5" minWidth="10.0" prefWidth="102.5" />
@@ -128,10 +128,6 @@
          <padding>
             <Insets left="15.0" />
          </padding></CheckBox>
-      <Slider fx:id="diffSlider" blockIncrement="1.0" majorTickUnit="1.0" max="3.0" min="1.0" minorTickCount="0" showTickMarks="true" snapToTicks="true" value="1.0" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="5" GridPane.valignment="CENTER">
-         <padding>
-            <Insets bottom="30.0" />
-         </padding></Slider>
       <Label fx:id="diff" contentDisplay="CENTER" text="Easy" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="5" GridPane.valignment="CENTER">
          <padding>
             <Insets bottom="30.0" right="15.0" />
@@ -156,5 +152,10 @@
          <effect>
             <DropShadow />
          </effect></Label>
+      <Slider fx:id="diffSlider" blockIncrement="1.0" majorTickUnit="1.0" max="3.0" min="1.0" minorTickCount="0" showTickMarks="true" snapToTicks="true" value="1.0" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+         <padding>
+            <Insets bottom="30.0" />
+         </padding>
+      </Slider>
    </children>
 </GridPane>
