@@ -33,7 +33,7 @@ public class ScoreboardController {
     private List<readWriteScoreboard> encodedScoreboard = scoreboard.fromFile(path).scoreboard;
 
     @FXML
-    private void next() {
+    private void next() { //shows next page of scoreboard
         setScoreboard();
         prev.setOpacity(1);
         prev.setDisable(false);
@@ -44,7 +44,7 @@ public class ScoreboardController {
     }
 
 
-    public void previous() {
+    public void previous() { //showes previous page of scoreboard
         count -= 20;
         setScoreboard();
         next.setOpacity(1);

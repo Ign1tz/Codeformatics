@@ -23,15 +23,13 @@ public class SceneController implements Initializable {
     @FXML
     public Button exit, stay, OptionsButton, StartButton, Return, twentyfive, jokerSeventy, jokerFifty, newQuestion, nextQuestion;
     @FXML
-    private Label scoreboardLabel, Score, FinalScore, Questions;
+    private Label scoreboardLabel, Score, FinalScore, Questions, gameMade;
     @FXML
     private CheckBox Answer1, Answer2, Answer3, Answer4;
     @FXML
     private TextField nameScoreboard, myNameText;
     @FXML
     private ImageView myImageView;
-    @FXML
-    private Button exitGame;
     //FXML USAGE END
 
     //VARIABLES START
@@ -40,6 +38,7 @@ public class SceneController implements Initializable {
     static List<Integer> diffList, easy, medium, hard;
     static int question = 0;
     static List<readWriteQuestions> questionsList;
+    static QuizzInfo thisQuiz;
     static String selected, right, numberOfQuestions, score = "00000";
     static boolean nameGiven = false, firstTime = true;
     private static Scene scene;
@@ -47,17 +46,16 @@ public class SceneController implements Initializable {
     int counterF, counterS, counterTF, counterN;
     QuestionJoker questionJoker = new QuestionJoker();
     public static double startTime, timeElapsed;
-    //VARIABLES END
-
-    //METHODS START
     public void setPrimaryStage(Stage stage, Scene scene) {          //Implement the main primary Stage from HomeStage to SceneController
         this.primaryStage = stage;                                  //Used for modifying the main Window/Stage
         this.scene = scene;
     }
-
     public Scene getScene() {
         return scene;
     }
+    //VARIABLES END
+
+    //METHODS START
 
     private int randomNumber(int high) {
         int low = 1, random;
@@ -65,16 +63,14 @@ public class SceneController implements Initializable {
         random = rand.nextInt(high) + low;
         return random;
     }
-
-    public void switchStart(ActionEvent event) throws IOException {
+    /*public void switchStart(ActionEvent event) throws IOException {
         Vars.isHome = true;
         FXMLLoader loader = new FXMLLoader(getClass().getResource("HomeStage.fxml"));
         Parent root = loader.load();
         SceneController controller = loader.getController();
         Scene scene = ((Node) event.getSource()).getScene();
         scene.setRoot(root);
-    }
-
+    }*/
     public void switchSettings(ActionEvent event) throws IOException {
         Vars.isHome = false;
         FXMLLoader loader = new FXMLLoader(getClass().getResource("SettingsStage.fxml"));
@@ -82,26 +78,24 @@ public class SceneController implements Initializable {
         Scene scene = ((Node) event.getSource()).getScene();
         scene.setRoot(root);
     }
-    //SWITCH SCENES END
 
-    //HOMESTAGE START
     public void switchGame(ActionEvent event) throws IOException {
-        Vars.isHome = false;
-        question = 0;
         pickQuestions pQ = new pickQuestions();
         EncodeDecode eD = new EncodeDecode();
         readWriteQuestions rwq = new readWriteQuestions();
+        Vars.isHome = false;
+        question = 0;
         diffList = pQ.testQuestion();
         easy = pQ.easy;
         medium = pQ.medium;
         hard = pQ.hard;
-        QuizzInfo thisQuizz = rwq.readQuizz(Vars.pathQuestions);
-        questionsList = thisQuizz.questionsList;
-        numberOfQuestions = eD.decodeSingle(thisQuizz.questionsUsed);
+        thisQuiz = rwq.readQuizz(Vars.pathQuestions); //get quiz
+        questionsList = thisQuiz.questionsList; //get list of questions
+        numberOfQuestions = eD.decodeSingle(thisQuiz.questionsUsed); //get number of questions that should be
         readWriteQuestions temp = null;
         int random;
         String thisQuestion = null;
-        switch (diffList.get(question)) {
+        switch (diffList.get(question)) { //gets the actual question by checking what difficulty the next should be, then randomly choosing one of said difficulty
             case 1:
                 random = randomNumber(easy.size()) - 1;
                 temp = questionsList.get(easy.get(random));
@@ -139,8 +133,74 @@ public class SceneController implements Initializable {
         question++;
         startTime = System.currentTimeMillis();
     }
+    @FXML
+    public void updateQuestion(ActionEvent event) throws IOException {
+        EncodeDecode ed = new EncodeDecode();
+        readWriteQuestions temp = null;
+        if (Objects.equals(selected, right)) {
+            score = String.valueOf(Integer.parseInt(score) + 100);
+        }
+        if (selected == null) {
 
-    //END GAME SCENE
+        } else {
+            StringBuilder finalScore = new StringBuilder(score);
+            for (int nulls = 5; nulls > score.length(); nulls--) { //adds as many 0 before score as needed to get 5 places
+                finalScore.insert(0, "0");
+            }
+            Score.setText("Score: " + finalScore);
+            if (question >= diffList.size()) { // if it was the last question go to the finish screen
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("finishScreens.fxml"));
+                Parent root = loader.load();
+                SceneController controller = loader.getController();
+                controller.FinalScore.setText("" + finalScore);
+                controller.gameMade.setText(ed.decodeSingle(thisQuiz.Quizzname) + " made by " + ed.decodeSingle(thisQuiz.AuthorName));
+                Scene scene = ((Node) event.getSource()).getScene();
+                scene.setRoot(root);
+                timeElapsed = System.currentTimeMillis() - startTime;
+                return;
+            }
+            EncodeDecode eD = new EncodeDecode();
+            int random;
+            String thisQuestion = null;
+            switch (diffList.get(question)) { //gets the actual question by checking what difficulty the next should be, then randomly choosing one of said difficulty
+                case 1:
+                    random = randomNumber(easy.size()) - 1;
+                    temp = questionsList.get(easy.get(random));
+                    thisQuestion = eD.decodeSingle(temp.QUESTION);
+                    easy.remove(random);
+                    break;
+                case 2:
+                    random = randomNumber(medium.size()) - 1;
+                    temp = questionsList.get(medium.get(random));
+                    thisQuestion = eD.decodeSingle(temp.QUESTION);
+                    medium.remove(random);
+                    break;
+                case 3:
+                    random = randomNumber(hard.size()) - 1;
+                    temp = questionsList.get(hard.get(random));
+                    thisQuestion = eD.decodeSingle(temp.QUESTION);
+                    hard.remove(random);
+                    break;
+            }
+            selected = null;
+            Questions.setText(layoutString(thisQuestion));
+            Answer1.setText(layoutString(eD.decodeSingle(temp.A1)));
+            Answer2.setText(layoutString(eD.decodeSingle(temp.A2)));
+            Answer3.setText(layoutString(eD.decodeSingle(temp.A3)));
+            Answer4.setText(layoutString(eD.decodeSingle(temp.A4)));
+            diff = eD.decodeSingle(temp.DIFFICULTY);
+            right = eD.decodeSingle(temp.RIGHTAWNSER);
+            question++;
+            Answer1.setSelected(false); //resets checkboxes
+            Answer2.setSelected(false);
+            Answer3.setSelected(false);
+            Answer4.setSelected(false);
+            Answer1.setDisable(false);
+            Answer2.setDisable(false);
+            Answer3.setDisable(false);
+            Answer4.setDisable(false);
+        }
+    }
     public void Return() {  //return button
         Warning.setOpacity(1);
         Warning.setDisable(false);  //GridPane is now visible and can be used
@@ -156,7 +216,6 @@ public class SceneController implements Initializable {
         jokerFifty.setDisable(true);
         nextQuestion.setDisable(true);  //every button in game cannot be used
     }
-
     public void Stay() {
         Warning.setOpacity(0);
         Warning.setDisable(true);       //GridPane cannot be used and seen
@@ -172,7 +231,6 @@ public class SceneController implements Initializable {
         jokerFifty.setDisable(false);
         nextQuestion.setDisable(false); //every button and answer can be used
     }
-
     public void Exit(ActionEvent event) throws IOException {
         Vars.isHome = true;
         FXMLLoader loader = new FXMLLoader(getClass().getResource("HomeStage.fxml"));
@@ -182,7 +240,59 @@ public class SceneController implements Initializable {
         scene.setRoot(root);
         score = "0";
     }
-
+    public void AnswerOne() {
+        if (Answer1.isSelected()) {
+            Answer2.setDisable(true);
+            Answer3.setDisable(true);
+            Answer4.setDisable(true);
+            selected = "A1";
+        } else {
+            Answer2.setDisable(false);
+            Answer3.setDisable(false);
+            Answer4.setDisable(false);
+            selected = null;
+        }
+    }
+    public void AnswerTwo() {
+        if (Answer2.isSelected()) {
+            Answer1.setDisable(true);
+            Answer3.setDisable(true);
+            Answer4.setDisable(true);
+            selected = "A2";
+        } else {
+            Answer1.setDisable(false);
+            Answer3.setDisable(false);
+            Answer4.setDisable(false);
+            selected = null;
+        }
+    }
+    public void AnswerThree() {
+        if (Answer3.isSelected()) {
+            Answer1.setDisable(true);
+            Answer2.setDisable(true);
+            Answer4.setDisable(true);
+            selected = "A3";
+        } else {
+            Answer1.setDisable(false);
+            Answer2.setDisable(false);
+            Answer4.setDisable(false);
+            selected = null;
+        }
+    }
+    public void AnswerFour() {
+        if (Answer4.isSelected()) {
+            Answer1.setDisable(true);
+            Answer2.setDisable(true);
+            Answer3.setDisable(true);
+            selected = "A4";
+        } else {
+            Answer1.setDisable(false);
+            Answer2.setDisable(false);
+            Answer3.setDisable(false);
+            selected = null;
+        }
+    }
+    //END GAME SCENE
     public void toScoreboard(ActionEvent event) throws IOException {
         readWriteScoreboard rwS = new readWriteScoreboard();
         if (!Objects.equals(name, null) && !name.equals(" ")) {
@@ -214,137 +324,6 @@ public class SceneController implements Initializable {
             }
         }
     }
-
-    //QUESTIONS LOGIC
-    @FXML
-    public void updateQuestion(ActionEvent event) throws IOException {
-        readWriteQuestions temp = null;
-        if (Objects.equals(selected, right)) {
-            score = String.valueOf(Integer.parseInt(score) + 100);
-        }
-        if (selected == null) {
-
-        } else {
-            if (counterS == 1) {
-                Answer1.setTextFill(Color.valueOf("#e91e63"));
-                Answer2.setTextFill(Color.valueOf("#e91e63"));
-                Answer3.setTextFill(Color.valueOf("#e91e63"));
-                Answer4.setTextFill(Color.valueOf("#e91e63"));
-            }
-            StringBuilder finalScore = new StringBuilder(score);
-            for (int nulls = 5; nulls > score.length(); nulls--) {
-                finalScore.insert(0, "0");
-            }
-            Score.setText("Score: " + finalScore);
-            if (question >= diffList.size()) {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("finishScreens.fxml"));
-                Parent root = loader.load();
-                SceneController controller = loader.getController();
-                controller.FinalScore.setText("" + finalScore);
-                Scene scene = ((Node) event.getSource()).getScene();
-                scene.setRoot(root);
-                timeElapsed = System.currentTimeMillis() - startTime;
-                return;
-            }
-            EncodeDecode eD = new EncodeDecode();
-            int random;
-            String thisQuestion = null;
-            switch (diffList.get(question)) {
-                case 1:
-                    random = randomNumber(easy.size()) - 1;
-                    temp = questionsList.get(easy.get(random));
-                    thisQuestion = eD.decodeSingle(temp.QUESTION);
-                    easy.remove(random);
-                    break;
-                case 2:
-                    random = randomNumber(medium.size()) - 1;
-                    temp = questionsList.get(medium.get(random));
-                    thisQuestion = eD.decodeSingle(temp.QUESTION);
-                    medium.remove(random);
-                    break;
-                case 3:
-                    random = randomNumber(hard.size()) - 1;
-                    temp = questionsList.get(hard.get(random));
-                    thisQuestion = eD.decodeSingle(temp.QUESTION);
-                    hard.remove(random);
-                    break;
-            }
-            selected = null;
-            Questions.setText(layoutString(thisQuestion));
-            Answer1.setText(layoutString(eD.decodeSingle(temp.A1)));
-            Answer2.setText(layoutString(eD.decodeSingle(temp.A2)));
-            Answer3.setText(layoutString(eD.decodeSingle(temp.A3)));
-            Answer4.setText(layoutString(eD.decodeSingle(temp.A4)));
-            diff = eD.decodeSingle(temp.DIFFICULTY);
-            right = eD.decodeSingle(temp.RIGHTAWNSER);
-            question++;
-            Answer1.setSelected(false);
-            Answer2.setSelected(false);
-            Answer3.setSelected(false);
-            Answer4.setSelected(false);
-            Answer1.setDisable(false);
-            Answer2.setDisable(false);
-            Answer3.setDisable(false);
-            Answer4.setDisable(false);
-        }
-    }
-
-    public void AnswerOne() {
-        if (Answer1.isSelected()) {
-            Answer2.setDisable(true);
-            Answer3.setDisable(true);
-            Answer4.setDisable(true);
-            selected = "A1";
-        } else {
-            Answer2.setDisable(false);
-            Answer3.setDisable(false);
-            Answer4.setDisable(false);
-            selected = null;
-        }
-    }
-
-    public void AnswerTwo() {
-        if (Answer2.isSelected()) {
-            Answer1.setDisable(true);
-            Answer3.setDisable(true);
-            Answer4.setDisable(true);
-            selected = "A2";
-        } else {
-            Answer1.setDisable(false);
-            Answer3.setDisable(false);
-            Answer4.setDisable(false);
-            selected = null;
-        }
-    }
-
-    public void AnswerThree() {
-        if (Answer3.isSelected()) {
-            Answer1.setDisable(true);
-            Answer2.setDisable(true);
-            Answer4.setDisable(true);
-            selected = "A3";
-        } else {
-            Answer1.setDisable(false);
-            Answer2.setDisable(false);
-            Answer4.setDisable(false);
-            selected = null;
-        }
-    }
-
-    public void AnswerFour() {
-        if (Answer4.isSelected()) {
-            Answer1.setDisable(true);
-            Answer2.setDisable(true);
-            Answer3.setDisable(true);
-            selected = "A4";
-        } else {
-            Answer1.setDisable(false);
-            Answer2.setDisable(false);
-            Answer3.setDisable(false);
-            selected = null;
-        }
-    }
-
     //Questions - Joker
     // 50/50 Joker
     public void jokerF() {
@@ -430,7 +409,6 @@ public class SceneController implements Initializable {
             Answer2.setSelected(false);
             Answer3.setSelected(false);
             Answer4.setSelected(false);
-
             String A1 = Answer1.getText();
             String A2 = Answer2.getText();
             String A3 = Answer3.getText();
@@ -438,7 +416,6 @@ public class SceneController implements Initializable {
             String rightAnswer = right;
             int range = 4;
             int rightnumber = 0;
-
             // get right answer
             if ("A1".equals(rightAnswer)) {
                 rightnumber = 1;
@@ -452,10 +429,7 @@ public class SceneController implements Initializable {
             if ("A4".equals(rightAnswer)) {
                 rightnumber = 4;
             }
-
-
             questionJoker.jokerTwentyFive(A1, A2, A3, A4, rightAnswer, range, rightnumber);
-
             Answer1.setDisable(false);
             Answer2.setDisable(false);
             Answer3.setDisable(false);
@@ -464,7 +438,6 @@ public class SceneController implements Initializable {
             Answer2.setSelected(false);
             Answer3.setSelected(false);
             Answer4.setSelected(false);
-
             // disable random answer
             switch (questionJoker.getRandomAnswer()) {
                 case 1:
@@ -681,7 +654,7 @@ public class SceneController implements Initializable {
             Image image = new Image(Vars.logoPath);
             myImageView.setImage(image);
         }
-        if (Vars.currentBackgroundValue <= 33) {
+        if (Vars.currentBackgroundValue <= 33) { //set Background
             if (homeGrid != null) homeGrid.setStyle("-fx-background-image: url(" + Vars.pathBackground1 + ")");
             if (finishGrid != null) finishGrid.setStyle("-fx-background-image: url(" + Vars.pathBackground1 + ")");
             if (GameGrid != null) GameGrid.setStyle("-fx-background-image: url(" + Vars.pathBackground1 + ")");

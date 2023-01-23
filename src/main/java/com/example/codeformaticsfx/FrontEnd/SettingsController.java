@@ -1,6 +1,7 @@
 package com.example.codeformaticsfx.FrontEnd;
 
 import com.example.codeformaticsfx.Files.EncodeDecode;
+import com.example.codeformaticsfx.Files.QuizzInfo;
 import com.example.codeformaticsfx.Files.Vars;
 import com.example.codeformaticsfx.Files.readWriteQuestions;
 import javafx.beans.value.ChangeListener;
@@ -24,6 +25,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class SettingsController implements Initializable {
@@ -104,8 +106,21 @@ public class SettingsController implements Initializable {
     }
 
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        ObservableList<String> quizNameList = FXCollections.observableList(Vars.listOfTopics);
+    public void initialize(URL location, ResourceBundle resources){
+        readWriteQuestions rwq = new readWriteQuestions();
+        EncodeDecode ed = new EncodeDecode();
+        QuizzInfo tempInfo;
+        List<String> nameList = new ArrayList<>();
+        for(int i = 0; i < Vars.listOfTopics.size(); i++){ //gets the names of all quizzes
+            String temp = Vars.listOfTopics.get(i);
+            try {
+                tempInfo = rwq.readQuizz("src/main/resources/com/example/codeformaticsfx/GameResources/QuestionLibrary/" + temp + ".json");
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            nameList.add(ed.decodeSingle(tempInfo.Quizzname));
+        }
+        ObservableList<String> quizNameList = FXCollections.observableList(nameList);
         chooseQuiz.setItems(quizNameList);
         chooseQuiz.setValue(Vars.currentQuiz);
         if (Vars.soundIsOn) { //sets Checksound on if sound is playing
