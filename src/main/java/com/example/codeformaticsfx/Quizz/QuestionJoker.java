@@ -40,7 +40,7 @@ public class QuestionJoker {
         this.range = range;
         this.randomAnswer = randomanswer;
 
-        return random.nextInt(10 - 1 + 1) + 1;
+        return random.nextInt(10) + 1;
     }
 
     public void jokerTwentyFive(String a1, String a2, String a3, String a4, String rightAnswer, int range, int rightnumber) {
@@ -64,5 +64,12 @@ public class QuestionJoker {
 
     public String getRightAnswer() {
         return rightAnswer;
+    }
+
+    public static void main(String[] args) {
+        QuestionJoker qj = new QuestionJoker();
+        for (int i = 0; i < 100; i++){
+            System.out.println(qj.random.nextInt(10));
+        }
     }
 }

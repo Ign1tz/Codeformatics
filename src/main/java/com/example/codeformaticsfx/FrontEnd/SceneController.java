@@ -561,37 +561,33 @@ public class SceneController implements Initializable {
                 switch (questionJoker.getRightAnswer()) {
                     case "A1":
                         Answer1.setDisable(false);
-                        Answer1.setTextFill(Color.valueOf("green"));
+                        Answer1.setSelected(true);
                         break;
                     case "A2":
                         Answer2.setDisable(false);
-                        Answer2.setTextFill(Color.valueOf("green"));
+                        Answer2.setSelected(true);
                         break;
                     case "A3":
                         Answer3.setDisable(false);
-                        Answer3.setTextFill(Color.valueOf("green"));
+                        Answer3.setSelected(true);
                         break;
                     case "A4":
                         Answer4.setDisable(false);
-                        Answer4.setTextFill(Color.valueOf("green"));
+                        Answer4.setSelected(true);
                         break;
                 }
                 switch (questionJoker.getRandomAnswer()) {
                     case 1:
                         Answer1.setDisable(false);
-                        Answer1.setTextFill(Color.valueOf("yellow"));
                         break;
                     case 2:
                         Answer2.setDisable(false);
-                        Answer2.setTextFill(Color.valueOf("yellow"));
                         break;
                     case 3:
                         Answer3.setDisable(false);
-                        Answer3.setTextFill(Color.valueOf("yellow"));
                         break;
                     case 4:
                         Answer4.setDisable(false);
-                        Answer4.setTextFill(Color.valueOf("yellow"));
                         break;
                 }
             } else {
@@ -599,37 +595,33 @@ public class SceneController implements Initializable {
                 switch (questionJoker.getRightAnswer()) {
                     case "A1":
                         Answer1.setDisable(false);
-                        Answer1.setTextFill(Color.valueOf("yellow"));
                         break;
                     case "A2":
                         Answer2.setDisable(false);
-                        Answer2.setTextFill(Color.valueOf("yellow"));
                         break;
                     case "A3":
                         Answer3.setDisable(false);
-                        Answer3.setTextFill(Color.valueOf("yellow"));
                         break;
                     case "A4":
                         Answer4.setDisable(false);
-                        Answer4.setTextFill(Color.valueOf("yellow"));
                         break;
                 }
                 switch (questionJoker.getRandomAnswer()) {
                     case 1:
                         Answer1.setDisable(false);
-                        Answer1.setTextFill(Color.valueOf("green"));
+                        Answer1.setSelected(true);
                         break;
                     case 2:
                         Answer2.setDisable(false);
-                        Answer2.setTextFill(Color.valueOf("green"));
+                        Answer2.setSelected(true);
                         break;
                     case 3:
                         Answer3.setDisable(false);
-                        Answer3.setTextFill(Color.valueOf("green"));
+                        Answer3.setSelected(true);
                         break;
                     case 4:
                         Answer4.setDisable(false);
-                        Answer4.setTextFill(Color.valueOf("green"));
+                        Answer4.setSelected(true);
                         break;
                 }
             }
