@@ -1,0 +1,152 @@
+{
+  "AuthorName": "TW9yaXR6",
+  "Quizzname": "RHVuZ2VvbnMgYW5kIERyYWdvbnM\u003d",
+  "questionsUsed": "Ng\u003d\u003d",
+  "logoPath": "Y29tL2V4YW1wbGUvY29kZWZvcm1hdGljc2Z4L0dhbWVSZXNvdXJjZXMvTG9nb3MvZHVuZ2VvbnNhbmRkcmFnb25zLmdpZg\u003d\u003d",
+  "questionsList": [
+    {
+      "QUESTION": "V2FubiBrYW0gZGllIGVyc3RlIEVkaXRpb24gcmF1cz8\u003d",
+      "A1": "MTk4MA\u003d\u003d",
+      "A2": "MTk3NA\u003d\u003d",
+      "A3": "MjAwMA\u003d\u003d",
+      "A4": "MTk1MA\u003d\u003d",
+      "DIFFICULTY": "RWFzeQ\u003d\u003d",
+      "RIGHTAWNSER": "QTI\u003d"
+    },
+    {
+      "QUESTION": "V2FzIGlzdCBkYXMgbWF4IExldmVsIGbDvHIgQ2hhcmFrdHJlPw==",
+      "A1": "MTA\u003d",
+      "A2": "NQ\u003d\u003d",
+      "A3": "MjA\u003d",
+      "A4": "MzA\u003d",
+      "DIFFICULTY": "RWFzeQ\u003d\u003d",
+      "RIGHTAWNSER": "QTM\u003d"
+    },
+    {
+      "QUESTION": "V2VsY2hlcyBkaWVzZXIgTW9uc3RlciBoYXQgZGllIGj2Y2hzdGUgQUM/",
+      "A1": "T2x3YmVhcg\u003d\u003d",
+      "A2": "QmVob2xkZXI\u003d",
+      "A3": "WW91bmcgQnJhc3MgRHJhZ29u",
+      "A4": "QXJjaG1hZ2U\u003d",
+      "DIFFICULTY": "SGFyZA\u003d\u003d",
+      "RIGHTAWNSER": "QTI\u003d"
+    },
+    {
+      "QUESTION": "V2FzIGlzdCBkYXMgaPZjaHN0ZSBvZmZpemllbGxlIENoYWxsYW5nZSBSYXRpbmc/",
+      "A1": "MjA\u003d",
+      "A2": "MTU\u003d",
+      "A3": "NDA\u003d",
+      "A4": "MzA\u003d",
+      "DIFFICULTY": "TWVkaXVt",
+      "RIGHTAWNSER": "QTQ\u003d"
+    },
+    {
+      "QUESTION": "V2VsY2hlIEtyZWF0dXIgaXN0IGF1ZiBkZXIgc3RhbmRhcnQgQXVzZ2FiZSBkZXMgU3BpZWxlcmhhbmRidWNoZXM/",
+      "A1": "QmVob2xkZXI\u003d",
+      "A2": "UmVkIERyYWdvbg\u003d\u003d",
+      "A3": "U3Rvcm0gR2lnYW50",
+      "A4": "TGljaA\u003d\u003d",
+      "DIFFICULTY": "TWVkaXVt",
+      "RIGHTAWNSER": "QTM\u003d"
+    },
+    {
+      "QUESTION": "V2VsY2hlciBaYXViZXIga2FubiB2ZXJ3ZW5kZXQgd2VyZGUgdW0gZWluZSBXYWxsIG9mIEZvcmNlIHp1IGJlc2VpdGlnZW4/",
+      "A1": "Q291bnRlcnNwZWxs",
+      "A2": "RGlzcGVsbCBNYWdpYw\u003d\u003d",
+      "A3": "RmlyZWJhbGw\u003d",
+      "A4": "RGlzaW50ZWdyYXRl",
+      "DIFFICULTY": "TWVkaXVt",
+      "RIGHTAWNSER": "QTQ\u003d"
+    },
+    {
+      "QUESTION": "V2VyIGlzdCBIZXJyIGRlciA5IEj2bGxlbj8\u003d",
+      "A1": "QXNtb2RldXM\u003d",
+      "A2": "QmFhbHplYnVs",
+      "A3": "RGlzcGF0ZXI\u003d",
+      "A4": "VGlhbWF0",
+      "DIFFICULTY": "RWFzeQ\u003d\u003d",
+      "RIGHTAWNSER": "QTE\u003d"
+    },
+    {
+      "QUESTION": "V2VyIGhhdCBEdW5nZW9ucyBhbmQgRHJhZ29ucyBlcmZ1bmRlbj8\u003d",
+      "A1": "R2VvcmdlIFIuIFIuIE1hcnRpbg\u003d\u003d",
+      "A2": "R2FyeSBHeWdheA\u003d\u003d",
+      "A3": "Si4gUi4gUi4gVG9sa2lu",
+      "A4": "Sm9zZXBoIE93ZW5z",
+      "DIFFICULTY": "RWFzeQ\u003d\u003d",
+      "RIGHTAWNSER": "QTI\u003d"
+    },
+    {
+      "QUESTION": "V2FzIGlzdCBrZWluZSBvZmZpemllbGxlIEtsYXNzZT8\u003d",
+      "A1": "Q2xlcmlj",
+      "A2": "V2FybG9jaw\u003d\u003d",
+      "A3": "V2l0Y2g\u003d",
+      "A4": "QXJ0aWZpY2Vy",
+      "DIFFICULTY": "TWVkaXVt",
+      "RIGHTAWNSER": "QTM\u003d"
+    },
+    {
+      "QUESTION": "V2FzIGlzdCBkYXMgaPZjaHN0ZSBaYXViZXIgTGV2ZWwgZGFzIGVpbiBTcGllbGVyIGVycmVpY2hlbiBrYW5uPw\u003d\u003d",
+      "A1": "NQ\u003d\u003d",
+      "A2": "Nw\u003d\u003d",
+      "A3": "OQ\u003d\u003d",
+      "A4": "MTE\u003d",
+      "DIFFICULTY": "TWVkaXVt",
+      "RIGHTAWNSER": "QTM\u003d"
+    },
+    {
+      "QUESTION": "V2FzIGlzdCBkYXMgaPZjaHN0ZSBaYXViZXIgTGV2ZWwgZGFzIGV4aXN0aWVydD8\u003d",
+      "A1": "Nw\u003d\u003d",
+      "A2": "OQ\u003d\u003d",
+      "A3": "MTA\u003d",
+      "A4": "MTI\u003d",
+      "DIFFICULTY": "SGFyZA\u003d\u003d",
+      "RIGHTAWNSER": "QTQ\u003d"
+    },
+    {
+      "QUESTION": "V2VsY2hlbiBX/HJmZWwgdmVyd2VuZGV0IGVpbiBGaWd0ZXIgdW0gYmVpIGVpbmVtIExldmVsIHVwIHNlaW5lIExlYmVuc3B1bmt0ZSB6dSB3/HJmZWxuPw\u003d\u003d",
+      "A1": "ZDY\u003d",
+      "A2": "ZDg\u003d",
+      "A3": "ZDEw",
+      "A4": "ZDEy",
+      "DIFFICULTY": "TWVkaXVt",
+      "RIGHTAWNSER": "QTM\u003d"
+    },
+    {
+      "QUESTION": "V2lldmllbCBrb3N0ZXQgZWluIGVpbmZhY2hlciBIZWlsdHJhbms/",
+      "A1": "MTAgZ3A\u003d",
+      "A2": "NTAgZ3A\u003d",
+      "A3": "MTAwIGdw",
+      "A4": "MjUgZ3A\u003d",
+      "DIFFICULTY": "SGFyZA\u003d\u003d",
+      "RIGHTAWNSER": "QTI\u003d"
+    },
+    {
+      "QUESTION": "V2lldmllbCBCYXNpc3NjaGFkZW4gbWFjaHQgZWluZSBIYW5kYXJtYnJ1c3Q/",
+      "A1": "Nw\u003d\u003d",
+      "A2": "MWQxMA\u003d\u003d",
+      "A3": "OQ\u003d\u003d",
+      "A4": "MWQ2",
+      "DIFFICULTY": "SGFyZA\u003d\u003d",
+      "RIGHTAWNSER": "QTQ\u003d"
+    },
+    {
+      "QUESTION": "V2FzIGlzdCBrZWluZSBaYXViZXJ1bnRlcmthdGVnb3JpZT8\u003d",
+      "A1": "VHJhbnNtdXRhdGlvbg\u003d\u003d",
+      "A2": "RXZvY2F0aW9u",
+      "A3": "Rm9ydGVmaWNhdGlvbg\u003d\u003d",
+      "A4": "RGl2aW5hdGlvbg\u003d\u003d",
+      "DIFFICULTY": "TWVkaXVt",
+      "RIGHTAWNSER": "QTM\u003d"
+    },
+    {
+      "QUESTION": "V2llIGhlad90IGRlciBCZWdsZWl0ZXIgdm9uIFJhc2hlbWk/",
+      "A1": "Q3Jhd2xlcg\u003d\u003d",
+      "A2": "VG9vdGg\u003d",
+      "A3": "U2VycGVudA\u003d\u003d",
+      "A4": "Qm9v",
+      "DIFFICULTY": "SGFyZA\u003d\u003d",
+      "RIGHTAWNSER": "QTQ\u003d"
+    }
+  ]
+}

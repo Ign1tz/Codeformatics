@@ -74,7 +74,7 @@ public class SettingsController implements Initializable {
     }
 
     public void switchStart(ActionEvent event) throws IOException {
-        Vars.currentQuiz = chooseQuiz.getValue().toString();
+        Vars.currentQuiz = chooseQuiz.getValue().toString().toLowerCase().replace(" ", "");
         Vars.pathQuestions = "src/main/resources/com/example/codeformaticsfx/GameResources/QuestionLibrary/" + Vars.currentQuiz + ".json";
         Vars.pathScoreboard = "src/main/resources/com/example/codeformaticsfx/GameResources/Scoreboards/" + Vars.currentQuiz + "Scoreboard.json";
         readWriteQuestions rwq = new readWriteQuestions();
