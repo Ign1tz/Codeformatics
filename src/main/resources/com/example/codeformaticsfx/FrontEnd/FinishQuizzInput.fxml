@@ -5,11 +5,12 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Slider?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane fx:id="finishQuestionsGrid" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="finishQuestionsGrid" stylesheets="@FinishQuizInput.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.codeformaticsfx.FrontEnd.InitQuestionInputController">
+<GridPane fx:id="finishQuestionsGrid" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="finishQuestionsGrid" stylesheets="@FinishQuizInput.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.codeformaticsfx.FrontEnd.InitQuestionInputController">
   <columnConstraints>
       <ColumnConstraints hgrow="SOMETIMES" maxWidth="210.0" minWidth="10.0" prefWidth="208.0" />
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="210.0" minWidth="10.0" prefWidth="208.0" />
@@ -26,14 +27,26 @@
    <children>
       <TextField fx:id="QuizzName" GridPane.columnIndex="2" />
       <TextField fx:id="AuthorName" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-      <Label text="Quizz Name" GridPane.columnIndex="1" />
-      <Label text="Author Name" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-      <Label stylesheets="@FinishQuizInput.css" text="Number of Questions" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      <Label text="Quizz Name" GridPane.columnIndex="1">
+         <effect>
+            <DropShadow />
+         </effect></Label>
+      <Label text="Author Name" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <effect>
+            <DropShadow />
+         </effect></Label>
+      <Label stylesheets="@FinishQuizInput.css" text="Number of Questions" GridPane.columnIndex="1" GridPane.rowIndex="2">
+         <effect>
+            <DropShadow />
+         </effect></Label>
       <Button mnemonicParsing="false" onAction="#startQuestion" text="Finish Quiz" GridPane.columnIndex="2" GridPane.rowIndex="4" />
       <Label fx:id="Number" text="0" textFill="WHITE" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="CENTER">
          <padding>
             <Insets left="15.0" />
          </padding>
+         <effect>
+            <DropShadow />
+         </effect>
       </Label>
       <Label fx:id="error" opacity="0.0" text="Please fill everything out!" textFill="RED" GridPane.columnIndex="2" GridPane.rowIndex="4" GridPane.valignment="TOP" />
       <Slider fx:id="numberOfQuestions" GridPane.columnIndex="2" GridPane.rowIndex="2" />
