@@ -56,7 +56,7 @@
                   <Font name="Arial Black" size="100.0" />
                </font>
             </Label>
-            <Label fx:id="logoLabel2" layoutX="80.0" layoutY="79.0" prefHeight="144.0" prefWidth="312.0" text="Maker">
+            <Label fx:id="logoLabel2" layoutX="40.0" layoutY="88.0" prefHeight="144.0" prefWidth="312.0" text="Maker">
                <font>
                   <Font name="Arial Black" size="90.0" />
                </font>
