@@ -18,6 +18,7 @@ import java.util.*;
 public class SceneController implements Initializable {
 
     //FXML USAGE START
+    //Connect the Buttons from the FXML Files to SceneController as modules for them to be accessible in SceneController
     @FXML
     public GridPane Warning, homeGrid, finishGrid, GameGrid;
     @FXML
@@ -33,6 +34,7 @@ public class SceneController implements Initializable {
     //FXML USAGE END
 
     //VARIABLES START
+    //Initializing needed Variables for the functions and methods
     static String name;
     private static Stage primaryStage;
     static List<Integer> diffList, easy, medium, hard;
@@ -46,6 +48,7 @@ public class SceneController implements Initializable {
     int counterF, counterS, counterTF, counterN;
     QuestionJoker questionJoker = new QuestionJoker();
     public static double startTime, timeElapsed;
+    //VARIABLES END
     public void setPrimaryStage(Stage stage, Scene scene) {          //Implement the main primary Stage from HomeStage to SceneController
         this.primaryStage = stage;                                  //Used for modifying the main Window/Stage
         this.scene = scene;
@@ -53,7 +56,6 @@ public class SceneController implements Initializable {
     public Scene getScene() {
         return scene;
     }
-    //VARIABLES END
 
     //METHODS START
 
@@ -71,12 +73,13 @@ public class SceneController implements Initializable {
         Scene scene = ((Node) event.getSource()).getScene();
         scene.setRoot(root);
     }*/
+
     public void switchSettings(ActionEvent event) throws IOException {
         Vars.isHome = false;
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("SettingsStage.fxml"));
-        Parent root = loader.load();
-        Scene scene = ((Node) event.getSource()).getScene();
-        scene.setRoot(root);
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("SettingsStage.fxml"));       //Sets a new Scene representation via FXMLLoader using a given fxml file
+        Parent root = loader.load();                                                                  //Sets the new representation for the scene as main/parent scene overwriting the primaryStage Scene
+        Scene scene = ((Node) event.getSource()).getScene();                                          //Gets the current scene from the HomeStage upcasting it as a Node to the main Stage
+        scene.setRoot(root);                                                                          //Changes the Scene of the main Stage
     }
 
     public void switchGame(ActionEvent event) throws IOException {
@@ -120,7 +123,7 @@ public class SceneController implements Initializable {
         //This part initialises the Design representation of the new Scene.
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Game.fxml"));
         Parent root = loader.load();
-        SceneController controller = loader.getController();
+        SceneController controller = loader.getController();                                //Enables us to manipulate nodes in our Scene
         controller.Answer1.setText(layoutString(eD.decodeSingle(temp.A1)));
         controller.Answer2.setText(layoutString(eD.decodeSingle(temp.A2)));
         controller.Answer3.setText(layoutString(eD.decodeSingle(temp.A3)));
