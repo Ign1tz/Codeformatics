@@ -166,7 +166,7 @@
          </effect></Label>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
          <children>
-            <Label fx:id="titleScore" alignment="CENTER" contentDisplay="CENTER" prefHeight="88.0" prefWidth="607.0" stylesheets="@Scoreboard.css" text="Scoreboard" textFill="#951197">
+            <Label fx:id="titleScore" alignment="CENTER" contentDisplay="CENTER" layoutY="66.0" prefHeight="88.0" prefWidth="607.0" stylesheets="@Scoreboard.css" text="Scoreboard" textFill="#951197">
                <font>
                   <Font size="33.0" />
                </font>
