@@ -25,8 +25,7 @@ public class readWriteQuestions { //this class handles creating the questions, w
         this.DIFFICULTY = eDifficulty;
         this.RIGHTAWNSER = eAnswer;
     }
-    public readWriteQuestions(){
-    }
+    public readWriteQuestions(){}
     public List<readWriteQuestions> questionList(String filePath) throws IOException {
         QuizzInfo Qtemp = readQuizz(filePath);
         List<readWriteQuestions> temp = new ArrayList<>();

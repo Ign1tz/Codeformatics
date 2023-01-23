@@ -102,6 +102,7 @@ public class SettingsController implements Initializable {
         } else {
             Vars.mediaPlayer.pause();   //music stops
             CheckSound.setText("OFF");  //text of checkbox sets to 'OFF'
+            Vars.soundIsOn = false;
         }
     }
 
@@ -125,6 +126,7 @@ public class SettingsController implements Initializable {
         chooseQuiz.setValue(Vars.currentQuiz);
         if (Vars.soundIsOn) { //sets Checksound on if sound is playing
             CheckSound.setSelected(true);
+            CheckSound.setText("ON");
         }
         songs = new ArrayList<>();
         directory = new File("src/main/resources/com/example/codeformaticsfx/FrontEnd/music"); //path to file

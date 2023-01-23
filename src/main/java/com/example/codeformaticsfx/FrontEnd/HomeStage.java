@@ -17,7 +17,7 @@ public class HomeStage extends Application {
         Scene scene = new Scene(parentRoot);    //set root to scene
         String css = Objects.requireNonNull(this.getClass().getResource("HomeStage.css")).toExternalForm(); //connect css file to scene
         scene.getStylesheets().add(css);
-        primaryStage.setTitle("HomeStage");     //title of window
+        primaryStage.setTitle("QuizMaker");     //title of window
         primaryStage.setResizable(true);     //not resiazable
         primaryStage.setMaximized(true);        //fullscreen
         primaryStage.setScene(scene);           //setscene to stage

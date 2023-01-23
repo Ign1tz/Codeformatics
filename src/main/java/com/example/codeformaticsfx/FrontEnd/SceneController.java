@@ -48,7 +48,6 @@ public class SceneController implements Initializable {
     int counterF, counterS, counterTF, counterN;
     QuestionJoker questionJoker = new QuestionJoker();
     public static double startTime, timeElapsed;
-    //VARIABLES END
     public void setPrimaryStage(Stage stage, Scene scene) {          //Implement the main primary Stage from HomeStage to SceneController
         this.primaryStage = stage;                                  //Used for modifying the main Window/Stage
         this.scene = scene;
@@ -56,6 +55,7 @@ public class SceneController implements Initializable {
     public Scene getScene() {
         return scene;
     }
+    //VARIABLES END
 
     //METHODS START
 
@@ -65,15 +65,6 @@ public class SceneController implements Initializable {
         random = rand.nextInt(high) + low;
         return random;
     }
-    /*public void switchStart(ActionEvent event) throws IOException {
-        Vars.isHome = true;
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("HomeStage.fxml"));
-        Parent root = loader.load();
-        SceneController controller = loader.getController();
-        Scene scene = ((Node) event.getSource()).getScene();
-        scene.setRoot(root);
-    }*/
-
     public void switchSettings(ActionEvent event) throws IOException {
         Vars.isHome = false;
         FXMLLoader loader = new FXMLLoader(getClass().getResource("SettingsStage.fxml"));       //Sets a new Scene representation via FXMLLoader using a given fxml file
@@ -297,13 +288,17 @@ public class SceneController implements Initializable {
     }
     //END GAME SCENE
     public void toScoreboard(ActionEvent event) throws IOException {
+        if (!nameGiven) {
+            name = nameScoreboard.getText();
+        }
+        if (name.length() >= 9) {
+            scoreboardLabel.setText("Username not accepted");
+            name = null;
+        }
         readWriteScoreboard rwS = new readWriteScoreboard();
-        if (!Objects.equals(name, null) && !name.equals(" ")) {
+        if (!Objects.equals(name, null) && !name.equals(" ") && !name.equals("")) {
             if (myNameText != null) {
                 nameScoreboard.setText(myNameText.getText());
-            }
-            if (!nameGiven) {
-                name = nameScoreboard.getText();
             }
             System.out.println(Vars.pathScoreboard);
             rwS.writeToScoreboard(name, score, String.valueOf(timeElapsed), Vars.pathScoreboard);
@@ -321,6 +316,7 @@ public class SceneController implements Initializable {
                 name = nameScoreboard.getText();
                 if (name.length() >= 9) {
                     scoreboardLabel.setText("Username not accepted");
+                    name = null;
                 }
             } catch (Exception e) {
                 scoreboardLabel.setText("error");
