@@ -51,12 +51,12 @@
       </ImageView>
       <AnchorPane prefHeight="249.0" prefWidth="362.0" GridPane.columnIndex="2">
          <children>
-            <Label fx:id="logoLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="-41.0" layoutY="22.0" prefHeight="165.0" prefWidth="259.0" stylesheets="@HomeStage.css" text="Quiz" textFill="#bf1394">
+            <Label fx:id="logoLabel" alignment="CENTER" contentDisplay="CENTER" layoutY="22.0" prefHeight="165.0" prefWidth="259.0" stylesheets="@HomeStage.css" text="Quiz" textFill="#bf1394">
                <font>
                   <Font name="Arial Black" size="100.0" />
                </font>
             </Label>
-            <Label fx:id="logoLabel2" layoutX="40.0" layoutY="88.0" prefHeight="144.0" prefWidth="312.0" text="Maker">
+            <Label fx:id="logoLabel2" layoutX="84.0" layoutY="88.0" prefHeight="144.0" prefWidth="312.0" text="Maker">
                <font>
                   <Font name="Arial Black" size="90.0" />
                </font>
