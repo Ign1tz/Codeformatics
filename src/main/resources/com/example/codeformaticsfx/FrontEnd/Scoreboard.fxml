@@ -20,6 +20,7 @@
    </columnConstraints>
    <rowConstraints>
       <RowConstraints maxHeight="93.0" minHeight="10.0" prefHeight="93.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="93.0" minHeight="10.0" prefHeight="93.0" vgrow="SOMETIMES" />
       <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
       <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
       <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
@@ -31,134 +32,135 @@
       <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
       <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
       <RowConstraints maxHeight="98.5" minHeight="10.0" prefHeight="93.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="98.5" minHeight="10.0" prefHeight="93.0" vgrow="SOMETIMES" />
    </rowConstraints>
    <children>
-      <Label fx:id="name1" prefHeight="17.0" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+      <Label fx:id="name1" prefHeight="17.0" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2">
          <effect>
             <DropShadow />
          </effect></Label>
-      <Label fx:id="points1" textFill="WHITE" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+      <Label fx:id="points1" textFill="WHITE" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2">
          <effect>
             <DropShadow />
          </effect></Label>
-      <Label fx:id="place1" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+      <Label fx:id="place1" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2">
          <effect>
             <DropShadow />
          </effect></Label>
-      <Label fx:id="place5" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5">
+      <Label fx:id="place5" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6">
          <effect>
             <DropShadow />
          </effect></Label>
-      <Label fx:id="place4" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+      <Label fx:id="place4" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5">
          <effect>
             <DropShadow />
          </effect></Label>
-      <Label fx:id="place3" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+      <Label fx:id="place3" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4">
          <effect>
             <DropShadow />
          </effect></Label>
-      <Label fx:id="place2" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+      <Label fx:id="place2" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3">
          <effect>
             <DropShadow />
          </effect></Label>
-      <Label fx:id="name5" prefHeight="17.0" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="5">
+      <Label fx:id="name5" prefHeight="17.0" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="6">
          <effect>
             <DropShadow />
          </effect></Label>
-      <Label fx:id="name4" prefHeight="17.0" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+      <Label fx:id="name4" prefHeight="17.0" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="5">
          <effect>
             <DropShadow />
          </effect></Label>
-      <Label fx:id="name3" prefHeight="17.0" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+      <Label fx:id="name3" prefHeight="17.0" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4">
          <effect>
             <DropShadow />
          </effect></Label>
-      <Label fx:id="name2" prefHeight="17.0" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+      <Label fx:id="name2" prefHeight="17.0" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3">
          <effect>
             <DropShadow />
          </effect></Label>
-      <Label fx:id="points5" textFill="WHITE" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="5">
+      <Label fx:id="points5" textFill="WHITE" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="6">
          <effect>
             <DropShadow />
          </effect></Label>
-      <Label fx:id="points2" textFill="WHITE" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+      <Label fx:id="points2" textFill="WHITE" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3">
          <effect>
             <DropShadow />
          </effect></Label>
-      <Label fx:id="points4" textFill="WHITE" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+      <Label fx:id="points4" textFill="WHITE" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="5">
          <effect>
             <DropShadow />
          </effect></Label>
-      <Label fx:id="points3" textFill="WHITE" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+      <Label fx:id="points3" textFill="WHITE" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="4">
          <effect>
             <DropShadow />
          </effect></Label>
-      <Button fx:id="next" mnemonicParsing="false" onAction="#next" text="Next" textFill="#e91e63" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="11">
+      <Button fx:id="next" mnemonicParsing="false" onAction="#next" text="Next" textFill="#e91e63" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="13">
          <font>
             <Font name="Arial Black" size="12.0" />
          </font></Button>
-      <Button fx:id="prev" mnemonicParsing="false" onAction="#previous" text="Previous" textFill="#e91e63" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="11">
+      <Button fx:id="prev" mnemonicParsing="false" onAction="#previous" text="Previous" textFill="#e91e63" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="13">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Button>
-      <Button fx:id="exit" mnemonicParsing="false" onAction="#Exit" text="Exit" textFill="#e91e63" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="11" />
-      <Label fx:id="name6" layoutX="254.0" layoutY="195.0" prefHeight="17.0" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="6">
+      <Button fx:id="exit" mnemonicParsing="false" onAction="#Exit" text="Exit" textFill="#e91e63" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="13" />
+      <Label fx:id="name6" layoutX="254.0" layoutY="195.0" prefHeight="17.0" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="7">
          <effect>
             <DropShadow />
          </effect></Label>
-      <Label fx:id="points6" layoutX="375.0" layoutY="195.0" prefHeight="18.0" textFill="WHITE" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="6">
+      <Label fx:id="points6" layoutX="375.0" layoutY="195.0" prefHeight="18.0" textFill="WHITE" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="7">
          <effect>
             <DropShadow />
          </effect></Label>
-      <Label fx:id="place6" layoutX="132.0" layoutY="85.0" prefHeight="18.0" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6">
+      <Label fx:id="place6" layoutX="132.0" layoutY="85.0" prefHeight="18.0" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="7">
          <effect>
             <DropShadow />
          </effect></Label>
-      <Label fx:id="name7" layoutX="254.0" layoutY="223.0" prefHeight="17.0" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="7">
+      <Label fx:id="name7" layoutX="254.0" layoutY="223.0" prefHeight="17.0" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="8">
          <effect>
             <DropShadow />
          </effect></Label>
-      <Label fx:id="name8" layoutX="254.0" layoutY="250.0" prefHeight="17.0" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="8">
+      <Label fx:id="name8" layoutX="254.0" layoutY="250.0" prefHeight="17.0" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="9">
          <effect>
             <DropShadow />
          </effect></Label>
-      <Label fx:id="name9" layoutX="254.0" layoutY="277.0" prefHeight="17.0" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="9">
+      <Label fx:id="name9" layoutX="254.0" layoutY="277.0" prefHeight="17.0" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="10">
          <effect>
             <DropShadow />
          </effect></Label>
-      <Label fx:id="name10" layoutX="254.0" layoutY="304.0" prefHeight="17.0" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="10">
+      <Label fx:id="name10" layoutX="254.0" layoutY="304.0" prefHeight="17.0" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="11">
          <effect>
             <DropShadow />
          </effect></Label>
-      <Label fx:id="points7" layoutX="375.0" layoutY="222.0" prefHeight="18.0" textFill="WHITE" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="7">
+      <Label fx:id="points7" layoutX="375.0" layoutY="222.0" prefHeight="18.0" textFill="WHITE" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="8">
          <effect>
             <DropShadow />
          </effect></Label>
-      <Label fx:id="points8" layoutX="375.0" layoutY="249.0" prefHeight="18.0" textFill="WHITE" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="8">
+      <Label fx:id="points8" layoutX="375.0" layoutY="249.0" prefHeight="18.0" textFill="WHITE" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="9">
          <effect>
             <DropShadow />
          </effect></Label>
-      <Label fx:id="points9" layoutX="375.0" layoutY="277.0" prefHeight="18.0" textFill="WHITE" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="9">
+      <Label fx:id="points9" layoutX="375.0" layoutY="277.0" prefHeight="18.0" textFill="WHITE" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="10">
          <effect>
             <DropShadow />
          </effect></Label>
-      <Label fx:id="points10" layoutX="375.0" layoutY="304.0" prefHeight="18.0" textFill="WHITE" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="10">
+      <Label fx:id="points10" layoutX="375.0" layoutY="304.0" prefHeight="18.0" textFill="WHITE" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="11">
          <effect>
             <DropShadow />
          </effect></Label>
-      <Label fx:id="place7" layoutX="132.0" layoutY="222.0" prefHeight="18.0" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="7">
+      <Label fx:id="place7" layoutX="132.0" layoutY="222.0" prefHeight="18.0" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="8">
          <effect>
             <DropShadow />
          </effect></Label>
-      <Label fx:id="place8" layoutX="132.0" layoutY="249.0" prefHeight="18.0" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="8">
+      <Label fx:id="place8" layoutX="132.0" layoutY="249.0" prefHeight="18.0" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="9">
          <effect>
             <DropShadow />
          </effect></Label>
-      <Label fx:id="place9" layoutX="132.0" layoutY="277.0" prefHeight="18.0" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="9">
+      <Label fx:id="place9" layoutX="132.0" layoutY="277.0" prefHeight="18.0" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="10">
          <effect>
             <DropShadow />
          </effect></Label>
-      <Label fx:id="place10" layoutX="132.0" layoutY="304.0" prefHeight="18.0" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="10">
+      <Label fx:id="place10" layoutX="132.0" layoutY="304.0" prefHeight="18.0" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="11">
          <effect>
             <DropShadow />
          </effect></Label>
@@ -174,47 +176,47 @@
             </Label>
          </children>
       </AnchorPane>
-      <Label fx:id="winnerPlace" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+      <Label fx:id="winnerPlace" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
          <effect>
             <Bloom />
          </effect>
       </Label>
-      <Label fx:id="winnerName" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+      <Label fx:id="winnerName" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
          <effect>
             <Bloom />
          </effect>
       </Label>
-      <Label fx:id="winnerPoints" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+      <Label fx:id="winnerPoints" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
          <effect>
             <Bloom />
          </effect>
       </Label>
-      <Label fx:id="secondPlace" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+      <Label fx:id="secondPlace" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
          <effect>
             <DropShadow />
          </effect>
       </Label>
-      <Label fx:id="secondName" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+      <Label fx:id="secondName" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
          <effect>
             <DropShadow />
          </effect>
       </Label>
-      <Label fx:id="secondPoints" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+      <Label fx:id="secondPoints" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
          <effect>
             <DropShadow />
          </effect>
       </Label>
-      <Label fx:id="thirdPlace" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+      <Label fx:id="thirdPlace" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
          <effect>
             <DropShadow />
          </effect>
       </Label>
-      <Label fx:id="thirdName" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+      <Label fx:id="thirdName" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
          <effect>
             <DropShadow />
          </effect>
       </Label>
-      <Label fx:id="thirdPoints" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+      <Label fx:id="thirdPoints" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
          <effect>
             <DropShadow />
          </effect>
