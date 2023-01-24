@@ -221,6 +221,7 @@ public class ScoreboardController {
     }
 
     public void Exit(ActionEvent event) throws IOException {
+        Vars.isHome = true;
         count = 0;
         FXMLLoader loader = new FXMLLoader(getClass().getResource("HomeStage.fxml"));
         Parent root = loader.load();
