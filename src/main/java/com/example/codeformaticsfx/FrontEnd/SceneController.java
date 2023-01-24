@@ -682,6 +682,7 @@ public class SceneController implements Initializable {
         if (string.length() > 13) {         //if string is bigger than 13 characters it should be splitted
             if (check[middle] == ' ') { //if middle of array is a space, split string
                 arrStr = new String[]{string.substring(0, middle), string.substring(middle)}; //splitting String in two sections
+                newLine = true;
             } else {
                 for (int x = middle + 1; x < check.length; x++) {
                     if (check[x] == ' ') {
