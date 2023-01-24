@@ -46,7 +46,7 @@ public class InitQuestionInputController implements Initializable{
         if(QuizzName.getText() == "" || AuthorName.getText() == "") { //there has to be a QuizName and AuthorName
             error.setOpacity(1);
         }else{
-            if(!existsIn(QuizzName.getText().toLowerCase(), QuizList)) { // looks if QuizName already exists
+            if(!existsIn(QuizzName.getText().replace(" ", "").toLowerCase(), QuizList)) { // looks if QuizName already exists
                 nameNoSpace = QuizzName.getText().replace(" ", "").toLowerCase(); // removes Spaces
                 if(file == null && directory.getText() != null){ //sets Logo if not chosen to default
                     Vars.logoPath = "default";
